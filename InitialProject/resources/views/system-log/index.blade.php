@@ -28,10 +28,37 @@
                     </div>
                 </div>
 
-                <!-- Filter -->
-                <div class="d-flex align-items-center gap-2 bg-secondary py-1 px-3 rounded" style="cursor: pointer;">
-                    <i class="mdi mdi-settings"></i>
-                    <p class="mb-0">Filter</p>
+                <!-- Filter Dropdown -->
+                <div class="dropdown">
+                    <div class="d-flex align-items-center gap-2 bg-secondary py-1 px-3 rounded"
+                        style="cursor: pointer;"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="mdi mdi-settings"></i>
+                        <p class="mb-0">Filter</p>
+                    </div>
+
+                    <ul class="dropdown-menu p-3">
+                        <li>
+                            <label class="form-label">Select Status</label>
+                            <select class="form-select" id="filter-status">
+                                <option value="">All</option>
+                                <option value="success">Success</option>
+                                <option value="failed">Failed</option>
+                            </select>
+                        </li>
+                        <li class="mt-2">
+                            <label class="form-label">Select Role</label>
+                            <select class="form-select" id="filter-role">
+                                <option value="">All</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </li>
+                        <li class="mt-3 text-end">
+                            <button class="btn btn-primary btn-sm" onclick="applyFilter()">Apply</button>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -68,6 +95,19 @@
 <script>
     const rowsPerPage = 10; // จำนวนแถวต่อหน้า
     let currentPage = 1;
+
+    //filter submit
+    function applyFilter() {
+        const statusFilter = document.getElementById("filter-status").value;
+        const roleFilter = document.getElementById("filter-role").value;
+
+        console.log("Filter applied:", {
+            status: statusFilter,
+            role: roleFilter
+        });
+    }
+
+    //table
     function renderTable() {
         const tableBody = document.querySelector('#data-table tbody');
         tableBody.innerHTML = ''; // ลบข้อมูลเก่าออก
@@ -106,6 +146,7 @@
         renderPagination();
     }
 
+    //pagination
     function renderPagination() {
         const pagination = document.querySelector('#pagination');
         pagination.innerHTML = ''; // ลบปุ่มเก่าออก
@@ -160,7 +201,7 @@
         pagination.appendChild(nextItem);
     }
 
-    document.addEventListener('DOMContentLoaded', renderTable); // เรียกฟังก์ชัน renderTable เมื่อโหลดหน้าเสร็จ
+    document.addEventListener('DOMContentLoaded', renderTable);
 </script>
 
 <!-- mockup data -->
