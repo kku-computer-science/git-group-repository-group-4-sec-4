@@ -64,96 +64,10 @@
     </div>
 
 </div>
-<script>
-    const data = [{
-            dateTime: '2024-02-07 10:15:00',
-            role: 'Admin',
-            activity: "Logged In",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 11:00:00',
-            role: 'User',
-            activity: "Edited",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 12:30:00',
-            role: 'Admin',
-            activity: "Logged Out",
-            status: false,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 10:15:00',
-            role: 'Admin',
-            activity: "Logged In",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 11:00:00',
-            role: 'User',
-            activity: "Edited",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 12:30:00',
-            role: 'Admin',
-            activity: "Logged Out",
-            status: false,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 10:15:00',
-            role: 'Admin',
-            activity: "Logged In",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 11:00:00',
-            role: 'User',
-            activity: "Edited",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 12:30:00',
-            role: 'Admin',
-            activity: "Logged Out",
-            status: false,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 10:15:00',
-            role: 'Admin',
-            activity: "Logged In",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 11:00:00',
-            role: 'User',
-            activity: "Edited",
-            status: true,
-            action: ""
-        },
-        {
-            dateTime: '2024-02-07 12:30:00',
-            role: 'Admin',
-            activity: "Logged Out",
-            status: false,
-            action: ""
-        },
-    ];
 
+<script>
     const rowsPerPage = 10; // จำนวนแถวต่อหน้า
     let currentPage = 1;
-
     function renderTable() {
         const tableBody = document.querySelector('#data-table tbody');
         tableBody.innerHTML = ''; // ลบข้อมูลเก่าออก
@@ -249,4 +163,337 @@
     document.addEventListener('DOMContentLoaded', renderTable); // เรียกฟังก์ชัน renderTable เมื่อโหลดหน้าเสร็จ
 </script>
 
+<!-- mockup data -->
+<script>
+    const data = [{
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 10:15:00',
+            role: 'Admin',
+            activity: "Logged In",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 11:00:00',
+            role: 'User',
+            activity: "Edited",
+            status: true,
+            action: ""
+        },
+        {
+            dateTime: '2024-02-07 12:30:00',
+            role: 'Admin',
+            activity: "Logged Out",
+            status: false,
+            action: ""
+        },
+    ];
+</script>
 @stop
