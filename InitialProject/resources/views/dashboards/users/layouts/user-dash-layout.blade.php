@@ -272,6 +272,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     @endcan
+                    @can('system-log-list')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('system.log')}}">
+                            <i class="menu-icon mdi mdi-history"></i>
+                            <span class="menu-title">System Log</span>
+                        </a>
+                    </li>
+                    @endcan
                 </ul>
             </nav>
 
