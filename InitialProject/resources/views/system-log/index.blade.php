@@ -17,12 +17,12 @@
         <div class="card-body">
             <h4 class="card-title">Systam Log</h4>
 
-            <div class="mt-3 d-flex align-items-end gap-5 p-0 flex-wrap">
+            <div class="mt-4 d-flex align-items-end gap-3 p-0 flex-wrap">
                 <!-- Search -->
-                <div class=" m-0" style="width: 25rem;">
-                    <div class="input-group ">
-                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
-                        <div class="  ">
+                <div class=" border rounded px-1 " style="width: 20rem;">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-0" placeholder="Search..." aria-label="Search">
+                        <div class="d-flex align-items-center justify-content-center px-2">
                             <i class="mdi mdi-magnify fs-4"></i>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <table id="data-table" class="table table-striped">
+            <table id="data-table" class="table table-striped mt-2">
                 <thead class="thead-dark">
                     <tr>
                         <th>Datatime</th>
@@ -49,11 +49,16 @@
                     <!-- ข้อมูลจะถูกแทรกในนี้ -->
                 </tbody>
             </table>
-            <!-- Pagination Links -->
-            <div class="d-flex justify-content-end mt-3 ">
-                <ul id="pagination" class="pagination">
-                    <!-- ปุ่ม Pagination จะถูกสร้างที่นี่ -->
-                </ul>
+            <div class="d-flex justify-content-between mt-3">
+                <div>
+                    <p id="showing-text"></p>
+                </div>
+                <!-- Pagination Links -->
+                <div class="  ">
+                    <ul id="pagination" class="pagination">
+                        <!-- ปุ่ม Pagination จะถูกสร้างที่นี่ -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -160,22 +165,29 @@
         currentPageData.forEach((item) => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${item.dateTime}</td>
-                <td>${item.role}</td>
-                <td>${item.activity}</td>
-                <td class="d-flex align-items-center gap-2">
+            <td>${item.dateTime}</td>
+            <td>${item.role}</td>
+            <td>${item.activity}</td>
+            <td class="d-flex align-items-center gap-2">
                 ${item.status ? (
-                    `<i class="mdi mdi-checkbox-marked text-success fs-2"></i> <p class="mb-0">Success</p>` 
+                    `<i class="mdi mdi-checkbox-marked text-success fs-2"></i> <p class="mb-0">Success</p>`
                 ):(
                     `<i class="mdi mdi-close text-danger fs-2"></i> <p class="mb-0">Failed</p>`
                 )}
-                </td>
-                <td>
-                    <i class=" mdi mdi-dots-horizontal fs-2"></i> 
-                </td>
-            `;
+            </td>
+            <td>
+                <i class="mdi mdi-dots-horizontal fs-2"></i> 
+            </td>
+        `;
             tableBody.appendChild(row);
         });
+
+        // Update the 'Showing' text
+        const showingText = document.querySelector('#showing-text');
+        const totalEntries = data.length;
+        const startRange = startIndex + 1;
+        const endRange = Math.min(endIndex, totalEntries);
+        showingText.textContent = `Showing ${startRange} to ${endRange} of ${totalEntries} entries`;
 
         renderPagination();
     }
