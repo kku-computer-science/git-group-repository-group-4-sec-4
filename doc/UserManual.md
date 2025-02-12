@@ -25,7 +25,7 @@ System Log ใช้สำหรับติดตามและแสดงบ
    <img width="685" alt="image" src="https://github.com/user-attachments/assets/15cc9903-519a-4df7-8c69-789adbc26514" />
 
 3. ไปที่เมนู System Log
-   <img width="938" alt="image" src="https://github.com/user-attachments/assets/c8073b22-1396-4ab4-93d4-c24bc2c4cca7" />
+   ![image](https://github.com/user-attachments/assets/dd1293a2-f43c-47ce-a530-115f04a0e9e0)
 
 5. สามารถดูรายละเอียดกิจกรรมของทุก User ได้
    <img width="833" alt="image" src="https://github.com/user-attachments/assets/6239b92b-9986-451b-bebb-977d51aa2369" />
