@@ -1,1 +1,1 @@
-"Test folder for Automated Testing" 
+"Test folder for UAT" 
