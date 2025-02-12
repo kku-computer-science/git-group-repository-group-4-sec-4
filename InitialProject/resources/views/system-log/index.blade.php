@@ -30,7 +30,7 @@
 
                 <!-- Filter -->
                 <div class="dropdown">
-                    <div class="d-flex align-items-center gap-2 bg-secondary py-1 px-3 rounded"
+                    <div id="dropdown-filter" class="d-flex align-items-center gap-2 bg-secondary py-1 px-3 rounded"
                         style="cursor: pointer;"
                         data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -48,7 +48,7 @@
                             <input type="date" class="form-control" id="filter-end-date">
                         </li>
                         <li class="mt-3 text-end">
-                            <button class="btn btn-primary btn-sm" onclick="applyDateFilter()">Apply</button>
+                            <button id="btn-filter" class="btn btn-primary btn-sm" onclick="applyDateFilter()">Apply</button>
                         </li>
                     </ul>
                 </div>
