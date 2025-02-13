@@ -194,7 +194,7 @@
                 )}
             </td>
             <td>
-                <i class="mdi mdi-dots-horizontal fs-2"></i> 
+                <i style="cursor: pointer;" class="mdi mdi-dots-horizontal fs-2"></i> 
             </td>
         `;
                 tableBody.appendChild(row);
@@ -332,7 +332,7 @@
                 action: ""
             },
             {
-                dateTime: '2024-02-07 10:15:00',
+                dateTime: '2025-02-07',
                 role: 'Admin',
                 email: 'test@gmail.com',
                 activity: "Logged In",
@@ -380,7 +380,7 @@
                 action: ""
             },
             {
-                dateTime: '2024-02-07 10:15:00',
+                dateTime: '2025-02-07',
                 role: 'Admin',
                 email: 'test@gmail.com',
                 activity: "Logged In",
@@ -428,7 +428,7 @@
                 action: ""
             },
             {
-                dateTime: '2024-02-07 10:15:00',
+                dateTime: '2025-02-07',
                 role: 'Admin',
                 email: 'test@gmail.com',
                 activity: "Logged In",
@@ -476,7 +476,7 @@
                 action: ""
             },
             {
-                dateTime: '2024-02-07 10:15:00',
+                dateTime: '2025-02-07',
                 role: 'Admin',
                 email: 'test@gmail.com',
                 activity: "Logged In",
@@ -524,7 +524,7 @@
                 action: ""
             },
             {
-                dateTime: '2024-02-07 10:15:00',
+                dateTime: '2025-02-07',
                 role: 'Admin',
                 email: 'test@gmail.com',
                 activity: "Logged In",
