@@ -10,5 +10,9 @@ return [
         'display' => 'ไทย',
         'flag-icon' => 'th'
     ],
+    'ch' => [
+        'display' => 'Chinese',
+        'flag-icon' => 'cn'
+    ]
     
 ];
