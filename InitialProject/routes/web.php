@@ -146,6 +146,13 @@ Route::group(['middleware' => ['auth', 'PreventBackHistory']], function () {
   
 });
 
+Route::get('lang/{lang}', function ($lang) {
+    if (array_key_exists($lang, Config::get('languages'))) {
+        Session::put('applocale', $lang);
+    }
+    return redirect()->back();
+})->name('langswitch');
+
 
 
 // Route::get('/example/pdf', 'ExampleController@pdf_index');
