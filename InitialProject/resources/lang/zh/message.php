@@ -14,4 +14,6 @@ return [
     'number' => '数量',
     'year' => '年',
     'reference' => '引用',
+    'research_group' => '研究小组',
+    'laboratory_supervisor' => '实验室主管',
 ];

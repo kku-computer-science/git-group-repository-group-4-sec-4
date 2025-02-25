@@ -18,5 +18,7 @@ return [
 'number' => 'จำนวน',
 'year' => 'ปี',
 'reference' => 'อ้างอิง',
+'research_group' => 'กลุ่มวิจัย',
+'laboratory_supervisor' => 'หัวหน้าห้องปฏิบัติการ',
 
 ];
