@@ -20,4 +20,7 @@ return [
 'reference' => 'Reference',
 'research_group' => 'Research Group',
 'laboratory_supervisor' => 'Laboratory Supervisor',
+'total_articles_5years' => 'Total Number of Articles (5 Years)',
+'cited_articles_5years' => 'Statistics of Cited Articles (5 Years)',
+'source' => 'Source',
 ];

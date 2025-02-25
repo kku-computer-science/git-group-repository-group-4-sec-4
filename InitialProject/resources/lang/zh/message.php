@@ -16,4 +16,7 @@ return [
     'reference' => '引用',
     'research_group' => '研究小组',
     'laboratory_supervisor' => '实验室主管',
+    'total_articles_5years' => '过去5年的文章统计',
+    'cited_articles_5years' => '过去5年被引用的文章统计',
+    'source' => '来源',
 ];

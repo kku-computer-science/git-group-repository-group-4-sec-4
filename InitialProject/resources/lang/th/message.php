@@ -20,5 +20,7 @@ return [
 'reference' => 'อ้างอิง',
 'research_group' => 'กลุ่มวิจัย',
 'laboratory_supervisor' => 'หัวหน้าห้องปฏิบัติการ',
-
+'total_articles_5years' => 'สถิติจำนวนบทความทั้งหมด 5 ปี',
+'cited_articles_5years' => 'สถิติจำนวนบทความที่ได้รับการอ้างอิง',
+'source' => 'แหล่งข้อมูล',
 ];
