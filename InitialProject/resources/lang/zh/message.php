@@ -4,6 +4,7 @@ return [
     'Researchers' => '研究人员',
     'ResearchProj' => '研究项目',
     'ResearchGroup' => '研究团队',
+    'details' =>'细节',
     'Report' => '报告',
     'report_title' => '报告文章总数（5年累计）',
     'summary' => '总结',
@@ -19,4 +20,5 @@ return [
     'total_articles_5years' => '过去5年的文章统计',
     'cited_articles_5years' => '过去5年被引用的文章统计',
     'source' => '来源',
+    'student' => '学生',
 ];
