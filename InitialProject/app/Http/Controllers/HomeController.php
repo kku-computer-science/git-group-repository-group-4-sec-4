@@ -249,8 +249,6 @@ class HomeController extends Controller
         $bb->bibarr["kku"] = $arr;
         $key = "kku";
 
-     
-
         return response()->json($key, $bb);
     }
 }

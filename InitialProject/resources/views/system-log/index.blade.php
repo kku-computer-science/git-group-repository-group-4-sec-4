@@ -15,7 +15,7 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">System Log</h4>
+            <h4 class="card-title">Systam Log</h4>
 
             <div class="mt-4 d-flex align-items-end gap-3 p-0 flex-wrap">
                 <!-- Search -->
@@ -73,25 +73,8 @@
                     </tr>
                 </thead>
                 <tbody>
-    @foreach ($experts as $expert)
-        <tr>
-            <td>{{ $expert->created_at }}</td>
-            <td>{{ $expert->user->name ?? 'Unknown' }}</td>
-            <td>{{ $expert->activity }}</td>
-            <td>
-                @if ($expert->status == 'success')
-                    <i class="mdi mdi-checkbox-marked text-success fs-2"></i> Success
-                @else
-                    <i class="mdi mdi-close text-danger fs-2"></i> Failed
-                @endif
-            </td>
-            <td>
-                <i class="mdi mdi-dots-horizontal fs-2"></i>
-            </td>
-        </tr>
-    @endforeach
-</tbody>
-
+                    <!-- ข้อมูลจะถูกแทรกในนี้ -->
+                </tbody>
             </table>
             <div class="d-flex justify-content-between mt-3">
                 <div>

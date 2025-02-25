@@ -144,9 +144,18 @@ Route::group(['middleware' => ['auth', 'PreventBackHistory']], function () {
     Route::get('tests', [TestController::class, 'index']); //call department
     Route::get('tests/{id}', [TestController::class, 'getCategory'])->name('tests'); //call program
   
-   
-
 });
+
+Route::get('lang/{lang}', function ($lang) {
+    $availableLangs = ['en', 'th', 'zh'];
+    
+    if (in_array($lang, $availableLangs)) {
+        Session::put('applocale', $lang);
+        App::setLocale($lang);
+    }
+    
+    return redirect()->back();
+})->name('langswitch');
 
 
 

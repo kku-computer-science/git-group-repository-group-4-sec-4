@@ -75,9 +75,17 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach($dn as $department)
-                            <li><a class="dropdown-item" href="{{ route('researchers',['id'=>$department->id])}}">
-                                    {{$department->program_name_en}}</a>
-                            </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('researchers', ['id' => $department->id]) }}">
+                                    @if(app()->getLocale() == 'zh') 
+                                        {{ $department->program_name_zh }}
+                                    @elseif(app()->getLocale() == 'th') 
+                                        {{ $department->program_name_th }}
+                                    @else 
+                                        {{ $department->program_name_en }}
+                                    @endif
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
                     </li>
@@ -95,17 +103,17 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <span
-                                class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>
+                            <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>
                             {{ Config::get('languages')[App::getLocale()]['display'] }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             @foreach (Config::get('languages') as $lang => $language)
-                            @if ($lang != App::getLocale())
-                            <a class="dropdown-item" href="{{ route('langswitch', $lang) }}"><span
-                                    class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
-                                {{$language['display']}}</a>
-                            @endif
+                                @if ($lang != App::getLocale())
+                                    <a class="dropdown-item" href="{{ route('langswitch', $lang) }}">
+                                        <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
+                                        {{$language['display']}}
+                                    </a>
+                                @endif
                             @endforeach
                         </div>
                     </li>
