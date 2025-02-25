@@ -3,7 +3,7 @@
     .name {
 
         font-size: 20px;
-
+lglglgkkf
     }
 </style>
 @section('content')
