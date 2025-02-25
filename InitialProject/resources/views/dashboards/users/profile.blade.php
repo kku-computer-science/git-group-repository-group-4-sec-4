@@ -180,7 +180,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>{{ __('profile.New password') }}</label>
+                                <label>{{ __('profile.new_password') }}</label>
                                 <input type="password" class="form-control" id="newpassword" placeholder="Enter new password" name="newpassword">
                                 <span class="text-danger error-text newpassword_error"></span>
                             </div>
