@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <div class="container card-2">
-    <p class="title"> Researchers </p>
+    <p class="title">{{ trans('research.title') }}</p>
     @foreach($request as $res)
     <span>
         <ion-icon name="caret-forward-outline" size="small"></ion-icon> {{$res->program_name_en}}
@@ -11,7 +11,7 @@
             <form class="row row-cols-lg-auto g-3" method="GET" action="{{ route('searchresearchers',['id'=>$res->id])}}">
                 <div class="col-md-8">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="textsearch" placeholder="Research interests">
+                        <input type="text" class="form-control" name="textsearch" placeholder={{  trans('research.search')  }}>
                     </div>
                 </div>
                 <!-- <div class="col-12">
@@ -24,7 +24,7 @@
                         </select>
                     </div> -->
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                    <button type="submit" class="btn btn-outline-primary">{{ trans('research.search') }}</button>
                 </div>
             </form>
         </div>
