@@ -113,7 +113,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Reference (APA)</h5>
+                <h5 class="modal-title">{{ trans('message.reference_apa') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="name">
@@ -161,7 +161,7 @@
                                     <!-- <a href="{{ route('bibtex',['id'=>$p['id']])}}">
                                         [อ้างอิง]
                                     </a> -->
-                                    <button style="padding: 0;"class="btn btn-link open_modal" value="{{$p['id']}}">[อ้างอิง]</button>
+                                    <button style="padding: 0;" class="btn btn-link open_modal" value="{{$p['id']}}">[{{ __('message.reference') }}]</button>
                                 </p>
                             </div>
                         </div>
@@ -242,6 +242,13 @@
     //-------------
     //- BAR CHART -
     //-------------
+    var lang_number = "{{ __('message.number') }}";
+    var lang_year = "{{ __('message.year') }}";
+    var lang_report_title = "{{ __('message.report_title') }}";
+    var lang_summary = "{{ __('message.summary') }}";
+    var lang_scopus = "{{ __('message.scopus') }}";
+    var lang_wos = "{{ __('message.wos') }}";
+    var lang_tci = "{{ __('message.tci') }}";
     var barChartCanvas = $('#barChart1').get(0).getContext('2d')
     var barChartData = $.extend(true, {}, areaChartData)
     var temp0 = areaChartData.datasets[0]
@@ -260,7 +267,7 @@
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Number',
+                    labelString: lang_number
 
                 },
                 ticks: {
@@ -271,14 +278,14 @@
             xAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Year'
+                    labelString: lang_year
                 }
             }]
         },
 
         title: {
             display: true,
-            text: 'Report the total number of articles ( 5 years : cumulative)',
+            text: lang_report_title,
             fontSize: 20
         }
 
@@ -307,7 +314,7 @@
         document.getElementById("all").innerHTML += `
                 <i class="count-icon fa fa-book fa-2x"></i>
                 <h2 class="timer count-title count-number" data-to="${sum}" data-speed="1500"></h2>
-                <p class="count-text ">SUMMARY</p>`
+                <p class="count-text ">${lang_summary}</p>`;
         document.getElementById("scopus").innerHTML += `
                 <i class="count-icon fa fa-book fa-2x"></i>
                 <h2 class="timer count-title count-number" data-to="${sumsco}" data-speed="1500"></h2>

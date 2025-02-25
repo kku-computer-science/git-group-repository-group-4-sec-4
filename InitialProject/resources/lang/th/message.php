@@ -10,5 +10,13 @@ return [
 'publications' => 'ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)',
 'education'=>'การศึกษา',
 'publications2' => 'ผลงานตีพิมพ์',
+'report_title' => 'รายงานจำนวนบทความทั้งหมด (5 ปี : สะสม)',
+'summary' => 'สรุป',
+'scopus' => 'SCOPUS',
+'wos' => 'WOS',
+'tci' => 'TCI',
+'number' => 'จำนวน',
+'year' => 'ปี',
+'reference' => 'อ้างอิง',
 
 ];

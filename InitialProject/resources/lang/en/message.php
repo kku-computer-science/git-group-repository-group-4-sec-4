@@ -10,4 +10,7 @@ return [
 'publications' => 'Publications (In the Last 5 Years)',
 'education'=>'Education',
 'publications2' => 'Publications',
+'number' => 'Number',
+'year' => 'Year',
+'reference' => 'Reference',
 ];
