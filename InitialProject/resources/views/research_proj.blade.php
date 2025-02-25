@@ -8,18 +8,18 @@
         <table id="example1" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th style="font-weight: bold;">ลำดับ</th>
-                    <th class="col-md-1" style="font-weight: bold;">ปี</th>
-                    <th class="col-md-4" style="font-weight: bold;">ชื่อโครงการ </th>
+                    <th style="font-weight: bold;">{{ trans('researchPJ.no') }}</th>
+                    <th class="col-md-1" style="font-weight: bold;">{{ trans('researchPJ.year') }}</th>
+                    <th class="col-md-4" style="font-weight: bold;">{{ trans('researchPJ.projectName') }} </th>
                     <!-- <th>ระยะเวลาโครงการ</th>
                     <th>ผู้รับผิดชอบโครงการ</th>
                     <th>ประเภททุนวิจัย</th>
                     <th>หน่วยงานที่สนันสนุนทุน</th>
                     <th>งบประมาณที่ได้รับจัดสรร</th> -->
-                    <th class="col-md-4" style="font-weight: bold;">รายละเอียด</th>
-                    <th class="col-md-2" style="font-weight: bold;">ผู้รับผิดชอบโครงการ</th>
+                    <th class="col-md-4" style="font-weight: bold;">{{ trans('researchPJ.detail') }}</th>
+                    <th class="col-md-2" style="font-weight: bold;">{{ trans('researchPJ.responsible') }}</th>
                     <!-- <th class="col-md-5">หน่วยงานที่รับผิดชอบ</th> -->
-                    <th class="col-md-1" style="font-weight: bold;">สถานะ</th>
+                    <th class="col-md-1" style="font-weight: bold;">{{ trans('researchPJ.status') }}</th>
                 </tr>
             </thead>
 
