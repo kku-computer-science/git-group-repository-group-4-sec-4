@@ -5,6 +5,19 @@
 
 <h3 style="padding-top: 10px;">{{ __('dashboard.text1') }}</h3>
 <br>
-<h4>สวัสดี {{Auth::user()->position_th}} {{Auth::user()->fname_th}} {{Auth::user()->lname_th}}</h2>
+<h4>{{ __('dashboard.hello') }}
+                @if(app()->getLocale() == 'zh')
+                    @if(Auth::user()->fname_zh == null || Auth::user()->fname_zh == '-' || Auth::user()->lname_zh == null || Auth::user()->lname_zh == '-')
+                        {{ Auth::user()->position_en }} {{ Auth::user()->fname_en }} {{ Auth::user()->lname_en }}
+                    @else
+                        {{ Auth::user()->position_zh }} {{ Auth::user()->fname_zh }} {{ Auth::user()->lname_zh }}
+                    @endif
+                @elseif(app()->getLocale() == 'th')
+                        {{ Auth::user()->position_th }} {{ Auth::user()->fname_th }} {{ Auth::user()->lname_th }}
+                @else
+                        {{ Auth::user()->position_en }} {{ Auth::user()->fname_en }} {{ Auth::user()->lname_en }}
+                @endif
+
+</h2>
 
 @endsection
