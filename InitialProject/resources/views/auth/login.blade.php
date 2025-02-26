@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +26,7 @@
         <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
-	<!--===============================================================================================-->
+
 	<style>
 		html {
 			width: 100%;
@@ -324,11 +325,15 @@
 			margin-left: 0px;
 			font-size: 12px;
 		}
+		.dropdown {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
 	</style>
 </head>
 
 <body>
-
 	<!-- <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-100">
@@ -385,9 +390,26 @@
 		<div class="form-toggle"></div>
 		<div class="form-panel one">
 			<div class="form-header">
-				<h1>Account Login</h1>
+				<h1 id="login-title">Account Login</h1>
 			</div>
+			
 			<div class="form-content">
+            <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="language-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="selected-language"><img src="img/flags/us.png" width="20"> English</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="language-menu">
+							<a class="dropdown-item" href="#" id="eng" data-lang="eng">
+    							<span class="flag-icon flag-icon-us"></span> English
+							</a>
+							<a class="dropdown-item" href="#" id="thai" data-lang="thai">
+    							<span class="flag-icon flag-icon-th"></span> ไทย
+							</a>
+							<a class="dropdown-item" href="#" id="china" data-lang="china">
+    							<span class="flag-icon flag-icon-cn"></span> 中文
+							</a>
+                        </div>
+                    </div>
 				<form method="POST" class="validate-form" autocomplete="off" action="{{ route('login') }}">
 					@csrf
 					@if($errors->any())
@@ -398,7 +420,7 @@
 					@endif
 					<!-- <div class="form-group validate-input" data-validate="Valid email is required: ex@abc.xyz"> -->
 					<div class="form-group validate-input">
-						<label for="email">Username</label>
+						<label id="username-label" for="email">Username</label>
 						<input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
 						@error('username')
 						<span class="invalid-feedback" role="alert">
@@ -407,23 +429,23 @@
 						@enderror
 					</div>
 					<div class="form-group validate-input" data-validate="Password is required">
-						<label for="password">Password</label>
+						<label id="password-label" for="password">Password</label>
 						<input id="password" class="input" type="password" name="password" required="required" />
 					</div>
 					<div class="form-group">
-						<label class="form-remember">
+						<label id="remember-label" class="form-remember">
 							<input id="ckb1" name="remember" type="checkbox" />Remember Me
 						</label>
 					</div>
 					<div class="form-group">
 						<button type="submit">Log In</button>
 					</div>
-					<div class="form-remember pb-3">
-							<p style="color: red; text-align: right;"> *** หากลืมรหัสผ่าน ให้ติดต่อผู้ดูแลระบบ</p>
+					<div  class="form-remember pb-3">     
+							<p id="forgot-password" style="color: red; text-align: right;"> *** หากลืมรหัสผ่าน ให้ติดต่อผู้ดูแลระบบ</p>
 					</div>
 					<ul>
-						<li>สำหรับ Username ใช้ KKU-Mail ในการเข้าสู่ระบบ</li>
-						<li>สำหรับนักศึกษาที่เข้าระบบเป็นครั้งแรกให้เข้าสู่ระด้วยรหัสนักศึกษา</li>
+						<li id="note1">สำหรับ Username ใช้ KKU-Mail ในการเข้าสู่ระบบ</li>
+						<li id="note2">สำหรับนักศึกษาที่เข้าระบบเป็นครั้งแรกให้เข้าสู่ระด้วยรหัสนักศึกษา</li>
 					</ul>
 				</form>
 			</div>
@@ -492,7 +514,8 @@
 
 
 		})(jQuery);
-		const translations = {
+
+        const translations = {
             eng: {
                 login: "Account Login",
                 username: "Username",
