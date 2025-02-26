@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20250227 01:51:06.887" schemaversion="2" generator="Robot 4.1.3 (Python 2.7.18 on darwin)">
+<suite source="/Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/InitialProject/tests/robot_framework/test.robot" id="s1" name="Test">
+<test id="s1-t1" name="Open Web Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250227 01:51:07.076" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<status status="PASS" endtime="20250227 01:51:20.487" starttime="20250227 01:51:07.076"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20250227 01:51:20.657" level="INFO">Page title is 'ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์'.</msg>
+<status status="PASS" endtime="20250227 01:51:20.658" starttime="20250227 01:51:20.490"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=navbarDropdownMenuLink</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250227 01:51:20.659" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<status status="PASS" endtime="20250227 01:51:22.118" starttime="20250227 01:51:20.658"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=language-th</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250227 01:51:22.119" level="INFO">Clicking element 'id=language-th'.</msg>
+<status status="PASS" endtime="20250227 01:51:24.602" starttime="20250227 01:51:22.119"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250227 01:51:26.605" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20250227 01:51:26.605" starttime="20250227 01:51:24.603"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${translated_text}</var>
+<arg>id=navbarDropdownMenuLink</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250227 01:51:26.814" level="INFO">${translated_text} = ไทย</msg>
+<status status="PASS" endtime="20250227 01:51:26.814" starttime="20250227 01:51:26.606"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${expected_text}</var>
+<arg>ไทย</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250227 01:51:26.814" level="INFO">${expected_text} = ไทย</msg>
+<status status="PASS" endtime="20250227 01:51:26.814" starttime="20250227 01:51:26.814"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${translated_text}</arg>
+<arg>${expected_text}</arg>
+<arg>Test Failed! Expected '${expected_text}', but got '${translated_text}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" endtime="20250227 01:51:26.816" starttime="20250227 01:51:26.815"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test Passed! Language translation works correctly.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250227 01:51:26.816" level="INFO">Test Passed! Language translation works correctly.</msg>
+<status status="PASS" endtime="20250227 01:51:26.816" starttime="20250227 01:51:26.816"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250227 01:51:26.902" starttime="20250227 01:51:26.817"/>
+</kw>
+<doc>เปิดเว็บและตรวจสอบการเปลี่ยนภาษา</doc>
+<status status="PASS" endtime="20250227 01:51:26.902" starttime="20250227 01:51:07.073"/>
+</test>
+<status status="PASS" endtime="20250227 01:51:26.904" starttime="20250227 01:51:06.889"/>
+</suite>
+<statistics>
+<total>
+<stat fail="0" skip="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" skip="0" id="s1" name="Test" pass="1">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
