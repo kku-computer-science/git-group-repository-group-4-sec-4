@@ -55,7 +55,7 @@ Open Web Page And Translate to English
 
     # ตรวจสอบว่าข้อความเปลี่ยนไปถูกต้อง
     ${translated_text}=    Get Text    id=home
-    ${expected_text}=    Set Variable    Home  # ข้อความที่ควรเป็นหลังจากเปลี่ยนภาษา
+    ${expected_text}=    Set Variable    HOME  # ข้อความที่ควรเป็นหลังจากเปลี่ยนภาษา
 
     Should Be Equal    ${translated_text}    ${expected_text}    Test Failed! Expected '${expected_text}', but got '${translated_text}'
 

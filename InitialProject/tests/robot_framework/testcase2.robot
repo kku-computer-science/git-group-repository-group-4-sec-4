@@ -11,7 +11,7 @@ ${CHROME_DRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-gro
 
 *** Test Cases ***
 Login Test
-    [Documentation]    ทดสอบการเข้าสู่ระบบด้วยชื่อผู้ใช้และรหัสผ่านที่ถูกต้อง
+    [Documentation]    ทดสอบการเข้าสู่ระบบด้วยชื่อผู้ใช้และรหัสผ่านและเปลี่ยนภาษาถูกต้อง
     Open Browser    ${URL}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Title Should Be    ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์
     
