@@ -12,7 +12,7 @@
     <div class="justify-content-center">
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <strong>Opps!</strong> Something went wrong, please check below errors.<br><br>
+                <strong>{{ __('department.error_title') }}</strong> {{ __('department.error_message') }}<br><br>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -21,22 +21,22 @@
             </div>
         @endif
         <div class="card">
-            <div class="card-header">Create department
+            <div class="card-header">{{ __('department.edit_department') }}
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('departments.index') }}">departments</a>
+                    <a class="btn btn-primary" href="{{ route('departments.index') }}">{{ __('department.departments') }}</a>
                 </span>
             </div>
             <div class="card-body">
                 {!! Form::model($department, ['route' => ['departments.update', $department->id], 'method'=>'PATCH']) !!}
                     <div class="form-group">
-                        <strong>Department Name TH:</strong>
-                        {!! Form::text('department_name_th', null, array('placeholder' => 'Department Name TH','class' => 'form-control')) !!}
+                        <strong>{{ __('department.department_name_th') }}:</strong>
+                        {!! Form::text('department_name_th', null, array('placeholder' => __('department.placeholder_th'),'class' => 'form-control')) !!}
                     </div>
                     <div class="form-group">
-                        <strong>Department Name EN:</strong>
-                        {!! Form::text('department_name_en', null, array('placeholder' => 'Department Name EN','class' => 'form-control')) !!}
+                        <strong>{{ __('department.department_name_en') }}:</strong>
+                        {!! Form::text('department_name_en', null, array('placeholder' => __('department.placeholder_en'),'class' => 'form-control')) !!}
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">{{ __('department.submit') }}</button>
                 {!! Form::close() !!}
             </div>
         </div>
