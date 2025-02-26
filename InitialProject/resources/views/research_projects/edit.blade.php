@@ -24,8 +24,8 @@
     @endif
     <div class="card col-md-12" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">แก้ไขข้อมูลโครงการวิจัย</h4>
-            <p class="card-description">กรอกข้อมูลแก้ไขรายละเอียดโครงการวิจัย</p>
+            <h4 class="card-title">{{ __('researchProjects.edit_research_project') }}</h4>
+            <p class="card-description">{{ __('researchProjects.fill_information') }}</p>
             <form action="{{ route('researchProjects.update',$researchProject->id) }}" method="POST">
                 @csrf
                 @method('PUT')
