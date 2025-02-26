@@ -24,6 +24,8 @@ return [
     'external' => '（外部联合）项目负责人',
     'baht_unit' => '泰铢单位',
     'Choose_study' => '选择学习领域',
+    'Are you sure?' => '你确定吗？',
+    'Delete warning' => '如果删除，将无法恢复。',
 
 
 ];

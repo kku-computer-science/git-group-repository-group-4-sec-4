@@ -14,6 +14,7 @@ return [
     'next' => 'ถัดไป',
     'add' => 'เพิ่ม',
     'increase_research_funds' => 'เพิ่มทุนวิจัย',
+    'Edit Fund' => 'แก้ไขทุน',
     'fill' => 'กรอกรายละเอียดทุนวิจัย',
     'research_grant_type' => 'ประเภททุนวิจัย',
     'capital_level' => 'ระดับทุน',
@@ -32,4 +33,14 @@ return [
     'medium' => 'ปานกลาง',
     'low' => 'ต่ำ',
 
+    'Are you sure?' => 'คุณแน่ใจหรือไม่?',
+    'Delete warning' => 'หากคุณลบสิ่งนี้ จะไม่สามารถกู้คืนได้อีกต่อไป',
+    'Cancel' => 'ยกเลิก',
+    'OK' => 'ตกลง',
+    'Fund Description' => 'ข้อมูลรายละเอียดทุน',
+    'Year' => 'ปี',
+    'Fund Details' => 'รายละเอียดทุน',
+    'Support Organization' => 'หน่วยงานที่สนับสนุน',
+    'Added by' => 'เพิ่มรายละเอียดโดย',
+    'Back' => 'ย้อนกลับ',
     ];

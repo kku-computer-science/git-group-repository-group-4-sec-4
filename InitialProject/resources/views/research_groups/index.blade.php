@@ -102,8 +102,8 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: "{{ __('researchGroups.Are you sure?') }}",
+                text: "{{ __('researchGroups.Delete warning') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,

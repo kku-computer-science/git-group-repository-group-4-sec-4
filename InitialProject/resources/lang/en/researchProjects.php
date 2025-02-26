@@ -30,4 +30,8 @@ return [
     'position_prefix' => 'position or prefix',
     'fname' => 'First Name',
     'lname' => 'Last Name',
+    'action' => 'Action'
+    'Are you sure?' => 'Are you sure?',
+    'Delete warning' => 'If you delete this, it will be gone forever.',
+
 ];
