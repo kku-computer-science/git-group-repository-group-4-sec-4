@@ -10,5 +10,21 @@ return [
     'registration_number' => 'Registration number',
     'creator' => 'Creator',
     'action' => 'Action',
-
+    'Add_works' => 'Add other academic works',
+    'fill' => 'Fill in details of other academic works (patents, petty patents, copyrights)',
+    'name' => 'Name (patent, petty patent, copyright)',
+    'type' => 'type',
+    'date' => 'Date of copyright acquisition',
+    'registration_number' => 'Registration number',
+    'professor_field' => 'Professor in the field',
+    'outsiders' => 'Outsiders',
+    'fname' => 'First Name',
+    'lname' => 'Last Name',
+    'submit' => 'Submit',
+    'cancel' => 'Cancel',
+    'detail' => 'Details of other academic works (patents, petty patents, copyrights)',
+    'detail2' => 'Detailed information on other academic works (patents, petty patents, copyrights)',
+    'name2' => 'name',
+    'creator_joint' => 'Creator (joint)',
+    'back' => 'Back'
 ];
