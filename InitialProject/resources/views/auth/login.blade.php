@@ -390,26 +390,27 @@
 		<div class="form-toggle"></div>
 		<div class="form-panel one">
 			<div class="form-header">
-				<h1 id="login-title">Account Login</h1>
+				<h1 id="login-title">{{ trans('login.account_login') }}</h1>
 			</div>
 			
 			<div class="form-content">
-            <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="language-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span id="selected-language"><img src="img/flags/us.png" width="20"> English</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="language-menu">
-							<a class="dropdown-item" href="#" id="eng" data-lang="eng">
-    							<span class="flag-icon flag-icon-us"></span> English
-							</a>
-							<a class="dropdown-item" href="#" id="thai" data-lang="thai">
-    							<span class="flag-icon flag-icon-th"></span> ไทย
-							</a>
-							<a class="dropdown-item" href="#" id="china" data-lang="china">
-    							<span class="flag-icon flag-icon-cn"></span> 中文
-							</a>
+			<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>
+                            {{ Config::get('languages')[App::getLocale()]['display'] }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                    <a class="dropdown-item" href="{{ route('langswitch', $lang) }}">
+                                        <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
+                                        {{$language['display']}}
+                                    </a>
+                                @endif
+                            @endforeach
                         </div>
-                    </div>
+                    </li>
 				<form method="POST" class="validate-form" autocomplete="off" action="{{ route('login') }}">
 					@csrf
 					@if($errors->any())
@@ -420,7 +421,7 @@
 					@endif
 					<!-- <div class="form-group validate-input" data-validate="Valid email is required: ex@abc.xyz"> -->
 					<div class="form-group validate-input">
-						<label id="username-label" for="email">Username</label>
+						<label id="username-label" for="email">{{ trans('login.username') }}</label>
 						<input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
 						@error('username')
 						<span class="invalid-feedback" role="alert">
@@ -429,23 +430,23 @@
 						@enderror
 					</div>
 					<div class="form-group validate-input" data-validate="Password is required">
-						<label id="password-label" for="password">Password</label>
+						<label id="password-label" for="password">{{ trans('login.password') }}</label>
 						<input id="password" class="input" type="password" name="password" required="required" />
 					</div>
 					<div class="form-group">
 						<label id="remember-label" class="form-remember">
-							<input id="ckb1" name="remember" type="checkbox" />Remember Me
+							<input id="ckb1" name="remember" type="checkbox" />{{ trans('login.remember') }}
 						</label>
 					</div>
 					<div class="form-group">
-						<button type="submit">Log In</button>
+						<button type="submit">{{ trans('login.submit') }}</button>
 					</div>
 					<div  class="form-remember pb-3">     
-							<p id="forgot-password" style="color: red; text-align: right;"> *** หากลืมรหัสผ่าน ให้ติดต่อผู้ดูแลระบบ</p>
+							<p id="forgot-password" style="color: red; text-align: right;"> {{ trans('login.forget_password') }}</p>
 					</div>
 					<ul>
-						<li id="note1">สำหรับ Username ใช้ KKU-Mail ในการเข้าสู่ระบบ</li>
-						<li id="note2">สำหรับนักศึกษาที่เข้าระบบเป็นครั้งแรกให้เข้าสู่ระด้วยรหัสนักศึกษา</li>
+						<li id="note1">{{ trans('login.note_1') }}</li>
+						<li id="note2">{{ trans('login.note_2') }}</li>
 					</ul>
 				</form>
 			</div>
@@ -514,61 +515,6 @@
 
 
 		})(jQuery);
-
-        const translations = {
-            eng: {
-                login: "Account Login",
-                username: "Username",
-                password: "Password",
-                remember: "Remember Me",
-                forgot: "*** If you forget your password, contact the administrator",
-                note1: "Use KKU-Mail for login",
-                note2: "First-time students log in with student ID"
-            },
-            thai: {
-                login: "เข้าสู่ระบบ",
-                username: "ชื่อผู้ใช้",
-                password: "รหัสผ่าน",
-                remember: "จดจำฉัน",
-                forgot: "*** หากลืมรหัสผ่าน ให้ติดต่อผู้ดูแลระบบ",
-                note1: "ใช้ KKU-Mail ในการเข้าสู่ระบบ",
-                note2: "นักศึกษาที่เข้าระบบครั้งแรกให้ใช้รหัสนักศึกษา"
-            },
-            china: {
-                login: "登录",
-                username: "用户名",
-                password: "密码",
-                remember: "记住我",
-                forgot: "*** 如果您忘记密码，请联系管理员",
-                note1: "使用KKU-Mail登录",
-                note2: "首次登录的学生请使用学号"
-            }
-        };
-
-		function changeLanguage(lang) {
-            if (!document.getElementById("login-title")) return;
-            document.getElementById("login-title").innerText = translations[lang].login;
-            document.getElementById("username-label").innerText = translations[lang].username;
-            document.getElementById("password-label").innerText = translations[lang].password;
-            document.getElementById("remember-label").innerText = translations[lang].remember;
-            document.getElementById("forgot-password").innerText = translations[lang].forgot;
-            document.getElementById("note1").innerText = translations[lang].note1;
-            document.getElementById("note2").innerText = translations[lang].note2;
-            
-            document.getElementById("selected-language").innerHTML = document.getElementById(lang).innerHTML;
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const languageSelector = document.getElementById("language-menu");
-            if (languageSelector) {
-                document.querySelectorAll(".dropdown-item").forEach(item => {
-                    item.addEventListener("click", function () {
-                        changeLanguage(this.getAttribute("data-lang"));
-                    });
-                });
-                changeLanguage("eng"); // Default to English
-            }
-        });
 	</script>
 </body>
 
