@@ -5,7 +5,7 @@
     <div class="justify-content-center">
         @if (count($errors) > 0)
         <div class="alert alert-danger">
-            <strong>Opps!</strong> Something went wrong, please check below errors.<br><br>
+            <strong>{{ __('users.oops') }}</strong> {{ __('users.error_msg') }}<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -16,80 +16,73 @@
         <div class="col-md-8 grid-margin stretch-card">
             <div class="card" style="padding: 16px;">
                 <div class="card-body">
-                    <h4 class="card-title mb-5">เพิ่มผู้ใช้งาน</h4>
-                    <p class="card-description">กรอกข้อมูลแก้ไขรายละเอียดผู้ใช้งาน</p>
+                    <h4 class="card-title mb-5">{{ __('users.add_user') }}</h4>
+                    <p class="card-description">{{ __('users.enter_details') }}</p>
                     {!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
                     <div class="form-group row">
                         <div class="col-sm-6">
-                            <p><b>ชื่อ (ภาษาไทย)</b></p>
-                            {!! Form::text('fname_th', null, array('placeholder' => 'ชื่อภาษาไทย','class' =>
-                            'form-control')) !!}
+                            <p><b>{{ __('users.fname_th') }}</b></p>
+                            {!! Form::text('fname_th', null, array('placeholder' => __('users.fname_th'),'class' => 'form-control')) !!}
                         </div>
                         <div class="col-sm-6">
-                            <p><b>นามสกุล (ภาษาไทย)</b></p>
-                            {!! Form::text('lname_th', null, array('placeholder' => 'นามสกุลภาษาไทย','class' =>
-                            'form-control')) !!}
+                            <p><b>{{ __('users.lname_th') }}</b></p>
+                            {!! Form::text('lname_th', null, array('placeholder' => __('users.lname_th'),'class' => 'form-control')) !!}
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6">
-                            <p><b>ชื่อ (English)</b></p>
-                            {!! Form::text('fname_en', null, array('placeholder' => 'ชื่อภาษาอังกฤษ','class' =>
-                            'form-control')) !!}
+                            <p><b>{{ __('users.fname_en') }}</b></p>
+                            {!! Form::text('fname_en', null, array('placeholder' => __('users.fname_en'),'class' => 'form-control')) !!}
                         </div>
                         <div class="col-sm-6">
-                            <p><b>นามสกุล (English)</b></p>
-                            {!! Form::text('lname_en', null, array('placeholder' => 'นามสกุลภาษาอังกฤษ','class' =>
-                            'form-control')) !!}
+                            <p><b>{{ __('users.lname_en') }}</b></p>
+                            {!! Form::text('lname_en', null, array('placeholder' => __('users.lname_en'),'class' => 'form-control')) !!}
                         </div>
                     </div>
                     <div class="form-group row">
-
                         <div class="col-sm-8">
-                            <p><b>Email</b></p>
-                            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control'))!!}
+                            <p><b>{{ __('users.email') }}</b></p>
+                            {!! Form::text('email', null, array('placeholder' => __('users.email'),'class' => 'form-control'))!!}
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6">
-                            <p><b>Password:</b></p>
-                            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control'))!!}
+                            <p><b>{{ __('users.password') }}</b></p>
+                            {!! Form::password('password', array('placeholder' => __('users.password'),'class' => 'form-control'))!!}
                         </div>
                         <div class="col-sm-6">
-                            <p><b>Confirm Password:</p></b>
-                            {!! Form::password('password_confirmation', array('placeholder' => 'Confirm Password','class' =>'form-control')) !!}
+                            <p><b>{{ __('users.confirm_password') }}</b></p>
+                            {!! Form::password('password_confirmation', array('placeholder' => __('users.confirm_password'),'class' =>'form-control')) !!}
                         </div>
                     </div>
                     <div class="form-group col-sm-8">
-                    <p><b>Role:</b></p>
+                        <p><b>{{ __('users.role') }}</b></p>
                         <div class="col-sm-8">
-                            
                             {!! Form::select('roles[]', $roles,[],  array('class' => 'selectpicker','multiple')) !!}
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-4">
-                                <h6 for="category">Department <span class="text-danger">*</span></h6>
+                                <h6>{{ __('users.department') }} <span class="text-danger">*</span></h6>
                                 <select class="form-control" name="cat" id="cat" style="width: 100%;" required>
-                                    <option>Select Category</option>
+                                    <option>{{ __('users.select_category') }}</option>
                                     @foreach ($departments as $cat)
                                     <option value="{{$cat->id}}">{{ $cat->department_name_en }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <h6 for="subcat">Program <span class="text-danger">*</span></h6>
+                                <h6>{{ __('users.program') }} <span class="text-danger">*</span></h6>
                                 <select class="form-control select2" name="sub_cat" id="subcat" required>
-                                    <option value="">Select Subcategory</option>
+                                    <option value="">{{ __('users.select_subcategory') }}</option>
                                 </select>
                             </div>
-
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <a class="btn btn-secondary" href="{{ route('users.index') }}">Cencel</a>
+                    <button type="submit" class="btn btn-primary">{{ __('users.submit') }}</button>
+                    <a class="btn btn-secondary" href="{{ route('users.index') }}">{{ __('users.cancel') }}</a>
                     {!! Form::close() !!}
                 </div>
             </div>
@@ -108,7 +101,6 @@
         $.get('/ajax-get-subcat?cat_id=' + cat_id, function(data) {
             $('#subcat').empty();
             $.each(data, function(index, areaObj) {
-                //console.log(areaObj)
                 $('#subcat').append('<option value="' + areaObj.id + '">' + areaObj.degree.title_en +' in '+ areaObj.program_name_en + '</option>');
             });
         });

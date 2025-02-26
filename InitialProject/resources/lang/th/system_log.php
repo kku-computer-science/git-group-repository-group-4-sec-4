@@ -9,5 +9,6 @@ return [
     "event" => "เหตุการณ์",
     "type" => "ประเภท",
     "description" => "รายละเอียด",
-    "log_events" => "เหตุการณ์บันทึก"
+    "log_events" => "เหตุการณ์บันทึก",
+    "No logs found" => "ไม่พบบันทึก",
 ];

@@ -30,7 +30,7 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title" style="text-align: center;">{{ __('manageProgram.course') }}</h4>
+            <h4 class="card-title" ">{{ __('manageProgram.course') }}</h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="javascript:void(0)" id="new-program" data-toggle="modal"><i class="mdi mdi-plus btn-icon-prepend"></i> {{ __('manageProgram.add') }} </a>
             <table id="example1" class="table table-striped">
                 <thead>
@@ -90,7 +90,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>ระดับการศึกษา:</strong>
+                                <strong>{{ __('manageProgram.education_level') }}:</strong>
                                 <div class="col-sm-8">
                                     <select id="degree" class="custom-select my-select" name="degree">
                                         @foreach($degree as $d)
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <strong>สาขาวิชา:</strong>
+                                <strong>{{ __('manageProgram.major') }}:</strong>
                                 <div class="col-sm-8">
                                     <select id="department" class="custom-select my-select" name="department">
                                         @foreach($department as $d)
@@ -110,24 +110,18 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <strong>Name TH:</strong>
-                                <input type="text" name="program_name_th" id="program_name_th" class="form-control" placeholder="program name th" onchange="validate()">
+                                <strong>{{ __('manageProgram.name_thai') }}:</strong>
+                                <input type="text" name="program_name_th" id="program_name_th" class="form-control" placeholder="{{ __('manageProgram.enter_name_thai') }}" onchange="validate()">
                             </div>
                             <div class="form-group">
-                                <strong>Name EH:</strong>
-                                <input type="text" name="program_name_en" id="program_name_en" class="form-control" placeholder="program_name_en" onchange="validate()">
+                                <strong>{{ __('manageProgram.name_english') }}:</strong>
+                                <input type="text" name="program_name_en" id="program_name_en" class="form-control" placeholder="{{ __('manageProgram.enter_name_english') }}" onchange="validate()">
                             </div>
-                            <!-- <div class="form-group">
-                                <strong>ระดับการศึกษา:</strong>
-                                <input type="text" name="degree_id" id="degree_id" class="form-control" placeholder="degree_id" onchange="validate()">
-                            </div> -->
-
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary" disabled>Submit</button>
-                            <a href="{{ route('programs.index') }}" class="btn btn-danger">Cancel</a>
-                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary" disabled>{{ __('manageProgram.submit') }}</button>
+                            <a href="{{ route('programs.index') }}" class="btn btn-danger">{{ __('manageProgram.cancel') }}</a>
                         </div>
                     </div>
                 </form>
@@ -141,9 +135,20 @@
 <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer></script>
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-            responsive: true,
-        });
+        if (!$.fn.DataTable.isDataTable('#example1')) { // ตรวจสอบว่า DataTable ถูกใช้งานไปแล้วหรือยัง
+            var table1 = $('#example1').DataTable({
+                responsive: true,
+                language: {
+                    search: "{{ __('reseracher.Search') }}",
+                    lengthMenu: "{{ __('reseracher.Show') }} _MENU_ {{ __('reseracher.entries') }}",
+                    info: "{{ __('reseracher.Showing') }} _START_ {{ __('reseracher.to') }} _END_ {{ __('reseracher.of') }} _TOTAL_ {{ __('reseracher.entries') }}",
+                    paginate: {
+                        previous: "{{ __('reseracher.Previous') }}",
+                        next: "{{ __('reseracher.Next') }}",
+                    }
+                }
+            });
+        }
     });
 </script>
 <script>

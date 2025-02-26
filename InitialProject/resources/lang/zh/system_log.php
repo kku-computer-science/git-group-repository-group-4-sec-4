@@ -9,5 +9,6 @@ return [
     "event" => "事件",
     "type" => "类型",
     "description" => "描述",
-   "log_events" => "日志事件"
+   "log_events" => "日志事件",
+   "No logs found" => "未找到日志",
 ];
