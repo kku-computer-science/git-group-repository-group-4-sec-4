@@ -49,7 +49,7 @@
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-    
+
 
 </head>
 
@@ -57,7 +57,7 @@
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-        <a class="navbar-brand logo-image" href="#">
+            <a class="navbar-brand logo-image" href="#">
                 @if(app()->getLocale() == 'en')
                 <img src="{{asset('img/logo2-en.png')}}" alt="alternative">
                 @elseif (app()->getLocale() == 'th')
@@ -65,81 +65,77 @@
                 @elseif (app()->getLocale() == 'zh')
                 <img src="{{asset('img/logo2-zh.png')}}" alt="alternative">
                 @endif
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav ms-auto navbar-nav-scroll">
-                <li class="nav-item d-flex align-items-center {{ request()->is('/') ? 'active' : ''}}">
-    <a class="nav-link" href="/">{{ trans('message.Home') }}</a>
-</li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                        <li class="nav-item d-flex align-items-center {{ request()->is('/') ? 'active' : ''}}">
+                            <a class="nav-link" href="/">{{ trans('message.Home') }}</a>
+                        </li>
 
-                    <li
-                        class="nav-item dropdown {{ Request::routeIs('researchers') ? 'active' : '' }} {{ request()->is('detail*') ? 'active' : ''}} ">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {{ trans('message.Researchers') }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach($dn as $department)
+                        <li
+                            class="nav-item dropdown {{ Request::routeIs('researchers') ? 'active' : '' }} {{ request()->is('detail*') ? 'active' : ''}} ">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ trans('message.Researchers') }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach($dn as $department)
                                 <li>
                                     <a class="dropdown-item" href="{{ route('researchers', ['id' => $department->id]) }}">
-                                    @if(app()->getLocale() == 'zh') 
+                                        @if(app()->getLocale() == 'zh')
                                         {{ $department->program_name_zh }}
-                                    @elseif(app()->getLocale() == 'th') 
+                                        @elseif(app()->getLocale() == 'th')
                                         {{ $department->program_name_th }}
-                                    @else 
+                                        @else
                                         {{ $department->program_name_en }}
-                                    @endif
+                                        @endif
                                     </a>
                                 </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    <li class="nav-item {{ request()->is('researchproject') ? 'active' : ''}} ">
-                        <a class="nav-link" href="/researchproject">{{ trans('message.ResearchProj') }}</a>
-                    </li>
-                    <li class="nav-item {{ request()->is('researchgroup') ? 'active' : ''}}  ">
-                        <a class="nav-link" href="/researchgroup">{{ trans('message.ResearchGroup') }}</a>
-                    </li>
-                    <li class="nav-item {{ request()->is('reports') ? 'active' : ''}}">
-                        <a class="nav-link" href="/reports">{{ trans('message.Report') }}</a>
-                    </li>
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>
-                            {{ Config::get('languages')[App::getLocale()]['display'] }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @foreach (Config::get('languages') as $lang => $language)
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="nav-item {{ request()->is('researchproject') ? 'active' : ''}} ">
+                            <a class="nav-link" href="/researchproject">{{ trans('message.ResearchProj') }}</a>
+                        </li>
+                        <li class="nav-item {{ request()->is('researchgroup') ? 'active' : ''}}  ">
+                            <a class="nav-link" href="/researchgroup">{{ trans('message.ResearchGroup') }}</a>
+                        </li>
+                        <li class="nav-item {{ request()->is('reports') ? 'active' : ''}}">
+                            <a class="nav-link" href="/reports">{{ trans('message.Report') }}</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>
+                                {{ Config::get('languages')[App::getLocale()]['display'] }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                @foreach (Config::get('languages') as $lang => $language)
                                 @if ($lang != App::getLocale())
-                                    <a class="dropdown-item" href="{{ route('langswitch', $lang) }}">
-                                        <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
-                                        {{$language['display']}}
-                                    </a>
+                                <a class="dropdown-item" id="language-{{ $lang }}" href="{{ route('langswitch', $lang) }}">
+                                    <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
+                                    {{$language['display']}}
+                                </a>
                                 @endif
-                            @endforeach
-                        </div>
-                    </li>
+                                @endforeach
+                            </div>
+                        </li>
+                    </ul>
+                    @if (Route::has('login'))
+                    @auth
+                    <span class="nav-item">
 
-
-                </ul>
-                @if (Route::has('login'))
-                @auth
-                <span class="nav-item">
-
-                </span>
-                @else
-                <span class="nav-item">
-                    <a class="btn-solid-sm" href="/login" target="_blank">{{ trans('message.login') }}</a>
-                </span>
-                @endauth
-                @endif
-            </div> <!-- end of navbar-collapse -->
+                    </span>
+                    @else
+                    <span class="nav-item">
+                        <a class="btn-solid-sm" href="/login" target="_blank">{{ trans('message.login') }}</a>
+                    </span>
+                    @endauth
+                    @endif
+                </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
