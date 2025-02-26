@@ -11,10 +11,10 @@
         </div>
         @endif
         <div class="card">
-            <div class="card-header">Permissions
+            <div class="card-header">{{ __('permissions.permissions') }}
                 @can('permission-create')
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('permissions.create') }}">New Permission</a>
+                    <a class="btn btn-primary" href="{{ route('permissions.create') }}">{{ __('permissions.new_permissions') }}</a>
                 </span>
                 @endcan
             </div>
@@ -23,8 +23,8 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th width="280px">Action</th>
+                            <th>{{ __('permissions.name') }}</th>
+                            <th width="280px">{{ __('permissions.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

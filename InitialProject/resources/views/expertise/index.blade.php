@@ -33,17 +33,17 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title" style="text-align: center;">ความเชี่ยวชาญของอาจารย์</h4>
+            <h4 class="card-title" style="text-align: center;">{{ __('manageExpertise.teacher_expertise') }}</h4>
             <table id="example1" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>{{ __('manageExpertise.id') }}</th>
                         @if(Auth::user()->hasRole('admin'))
-                        <th>Teacher Name</th>
+                        <th>{{ __('manageExpertise.teacher_name') }}</th>
                         @endif
-                        <th>Name</th>
+                        <th>{{ __('manageExpertise.name') }}</th>
 
-                        <th>Action</th>
+                        <th>{{ __('manageExpertise.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>

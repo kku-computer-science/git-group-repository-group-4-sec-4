@@ -30,16 +30,16 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title" style="text-align: center;">หลักสูตร</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="javascript:void(0)" id="new-program" data-toggle="modal"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD </a>
+            <h4 class="card-title" style="text-align: center;">{{ __('manageProgram.course') }}</h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="javascript:void(0)" id="new-program" data-toggle="modal"><i class="mdi mdi-plus btn-icon-prepend"></i> {{ __('manageProgram.add') }} </a>
             <table id="example1" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>id</th>
-                        <th>Name (ไทย)</th>
+                        <th>{{ __('manageProgram.id') }}</th>
+                        <th>{{ __('manageProgram.name_thai') }}</th>
                         <!-- <th>Name (Eng)</th> -->
-                        <th>Degree</th>
-                        <th>Action</th>
+                        <th>{{ __('manageProgram.degree') }}</th>
+                        <th>{{ __('manageProgram.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
