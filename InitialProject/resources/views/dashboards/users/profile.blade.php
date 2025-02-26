@@ -26,29 +26,40 @@
                     <div class="text-center">
                         <img class="profile-user-img img-fluid img-circle admin_picture" src="{{ Auth::user()->picture }}" alt="User profile picture">
                     </div>
-                    <h4 class="text-center p-2">{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h4>
+                    <h4 class="text-center p-2">@if(app()->getLocale() == 'zh')
+                            @if(Auth::user()->fname_zh == null || Auth::user()->fname_zh == '-' || Auth::user()->lname_zh == null || Auth::user()->lname_zh == '-')
+                                {{ Auth::user()->position_en }} {{ Auth::user()->fname_en }} {{ Auth::user()->lname_en }}
+                            @else
+                                {{ Auth::user()->position_zh }} {{ Auth::user()->fname_zh }} {{ Auth::user()->lname_zh }}
+                            @endif
+                            @elseif(app()->getLocale() == 'th')
+                                    {{ Auth::user()->position_th }} {{ Auth::user()->fname_th }} {{ Auth::user()->lname_th }}
+                            @else
+                                    {{ Auth::user()->position_en }} {{ Auth::user()->fname_en }} {{ Auth::user()->lname_en }}
+                            @endif
+                    </h4>
                     <input type="file" name="admin_image" id="admin_image" style="opacity: 0;height:1px;display:none">
-                    <a href="javascript:void(0)" class="btn btn-primary btn-block btn-sm" id="change_picture_btn"><b>Change picture</b></a>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-block btn-sm" id="change_picture_btn"><b>{{ __('profile.change_picture') }}</b></a>
                 </div>
 
             </div>
             <div class="nav flex-column nav-pills-1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link " id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
                     <i class="mdi mdi-account-card-details"></i>
-                    <span class="menu-title"> Account </span>
+                    <span class="menu-title"> {{ __('profile.account') }} </span>
                 </a>
                 <a class="nav-link " id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
                     <i class="mdi mdi-key-variant"></i>
-                    <span class="menu-title"> Password </span>
+                    <span class="menu-title"> {{ __('profile.password') }}  </span>
                 </a>
                 @if(Auth::user()->hasRole('teacher'))
                 <a class="nav-link {{old('tab') == 'expertise' ? ' active' : null}}" id="expertise-tab" data-toggle="pill" href="#expertise" role="tab" aria-controls="expertise" aria-selected="false">
                     <i class="mdi mdi-account-star"></i>
-                    <span class="menu-title"> Expertise </span>
+                    <span class="menu-title"> {{ __('profile.expiretise') }}  </span>
                 </a>
                 <a class="nav-link" id="education-tab" data-toggle="pill" href="#education" role="tab" aria-controls="education" aria-selected="false">
                     <i class="mdi mdi-school"></i>
-                    <span class="menu-title"> Education </span>
+                    <span class="menu-title"> {{ __('profile.education') }} </span>
                 </a>
                 @endif
             </div>
@@ -56,50 +67,50 @@
         <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
             <!-- <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab"> -->
             <div class="tab-pane " id="account" role="tabpanel" aria-labelledby="account-tab">
-                <h3 class="mb-4">Profile Settings</h3>
+                <h3 class="mb-4">{{ __('profile.srofile_settings') }}</h3>
                 <form class="form-horizontal" method="POST" action="{{ route('adminUpdateInfo') }}" id="AdminInfoForm">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group col-sm-4">
-                                <label>Name title</label>
+                                <label>{{ __('profile.name_title') }}</label>
                                 <select class="custom-select my-select " name="title_name_en">
-                                    <option value="Mr." {{ Auth::user()->title_name_en == 'Mr.' ? 'selected' : '' }}>Mr.</option>
-                                    <option value="Miss" {{ Auth::user()->title_name_en == 'Miss' ? 'selected' : '' }}>Miss</option>
-                                    <option value="Mrs." {{ Auth::user()->title_name_en == 'Mrs.' ? 'selected' : '' }}>Mrs.</option>
+                                    <option value="Mr." {{ Auth::user()->title_name_en == 'Mr.' ? 'selected' : '' }}>{{ __('profile.mr') }}</option>
+                                    <option value="Miss" {{ Auth::user()->title_name_en == 'Miss' ? 'selected' : '' }}>{{ __('profile.mrs') }}</option>
+                                    <option value="Mrs." {{ Auth::user()->title_name_en == 'Mrs.' ? 'selected' : '' }}>{{ __('profile.miss') }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>First name (English)</label>
+                                <label>{{ __('profile.fname_en') }}</label>
                                 <input type="text" class="form-control" id="inputfNameEN" placeholder="Name" value="{{ Auth::user()->fname_en }}" name="fname_en">
                                 <span class="text-danger error-text name_error"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Last name (English)</label>
+                                <label>{{ __('profile.lname_en') }}</label>
                                 <input type="text" class="form-control" id="inputlNameEN" placeholder="Name" value="{{ Auth::user()->lname_en }}" name="lname_en">
                                 <span class="text-danger error-text name_error"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>ชื่อ (ภาษาไทย)</label>
+                                <label>{{ __('profile.fname_th') }}</label>
                                 <input type="text" class="form-control" id="inputfNameTH" placeholder="Name" value="{{ Auth::user()->fname_th }}" name="fname_th">
                                 <span class="text-danger error-text name_error"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>นามสกุล (ภาษาไทย)</label>
+                                <label>{{ __('profile.lname_th') }}</label>
                                 <input type="text" class="form-control" id="inputlNameTH" placeholder="Name" value="{{ Auth::user()->lname_th }}" name="lname_th">
                                 <span class="text-danger error-text name_error"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>{{ __('profile.email') }}</label>
                                 <input type="text" class="form-control" id="inputEmail" placeholder="Email" value="{{ Auth::user()->email }}" name="email">
                                 <span class="text-danger error-text email_error"></span>
                             </div>
@@ -109,30 +120,30 @@
                         @if(Auth::user()->hasRole('teacher'))
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Academic Ranks</label>
+                                <label>{{ __('profile.academic_ranks') }}</label>
                                 <select id="category" class="custom-select my-select" name="academic_ranks_en">
-                                    <option value="Professor" {{ Auth::user()->academic_ranks_en == 'Professor' ? 'selected' : '' }}>Professor</option>
-                                    <option value="Associate Professor" {{ Auth::user()->academic_ranks_en == 'Associate Professor' ? 'selected' : '' }}>Associate Professor</option>
-                                    <option value="Assistant Professor" {{ Auth::user()->academic_ranks_en == 'Assistant Professor' ? 'selected' : '' }}>Assistant Professor</option>
-                                    <option value="Lecturer" {{ Auth::user()->academic_ranks_en == 'Lecturer' ? 'selected' : '' }}>Lecturer</option>
+                                    <option value="Professor" {{ Auth::user()->academic_ranks_en == 'Professor' ? 'selected' : '' }}>{{ __('profile.professor') }}</option>
+                                    <option value="Associate Professor" {{ Auth::user()->academic_ranks_en == 'Associate Professor' ? 'selected' : '' }}>{{ __('profile.associate_professor') }}</option>
+                                    <option value="Assistant Professor" {{ Auth::user()->academic_ranks_en == 'Assistant Professor' ? 'selected' : '' }}>{{ __('profile.assistant_professor') }}</option>
+                                    <option value="Lecturer" {{ Auth::user()->academic_ranks_en == 'Lecturer' ? 'selected' : '' }}>{{ __('profile.lecturer') }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>ตำแหน่งทางวิชาการ</label>
+                                <label>{{ __('profile.academic_position') }}</label>
                                 <select name="academic_ranks_th" id="subcategory" class="custom-select my-select">
                                     <optgroup id="Professor" label="Professor">
-                                        <option value="ศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ศาสตราจารย์' ? 'selected' : '' }}>ศาสตราจารย์</option>
+                                        <option value="ศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ศาสตราจารย์' ? 'selected' : '' }}>{{ __('profile.professor') }}</option>
                                     </optgroup>
                                     <optgroup id="Associate Professor" label="Associate Professor">
-                                        <option value="รองศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'รองศาสตราจารย์' ? 'selected' : '' }}>รองศาสตราจารย์</option>
+                                        <option value="รองศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'รองศาสตราจารย์' ? 'selected' : '' }}>{{ __('profile.associate_professor') }}</option>
                                     </optgroup>
                                     <optgroup id="Assistant Professor" label="Assistant Professor">
-                                        <option value="ผู้ช่วยศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ผู้ช่วยศาสตราจารย์' ? 'selected' : '' }}>ผู้ช่วยศาสตราจารย์</option>
+                                        <option value="ผู้ช่วยศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ผู้ช่วยศาสตราจารย์' ? 'selected' : '' }}>{{ __('profile.assistant_professor') }}</option>
                                     </optgroup>
                                     <optgroup id="Lecturer" label="Lecturer">
-                                        <option value="อาจารย์" {{ Auth::user()->academic_ranks_th == 'อาจารย์' ? 'selected' : '' }}>อาจารย์</option>
+                                        <option value="อาจารย์" {{ Auth::user()->academic_ranks_th == 'อาจารย์' ? 'selected' : '' }}>{{ __('profile.lecturer') }}</option>
                                     </optgroup>
                                 </select>
                             </div>
@@ -140,7 +151,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <div class="checkbox">
-                                    <label><input name="pos" type="checkbox" value="check2" />สำหรับอ.ผู้ที่ไม่มีคุณวุฒิปริญญาเอก โปรดระบุ</label>
+                                    <label><input name="pos" type="checkbox" value="check2" />{{ __('profile.check_degree') }}</label>
                                 </div>
 
                             </div>
@@ -148,7 +159,7 @@
                         @endif
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">{{ __('profile.update') }}</button>
                     </div>
                 </form>
             </div>
@@ -156,11 +167,11 @@
 
             <div class="tab-pane fade " id="password" role="tabpanel" aria-labelledby="password-tab">
                 <form class="form-horizontal" action="{{ route('adminChangePassword') }}" method="POST" id="changePasswordAdminForm">
-                    <h3 class="mb-4">Password Settings</h3>
+                    <h3 class="mb-4">{{ __('profile.password_settings') }}</h3>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Old password</label>
+                                <label>{{ __('profile.old_password') }}</label>
                                 <input type="password" class="form-control" id="inputpassword" placeholder="Enter current password" name="oldpassword">
                                 <span class="text-danger error-text oldpassword_error"></span>
                             </div>
@@ -169,21 +180,21 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>New password</label>
+                                <label>{{ __('profile.new_password') }}</label>
                                 <input type="password" class="form-control" id="newpassword" placeholder="Enter new password" name="newpassword">
                                 <span class="text-danger error-text newpassword_error"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Confirm new password</label>
+                                <label>{{ __('profile.confirm_new_password') }}</label>
                                 <input type="password" class="form-control" id="cnewpassword" placeholder="ReEnter new password" name="cnewpassword">
                                 <span class="text-danger error-text cnewpassword_error"></span>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <button class="btn btn-primary">Update!!</button>
+                        <button class="btn btn-primary">{{ __('profile.update') }}!!</button>
                         <!-- <button class="btn btn-light">Cancel</button> -->
                     </div>
 
@@ -191,12 +202,12 @@
             </div>
             <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
                 <form class="form-horizontal" method="POST" action="{{ route('updateEdInfo') }}" id="EdInfoForm">
-                    <h3 class="mb-4">ประวัติการศึกษา</h3>
+                    <h3 class="mb-4">{{ __('profile.educational_record') }}</h3>
                     <div class="row">
-                        <label>ปริญญาตรี</label>
+                        <label>{{ __('profile.bachelor_degree') }}</label>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ชื่อมหาวิทยาลัย</label>
+                                <label>{{ __('profile.university_name') }}</label>
                                 @if (empty(Auth::user()->education[0]->uname))
                                 <input type="text" class="form-control" id="inputlBUName" placeholder="ชื่อมหาวิทยาลัย" value="" name="b_uname">
                                 @else
@@ -207,7 +218,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ชื่อวุฒิปริญญา</label>
+                                <label>{{ __('profile.degree_name') }}</label>
                                 @if (empty(Auth::user()->education[0]->qua_name))
                                 <input type="text" class="form-control" id="inputlBQuName" placeholder="ชื่อวุฒิปริญญา" value="" name="b_qua_name">
                                 @else
@@ -218,7 +229,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ปี พ.ศ. ที่จบ</label>
+                                <label>{{ __('profile.year_of_graduation') }}</label>
                                 @if (empty(Auth::user()->education[0]->year))
                                 <input type="text" class="form-control" id="inputlYear" placeholder="ปี พ.ศ. ที่จบ" value="" name="b_year">
                                 @else
@@ -229,10 +240,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label>ปริญญาโท</label>
+                        <label>{{ __('profile.master_degree') }}</label>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ชื่อมหาวิทยาลัย</label>
+                                <label>{{ __('profile.university_name') }}</label>
                                 @if (empty(Auth::user()->education[1]->uname))
                                 <input type="text" class="form-control" id="inputlMUName" placeholder="ชื่อมหาวิทยาลัย" value="" name="m_uname">
                                 @else
@@ -243,7 +254,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ชื่อวุฒิปริญญา</label>
+                                <label>{{ __('profile.degree_name') }}</label>
                                 @if (empty(Auth::user()->education[1]->qua_name))
                                 <input type="text" class="form-control" id="inputlMQuName" placeholder="ชื่อวุฒิปริญญา" value="" name="m_qua_name">
                                 @else
@@ -254,7 +265,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ปี พ.ศ. ที่จบ</label>
+                                <label>{{ __('profile.year_of_graduation') }}</label>
                                 @if (empty(Auth::user()->education[1]->year))
                                 <input type="text" class="form-control" id="inputlYear" placeholder="ปี พ.ศ. ที่จบ" value="" name="m_year">
                                 @else
@@ -265,10 +276,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label>ปริญญาเอก</label>
+                        <label>{{ __('profile.doctoral_degree') }}</label>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ชื่อมหาวิทยาลัย</label>
+                                <label>{{ __('profile.university_name') }}</label>
                                 @if (empty(Auth::user()->education[2]->uname))
                                 <input type="text" class="form-control" id="inputlDUName" placeholder="ชื่อมหาวิทยาลัย" value="" name="d_uname">
                                 @else
@@ -279,7 +290,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ชื่อวุฒิปริญญา</label>
+                                <label>{{ __('profile.degree_name') }}</label>
                                 @if (empty(Auth::user()->education[2]->qua_name))
                                 <input type="text" class="form-control" id="inputlDQuName" placeholder="ชื่อวุฒิปริญญา" value="" name="d_qua_name">
                                 @else
@@ -290,7 +301,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>ปี พ.ศ. ที่จบ</label>
+                                <label>{{ __('profile.year_of_graduation') }}</label>
                                 @if (empty(Auth::user()->education[2]->year))
                                 <input type="text" class="form-control" id="inputlYear" placeholder="ปี พ.ศ. ที่จบ" value="" name="d_year">
                                 @else
@@ -302,7 +313,7 @@
                     </div>
 
                     <div>
-                        <button class="btn btn-primary">Update</button>
+                        <button class="btn btn-primary">{{ __('profile.update') }}</button>
                         <!-- <button class="btn btn-light">Cancel</button> -->
                     </div>
 
@@ -310,13 +321,13 @@
 
             </div>
             <div class="tab-pane fade show{{old('tab') == 'expertise' ? ' active' : null}}" id="expertise" role="tabpanel" aria-labelledby="expertise-tab">
-                <h3 class="mb-4">ความเชี่ยวชาญ</h3>
+                <h3 class="mb-4">{{ __('profile.expiretise') }}</h3>
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-right">
                             <!-- <a href="javascript:void(0)" class="btn btn-success mb-2" id="new-expertise" data-toggle="modal">Add Expertise</a> -->
                             <button type="button" class="btn btn-primary btn-menu1 btn-icon-text btn-sm mb-3" data-toggle="modal" data-target="#crud-modal">
-                                <i class="mdi mdi-plus btn-icon-prepend"></i>Add Expertise
+                                <i class="mdi mdi-plus btn-icon-prepend"></i>{{ __('profile.add_expiretise') }}
                             </button>
                         </div>
                     </div>
@@ -331,7 +342,7 @@
 
                 <table class="table table-striped table-hover">
                     <tr>
-                        <th colspan="2">Expertise</th>
+                        <th colspan="2">{{ __('profile.expiretise') }}</th>
 
                     </tr>
                     @foreach (Auth::user()->expertise as $expert)
@@ -374,15 +385,15 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
+                                <strong>{{ __('profile.name') }}:</strong>
                                 <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
                             </div>
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary" disabled>Submit</button>
+                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary" disabled>{{ __('profile.submit') }}</button>
                             <!-- <a  href="{{ URL::previous() }}"class="btn btn-danger">Cancel</a>-->
-                            <button class="btn btn-danger" id="btnCancel" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-danger" id="btnCancel" data-dismiss="modal">{{ __('profile.cancel') }}</button>
                             <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
                         </div>
                     </div>

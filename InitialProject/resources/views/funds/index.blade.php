@@ -14,18 +14,18 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">ทุนวิจัย</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD</a>
+            <h4 class="card-title">{{ __('funds.research_funding') }}</h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> {{ __('funds.add') }}</a>
             <div class="table-responsive">
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Fund name</th>
-                            <th>Fund Type</th>
-                            <th>Fund Level</th>
+                            <th>{{ __('funds.no') }}</th>
+                            <th>{{ __('funds.fund_name') }}</th>
+                            <th>{{ __('funds.fund_type') }}</th>
+                            <th>{{ __('funds.fund_level') }}</th>
                             <!-- <th>Create by</th> -->
-                            <th>Action</th>
+                            <th>{{ __('funds.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

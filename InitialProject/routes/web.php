@@ -147,13 +147,9 @@ Route::group(['middleware' => ['auth', 'PreventBackHistory']], function () {
 });
 
 Route::get('lang/{lang}', function ($lang) {
-    $availableLangs = ['en', 'th', 'zh'];
-    
-    if (in_array($lang, $availableLangs)) {
-        Session::put('applocale', $lang);
-        App::setLocale($lang);
+    if (array_key_exists($lang, config('languages'))) {
+        session(['applocale' => $lang]);
     }
-    
     return redirect()->back();
 })->name('langswitch');
 
