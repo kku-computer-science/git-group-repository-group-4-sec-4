@@ -32,4 +32,6 @@ return [
     'select_user' => '选择用户',
     'submit' => '提交',
     'back' => '返回',
+    'Are you sure?' => '你确定吗？',
+    'Delete warning' => '如果删除，将无法恢复。',
 ];

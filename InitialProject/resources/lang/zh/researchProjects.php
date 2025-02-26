@@ -8,5 +8,8 @@ return [
     'head' => '负责人',
     'member' => '成员',
     'action' => '操作',
+    'Are you sure?' => '你确定吗？',
+    'Delete warning' => '如果删除，将无法恢复。',
+
 
 ];

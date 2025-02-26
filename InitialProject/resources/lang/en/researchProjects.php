@@ -8,5 +8,7 @@ return [
     'head' => 'Head',
     'member' => 'Member',
     'action' => 'Action'
+    'Are you sure?' => 'Are you sure?',
+    'Delete warning' => 'If you delete this, it will be gone forever.',
 
 ];

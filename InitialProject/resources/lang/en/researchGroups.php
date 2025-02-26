@@ -32,4 +32,6 @@ return [
     'select_user' => 'Select User',
     'submit' => 'Submit',
     'back' => 'Back',
+    'Are you sure?' => 'Are you sure?',
+    'Delete warning' => 'If you delete this, it will be gone forever.',
 ];
