@@ -87,10 +87,10 @@
                         <label for="exampleInputstatus" class="col-sm-2 ">{{ __('researchProjects.status') }}</label>
                         <div class="col-sm-3">
                             <select id='status' class="custom-select my-select" name="status">
-                                <option value="" disabled selected>โปรดระบุสถานะดำเนินงาน</option>
-                                <option value="1">ยื่นขอ</option>
-                                <option value="2">ดำเนินการ</option>
-                                <option value="3">ปิดโครงการ</option>
+                                <option value="" disabled selected>{{ __('researchProjects.operating_status') }}</option>
+                                <option value="1">{{ __('researchProjects.apply_for') }}</option>
+                                <option value="2">{{ __('researchProjects.carry_out') }}</option>
+                                <option value="3">{{ __('researchProjects.close_project') }}</option>
                             </select>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                         <label for="exampleInputfund_details" class="col-sm-2 ">{{ __('researchProjects.person_responsible') }}</label>
                         <div class="col-sm-9">
                             <select id='head0' style='width: 200px;' name="head">
-                                <option value=''>Select User</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
+                                <option value=''>{{ __('researchProjects.select_user') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -124,7 +124,7 @@
                                 <tr>
                                     <!-- <td><input type="text" name="moreFields[0][Budget]" placeholder="Enter title" class="form-control" /></td> -->
                                     <td><select id='selUser0' style='width: 200px;' name="moreFields[0][userid]">
-                                            <option value=''>Select User</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
+                                            <option value=''>{{ __('researchProjects.select_user') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
                                             @endforeach
                                         </select></td>
 
@@ -157,16 +157,16 @@
                             <div class="table-responsive">
                                 <table class="table table-hover small-text" id="tb">
                                     <tr class="tr-header">
-                                        <th>ตำแหน่งหรือคำนำหน้า</th>
-                                        <th>ชื่อ</th>
-                                        <th>นามสกุล</th>
+                                        <th>{{ __('researchProjects.position_prefix') }}</th>
+                                        <th>{{ __('researchProjects.fname') }}</th>
+                                        <th>{{ __('researchProjects.lname') }}</th>
                                         <!-- <th>Email Id</th> -->
                                             <!-- <button type="button" name="add" id="add" class="btn btn-success btn-sm"><i class="mdi mdi-plus"></i></button> -->
                                         <th><a href="javascript:void(0);" style="font-size:18px;" id="addMore2" title="Add More Person"><i class="mdi mdi-plus"></i></span></a></th>
                                     <tr>
-                                        <td><input type="text" name="title_name[]" class="form-control" placeholder="ตำแหน่งหรือคำนำหน้า"></td>
-                                        <td><input type="text" name="fname[]" class="form-control" placeholder="ชื่อ" ></td>
-                                        <td><input type="text" name="lname[]" class="form-control" placeholder="นามสกุล" ></td>
+                                        <td><input type="text" name="title_name[]" class="form-control" placeholder="{{ __('researchProjects.position_prefix') }}"></td>
+                                        <td><input type="text" name="fname[]" class="form-control" placeholder="{{ __('researchProjects.fname') }}" ></td>
+                                        <td><input type="text" name="lname[]" class="form-control" placeholder="{{ __('researchProjects.lname') }}" ></td>
                                         <!-- <td><input type="text" name="emailid[]" class="form-control"></td> -->
                                         <td><a href='javascript:void(0);' class='remove'><span><i class="mdi mdi-minus"></span></a></td>
                                     </tr>
@@ -176,8 +176,8 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <button type="submit" class="btn btn-primary me-2">Submit</button>
-                        <a class="btn btn-light" href="{{ route('researchProjects.index')}}">Cancel</a>
+                        <button type="submit" class="btn btn-primary me-2">{{ __('researchProjects.submit') }}</button>
+                        <a class="btn btn-light" href="{{ route('researchProjects.index')}}">{{ __('researchProjects.cancel') }}</a>
                     </div>
                 </form>
             </div>
