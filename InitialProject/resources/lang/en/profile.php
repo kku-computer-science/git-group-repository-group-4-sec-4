@@ -39,4 +39,5 @@ return [
     'year_of_graduation' => 'Year of graduation',
     'master_degree' => 'Master degree',
     'doctoral_degree' => 'Doctoral degree',
+    'edit_expertise' => 'Edit Expertise',
 ];

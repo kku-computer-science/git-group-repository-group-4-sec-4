@@ -39,4 +39,6 @@ return [
     'year_of_graduation' => '毕业年份',
     'master_degree' => '硕士学位',
     'doctoral_degree' => '博士学位',
+    'edit_expertise' => '编辑专业知识',
+
 ];

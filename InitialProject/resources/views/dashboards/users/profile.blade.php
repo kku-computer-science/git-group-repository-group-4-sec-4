@@ -609,7 +609,7 @@
         $('body').on('click', '#edit-expertise', function() {
             var expert_id = $(this).data('id');
             $.get('experts/' + expert_id + '/edit', function(data) {
-                $('#expertiseCrudModal').html("Edit Expertise");
+                $('#expertiseCrudModal').html("{{ __('profile.edit_expertise') }}");
 
                 $('#btn-update').val("Update");
                 $('#btn-save').prop('disabled', false);
