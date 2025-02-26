@@ -31,5 +31,14 @@ return [
     'high' => 'high',
     'medium' => 'medium',
     'low' => 'low',
+    'Are you sure?' => 'Are you sure?',
+    'Delete warning' => 'If you delete this, it will be gone forever.',
+    'OK' => 'OK',
+    'Fund Description' => 'Fund Description',
+    'Year' => 'Year',
+    'Fund Details' => 'Fund Details',
+    'Support Organization' => 'Support Organization',
+    'Added by' => 'Added by',
+    'Back' => 'Back',
 
 ];
