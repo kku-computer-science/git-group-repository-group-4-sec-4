@@ -39,4 +39,6 @@ return [
     'year_of_graduation' => 'ปีที่สำเร็จการศึกษา',
     'master_degree' => 'ปริญญาโท',
     'doctoral_degree' => 'ปริญญาเอก',
+    'edit_expertise' => 'แก้ไขความเชี่ยวชาญ',
+
 ];

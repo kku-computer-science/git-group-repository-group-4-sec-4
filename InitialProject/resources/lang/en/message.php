@@ -26,5 +26,5 @@ return [
 'student' => 'Student',
 'reference_apa' => 'Reference (APA)',
 'close' => 'Close',
-
+'login' => 'Login',
 ];
