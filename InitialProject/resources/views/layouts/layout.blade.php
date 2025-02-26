@@ -57,16 +57,24 @@
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand logo-image" href="#"><img src="{{asset('img/logo2.png')}}" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="#">
+                @if(app()->getLocale() == 'en')
+                <img src="{{asset('img/logo2-en.png')}}" alt="alternative">
+                @elseif (app()->getLocale() == 'th')
+                <img src="{{asset('img/logo2-th.png')}}" alt="alternative">
+                @elseif (app()->getLocale() == 'zh')
+                <img src="{{asset('img/logo2-zh.png')}}" alt="alternative">
+                @endif
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
-                    <li class="nav-item {{ request()->is('/') ? 'active' : ''}} ">
-                        <a class="nav-link" href="/">{{ trans('message.Home') }}</a>
-                    </li>
+                <li class="nav-item d-flex align-items-center {{ request()->is('/') ? 'active' : ''}}">
+    <a class="nav-link" href="/">{{ trans('message.Home') }}</a>
+</li>
+
                     <li
                         class="nav-item dropdown {{ Request::routeIs('researchers') ? 'active' : '' }} {{ request()->is('detail*') ? 'active' : ''}} ">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"

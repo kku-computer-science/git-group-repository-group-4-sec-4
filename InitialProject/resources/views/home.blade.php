@@ -36,7 +36,7 @@
 <div class="container home">
     <div class="container d-sm-flex justify-content-center mt-5">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
+            <div class="carouse6l-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
@@ -44,10 +44,22 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('img/Banner1.png')}}" class="d-block w-100" alt="...">
+                    @if(app()->getLocale() == 'en')
+                    <img src="{{asset('img/banner1-en.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'th')
+                    <img src="{{asset('img/banner1-th.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'zh')
+                    <img src="{{asset('img/banner1-zh.png')}}" class="d-block w-100" alt="...">
+                    @endif
                 </div>
                 <div class="carousel-item">
-                    <img src="{{asset('img/Banner2.png')}}" class="d-block w-100" alt="...">
+                    @if(app()->getLocale() == 'en')
+                    <img src="{{asset('img/banner2-en.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'th')
+                    <img src="{{asset('img/banner2-th.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'zh')
+                    <img src="{{asset('img/banner2-zh.png')}}" class="d-block w-100" alt="...">
+                    @endif
                 </div>
                 <!-- <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
@@ -113,14 +125,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Reference (APA)</h5>
+                <h5 class="modal-title">{{ trans('message.reference_apa') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="name">
                     <!-- <p>Modal body text goes here.</p> -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    {{ __('message.close') }}
+                </button>
                     <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
             </div>
@@ -161,7 +175,7 @@
                                     <!-- <a href="{{ route('bibtex',['id'=>$p['id']])}}">
                                         [อ้างอิง]
                                     </a> -->
-                                    <button style="padding: 0;"class="btn btn-link open_modal" value="{{$p['id']}}">[อ้างอิง]</button>
+                                    <button style="padding: 0;" class="btn btn-link open_modal" value="{{$p['id']}}">[{{ __('message.reference') }}]</button>
                                 </p>
                             </div>
                         </div>
@@ -242,6 +256,13 @@
     //-------------
     //- BAR CHART -
     //-------------
+    var lang_number = "{{ __('message.number') }}";
+    var lang_year = "{{ __('message.year') }}";
+    var lang_report_title = "{{ __('message.report_title') }}";
+    var lang_summary = "{{ __('message.summary') }}";
+    var lang_scopus = "{{ __('message.scopus') }}";
+    var lang_wos = "{{ __('message.wos') }}";
+    var lang_tci = "{{ __('message.tci') }}";
     var barChartCanvas = $('#barChart1').get(0).getContext('2d')
     var barChartData = $.extend(true, {}, areaChartData)
     var temp0 = areaChartData.datasets[0]
@@ -260,7 +281,7 @@
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Number',
+                    labelString: lang_number
 
                 },
                 ticks: {
@@ -271,14 +292,14 @@
             xAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Year'
+                    labelString: lang_year
                 }
             }]
         },
 
         title: {
             display: true,
-            text: 'Report the total number of articles ( 5 years : cumulative)',
+            text: lang_report_title,
             fontSize: 20
         }
 
@@ -307,7 +328,7 @@
         document.getElementById("all").innerHTML += `
                 <i class="count-icon fa fa-book fa-2x"></i>
                 <h2 class="timer count-title count-number" data-to="${sum}" data-speed="1500"></h2>
-                <p class="count-text ">SUMMARY</p>`
+                <p class="count-text ">${lang_summary}</p>`;
         document.getElementById("scopus").innerHTML += `
                 <i class="count-icon fa fa-book fa-2x"></i>
                 <h2 class="timer count-title count-number" data-to="${sumsco}" data-speed="1500"></h2>
