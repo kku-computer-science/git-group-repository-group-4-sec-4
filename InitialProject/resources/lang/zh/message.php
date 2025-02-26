@@ -21,4 +21,6 @@ return [
     'cited_articles_5years' => '过去5年被引用的文章统计',
     'source' => '来源',
     'student' => '学生',
+    'reference_apa' => '参考文献 (APA 格式)',
+    'close' => '关闭'
 ];

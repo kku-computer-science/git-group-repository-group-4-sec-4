@@ -24,4 +24,7 @@ return [
 'cited_articles_5years' => 'Statistics of Cited Articles (5 Years)',
 'source' => 'Source',
 'student' => 'Student',
+'reference_apa' => 'Reference (APA)',
+'close' => 'Close',
+
 ];

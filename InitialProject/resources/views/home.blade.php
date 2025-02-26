@@ -36,7 +36,7 @@
 <div class="container home">
     <div class="container d-sm-flex justify-content-center mt-5">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
+            <div class="carouse6l-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
@@ -44,10 +44,22 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('img/Banner1.png')}}" class="d-block w-100" alt="...">
+                    @if(app()->getLocale() == 'en')
+                    <img src="{{asset('img/banner1-en.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'th')
+                    <img src="{{asset('img/banner1-th.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'zh')
+                    <img src="{{asset('img/banner1-zh.png')}}" class="d-block w-100" alt="...">
+                    @endif
                 </div>
                 <div class="carousel-item">
-                    <img src="{{asset('img/Banner2.png')}}" class="d-block w-100" alt="...">
+                    @if(app()->getLocale() == 'en')
+                    <img src="{{asset('img/banner2-en.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'th')
+                    <img src="{{asset('img/banner2-th.png')}}" class="d-block w-100" alt="...">
+                    @elseif (app()->getLocale() == 'zh')
+                    <img src="{{asset('img/banner2-zh.png')}}" class="d-block w-100" alt="...">
+                    @endif
                 </div>
                 <!-- <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
@@ -120,7 +132,9 @@
                     <!-- <p>Modal body text goes here.</p> -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    {{ __('message.close') }}
+                </button>
                     <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
             </div>
