@@ -20,6 +20,12 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
+	<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
+	<!--===============================================================================================-->
 	<style>
 		html {
 			width: 100%;
@@ -486,6 +492,60 @@
 
 
 		})(jQuery);
+		const translations = {
+            eng: {
+                login: "Account Login",
+                username: "Username",
+                password: "Password",
+                remember: "Remember Me",
+                forgot: "*** If you forget your password, contact the administrator",
+                note1: "Use KKU-Mail for login",
+                note2: "First-time students log in with student ID"
+            },
+            thai: {
+                login: "เข้าสู่ระบบ",
+                username: "ชื่อผู้ใช้",
+                password: "รหัสผ่าน",
+                remember: "จดจำฉัน",
+                forgot: "*** หากลืมรหัสผ่าน ให้ติดต่อผู้ดูแลระบบ",
+                note1: "ใช้ KKU-Mail ในการเข้าสู่ระบบ",
+                note2: "นักศึกษาที่เข้าระบบครั้งแรกให้ใช้รหัสนักศึกษา"
+            },
+            china: {
+                login: "登录",
+                username: "用户名",
+                password: "密码",
+                remember: "记住我",
+                forgot: "*** 如果您忘记密码，请联系管理员",
+                note1: "使用KKU-Mail登录",
+                note2: "首次登录的学生请使用学号"
+            }
+        };
+
+		function changeLanguage(lang) {
+            if (!document.getElementById("login-title")) return;
+            document.getElementById("login-title").innerText = translations[lang].login;
+            document.getElementById("username-label").innerText = translations[lang].username;
+            document.getElementById("password-label").innerText = translations[lang].password;
+            document.getElementById("remember-label").innerText = translations[lang].remember;
+            document.getElementById("forgot-password").innerText = translations[lang].forgot;
+            document.getElementById("note1").innerText = translations[lang].note1;
+            document.getElementById("note2").innerText = translations[lang].note2;
+            
+            document.getElementById("selected-language").innerHTML = document.getElementById(lang).innerHTML;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const languageSelector = document.getElementById("language-menu");
+            if (languageSelector) {
+                document.querySelectorAll(".dropdown-item").forEach(item => {
+                    item.addEventListener("click", function () {
+                        changeLanguage(this.getAttribute("data-lang"));
+                    });
+                });
+                changeLanguage("eng"); // Default to English
+            }
+        });
 	</script>
 </body>
 
