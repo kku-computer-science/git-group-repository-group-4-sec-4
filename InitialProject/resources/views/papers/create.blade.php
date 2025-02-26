@@ -48,12 +48,12 @@
     <div class="col-md-10 grid-margin stretch-card">
         <div class="card" style="padding: 16px;">
             <div class="card-body">
-                <h4 class="card-title">เพิ่มวารผลงานตีพิมพ์</h4>
-                <p class="card-description">กรอกข้อมูลรายละเอียดงานวิจัย</p>
+                <h4 class="card-title">{{ __('papers.Add_Publication') }}</h4>
+                <p class="card-description">{{ __('papers.Fill_Research_Details') }}</p>
                 <form class="forms-sample" action="{{ route('papers.store') }}" method="POST">
                     @csrf
                     <div class="form-group row">
-                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label"><b>แหล่งเผยแพร่งานวิจัย</b></label>
+                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label"><b>{{ __('papers.Research_Source') }}</b></label>
                         <div class="col-sm-9">
                             <select class="selectpicker" multiple data-live-search="true" name="cat[]">
                                 @foreach( $source as $s)
@@ -65,9 +65,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label"><b>ชื่องานวิจัย</b></label>
+                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label"><b>{{ __('papers.Research_Title') }}</b></label>
                         <div class="col-sm-9">
-                            <input type="text" name="paper_name" class="form-control" placeholder="ชื่อเรื่อง">
+                            <input type="text" name="paper_name" class="form-control" placeholder="{{ __('papers.Title') }}">
                         </div>
                     </div>
                     
@@ -79,27 +79,26 @@
                     </div> -->
 
                     <div class="form-group row">
-                        <label for="exampleInputabstract" class="col-sm-3 col-form-label"><b>abstract</b></label>
+                        <label for="exampleInputabstract" class="col-sm-3 col-form-label"><b>{{ __('papers.abstract') }}</b></label>
                         <div class="col-sm-9">
-                            <textarea type="text" name="abstract" class="form-control form-control-lg" style="height:150px" placeholder="abstract"></textarea>
+                            <textarea type="text" name="abstract" class="form-control form-control-lg" style="height:150px" placeholder="{{ __('papers.abstract') }}"></textarea>
                             <!-- <input type=" text" name="abstract" class="form-control" placeholder="abstract"> -->
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="exampleInputkeyword" class="col-sm-3 col-form-label"><b>Keyword</b></label>
+                        <label for="exampleInputkeyword" class="col-sm-3 col-form-label"><b>{{ __('papers.keyword') }}</b></label>
                         <!-- <div class="col-sm-9">
                             <p>แต่ละคําต้องคั่นด้วยเครื่องหมายเซมิโคลอน (;) แล้วเว้นวรรคหนึ่งครั้ง</p>
                         </div> -->
                         <div class="col-sm-9">
-                            <input type="text" name="keyword" class="form-control" placeholder="keyword">
-                            <p class="text-danger">***แต่ละคําต้องคั่นด้วยเครื่องหมายเซมิโคลอน (;) แล้วเว้นวรรคหนึ่งครั้ง</p>
+                            <input type="text" name="keyword" class="form-control" placeholder="{{ __('papers.keyword') }}">
+                            <p class="text-danger">{{ __('papers.alert') }}</p>
                         </div>
 
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_type" class="col-sm-3 col-form-label"><b>ประเภทของเอกสาร
-                                (Type)</b></label>
+                        <label for="exampleInputpaper_type" class="col-sm-3 col-form-label"><b>{{ __('papers.type_of_document') }}</b></label>
                         <div class="col-sm-9">
                             <select id='paper_type' class="custom-select my-select" style='width: 200px;' name="paper_type">
                                 <option value="" disabled selected> โปรดระบุประเภท </option>
@@ -111,8 +110,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_subtype" class="col-sm-3 col-form-label"><b>ประเภทของเอกสาร
-                                (Subtype)</b></label>
+                        <label for="exampleInputpaper_subtype" class="col-sm-3 col-form-label"><b>{{ __('papers.type_(Subtype)') }}</b></label>
                         <div class="col-sm-9">
                             <select id='paper_subtype' class="custom-select my-select" style='width: 200px;' name="paper_subtype">
                                 <option value="" disabled selected> โปรดระบุประเภทย่อย </option>
@@ -126,7 +124,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpublicatione" class="col-sm-3 col-form-label"><b>Publication
+                        <label for="exampleInputpublicatione" class="col-sm-3 col-form-label"><b>{{ __('papers.publication') }}
                                 </b></label>
                         <div class="col-sm-9">
                             <select id='publication' class="custom-select my-select" style='width: 200px;' name="publication">
@@ -143,53 +141,50 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_sourcetitle" class="col-sm-3 col-form-label"><b>ชื่อวารสาร</b></label>
+                        <label for="exampleInputpaper_sourcetitle" class="col-sm-3 col-form-label"><b>{{ __('papers.journal_name') }}</b></label>
                         <div class="col-sm-9">
                             <input type="text" name="paper_sourcetitle" class="form-control" placeholder="sourcetitle">
                         </div>
                     </div>
             
                     <div class="form-group row">
-                        <label for="exampleInputpaper_yearpub" class="col-sm-3 col-form-label"><b>ปีที่ตีพิมพ์</b></label>
+                        <label for="exampleInputpaper_yearpub" class="col-sm-3 col-form-label"><b>{{ __('papers.publication_year') }}</b></label>
                         <div class="col-sm-4">
                             <input type="text" name="paper_yearpub" class="form-control" placeholder="ปีที่ตีพิมพ์">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_volume" class="col-sm-3 col-form-label"><b>วารสารพิมพ์เป็นปีที่
-                                (Volume)</b></label>
+                        <label for="exampleInputpaper_volume" class="col-sm-3 col-form-label"><b>{{ __('papers.journal') }}</b></label>
                         <div class="col-sm-4">
                             <input type="text" name="paper_volume" class="form-control" placeholder="Volume">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_issue" class="col-sm-3 col-form-label"><b>ฉบับที่ (Issue
-                                number)</b></label>
+                        <label for="exampleInputpaper_issue" class="col-sm-3 col-form-label"><b>{{ __('papers.issue_number') }}</b></label>
                         <div class="col-sm-4">
                             <input type="text" name="paper_issue" class="form-control" placeholder="Issue">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_citation" class="col-sm-3 col-form-label"><b>การอ้างอิง
-                                (Citation)</b></label>
+                        <label for="exampleInputpaper_citation" class="col-sm-3 col-form-label"><b>{{ __('papers.citation') }}</b></label>
                         <div class="col-sm-4">
-                            <input type="text" name="paper_citation" class="form-control" placeholder="จำนวนการอ้างอิง">
+                            <input type="text" name="paper_citation" class="form-control" placeholder="{{ __('papers.citation') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_page" class="col-sm-3 col-form-label"><b>หน้า (Page)</b></label>
+                        <label for="exampleInputpaper_page" class="col-sm-3 col-form-label"><b>{{ __('papers.page') }}</b></label>
                         <div class="col-sm-4">
                             <input type="text" name="paper_page" class="form-control" placeholder="01-99">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_doi" class="col-sm-3 col-form-label"><b>Doi</b></label>
+                        <label for="exampleInputpaper_doi" class="col-sm-3 col-form-label"><b>{{ __('papers.doi') }}</b></label>
                         <div class="col-sm-9">
                             <input type="text" name="paper_doi" class="form-control" placeholder="doi">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_funder" class="col-sm-3 col-form-label"><b>ทุนสนับสนุน</b></label>
+                        <label for="exampleInputpaper_funder" class="col-sm-3 col-form-label"><b>{{ __('papers.support_funds') }}</b></label>
                         <div class="col-sm-9">
                             <input type="int" name="paper_funder" class="form-control" placeholder="Funder">
                         </div>
@@ -201,7 +196,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_doi" class="col-sm-3 "><b>Author Name (บุลคลภายในสาขา)</b></label>
+                        <label for="exampleInputpaper_doi" class="col-sm-3 "><b>{{ __('papers.author_name') }}</b></label>
                         <div class="col-sm-9">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dynamicAddRemove">
@@ -226,8 +221,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_doi" class="col-sm-3 col-form-label"><b>Author Name
-                                (บุลคลภายนอก)</b></label>
+                        <label for="exampleInputpaper_doi" class="col-sm-3 col-form-label"><b>{{ __('papers.author_name_ex') }}</b></label>
                         <div class="col-sm-9">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dynamic_field">
@@ -248,8 +242,8 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" name="submit" id="submit" class="btn btn-primary me-2">Submit</button>
-                    <a class="btn btn-light" href="{{ route('papers.index')}}">Cancel</a>
+                    <button type="submit" name="submit" id="submit" class="btn btn-primary me-2">{{ __('papers.submit') }}</button>
+                    <a class="btn btn-light" href="{{ route('papers.index')}}">{{ __('papers.cancel') }}</a>
                 </form>
             </div>
         </div>
