@@ -10,4 +10,6 @@ return [
     'publications' => '出版物（近5年）',
     'education' => '教育',
     'publications2' => '刊物',
+    'login'=> '登录
+',
 ];

@@ -47,31 +47,43 @@
             </div>
             <div class="col-md-6">
                 <div class="card-body">
-                    <h6 class="card-text"><b>{{$res->position_th}} {{$res->fname_th}} {{$res->lname_th}}</b></h6>
-                    @if($res->doctoral_degree == 'Ph.D.')
-                    <h6 class="card-text"><b>{{$res->fname_en}} {{$res->lname_en}}, {{$res->doctoral_degree}} </b>
-                        @else
-                        <h6 class="card-text"><b>{{$res->fname_en}} {{$res->lname_en}}</b>
-                            @endif</h6>
-                        <h6 class="card-text1"><b>{{$res->academic_ranks_en}}</b></h6>
-                        <!-- <h6 class="card-text1">Department of {{$res->program->program_name_en}}</h6> -->
-                        <!-- <h6 class="card-text1">College of Computing</h6>
-                    <h6 class="card-text1">Khon Kaen University</h6> -->
-                        <h6 class="card-text1">E-mail: {{$res->email}}</h6>
-                        <h6 class="card-title">{{ trans('message.education') }}</h6>
-                        @foreach( $res->education as $edu)
-                        <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name}} {{$edu->uname}}</h6>
-                        @endforeach
-                        <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            {{ trans('message.expertise') }}
-                        </button> -->
-                        <!-- <h6 class="card-title">Metrics overview</h6>
-                    <h6 class="card-text2" id="citation">Citation count</h6>
-                    <h6 class="card-text2" id="doc_count">Document count</h6>
-                    <h6 class="card-text2" id="cite_count">Cited By count</h6>
-                    <h6 class="card-text2" id="h-index">H-index </h6> -->
+                    @php
+                    $locale = app()->getLocale();
+                    $isEnglish = $locale == 'en';
+                    $isThai = $locale == 'th';
+                    $isChinese = $locale == 'zh';
+                    @endphp
 
+                    <h6 class="card-text">
+                        <b>
+                            {{ $isEnglish ? $res->position_en : ($isThai ? $res->position_th : $res->position_zh) }}
+                            {{ $isEnglish ? $res->fname_en : ($isThai ? $res->fname_th : $res->fname_en) }}
+                            {{ $isEnglish ? $res->lname_en : ($isThai ? $res->lname_th : $res->lname_en) }}
+                        </b>
+                    </h6>
+
+                    <h6 class="card-text">
+                        <b>
+                            {{ $isEnglish ? $res->fname_en : ($isThai ? $res->fname_th : $res->fname_en) }} {{ $isEnglish ? $res->lname_en : ($isThai ? $res->lname_th : $res->lname_en) }}
+                            @if($res->doctoral_degree == 'Ph.D.')
+                            , {{$res->doctoral_degree}}
+                            @endif
+                        </b>
+                    </h6>
+
+                    <h6 class="card-text1"><b>{{ $isEnglish ? $res->academic_ranks_en : ($isThai ? $res->academic_ranks_th : $res->academic_ranks_zh) }}</b></h6>
+
+                    <h6 class="card-text1">{{ trans('researcher.email')  }}: {{$res->email}}</h6>
+
+                    <h6 class="card-title">{{ trans('message.education') }}</h6>
+
+                    @foreach($res->education as $edu)
+                    <h6 class="card-text2 col-sm-10">
+                        {{$edu->year}}
+                        {{ $isEnglish ? $edu->qua_name_en : ($isThai ? $edu->qua_name : $edu->qua_name_zh) }}
+                        {{ $isEnglish ? $edu->uname_en : ($isThai ? $edu->uname : $edu->uname_zh) }}
+                    </h6>
+                    @endforeach
                 </div>
             </div>
 
@@ -131,30 +143,31 @@
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Summary</button>
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">{{ trans('researcher.summary') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="scopus-tab" data-bs-toggle="tab" data-bs-target="#scopus" type="button" role="tab" aria-controls="scopus" aria-selected="false">SCOPUS</button>
+            <button class="nav-link" id="scopus-tab" data-bs-toggle="tab" data-bs-target="#scopus" type="button" role="tab" aria-controls="scopus" aria-selected="false">{{ trans('researcher.scopus') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="wos-tab" data-bs-toggle="tab" data-bs-target="#wos" type="button" role="tab" aria-controls="wos" aria-selected="false">Web of Science</button>
+            <button class="nav-link" id="wos-tab" data-bs-toggle="tab" data-bs-target="#wos" type="button" role="tab" aria-controls="wos" aria-selected="false">{{ trans('researcher.web_of_science') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tci-tab" data-bs-toggle="tab" data-bs-target="#tci" type="button" role="tab" aria-controls="tci" aria-selected="false">TCI</button>
+            <button class="nav-link" id="tci-tab" data-bs-toggle="tab" data-bs-target="#tci" type="button" role="tab" aria-controls="tci" aria-selected="false">{{ trans('researcher.tci') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="book-tab" data-bs-toggle="tab" data-bs-target="#book" type="button" role="tab" aria-controls="book" aria-selected="false">หนังสือ</button>
+            <button class="nav-link" id="book-tab" data-bs-toggle="tab" data-bs-target="#book" type="button" role="tab" aria-controls="book" aria-selected="false">{{ trans('researcher.books') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="patent-tab" data-bs-toggle="tab" data-bs-target="#patent" type="button" role="tab" aria-controls="patent" aria-selected="false">ผลงานวิชาการด้านอื่นๆ</button>
+            <button class="nav-link" id="patent-tab" data-bs-toggle="tab" data-bs-target="#patent" type="button" role="tab" aria-controls="patent" aria-selected="false">{{ trans('researcher.other_academic_works') }}</button>
         </li>
     </ul>
+
     <br>
     <div class="tab-content" id="myTabContent">
 
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="tab-content" style="padding-bottom: 20px;">
-                <a class="btn btn-success" href="{{ route('excel', ['id' => $res->id]) }}" target="_blank">Export To Excel</a>
+                <a class="btn btn-success" href="{{ route('excel', ['id' => $res->id]) }}" target="_blank">{{ trans('researcher.export_to_excel') }}</a>
             </div>
             <table id="example1" class="table table-striped" style="width:100%">
                 <thead>
@@ -162,16 +175,16 @@
                         <th><a href="{{ route('excel', ['id' => $res->id]) }}" target="_blank">#Export</a></td>
                     </tr> -->
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th>Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th>Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
-                        <th>Source</th>
+                        <th>{{ trans('researcher.no') }}</th>
+                        <th>{{ trans('researcher.year') }}</th>
+                        <th>{{ trans('researcher.paper_name') }}</th>
+                        <th>{{ trans('researcher.author') }}</th>
+                        <th>{{ trans('researcher.document_type') }}</th>
+                        <th>{{ trans('researcher.page') }}</th>
+                        <th>{{ trans('researcher.journals_transactions') }}</th>
+                        <th>{{ trans('researcher.citations') }}</th>
+                        <th>{{ trans('researcher.doi') }}</th>
+                        <th>{{ trans('researcher.source') }}</th>
                     </tr>
                 </thead>
 
@@ -189,13 +202,20 @@
                             </span>
                             @endforeach
                             @foreach ($paper->teacher as $author)
-                            <span >
+                            <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                </a>
                             </span>
                             @endforeach
                         </td>
+                        @if(app()->getLocale() == 'en')
                         <td>{{$paper->paper_type}}</td>
+                        @elseif(app()->getLocale() == 'th')
+                        <td>{{$paper->paper_type_th}}</td>
+                        @elseif(app()->getLocale() == 'zh')
+                        <td>{{$paper->paper_type_zh}}</td>
+                        @endif
                         <td style="width:100%;">{{$paper->paper_page}}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
@@ -220,15 +240,16 @@
             <table id="example2" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th style="width:90%;">Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th style="width:100%;">Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
+                        <th>{{ trans('researcher.no') }}</th>
+                        <th>{{ trans('researcher.year') }}</th>
+                        <th style="width:90%;">{{ trans('researcher.paper_name') }}</th>
+                        <th>{{ trans('researcher.author') }}</th>
+                        <th>{{ trans('researcher.document_type') }}</th>
+                        <th style="width:100%;">{{ trans('researcher.page') }}</th>
+                        <th>{{ trans('researcher.journals_transactions') }}</th>
+                        <th>{{ trans('researcher.citations') }}</th>
+                        <th>{{ trans('researcher.doi') }}</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -247,7 +268,8 @@
                             @foreach ($paper->teacher as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -271,15 +293,15 @@
             <table id="example3" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th style="width:90%;">Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th style="width:100%;">Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
+                        <th>{{ trans('researcher.no') }}</th>
+                        <th>{{ trans('researcher.year') }}</th>
+                        <th style="width:90%;">{{ trans('researcher.paper_name') }}</th>
+                        <th>{{ trans('researcher.author') }}</th>
+                        <th>{{ trans('researcher.document_type') }}</th>
+                        <th style="width:100%;">{{ trans('researcher.page') }}</th>
+                        <th>{{ trans('researcher.journals_transactions') }}</th>
+                        <th>{{ trans('researcher.citations') }}</th>
+                        <th>{{ trans('researcher.doi') }}</th>
                     </tr>
                 </thead>
 
@@ -299,7 +321,8 @@
                             @foreach ($paper->teacher as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -323,15 +346,15 @@
             <table id="example4" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th style="width:90%;">Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th style="width:100%;">Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
+                        <th>{{ trans('researcher.no') }}</th>
+                        <th>{{ trans('researcher.year') }}</th>
+                        <th style="width:90%;">{{ trans('researcher.paper_name') }}</th>
+                        <th>{{ trans('researcher.author') }}</th>
+                        <th>{{ trans('researcher.document_type') }}</th>
+                        <th style="width:100%;">{{ trans('researcher.page') }}</th>
+                        <th>{{ trans('researcher.journals_transactions') }}</th>
+                        <th>{{ trans('researcher.citations') }}</th>
+                        <th>{{ trans('researcher.doi') }}</th>
                     </tr>
                 </thead>
 
@@ -351,7 +374,8 @@
                             @foreach ($paper->teacher as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -371,13 +395,12 @@
             <table id="example5" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th scope="col">Number</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">สถานที่พิมพ์</th>
-                        <th scope="col">Page</th>
-
+                        <th scope="col">{{ trans('researcher.number') }}</th>
+                        <th scope="col">{{ trans('researcher.year') }}</th>
+                        <th scope="col">{{ trans('researcher.name') }}</th>
+                        <th scope="col">{{ trans('researcher.author') }}</th>
+                        <th scope="col">{{ trans('researcher.printing_place') }}</th>
+                        <th scope="col">{{ trans('researcher.page') }}</th>
                     </tr>
                 </thead>
 
@@ -413,13 +436,12 @@
             <table id="example6" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th scope="col">Number</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">ประเภท</th>
-                        <th scope="col">หมายเลขทะเบียน</th>
-                        <th scope="col">วันที่จดทะเบียน</th>
-
+                        <th scope="col">{{ trans('researcher.number') }}</th>
+                        <th scope="col">{{ trans('researcher.name') }}</th>
+                        <th scope="col">{{ trans('researcher.author') }}</th>
+                        <th scope="col">{{ trans('researcher.type') }}</th>
+                        <th scope="col">{{ trans('researcher.registration_number') }}</th>
+                        <th scope="col">{{ trans('researcher.registration_date') }}</th>
                     </tr>
                 </thead>
 
@@ -438,7 +460,8 @@
                             @foreach ($paper->user as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                </a>
 
                             </span>
                             @endforeach
@@ -663,19 +686,19 @@
         //$("#scopus").append('data-to="100"');
         document.getElementById("all").innerHTML += `   
                 <h2 class="timer count-title count-number" data-to="${sum}" data-speed="1500"></h2>
-                <p class="count-text ">SUMMARY</p>`
+                <p class="count-text ">{{ trans('researcher.summary') }}</p>`
 
         document.getElementById("scopus_sum").innerHTML += `   
                 <h2 class="timer count-title count-number" data-to="${sumsco}" data-speed="1500"></h2>
-                <p class="count-text">SCOPUS</p>`
+                <p class="count-text">{{ trans('researcher.scopus') }}</p>`
 
         document.getElementById("wos_sum").innerHTML += `    
                 <h2 class="timer count-title count-number" data-to="${sumwos}" data-speed="1500"></h2>
-                <p class="count-text ">WOS</p>`
+                <p class="count-text ">{{ trans('researcher.wos') }}</p>`
 
         document.getElementById("tci_sum").innerHTML += `  
                 <h2 class="timer count-title count-number" data-to="${sumtci}" data-speed="1500"></h2>
-                <p class="count-text ">TCI</p>`
+                <p class="count-text ">{{ trans('researcher.tci') }}</p>`
 
 
         //document.getElementById("scopus").appendChild('data-to="100"');
