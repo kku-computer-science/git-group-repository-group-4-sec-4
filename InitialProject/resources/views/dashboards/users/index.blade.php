@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h3 style="padding-top: 10px;">{{ __('dashboard.text1') }}</h3>
+<h3 style="padding-top: 10px;" id="title-dashboard-admin">{{ __('dashboard.text1') }}</h3>
 <br>
 <h4>{{ __('dashboard.hello') }}
                 @if(app()->getLocale() == 'zh')
@@ -17,7 +17,6 @@
                 @else
                         {{ Auth::user()->position_en }} {{ Auth::user()->fname_en }} {{ Auth::user()->lname_en }}
                 @endif
-
 </h2>
 
 @endsection

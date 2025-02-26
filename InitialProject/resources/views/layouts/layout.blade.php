@@ -72,7 +72,7 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ms-auto navbar-nav-scroll">
                         <li class="nav-item d-flex align-items-center {{ request()->is('/') ? 'active' : ''}}">
-                            <a class="nav-link" href="/">{{ trans('message.Home') }}</a>
+                            <a class="nav-link" href="/" id="home">{{ trans('message.Home') }}</a>
                         </li>
 
                         <li
@@ -131,7 +131,7 @@
                     </span>
                     @else
                     <span class="nav-item">
-                        <a class="btn-solid-sm" href="/login" target="_blank">{{ trans('message.login') }}</a>
+                        <a class="btn-solid-sm" href="/login" target="_blank" id="btn-login">{{ trans('message.login') }}</a>
                     </span>
                     @endauth
                     @endif
