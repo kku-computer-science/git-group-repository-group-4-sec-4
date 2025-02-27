@@ -37,19 +37,18 @@
     <div class="col-md-8 grid-margin stretch-card">
         <div class="card" style="padding: 16px;">
             <div class="card-body">
-                <h4 class="card-title">เพิ่มผลงานวิชาการด้านอื่นๆ</h4>
-                <p class="card-description">กรอกข้อมูลรายละเอียดผลงานวิชาการด้านอื่นๆ (สิทธิบัตร, อนุสิทธิบัตร,
-                    ลิขสิทธิ์)</p>
+                <h4 class="card-title">{{ __('patents.Add_works') }}</h4>
+                <p class="card-description">{{ __('patents.fill') }}</p>
                 <form class="forms-sample" action="{{ route('patents.store') }}" method="POST">
                     @csrf
                     <div class="form-group row">
-                        <label for="exampleInputac_name" class="col-sm-3">ชื่อ (สิทธิบัตร,อนุสิทธิบัตร, ลิขสิทธิ์)</label>
+                        <label for="exampleInputac_name" class="col-sm-3">{{ __('patents.name') }}</label>
                         <div class="col-sm-9">
                             <input type="text" name="ac_name" class="form-control" placeholder="name">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputac_type" class="col-sm-3 ">ประเภท</label>
+                        <label for="exampleInputac_type" class="col-sm-3 ">{{ __('patents.type') }}</label>
                         <div class="col-sm-4">
                             <select id="category" class="custom-select my-select" name="ac_type">
                                 <option value="" disabled selected >---- โปรดระบุประเภท ----</option>
@@ -80,21 +79,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputac_year" class="col-sm-3 ">วันที่ได้รับลิขสิทธิ์</label>
+                        <label for="exampleInputac_year" class="col-sm-3 ">{{ __('patents.date') }}</label>
                         <div class="col-sm-4">
                             <input type="date" name="ac_year" class="form-control" placeholder="ac_year">
 
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputac_refnumber" class="col-sm-3 ">เลขทะเบียน</label>
+                        <label for="exampleInputac_refnumber" class="col-sm-3 ">{{ __('patents.registration_number') }}</label>
                         <div class="col-sm-4">
-                            <input type="text" name="ac_refnumber" class="form-control" placeholder="เลขทะเบียน">
+                            <input type="text" name="ac_refnumber" class="form-control" placeholder="{{ __('patents.registration_number') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="exampleInputac_doi" class="col-sm-3 ">อาจารย์ในสาขา</label>
+                        <label for="exampleInputac_doi" class="col-sm-3 ">{{ __('patents.professor_field') }}</label>
                         <div class="col-sm-9">
                             <div class="table-responsive">
                                 <table class="table table-hover small-text" id="dynamicAddRemove">
@@ -129,21 +128,21 @@
                         </div>
                     </div> -->
                     <div class="form-group row ">
-                        <label for="exampleInputpaper_doi" class="col-sm-3 ">บุคลลภายนอก</label>
+                        <label for="exampleInputpaper_doi" class="col-sm-3 ">{{ __('patents.outsiders') }}</label>
                         <div class="col-sm-9">
                             <div class="table-responsive">
                                 <table class="table table-hover small-text" id="tb">
                                     <tr class="tr-header">
                                         
-                                        <th>ชื่อ</th>
-                                        <th>นามสกุล</th>
+                                        <th>{{ __('patents.fname') }}</th>
+                                        <th>{{ __('patents.lname') }}</th>
                                         <!-- <th>Email Id</th> -->
                                             <!-- <button type="button" name="add" id="add" class="btn btn-success btn-sm"><i class="mdi mdi-plus"></i></button> -->
                                         <th><a href="javascript:void(0);" style="font-size:18px;" id="addMore2" title="Add More Person"><i class="mdi mdi-plus"></i></span></a></th>
                                     <tr>
                                         <!--  -->
-                                        <td><input type="text" name="fname[]" class="form-control" placeholder="ชื่อ" ></td>
-                                        <td><input type="text" name="lname[]" class="form-control" placeholder="นามสกุล" ></td>
+                                        <td><input type="text" name="fname[]" class="form-control" placeholder="{{ __('patents.fname') }}" ></td>
+                                        <td><input type="text" name="lname[]" class="form-control" placeholder="{{ __('patents.lname') }}" ></td>
                                         <!-- <td><input type="text" name="emailid[]" class="form-control"></td> -->
                                         <td><a href='javascript:void(0);' class='remove'><span><i class="mdi mdi-minus"></span></a></td>
                                     </tr>
@@ -152,8 +151,8 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" name="submit" id="submit" class="btn btn-primary me-2">Submit</button>
-                    <a class="btn btn-light" href="{{ route('patents.index')}}">Cancel</a>
+                    <button type="submit" name="submit" id="submit" class="btn btn-primary me-2">{{ __('patents.submit') }}</button>
+                    <a class="btn btn-light" href="{{ route('patents.index')}}">{{ __('patents.cancel') }}</a>
                 </form>
             </div>
         </div>
