@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-02-27T07:47:27.576859" rpa="false" schemaversion="5">
+<suite id="s1" name="Home" source="C:\xampp\htdocs\Project_SoftEn\git-group-repository-group-4-sec-4\InitialProject\tests\home.robot">
+<test id="s1-t1" name="Thai To English" line="69">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:47:28.106446" level="INFO">Opening browser 'chrome' to base url 'http://cs0404.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-27T07:47:28.106243" elapsed="9.995323"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-27T07:47:38.101913" elapsed="0.043081"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:47:48.430162" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-27T07:47:48.430324" level="FAIL">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</msg>
+<arg>${LANG_TO_THAI}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-02-27T07:47:38.145150" elapsed="10.319576">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-02-27T07:47:28.105721" elapsed="20.359170">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:47:48.465300" elapsed="0.000031"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_THAI_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:47:48.465716" elapsed="0.000026"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>th</arg>
+<status status="NOT RUN" start="2025-02-27T07:47:48.466006" elapsed="0.000024"/>
+</kw>
+<kw name="Wait And Click">
+<arg>${LANG_TO_ENGLISH}</arg>
+<status status="NOT RUN" start="2025-02-27T07:47:48.466297" elapsed="0.000023"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:47:48.466480" elapsed="0.000018"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_ENGLISH_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:47:48.466690" elapsed="0.000018"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>en</arg>
+<status status="NOT RUN" start="2025-02-27T07:47:48.466865" elapsed="0.000015"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-27T07:47:48.467118" elapsed="2.155941"/>
+</kw>
+<doc>Starting from default Thai, switch to English and verify texts and banner.</doc>
+<status status="FAIL" start="2025-02-27T07:47:28.105006" elapsed="22.518848">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</test>
+<test id="s1-t2" name="Thai To Chinese" line="80">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:47:50.627045" level="INFO">Opening browser 'chrome' to base url 'http://cs0404.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-27T07:47:50.626834" elapsed="6.000108"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-27T07:47:56.627103" elapsed="0.042657"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:48:07.041567" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-27T07:48:07.041683" level="FAIL">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</msg>
+<arg>${LANG_TO_THAI}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-02-27T07:47:56.669906" elapsed="10.372514">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-02-27T07:47:50.626513" elapsed="16.416063">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:07.042954" elapsed="0.000032"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_THAI_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:07.043161" elapsed="0.000021"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>th</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:07.043443" elapsed="0.000025"/>
+</kw>
+<kw name="Wait And Click">
+<arg>${LANG_TO_CHINESE}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:07.043729" elapsed="0.000024"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:07.044012" elapsed="0.000030"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_CHINESE_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:07.044600" elapsed="0.000029"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>cn</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:07.045134" elapsed="0.000023"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-27T07:48:07.045523" elapsed="2.139029"/>
+</kw>
+<doc>Starting from default Thai, switch to Chinese and verify texts and banner.</doc>
+<status status="FAIL" start="2025-02-27T07:47:50.625981" elapsed="18.559161">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</test>
+<test id="s1-t3" name="English To Chinese" line="91">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:48:09.189747" level="INFO">Opening browser 'chrome' to base url 'http://cs0404.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-27T07:48:09.189614" elapsed="6.149474"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-27T07:48:15.339322" elapsed="0.034383"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:48:25.696626" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-27T07:48:25.696768" level="FAIL">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</msg>
+<arg>${LANG_TO_THAI}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-02-27T07:48:15.373851" elapsed="10.324383">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-02-27T07:48:09.189434" elapsed="16.509267">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:25.700006" elapsed="0.000065"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_THAI_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.700480" elapsed="0.000031"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>th</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.700745" elapsed="0.000031"/>
+</kw>
+<kw name="Wait And Click">
+<arg>${LANG_TO_ENGLISH}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.701132" elapsed="0.000031"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:25.701510" elapsed="0.000031"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_ENGLISH_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.702063" elapsed="0.000026"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>en</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.702407" elapsed="0.000026"/>
+</kw>
+<kw name="Wait And Click">
+<arg>${LANG_TO_CHINESE}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.702728" elapsed="0.000025"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:25.703434" elapsed="0.000025"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_CHINESE_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.703739" elapsed="0.000025"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>cn</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:25.704090" elapsed="0.000025"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-27T07:48:25.704613" elapsed="2.153717"/>
+</kw>
+<doc>Switch from Thai to English then to Chinese, verify texts and banner.</doc>
+<status status="FAIL" start="2025-02-27T07:48:09.188887" elapsed="18.670067">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</test>
+<test id="s1-t4" name="Chinese To Thai" line="106">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:48:27.863435" level="INFO">Opening browser 'chrome' to base url 'http://cs0404.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-27T07:48:27.863081" elapsed="6.277176"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-27T07:48:34.140397" elapsed="0.040867"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-02-27T07:48:44.498624" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-27T07:48:44.498750" level="FAIL">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</msg>
+<arg>${LANG_TO_THAI}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-02-27T07:48:34.181406" elapsed="10.318740">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-02-27T07:48:27.862593" elapsed="16.637828">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:44.501428" elapsed="0.000075"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_THAI_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.502465" elapsed="0.000044"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>th</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.502734" elapsed="0.000064"/>
+</kw>
+<kw name="Wait And Click">
+<arg>${LANG_TO_CHINESE}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.503569" elapsed="0.000074"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:44.504004" elapsed="0.000026"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_CHINESE_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.504428" elapsed="0.000025"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>cn</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.504722" elapsed="0.000023"/>
+</kw>
+<kw name="Wait And Click">
+<arg>${LANG_TO_THAI}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.504948" elapsed="0.000023"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-27T07:48:44.505439" elapsed="0.000023"/>
+</kw>
+<kw name="Verify Page Contains Texts">
+<arg>@{EXPECTED_THAI_TEXTS}</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.505723" elapsed="0.000023"/>
+</kw>
+<kw name="Verify Banner For Language">
+<arg>th</arg>
+<status status="NOT RUN" start="2025-02-27T07:48:44.505997" elapsed="0.000022"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-27T07:48:44.506355" elapsed="2.144270"/>
+</kw>
+<doc>Switch from Thai to Chinese then back to Thai, verify texts and banner.</doc>
+<status status="FAIL" start="2025-02-27T07:48:27.861675" elapsed="18.789570">Element 'xpath=//a[contains(@class, 'dropdown-item') and contains(text(), 'ไทย')]' did not appear in 10 seconds.</status>
+</test>
+<doc>Test suite for verifying translation on the home page including Banner image.</doc>
+<status status="FAIL" start="2025-02-27T07:47:27.578080" elapsed="79.075691"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="4" skip="0" id="s1" name="Home">Home</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
