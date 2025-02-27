@@ -9,5 +9,6 @@ return [
     "event" => "Event",
     "type" => "Type",
     "description" => "Description",
-    "log_events" => "Log Events"
+    "log_events" => "Log Events",
+    "No logs found" => "No logs found",
 ];

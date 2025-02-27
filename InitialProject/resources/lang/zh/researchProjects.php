@@ -8,6 +8,7 @@ return [
     'head' => '负责人',
     'member' => '成员',
     'action' => '操作',
+
     'add_research_project_information' => '添加研究项目信息',
     'fill_in_research_project_details' => '填写研究项目详细信息',
     'name_of_research_project' => '研究项目名称',
@@ -24,6 +25,24 @@ return [
     'external' => '（外部联合）项目负责人',
     'baht_unit' => '泰铢单位',
     'Choose_study' => '选择学习领域',
-
-
+    'Are you sure?' => '你确定吗？',
+    'Delete warning' => '如果删除，将无法恢复。',
+    'note' => '备注',
+    'operating_status' => '请指定操作状态。',
+    'select_user' => '选择用户',
+    'position_prefix' => '职位或前缀',
+    'fname' => '名字',
+    'lname' => '姓氏',
+    'submit' => '提交',
+    'cancel' => '取消',
+    'edit_research_project' => '编辑研究项目资料',
+    'fill_information' => '填写信息并编辑研究项目详情',
+    'apply_for' => '申请',
+    'carry_out' => '执行',
+    'close_project' => '关闭项目',
+    'person' => '项目负责人',
+    'internal_project' => '内部项目负责人（合作）',
+    'external' => '外部（合作）项目负责人',
+    'back' => '后退
+',
 ];

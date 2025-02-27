@@ -96,14 +96,13 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
-                                <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
+                                <strong>{{ __('manageExpertise.name') }}:</strong>
+                                <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="{{ __('manageExpertise.enter_name') }}" onchange="validate()">
                             </div>
                         </div>
-
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary " disabled>Submit</button>
-                            <a href="{{ route('experts.index') }}" class="btn btn-danger">Cancel</a>
+                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary " disabled>{{ __('manageExpertise.submit') }}</button>
+                            <a href="{{ route('experts.index') }}" class="btn btn-danger">{{ __('manageExpertise.cancel') }}</a>
                         </div>
                     </div>
                 </form>
@@ -118,15 +117,20 @@
 <script src="https://cdn.datatables.net/rowgroup/1.2.0/js/dataTables.rowGroup.min.js" defer></script>
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-
-            order: [
-                [1, 'asc']
-            ],
-            rowGroup: {
-                dataSrc: 1
-            }
-        });
+        if (!$.fn.DataTable.isDataTable('#example1')) { // ตรวจสอบว่า DataTable ถูกใช้งานไปแล้วหรือยัง
+            var table1 = $('#example1').DataTable({
+                responsive: true,
+                language: {
+                    search: "{{ __('reseracher.Search') }}",
+                    lengthMenu: "{{ __('reseracher.Show') }} _MENU_ {{ __('reseracher.entries') }}",
+                    info: "{{ __('reseracher.Showing') }} _START_ {{ __('reseracher.to') }} _END_ {{ __('reseracher.of') }} _TOTAL_ {{ __('reseracher.entries') }}",
+                    paginate: {
+                        previous: "{{ __('reseracher.Previous') }}",
+                        next: "{{ __('reseracher.Next') }}",
+                    }
+                }
+            });
+        }
     });
 </script>
 <script>

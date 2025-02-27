@@ -34,7 +34,15 @@
 
                             <td>{{ $i+1 }}</td>
                             <td>{{ Str::limit($fund->fund_name,80) }}</td>
-                            <td>{{ $fund->fund_type }}</td>
+                            <td>
+                @if(app()->getLocale() == 'th')
+                    {{ $fund->fund_type_th }}
+                @elseif(app()->getLocale() == 'zh')
+                    {{ $fund->fund_type_zh }}
+                @else
+                    {{ $fund->fund_type_en }}
+                @endif
+            </td>
                             <td>{{ $fund->fund_level }}</td>
                             <!-- <td>{{ $fund->user->fname_en }} {{ $fund->user->lname_en }}</td> -->
 
@@ -89,8 +97,8 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: "{{ __('funds.Are you sure?') }}",
+                text: "{{ __('funds.Delete warning') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
