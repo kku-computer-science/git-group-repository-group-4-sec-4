@@ -47,8 +47,10 @@ return [
     "enter_details" => "填写研究小组信息",
     "group_name_th" => "研究小组名称（泰语）",
     "group_name_en" => "研究小组名称（英语）",
+    'research_group_name_zh' => '研究组名称（中文）',
     "group_desc_th" => "研究小组描述（泰语）",
     "group_desc_en" => "研究小组描述（英语）",
+    'research_group_desc_zh' => '研究组描述（中文）',
     "group_detail_th" => "研究小组详情（泰语）",
     "group_detail_en" => "研究小组详情（英语）",
     "image" => "图片",
@@ -64,4 +66,6 @@ return [
     'showing' => '显示 _START_ 到 _END_ ，共 _TOTAL_ 条目',
     'previous' => '上一页',
     'next' => '下一页',
+
+    
 ];
