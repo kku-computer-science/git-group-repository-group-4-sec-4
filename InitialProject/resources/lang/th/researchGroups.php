@@ -17,6 +17,7 @@ return [
     'research_group_desc_zh' => 'คำอธิบายกลุ่มวิจัย (ภาษาจีน)',
     'research_group_detail_th' => 'รายละเอียดกลุ่มวิจัย (ภาษาไทย)',
     'research_group_detail_en' => 'รายละเอียดกลุ่มวิจัย (ภาษาอังกฤษ)',
+    'research_group_detail_zh' => 'รายละเอียดกลุ่มวิจัย (ภาษาจีน)',
     'research_group_leader' => 'หัวหน้ากลุ่มวิจัย',
     'research_group_members' => 'สมาชิกกลุ่มวิจัย',
     'back' => 'ย้อนกลับ',
@@ -39,7 +40,7 @@ return [
     'research_group' => 'กลุ่มวิจัย',
     'add' => 'เพิ่ม',
     'no' => 'ลำดับ',
-    'group_name' => 'ชื่อกลุ่ม (ภาษาไทย)',
+    'group_name' => 'ชื่อกลุ่ม',
     'head' => 'หัวหน้ากลุ่ม',
     'member' => 'สมาชิก',
     'action' => 'การดำเนินการ',
@@ -66,4 +67,6 @@ return [
     'showing' => 'แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ',
     'previous' => 'ก่อนหน้า',
     'next' => 'ถัดไป',
+    'no_file_chosen' => 'ยังไม่ได้เลือกไฟล์',
+
 ];

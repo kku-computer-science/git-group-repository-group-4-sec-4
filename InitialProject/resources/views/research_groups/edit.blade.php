@@ -1,5 +1,6 @@
 @extends('dashboards.users.layouts.user-dash-layout')
 @section('content')
+
 <div class="container">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -32,11 +33,17 @@
                             placeholder="ชื่อกลุ่มวิจัย (English)">
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="row mt-2">
+                    <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_name_zh') }}</b></p>
+                    <div class="col-sm-8">
+                        <input type="text" name="group_name_zh" value="{{ $researchGroup->group_name_zh }}" class="form-control">
+                    </div>
+                </div>
+                <div class="row mt-2 mb-3">
                     <p class="col-sm-3"><b>{{ __('researchGroups.research_group_desc_th') }}</b></p>
                     <div class="col-sm-8">
                         <textarea name="group_desc_th" value="{{ $researchGroup->group_desc_th }}" class="form-control"
-                            style="height:90px">{{ $researchGroup->group_desc_th }}</textarea>
+                            style="height:80px">{{ $researchGroup->group_desc_th }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -46,7 +53,13 @@
                             style="height:90px">{{ $researchGroup->group_desc_en }}</textarea>
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="row mt-2">
+                    <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_desc_zh') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="group_desc_zh" class="form-control" style="height:90px">{{ $researchGroup->group_desc_zh }}</textarea>
+                    </div>
+                </div>
+                <div class="row mt-2 mb-3">
                     <p class="col-sm-3"><b>{{ __('researchGroups.research_group_detail_th') }}</b></p>
                     <div class="col-sm-8">
                         <textarea name="group_detail_th" value="{{ $researchGroup->group_detail_th }}" class="form-control"
@@ -60,28 +73,38 @@
                             style="height:90px">{{ $researchGroup->group_detail_en }}</textarea>
                     </div>
                 </div>
+                <div class="row mt-2">
+                    <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_detail_zh') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="group_detail_zh" class="form-control" style="height:90px">{{ $researchGroup->group_detail_zh }}</textarea>
+                    </div>
+                </div>
                 <div class="form-group row">
                     <p class="col-sm-3"><b>{{ __('researchGroups.image') }}</b></p>
                     <div class="col-sm-8">
                         <input type="file" name="group_image" class="form-control" >
                     </div>
                 </div>
-                <div class="form-group row">
-                    <p class="col-sm-3"><b>{{ __('researchGroups.research_group_leader') }}</b></p>
-                    <div class="col-sm-8">
-                        <select id='head0' name="head">
-                            @foreach($researchGroup->user as $u)
-                            @if($u->pivot->role == 1)
-                            @foreach($users as $user)
-                            <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                {{ $user->fname_th }} {{ $user->lname_th }}
-                            </option>
-                            @endforeach
-                            @endif
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+                <div class="row mt-3">
+    <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_leader') }}</b></p>
+    <div class="col-sm-9">
+        <select id="leader" name="leader" class="form-control">
+            @foreach($users as $user)
+                <option value="{{ $user->id }}"
+                    @if($user->id == $researchGroup->leader_id) selected @endif>
+                    @if(app()->getLocale() == 'zh') 
+                        {{ $user->position_zh }} {{ $user->fname_zh }} {{ $user->lname_zh }}
+                    @elseif(app()->getLocale() == 'en')
+                        {{ $user->position_en }} {{ $user->fname_en }} {{ $user->lname_en }}
+                    @else
+                        {{ $user->position_th }} {{ $user->fname_th }} {{ $user->lname_th }}
+                    @endif
+                </option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
                 <div class="form-group row">
                     <p class="col-sm-3 pt-4"><b>{{ __('researchGroups.research_group_members') }}</b></p>
                     <div class="col-sm-8">

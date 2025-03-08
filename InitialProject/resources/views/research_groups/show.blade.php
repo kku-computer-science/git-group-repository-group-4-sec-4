@@ -30,6 +30,18 @@
                 <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_desc_zh') }}</b></p>
                 <p class="card-text col-sm-9">{{ $researchGroup->group_desc_zh ?? $researchGroup->group_desc_en }}</p>
             </div>
+            <div class="row mt-2">
+                <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_detail_th') }}</b></p>
+                <p class="card-text col-sm-9">{{ $researchGroup->group_detail_th }}</p>
+            </div>
+            <div class="row mt-2">
+                <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_detail_en') }}</b></p>
+                <p class="card-text col-sm-9">{{ $researchGroup->group_detail_en }}</p>
+            </div>
+            <div class="row mt-2">
+                <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_detail_zh') }}</b></p>
+                <p class="card-text col-sm-9">{{ $researchGroup->group_detail_zh }}</p>
+            </div>
             <div class="row mt-3">
                 <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_leader') }}</b></p>
                 <p class="card-text col-sm-9">

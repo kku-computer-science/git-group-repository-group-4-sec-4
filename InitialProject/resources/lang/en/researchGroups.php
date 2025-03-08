@@ -39,7 +39,7 @@ return [
     'research_group' => 'Research group',
     'add' => 'ADD',
     'no' => 'No.',
-    'group_name' => 'group name(Thai language)',
+    'group_name' => 'group name',
     'head' => 'Head',
     'member' => 'Member',
     'action' => 'Action',
@@ -55,6 +55,7 @@ return [
     'research_group_desc_zh' => 'Research Group Description (Chinese)',
     "group_detail_th" => "Research Group Details (Thai)",
     "group_detail_en" => "Research Group Details (English)",
+    "research_group_detail_zh" => "Research Group Details (Chinese)",
     "image" => "Image",
     "group_head" => "Research Group Head",
     "group_members" => "Research Group Members",
@@ -68,4 +69,6 @@ return [
     'showing' => 'Showing _START_ to _END_ of _TOTAL_ entries',
     'previous' => 'Previous',
     'next' => 'Next',
+    'no_file_chosen' => 'No file chosen',
+
 ];

@@ -31,26 +31,45 @@
                         @foreach ($researchGroups as $i=>$researchGroup)
                         <tr>
                             <td>{{ $i+1 }}</td>
-                            <td>{{ Str::limit($researchGroup->group_name_th,50) }}</td>
                             <td>
-                                @foreach($researchGroup->user as $user)
-                                @if ( $user->pivot->role == 1)
+    @if(app()->getLocale() == 'zh') 
+        {{ Str::limit($researchGroup->group_name_zh,50) }}
+    @elseif(app()->getLocale() == 'en')
+        {{ Str::limit($researchGroup->group_name_en,50) }}
+    @else
+        {{ Str::limit($researchGroup->group_name_th,50) }}
+    @endif
+</td>
 
-                                {{ $user->fname_th}}
+<td>
+    @foreach($researchGroup->user as $user)
+    @if ( $user->pivot->role == 1)
+        @if(app()->getLocale() == 'zh') 
+            {{ $user->fname_zh }} {{ $user->lname_zh }}
+        @elseif(app()->getLocale() == 'en')
+            {{ $user->fname_en }} {{ $user->lname_en }}
+        @else
+            {{ $user->fname_th }} {{ $user->lname_th }}
+        @endif
+    @endif
+    @endforeach
+</td>
 
-                                @endif
+<td>
+    @foreach($researchGroup->user as $user)
+    @if ( $user->pivot->role == 2)
+        @if(app()->getLocale() == 'zh') 
+            {{ $user->fname_zh }} {{ $user->lname_zh }}
+        @elseif(app()->getLocale() == 'en')
+            {{ $user->fname_en }} {{ $user->lname_en }}
+        @else
+            {{ $user->fname_th }} {{ $user->lname_th }}
+        @endif
+        @if (!$loop->last),@endif
+    @endif
+    @endforeach
+</td>
 
-                                @endforeach
-                            </td>
-                            <td>
-                                @foreach($researchGroup->user as $user)
-                                @if ( $user->pivot->role == 2)
-                                {{ $user->fname_th}}
-                                @if (!$loop->last),@endif
-                                @endif
-
-                                @endforeach
-                            </td>
                             <td>
                                 <form action="{{ route('researchGroups.destroy',$researchGroup->id) }}" method="POST">
 
