@@ -58,14 +58,14 @@
                     <div class="form-group row">
                         <label for="exampleInputfund_name" class="col-sm-2 ">{{ __('funds.capital_name') }}</label>
                         <div class="col-sm-8">
-                            <input type="text" name="fund_name" class="form-control" placeholder="name">
+                        <input type="text" class="form-control" placeholder="{{ __('funds.name') }}">
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label for="exampleInputsupport_resource" class="col-sm-2 ">{{ __('funds.Support') }}</label>
                         <div class="col-sm-8">
-                            <input type="text" name="support_resource" class="form-control" placeholder="Support Resource">
+                        <input type="text" class="form-control" placeholder="{{ __('funds.support_resource') }}">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary me-2">{{ __('funds.submit') }}</button>

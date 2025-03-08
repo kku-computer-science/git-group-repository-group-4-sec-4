@@ -70,5 +70,9 @@ return [
     "doi" => "DOI",
     "url" => "URL",
     "back" => "Back",
-
+    'show_entries' => 'Show _MENU_ entries',
+    'search' => 'Search:',
+    'showing' => 'Showing _START_ to _END_ of _TOTAL_ entries',
+    'previous' => 'Previous',
+    'next' => 'Next',
 ];

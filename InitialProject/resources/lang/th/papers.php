@@ -70,4 +70,10 @@ return [
     "doi" => "DOI",
     "url" => "URL",
     "back" => "ย้อนกลับ",
+
+'show_entries' => 'แสดง _MENU_ รายการ',
+    'search' => 'ค้นหา:',
+    'showing' => 'แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ',
+    'previous' => 'ก่อนหน้า',
+    'next' => 'ถัดไป',
 ];

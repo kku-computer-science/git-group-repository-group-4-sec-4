@@ -26,5 +26,10 @@ return [
     'detail2' => 'Detailed information on other academic works (patents, petty patents, copyrights)',
     'name2' => 'name',
     'creator_joint' => 'Creator (joint)',
-    'back' => 'Back'
+    'back' => 'Back',
+    'show_entries' => 'Show _MENU_ entries',
+    'search' => 'Search:',
+    'showing' => 'Showing _START_ to _END_ of _TOTAL_ entries',
+    'previous' => 'Previous',
+    'next' => 'Next',
 ];

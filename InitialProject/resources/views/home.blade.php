@@ -154,7 +154,7 @@
                         @if (!$loop->last)
                         {{$n}}
                         @else
-                        Before {{$n}}
+                        {{ __('message.before') }} {{$n}}
                         @endif
 
                     </button>

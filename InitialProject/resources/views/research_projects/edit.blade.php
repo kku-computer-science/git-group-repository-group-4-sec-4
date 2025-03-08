@@ -50,10 +50,15 @@
                 <div class="form-group row mt-2">
                     <p for="exampleInputfund_details" class="col-sm-3"><b>{{ __('researchProjects.choose_scholarship') }}</b></p>
                     <div class="col-sm-9">
-                        <select id='fund' style='width: 200px;' class="custom-select my-select" name="fund">
-                            <option value='' disabled selected>{{ __('researchProjects.choose_scholarship') }}</option>@foreach($funds as $f)<option value="{{ $f->id }}" {{ $f->fund_name == $researchProject->fund->fund_name ? 'selected' : '' }}>{{ $f->fund_name }}</option>
-                            @endforeach
-                        </select>
+                        <select id="fund" style="width: 200px;" class="custom-select my-select" name="fund">
+    <option value="" disabled selected>{{ __('researchProjects.choose_scholarship') }}</option>
+    @foreach ($funds as $fund)
+        <option value="{{ $fund->id }}" {{ ($fund->id == $researchProject->fund_id) ? 'selected' : '' }}>
+            {{ $fund->fund_name }}
+        </option>
+    @endforeach
+</select>
+
                     </div>
                 </div>
                 <div class="form-group row mt-2">
@@ -69,13 +74,28 @@
                     </div>
                 </div>
                 <div class="form-group row mt-2">
-                    <p class="col-sm-3 "><b>{{ __('researchProjects.responsible_agency') }}</b></p>
-                    <div class="col-sm-3">
-                        <select id='dep' style='width: 200px;' class="custom-select my-select"  name="responsible_department">
-                            <option value=''>{{ __('researchProjects.Choose_study') }}</option>@foreach($deps as $dep)<option value="{{ $dep->department_name_th }}" {{ $dep->department_name_th == $researchProject->responsible_department ? 'selected' : '' }}>{{ $dep->department_name_th }}</option>@endforeach
-                        </select>
-                    </div>
-                </div>
+    <p class="col-sm-3"><b>{{ __('researchProjects.responsible_agency') }}</b></p>
+    <div class="col-sm-3">
+        <select id='dep' style='width: 200px;' class="custom-select my-select" name="responsible_department">
+            <option value="">{{ __('researchProjects.Choose_study') }}</option>
+            @foreach($deps as $dep)
+                <option value="{{ $dep->department_name_th }}"
+                    {{ $dep->department_name_th == $researchProject->responsible_department ? 'selected' : '' }}>
+                    
+                    @if(app()->getLocale() == 'th')
+                        {{ $dep->department_name_th }}
+                    @elseif(app()->getLocale() == 'zh' && !empty($dep->department_name_zh))
+                        {{ $dep->department_name_zh }}
+                    @else
+                        {{ $dep->department_name_en }} 
+                    @endif
+
+                </option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
                 
                 <div class="form-group row">
                     <p class="col-sm-3 "><b>{{ __('researchProjects.project_details') }}</b></p>
@@ -99,17 +119,22 @@
                             <th>{{ __('researchProjects.person') }}</th>
                         <tr>
                             <td>
-                                <select id='head0' style='width: 200px;' name="head">
-                                    @foreach($researchProject->user as $u)
-                                    @if($u->pivot->role == 1)
-                                    @foreach($users as $user)
-                                    <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                        {{ $user->fname_th }} {{ $user->lname_th }}
-                                    </option>
-                                    @endforeach
-                                    @endif
-                                    @endforeach
-                                </select>
+                            <select id="head0" style="width: 200px;" name="head">
+    @foreach($users as $user)
+        <option value="{{ $user->id }}">
+            @if(app()->getLocale() == 'th')
+                {{ $user->fname_th }} {{ $user->lname_th }} {{-- แสดงชื่อภาษาไทย --}}
+            @elseif(app()->getLocale() == 'en')
+                {{ $user->fname_en }} {{ $user->lname_en }} {{-- แสดงชื่อภาษาอังกฤษ --}}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $user->fname_zh }} {{ $user->lname_zh }} {{-- แสดงชื่อภาษาจีน --}}
+            @else
+                {{ $user->fname_th }} {{ $user->lname_th }} {{-- ค่าเริ่มต้นเป็นภาษาไทย --}}
+            @endif
+        </option>
+    @endforeach
+</select>
+
                             </td>
                         </tr>
                     </table>
@@ -148,11 +173,9 @@
 @section('javascript')
 <script>
     $(document).ready(function() {
+        
+        $("#head0").select2();
 
-        $("#head0").select2()
-        //$("#fund").select2()
-
-        //$("#dep").select2()
         var researchProject = <?php echo $researchProject['user']; ?>;
         var i = 0;
 
@@ -164,21 +187,31 @@
                     '][userid]"  style="width: 200px;">@foreach($users as $user)<option value="{{ $user->id }}" >{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
                 );
                 document.getElementById("selUser" + i).value = obj.id;
-                $("#selUser" + i).select2()
-
+                $("#selUser" + i).select2();
             }
-            //document.getElementById("#dynamicAddRemove").value = "10";
         }
 
-
         $("#add-btn2").click(function() {
-
-            ++i;
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;"><option value="">Select User</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-            );
-            $("#selUser" + i).select2()
-        });
+    ++i;
+    $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
+        '][userid]" style="width: 200px;">' +
+        '<option value="">{{ __("researchProjects.select_user") }}</option>' +
+        '@foreach($users as $user)' +
+        '<option value="{{ $user->id }}">' +
+        '@if(app()->getLocale() == "th")' +
+            '{{ trim($user->fname_th) }} {{ trim($user->lname_th) }}' +
+        '@elseif(app()->getLocale() == "zh" && !empty($user->fname_zh) && !empty($user->lname_zh))' +
+            '{{ trim($user->fname_zh) }} {{ trim($user->lname_zh) }}' +
+        '@else' +
+            '{{ trim($user->fname_en) }} {{ trim($user->lname_en) }}' + // fallback to English
+        '@endif' +
+        '</option>' +
+        '@endforeach' +
+        '</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr">' +
+        '<i class="mdi mdi-minus"></i></button></td></tr>'
+    );
+    $("#selUser" + i).select2();
+});
 
 
         $(document).on('click', '.remove-tr', function() {
@@ -187,38 +220,42 @@
 
     });
 </script>
+
 <script>
     $(document).ready(function() {
         var outsider = <?php echo $researchProject->outsider; ?>;
-
-        var postURL = "<?php echo url('addmore'); ?>";
         var i = 0;
-        //console.log(patent)
 
-        for (i = 0; i < outsider.length; i++) {value="'+ obj.title_name +'"
-            //console.log(patent);
+        for (i = 0; i < outsider.length; i++) {
             var obj = outsider[i];
-            $("#dynamic_field").append('<tr id="row' + i +
-                '" class="dynamic-added"><td><p>ตำแหน่งหรือคำนำหน้า :</p><input type="text" name="title_name[]" value="'+ obj.title_name +'" placeholder="ตำแหน่งหรือคำนำหน้า" style="width: 200px;" class="form-control name_list" /><br><p>ชื่อ :</p><input type="text" name="fname[]" value="'+ obj.fname +'" placeholder="ชื่อ" style="width: 300px;" class="form-control name_list" /><br><p>นามสกุล :</p><input type="text" name="lname[]" value="'+ obj.lname +'" placeholder="นามสกุล" style="width: 300px;" class="form-control name_list" /></td><td><button type="button" name="remove" id="' +
-                i + '" class="btn btn-danger btn-sm btn_remove"><i class="mdi mdi-minus"></i></button></td></tr>');
-            //document.getElementById("selUser" + i).value = obj.id;
-            //console.log(obj.author_fname)
-            // let doc=document.getElementById("row" + i)
-            // doc.setAttribute('fname','aaa');
-            // doc.setAttribute('lname','bbb');
-            //document.getElementById("row" + i).value = obj.author_lname;
-            //document.getAttribute("lname").value = obj.author_lname;
-            //$("#selUser" + i).select2()
-
-
-            //document.getElementById("#dynamicAddRemove").value = "10";
+            $("#dynamic_field").append('<tr id="row' + i + '" class="dynamic-added">' +
+                '<td>' +
+                '<p>{{ __("researchProjects.position_or_title") }} :</p>' +
+                '<input type="text" name="title_name[]" value="'+ obj.title_name +'" placeholder="{{ __("researchProjects.position_or_title") }}" style="width: 200px;" class="form-control name_list" /><br>' +
+                '<p>{{ __("researchProjects.first_name") }} :</p>' +
+                '<input type="text" name="fname[]" value="'+ obj.fname +'" placeholder="{{ __("researchProjects.first_name") }}" style="width: 300px;" class="form-control name_list" /><br>' +
+                '<p>{{ __("researchProjects.last_name") }} :</p>' +
+                '<input type="text" name="lname[]" value="'+ obj.lname +'" placeholder="{{ __("researchProjects.last_name") }}" style="width: 300px;" class="form-control name_list" />' +
+                '</td>' +
+                '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-sm btn_remove"><i class="mdi mdi-minus"></i></button></td>' +
+                '</tr>'
+            );
         }
 
         $('#add').click(function() {
             i++;
-            $('#dynamic_field').append('<tr id="row' + i +
-                '" class="dynamic-added"><td><p>ตำแหน่งหรือคำนำหน้า :</p><input type="text" name="title_name[]" placeholder="ตำแหน่งหรือคำนำหน้า" style="width: 200px;" class="form-control name_list" /><br><p>ชื่อ :</p><input type="text" name="fname[]" placeholder="ชื่อ" style="width: 300px;" class="form-control name_list" /><br><p>นามสกุล :</p><input type="text" name="lname[]" placeholder="นามสกุล" style="width: 300px;" class="form-control name_list" /></td><td><button type="button" name="remove" id="' +
-                i + '" class="btn btn-danger btn-sm btn_remove"><i class="mdi mdi-minus"></i></button></td></tr>');
+            $('#dynamic_field').append('<tr id="row' + i + '" class="dynamic-added">' +
+                '<td>' +
+                '<p>{{ __("researchProjects.position_or_title") }} :</p>' +
+                '<input type="text" name="title_name[]" placeholder="{{ __("researchProjects.position_or_title") }}" style="width: 200px;" class="form-control name_list" /><br>' +
+                '<p>{{ __("researchProjects.first_name") }} :</p>' +
+                '<input type="text" name="fname[]" placeholder="{{ __("researchProjects.first_name") }}" style="width: 300px;" class="form-control name_list" /><br>' +
+                '<p>{{ __("researchProjects.last_name") }} :</p>' +
+                '<input type="text" name="lname[]" placeholder="{{ __("researchProjects.last_name") }}" style="width: 300px;" class="form-control name_list" />' +
+                '</td>' +
+                '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-sm btn_remove"><i class="mdi mdi-minus"></i></button></td>' +
+                '</tr>'
+            );
         });
 
         $(document).on('click', '.btn_remove', function() {

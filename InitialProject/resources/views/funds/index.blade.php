@@ -86,10 +86,19 @@
 <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer></script>
 <script>
     $(document).ready(function() {
-        var table = $('#example1').DataTable({
-            fixedHeader: true
-        });
+    var table = $('#example1').DataTable({
+        fixedHeader: true,
+        "language": {
+            "lengthMenu": "{{ __('funds.show_entries') }}",
+            "search": "{{ __('funds.search') }}",
+            "info": "{{ __('funds.showing') }}",
+            "paginate": {
+                "previous": "{{ __('funds.previous') }}",
+                "next": "{{ __('funds.next') }}"
+            }
+        }
     });
+});
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {

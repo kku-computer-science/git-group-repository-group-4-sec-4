@@ -172,7 +172,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>{{ __('profile.old_password') }}</label>
-                                <input type="password" class="form-control" id="inputpassword" placeholder="Enter current password" name="oldpassword">
+                                <input type="password" class="form-control" placeholder="{{ __('profile.enter_current_password') }}">
                                 <span class="text-danger error-text oldpassword_error"></span>
                             </div>
                         </div>
@@ -181,14 +181,14 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>{{ __('profile.new_password') }}</label>
-                                <input type="password" class="form-control" id="newpassword" placeholder="Enter new password" name="newpassword">
+                                <input type="password" class="form-control" placeholder="{{ __('profile.enter_new_password') }}">
                                 <span class="text-danger error-text newpassword_error"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>{{ __('profile.confirm_new_password') }}</label>
-                                <input type="password" class="form-control" id="cnewpassword" placeholder="ReEnter new password" name="cnewpassword">
+                                <input type="password" class="form-control" placeholder="{{ __('profile.reenter_new_password') }}">
                                 <span class="text-danger error-text cnewpassword_error"></span>
                             </div>
                         </div>

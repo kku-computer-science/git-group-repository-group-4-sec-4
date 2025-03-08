@@ -78,21 +78,19 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        if (!$.fn.DataTable.isDataTable('#example1')) { // ตรวจสอบว่า DataTable ถูกใช้งานไปแล้วหรือยัง
-            var table1 = $('#example1').DataTable({
-                responsive: true,
-                language: {
-                    search: "{{ __('reseracher.Search') }}",
-                    lengthMenu: "{{ __('reseracher.Show') }} _MENU_ {{ __('reseracher.entries') }}",
-                    info: "{{ __('reseracher.Showing') }} _START_ {{ __('reseracher.to') }} _END_ {{ __('reseracher.of') }} _TOTAL_ {{ __('reseracher.entries') }}",
-                    paginate: {
-                        previous: "{{ __('reseracher.Previous') }}",
-                        next: "{{ __('reseracher.Next') }}",
-                    }
-                }
-            });
+    var table = $('#example1').DataTable({
+        fixedHeader: true,
+        "language": {
+            "lengthMenu": "{{ __('books.show_entries') }}",
+            "search": "{{ __('books.search') }}",
+            "info": "{{ __('books.showing') }}",
+            "paginate": {
+                "previous": "{{ __('books.previous') }}",
+                "next": "{{ __('books.next') }}"
+            }
         }
     });
+});
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {

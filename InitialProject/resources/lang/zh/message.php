@@ -30,4 +30,5 @@ return [
     'reference_apa' => '参考文献 (APA 格式)',
     'close' => '关闭',
     'login' => '登录',
+    'before' => '之前',
 ];

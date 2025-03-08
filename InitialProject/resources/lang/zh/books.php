@@ -77,4 +77,10 @@ return [
     "Publication_Source" => "出版来源",
     "Page" => "页数",
     'back' => '返回',
+
+    'show_entries' => '显示 _MENU_ 条目',
+    'search' => '搜索:',
+    'showing' => '显示 _START_ 到 _END_ ，共 _TOTAL_ 条目',
+    'previous' => '上一页',
+    'next' => '下一页',
 ];

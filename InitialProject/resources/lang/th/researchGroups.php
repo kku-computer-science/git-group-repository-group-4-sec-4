@@ -59,4 +59,9 @@ return [
     "edit_group" => "แก้ไขกลุ่มวิจัย",
     "group_details" => "รายละเอียดกลุ่มวิจัย",
     "group_information" => "ข้อมูลรายละเอียดกลุ่มวิจัย",
+    'show_entries' => 'แสดง _MENU_ รายการ',
+    'search' => 'ค้นหา:',
+    'showing' => 'แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ',
+    'previous' => 'ก่อนหน้า',
+    'next' => 'ถัดไป',
 ];

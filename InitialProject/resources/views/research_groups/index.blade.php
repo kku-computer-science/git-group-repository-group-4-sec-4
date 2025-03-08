@@ -91,10 +91,19 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-            responsive: true,
-        });
+    var table = $('#example1').DataTable({
+        fixedHeader: true,
+        "language": {
+            "lengthMenu": "{{ __('researchGroups.show_entries') }}",
+            "search": "{{ __('researchGroups.search') }}",
+            "info": "{{ __('researchGroups.showing') }}",
+            "paginate": {
+                "previous": "{{ __('researchGroups.previous') }}",
+                "next": "{{ __('researchGroups.next') }}"
+            }
+        }
     });
+});
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {

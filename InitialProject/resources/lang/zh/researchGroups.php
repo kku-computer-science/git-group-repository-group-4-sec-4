@@ -59,4 +59,9 @@ return [
     "edit_group" => "编辑研究小组",
     "group_details" => "研究小组详细信息",
     "group_information" => "研究小组信息",
+    'show_entries' => '显示 _MENU_ 条目',
+    'search' => '搜索:',
+    'showing' => '显示 _START_ 到 _END_ ，共 _TOTAL_ 条目',
+    'previous' => '上一页',
+    'next' => '下一页',
 ];

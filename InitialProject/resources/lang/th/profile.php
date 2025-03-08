@@ -40,5 +40,8 @@ return [
     'master_degree' => 'ปริญญาโท',
     'doctoral_degree' => 'ปริญญาเอก',
     'edit_expertise' => 'แก้ไขความเชี่ยวชาญ',
+    'enter_current_password' => 'กรอกรหัสผ่านปัจจุบัน',
+    'enter_new_password' => 'กรอกรหัสผ่านใหม่',
+    'reenter_new_password' => 'ยืนยันรหัสผ่านใหม่',
 
 ];

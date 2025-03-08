@@ -40,4 +40,7 @@ return [
     'master_degree' => 'Master degree',
     'doctoral_degree' => 'Doctoral degree',
     'edit_expertise' => 'Edit Expertise',
+    'enter_current_password' => 'Enter current password',
+    'enter_new_password' => 'Enter new password',
+    'reenter_new_password' => 'Re-enter new password',
 ];

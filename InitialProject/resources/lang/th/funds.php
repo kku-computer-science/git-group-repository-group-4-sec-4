@@ -43,4 +43,11 @@ return [
     'Support Organization' => 'หน่วยงานที่สนับสนุน',
     'Added by' => 'เพิ่มรายละเอียดโดย',
     'Back' => 'ย้อนกลับ',
+    'name' => 'ชื่อทุน',
+    'support_resource' => 'หน่วยงานสนับสนุน',
+    'show_entries' => 'แสดง _MENU_ รายการ',
+    'search' => 'ค้นหา:',
+    'showing' => 'แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ',
+    'previous' => 'ก่อนหน้า',
+    'next' => 'ถัดไป',
     ];
