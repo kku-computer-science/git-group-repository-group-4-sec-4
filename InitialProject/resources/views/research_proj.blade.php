@@ -10,7 +10,7 @@
                 <tr>
                     <th style="font-weight: bold;">{{ trans('researchPJ.no') }}</th>
                     <th class="col-md-1" style="font-weight: bold;">{{ trans('researchPJ.year') }}</th>
-                    <th class="col-md-4" style="font-weight: bold;">{{ trans('researchPJ.projectName') }} </th>
+                    <th class="col-md-4" style="font-weight: bold;">{{ trans('researchPJ.projectName') }} </th> 
                     <!-- <th>ระยะเวลาโครงการ</th>
                     <th>ผู้รับผิดชอบโครงการ</th>
                     <th>ประเภททุนวิจัย</th>
@@ -87,6 +87,7 @@
                             <span style="padding-left: 10px;"> @if(is_null($re->fund))
                                 @else
                                 {{$re->fund->support_resource}}
+                    
                                 @endif</span>
                         </div>
                         <div style="padding-bottom: 10px;">
@@ -103,7 +104,22 @@
                     <td style="vertical-align: top;text-align: left;">
                         <div style="padding-bottom: 10px;">
                             <span>@foreach($re->user as $user)
-                                {{$user->position_th }} {{$user->fname_th}} {{$user->lname_th}}<br>
+
+                                    @if(app()->getLocale() == 'en')
+                                        {{$user->position_en }} {{$user->fname_en}} {{$user->lname_en}}<br>
+                                    @elseif(app()->getLocale() == 'th')
+                                        @if($user->fname_th == NULL)
+                                        {{$user->position_en }} {{$user->fname_en}} {{$user->lname_en}}<br>
+                                        @else
+                                        {{$user->position_th }} {{$user->fname_th}} {{$user->lname_th}}<br>
+                                        @endif
+                                    @elseif(app()->getLocale() == 'zh')
+                                        @if($user->fname_zh == NULL)
+                                        {{$user->position_en }} {{$user->fname_en}} {{$user->lname_en}}<br>
+                                        @else
+                                        {{$user->position_zh }} {{$user->fname_zh}} {{$user->lname_zh}}<br>
+                                        @endif
+                                    @endif
                                 @endforeach
                             </span>
                         </div>

@@ -1,4 +1,4 @@
-*** Settings ***
+    *** Settings ***
 Documentation    Test suite for verifying translation on the home page including Banner image.
 Library          SeleniumLibrary
 Library          String

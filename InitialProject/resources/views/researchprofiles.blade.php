@@ -59,19 +59,22 @@
                             {{ $isEnglish ? $res->position_en : ($isThai ? $res->position_th : $res->position_zh) }}
                             {{ $isEnglish ? $res->fname_en : ($isThai ? $res->fname_th : $res->fname_en) }}
                             {{ $isEnglish ? $res->lname_en : ($isThai ? $res->lname_th : $res->lname_en) }}
-                        </b>
-                    </h6>
-
-                    <h6 class="card-text">
-                        <b>
-                            {{ $isEnglish ? $res->fname_en : ($isThai ? $res->fname_th : $res->fname_en) }} {{ $isEnglish ? $res->lname_en : ($isThai ? $res->lname_th : $res->lname_en) }}
                             @if($res->doctoral_degree == 'Ph.D.')
                             , {{$res->doctoral_degree}}
                             @endif
                         </b>
                     </h6>
+                    
+                    <h6 class="card-text">
+                        <b>
+                            <!--{{ $isEnglish ? $res->fname_en : ($isThai ? $res->fname_th : $res->fname_en) }} {{ $isEnglish ? $res->lname_en : ($isThai ? $res->lname_th : $res->lname_en) }}-->
+                            
+                        </b>
+                    </h6>
+                    
+                    <!--h6 class="card-text1"><b>{{ $isEnglish ? $res->academic_ranks_en : ($isThai ? $res->academic_ranks_th : $res->academic_ranks_zh) }}</b></h6-->
+                     
 
-                    <h6 class="card-text1"><b>{{ $isEnglish ? $res->academic_ranks_en : ($isThai ? $res->academic_ranks_th : $res->academic_ranks_zh) }}</b></h6>
 
                     <h6 class="card-text1">{{ trans('researcher.email')  }}: {{$res->email}}</h6>
 
@@ -198,13 +201,42 @@
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
+                            @if(app()->getLocale() == 'en')
+                            <a>{{$author -> author_fname}} {{$author -> author_lname}} , </a>
+                            @elseif(app()->getLocale() == 'th')
+                                @if($author -> author_fname_th == NULL)
+                                <a>{{$author -> author_fname}} {{$author -> author_lname}} , </a>
+                                @else
+                                <a>{{$author -> author_fname_th}} {{$author -> author_lname_th}} , </a>
+                                @endif
+                            @elseif(app()->getLocale() == 'zh')
+                                @if($author -> author_fname_zh == NULL)
+                                <a>{{$author -> author_fname}} {{$author -> author_lname}} , </a>
+                                @else
+                                <a>{{$author -> author_fname_zh}} {{$author -> author_lname_zh}} , </a>
+                                @endif
+                            @endif
+                                
                             </span>
                             @endforeach
                             @foreach ($paper->teacher as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
+                                @if(app()->getLocale() == 'en')
                                     <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                @elseif(app()->getLocale() == 'th')
+                                    @if($author -> fname_th == NULL)
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                    @else
+                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
+                                    @endif
+                                @elseif(app()->getLocale() == 'zh')
+                                    @if($author -> fname_zh == NULL)
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                    @else
+                                    <teacher>{{$author -> fname_zh}} {{$author -> lname_zh}}</teacher>
+                                    @endif
+                                @endif
                                 </a>
                             </span>
                             @endforeach
@@ -315,7 +347,9 @@
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
+                                <a>{{$author -> author_fname_en}} {{$author -> author_lname}}
+
+                                </a>
                             </span>
                             @endforeach
                             @foreach ($paper->teacher as $author)
