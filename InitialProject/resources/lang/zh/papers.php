@@ -77,4 +77,11 @@ return [
     'showing' => '显示 _START_ 到 _END_ ，共 _TOTAL_ 条目',
     'previous' => '上一页',
     'next' => '下一页',
+
+    'select_placeholder' => '请选择',
+    'no_publication_source' => '暂无数据', 
+    'delete_confirm' => '你确定吗？',
+    'delete_warning' => '如果您删除此内容，它将永远消失。',
+    'ok' => '确定',
+    'cancel' => '取消',
 ];

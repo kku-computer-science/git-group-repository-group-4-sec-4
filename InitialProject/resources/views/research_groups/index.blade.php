@@ -3,7 +3,33 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.bootstrap4.min.css">
 @section('content')
+<style>
+/* ปรับตารางให้ขยายเต็มที่ */
+table.dataTable {
+    width: 100% !important;
+    table-layout: auto;
+}
 
+/* ป้องกันข้อความยาวเกินไปในคอลัมน์ */
+table.dataTable th,
+table.dataTable td {
+    white-space: nowrap;
+    text-align: left;
+}
+
+/* ปรับขนาดคอลัมน์ที่มีข้อความยาว */
+table.dataTable td:nth-child(2), /* คอลัมน์ Group Name */
+table.dataTable td:nth-child(4)  /* คอลัมน์ Member */ {
+    max-width: 300px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</style>
+
+<div class="container">
+    <!-- โค้ด HTML ของตาราง -->
+</div>
 <div class="container">
     @if ($message = Session::get('success'))
     <div class="alert alert-success">

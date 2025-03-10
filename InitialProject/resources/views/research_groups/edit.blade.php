@@ -126,39 +126,58 @@
 @stop
 @section('javascript')
 <script>
-$(document).ready(function() {
-    $("#head0").select2()
-    $("#fund").select2()
+    var users = @json($users); // ส่งข้อมูล Users ไปให้ JavaScript ใช้งาน
+    var locale = "{{ app()->getLocale() }}"; // ดึงค่าภาษา ณ ปัจจุบัน
+</script>
 
+<script>
+    $(document).ready(function() {
+        var i = 0;
 
-    var researchGroup = <?php echo $researchGroup['user']; ?>;
-    var i = 0;
+        $("#add-btn2").click(function() {
+            i++;
 
-    for (i = 0; i < researchGroup.length; i++) {
-        var obj = researchGroup[i];
+            var options = `<option value="">${locale === 'zh' ? '选择用户' : locale === 'th' ? 'เลือกผู้ใช้' : 'Select User'}</option>`;
 
-        if (obj.pivot.role === 2) {
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;">@foreach($users as $user)<option value="{{ $user->id }}" >{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-            );
-            document.getElementById("selUser" + i).value = obj.id;
-            $("#selUser" + i).select2()
+            users.forEach(user => {
+                let fname, lname, position;
+                
+                if (locale === 'zh') {
+                    fname = user.fname_zh ?? user.fname_en;
+                    lname = user.lname_zh ?? user.lname_en;
+                    position = user.position_zh ?? '';
+                } else if (locale === 'en') {
+                    fname = user.fname_en;
+                    lname = user.lname_en;
+                    position = user.position_en ?? '';
+                } else {
+                    fname = user.fname_th;
+                    lname = user.lname_th;
+                    position = user.position_th ?? '';
+                }
 
-        }
-        //document.getElementById("#dynamicAddRemove").value = "10";
-    }
-    $("#add-btn2").click(function() {
-        ++i;
-        $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-            '][userid]"  style="width: 200px;"><option value="">Select User</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-        );
-        $("#selUser" + i).select2()
+                options += `<option value="${user.id}">${position} ${fname} ${lname}</option>`;
+            });
 
+            var newRow = `
+                <tr id="row${i}">
+                    <td>
+                        <select id="selUser${i}" name="moreFields[${i}][userid]" class="form-control select2" style="width: 100%; max-width: 400px;">
+                            ${options}
+                        </select>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button>
+                    </td>
+                </tr>`;
+
+            $("#dynamicAddRemove").append(newRow);
+            $("#selUser" + i).select2();
+        });
+
+        $(document).on('click', '.remove-tr', function() {
+            $(this).parents('tr').remove();
+        });
     });
-    $(document).on('click', '.remove-tr', function() {
-        $(this).parents('tr').remove();
-    });
-
-});
 </script>
 @stop

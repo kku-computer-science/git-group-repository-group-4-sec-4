@@ -18,6 +18,7 @@ class PatentController extends Controller
     public function index()
     {
         $id = auth()->user()->id;
+        
         //$papers=User::find($id)->paper()->latest()->paginate(5);
 
         //$papers = Paper::with('teacher')->get();
@@ -146,7 +147,8 @@ class PatentController extends Controller
     public function show($id)
     {
         $patent = Academicwork::find($id);
-        return view('patents.show', compact('patent'));
+        $locale = app()->getLocale(); // ดึงค่าภาษาปัจจุบันของระบบ
+        return view('patents.show', compact('patent', 'locale'));
     }
 
     /**

@@ -65,7 +65,12 @@ return [
     'project_leader' => 'ผู้รับผิดชอบโครงการ',
     'project_members' => 'สมาชิกโครงการ',
     'back' => 'ย้อนกลับ',
-    'no_data' => 'ไม่มีข้อมูล',
+
+    'no_funding_source' => 'ไม่มีข้อมูล',
+    'no_start_source' => 'ไม่มีข้อมูล',
+    'no_end_source' => 'ไม่มีข้อมูล',
+    'no_desc_source' => 'ไม่มีข้อมูล',
+    'no_member_source' => 'ไม่มีข้อมูล',
 
     'position_or_title' => 'ตำแหน่งหรือคำนำหน้า',
     'first_name' => 'ชื่อ',

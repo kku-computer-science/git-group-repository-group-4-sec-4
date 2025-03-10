@@ -50,14 +50,22 @@
                 <div class="form-group row mt-2">
                     <p for="exampleInputfund_details" class="col-sm-3"><b>{{ __('researchProjects.choose_scholarship') }}</b></p>
                     <div class="col-sm-9">
-                        <select id="fund" style="width: 200px;" class="custom-select my-select" name="fund">
-    <option value="" disabled selected>{{ __('researchProjects.choose_scholarship') }}</option>
-    @foreach ($funds as $fund)
-        <option value="{{ $fund->id }}" {{ ($fund->id == $researchProject->fund_id) ? 'selected' : '' }}>
-            {{ $fund->fund_name }}
+                    <select id='fund' style='width: 200px;' class="custom-select my-select" name="fund">
+    <option value='' disabled selected>{{ __('researchProjects.choose_scholarship') }}</option>
+    @foreach($funds as $fund)
+        <option value="{{ $fund->id }}" 
+            @if($fund->id == old('fund', $researchProject->fund_id)) selected @endif>
+            @if(app()->getLocale() == 'th')
+                {{ $fund->fund_name }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $fund->fund_name_zh ?? $fund->fund_name_en }}
+            @else
+                {{ $fund->fund_name_en }}
+            @endif
         </option>
     @endforeach
 </select>
+
 
                     </div>
                 </div>

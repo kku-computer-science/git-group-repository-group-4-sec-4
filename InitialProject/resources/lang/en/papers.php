@@ -75,4 +75,11 @@ return [
     'showing' => 'Showing _START_ to _END_ of _TOTAL_ entries',
     'previous' => 'Previous',
     'next' => 'Next',
+
+    'select_placeholder' => 'Please select',
+    'no_publication_source' => 'No data available', 
+    'delete_confirm' => 'Are you sure?',
+    'delete_warning' => 'If you delete this, it will be gone forever.',
+    'ok' => 'OK',
+    'cancel' => 'Cancel',
 ];

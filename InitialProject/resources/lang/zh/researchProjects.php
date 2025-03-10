@@ -65,7 +65,11 @@ return [
     'project_leader' => '项目负责人',
     'project_members' => '项目成员',
     'back' => '返回',
-    'no_data' => '没有数据',
+    'no_funding_source' => '没有数据',
+    'no_start_source' => '没有数据',
+    'no_end_source' => '没有数据',
+    'no_desc_source' => '没有数据',
+    'no_member_source' => '没有数据',
 
     'position_or_title' => '职位或头衔',
     'first_name' => '名字',

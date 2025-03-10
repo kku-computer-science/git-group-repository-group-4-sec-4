@@ -35,7 +35,16 @@
                                 <td>{{ $i+1 }}</td>
                                 <td>{{ $researchProject->project_year }}</td>
                                 {{-- <td>{{ $researchProject->project_name }}</td> --}}
-                                <td>{{ Str::limit($researchProject->project_name,70) }}</td>
+                                <td>
+    @if(app()->getLocale() == 'th')
+        {{ Str::limit($researchProject->project_name, 70) }}
+    @elseif(app()->getLocale() == 'zh')
+        {{ Str::limit($researchProject->project_name_zh ?? $researchProject->project_name_en, 70) }}
+    @else
+        {{ Str::limit($researchProject->project_name_en, 70) }}
+    @endif
+</td>
+
                                 <td>
     @foreach($researchProject->user as $user)
         @if ($user->pivot->role == 1)

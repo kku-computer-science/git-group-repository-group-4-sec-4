@@ -66,7 +66,12 @@ return [
     'project_leader' => 'Project Leader',
     'project_members' => 'Project Members',
     'back' => 'Back',
-    'no_data' => 'No Data',
+
+    'no_funding_source' => 'No Data', 
+    'no_start_source' => 'No Data',
+    'no_end_source' => 'No Data',
+    'no_desc_source' => 'No Data',
+    'no_member_source' => 'No Data',
 
     'position_or_title' => 'Position or Title',
     'first_name' => 'First Name',

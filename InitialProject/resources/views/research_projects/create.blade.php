@@ -52,9 +52,21 @@
                     <div class="form-group row mt-2">
                         <label for="exampleInputfund_details" class="col-sm-2 ">{{ __('researchProjects.choose_scholarship') }}</label>
                         <div class="col-sm-4">
-                            <select id='fund' style='width: 200px;' class="custom-select my-select" name="fund">
-                                <option value='' disabled selected>{{ __('researchProjects.choose_scholarship') }}</option>@foreach($funds as $fund)<option value="{{ $fund->id }}">{{ $fund->fund_name }}</option>@endforeach
-                            </select>
+                        <select id='fund' style='width: 200px;' class="custom-select my-select" name="fund">
+    <option value='' disabled selected>{{ __('researchProjects.choose_scholarship') }}</option>
+    @foreach($funds as $fund)
+        <option value="{{ $fund->id }}">
+            @if(app()->getLocale() == 'th')
+                {{ $fund->fund_name }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $fund->fund_name_zh ?? $fund->fund_name_en }}
+            @else
+                {{ $fund->fund_name_en }}
+            @endif
+        </option>
+    @endforeach
+</select>
+
                         </div>
                     </div>
                     <div class="form-group row">
@@ -72,9 +84,21 @@
                     <div class="form-group row mt-2">
                         <label for="exampleInputresponsible_department" class="col-sm-2 ">{{ __('researchProjects.responsible_agency') }}</label>
                         <div class="col-sm-9">
-                            <select id='dep' style='width: 200px;' class="custom-select my-select" name="responsible_department">
-                                <option value='' disabled selected>{{ __('researchProjects.Choose_study') }}</option>@foreach($deps as $dep)<option value="{{ $dep->department_name_th }}">{{ $dep->department_name_th }}</option>@endforeach
-                            </select>
+                        <select id='dep' style='width: 200px;' class="custom-select my-select" name="responsible_department">
+    <option value='' disabled selected>{{ __('researchProjects.Choose_study') }}</option>
+    @foreach($deps as $dep)
+        <option value="{{ $dep->id }}">
+            @if(app()->getLocale() == 'th')
+                {{ $dep->department_name_th }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $dep->department_name_zh ?? $dep->department_name_en }}
+            @else
+                {{ $dep->department_name_en }}
+            @endif
+        </option>
+    @endforeach
+</select>
+
                         </div>
                     </div>
                     <div class="form-group row mt-2">
@@ -108,10 +132,21 @@
                     <div class="form-group row mt-2">
                         <label for="exampleInputfund_details" class="col-sm-2 ">{{ __('researchProjects.person_responsible') }}</label>
                         <div class="col-sm-9">
-                            <select id='head0' style='width: 200px;' name="head">
-                                <option value=''>{{ __('researchProjects.select_user') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
-                                @endforeach
-                            </select>
+                        <select id='head0' style='width: 200px;' name="head">
+    <option value=''>{{ __('researchProjects.select_user') }}</option>
+    @foreach($users as $user)
+        <option value="{{ $user->id }}">
+            @if(app()->getLocale() == 'th')
+                {{ $user->fname_th }} {{ $user->lname_th }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+            @else
+                {{ $user->fname_en }} {{ $user->lname_en }}
+            @endif
+        </option>
+    @endforeach
+</select>
+
                         </div>
                     </div>
                     <div class="form-group row mt-2">
@@ -123,10 +158,21 @@
                                 </tr>
                                 <tr>
                                     <!-- <td><input type="text" name="moreFields[0][Budget]" placeholder="Enter title" class="form-control" /></td> -->
-                                    <td><select id='selUser0' style='width: 200px;' name="moreFields[0][userid]">
-                                            <option value=''>{{ __('researchProjects.select_user') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
-                                            @endforeach
-                                        </select></td>
+                                    <select id='selUser0' style='width: 200px;' name="moreFields[0][userid]">
+    <option value=''>{{ __('researchProjects.select_user') }}</option>
+    @foreach($users as $user)
+        <option value="{{ $user->id }}">
+            @if(app()->getLocale() == 'th')
+                {{ $user->fname_th }} {{ $user->lname_th }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+            @else
+                {{ $user->fname_en }} {{ $user->lname_en }}
+            @endif
+        </option>
+    @endforeach
+</select>
+</td>
 
                                 </tr>
                             </table>
@@ -188,6 +234,8 @@
     @section('javascript')
     <script>
         $(document).ready(function() {
+            var selectUserText = @json(__('researchProjects.select_user')); // กำหนดค่าจาก Blade
+            console.log("Select User Text:", selectUserText); // ตรวจสอบค่า
             $("#selUser0").select2()
             $("#head0").select2()
             //$("#fund").select2()
@@ -195,19 +243,42 @@
             var i = 0;
 
             $("#add-btn2").click(function() {
+                var i = $("#dynamicAddRemove tr").length; // นับจำนวนแถวที่มีอยู่
 
-                ++i;
-                $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i +
-                    '" name="moreFields[' + i +
-                    '][userid]"  style="width: 200px;"><option value="">Select User</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-                );
-                $("#selUser" + i).select2()
-            });
-            $(document).on('click', '.remove-tr', function() {
-                $(this).parents('tr').remove();
-            });
+                var newRow = `
+            <tr>
+                <td>
+                    <select id="selUser${i}" name="moreFields[${i}][userid]" style="width: 200px;">
+                        <option value="">${selectUserText}</option> <!-- ใช้ค่าจากตัวแปร -->
+                        @foreach($users as $user)
+                            <option value="{{ $user->id }}">
+                                @if(app()->getLocale() == 'th')
+                                    {{ $user->fname_th }} {{ $user->lname_th }}
+                                @elseif(app()->getLocale() == 'zh')
+                                    {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+                                @else
+                                    {{ $user->fname_en }} {{ $user->lname_en }}
+                                @endif
+                            </option>
+                        @endforeach
+                    </select>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm remove-tr">
+                        <i class="mdi mdi-minus"></i>
+                    </button>
+                </td>
+            </tr>
+        `;
 
-        });
+        $("#dynamicAddRemove").append(newRow);
+        $("#selUser" + i).select2(); // ใช้ select2 กับ dropdown ใหม่
+    });
+
+    $(document).on("click", ".remove-tr", function() {
+        $(this).closest("tr").remove();
+    });
+});
     </script>
     <script type="text/javascript">
         $(document).ready(function() {

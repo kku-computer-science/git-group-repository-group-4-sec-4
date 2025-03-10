@@ -28,15 +28,31 @@
                             <th>{{ __('papers.publication_year') }}</th>
                             <!-- <th>ผู้เขียน</th>   -->
                             <!-- <th>Source Title</th> -->
-                            <th width="280px">{{ __('papers.type') }}</th>
+                            <th width="280px">{{ __('papers.action') }}</th>
                         </tr>
                         <thead>
                         <tbody>
                             @foreach ($papers->sortByDesc('paper_yearpub') as $i=>$paper)
                             <tr>
                                 <td>{{ $i+1 }}</td>
-                                <td>{{ Str::limit($paper->paper_name,50) }}</td>
-                                <td>{{ Str::limit($paper->paper_type,50) }}</td>
+                                <td>
+                                    @if(app()->getLocale() == 'zh') 
+                                        {{ Str::limit($paper->paper_name_zh ?? $paper->paper_name_en, 50) }}
+                                    @elseif(app()->getLocale() == 'en')
+                                        {{ Str::limit($paper->paper_name_en, 50) }}
+                                    @else
+                                        {{ Str::limit($paper->paper_name, 50) }}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if(app()->getLocale() == 'zh') 
+                                        {{ Str::limit($paper->paper_type_zh ?? $paper->paper_type_en, 50) }}
+                                    @elseif(app()->getLocale() == 'en')
+                                        {{ Str::limit($paper->paper_type_en, 50) }}
+                                    @else
+                                        {{ Str::limit($paper->paper_type, 50) }}
+                                    @endif
+                                </td>
                                 <td>{{ $paper->paper_yearpub }}</td>
                                 <!-- <td>@foreach($paper->teacher->take(1) as $teacher)
                                     {{ $teacher->fname_en }} {{ $teacher->lname_en }},
@@ -61,6 +77,16 @@
                                             <a class="btn btn-outline-success btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('papers.edit',Crypt::encrypt($paper->id)) }}"><i class="mdi mdi-pencil"></i></a>
                                         </li>
                                         @endif
+
+                                        @if(Auth::user()->can('delete', $paper))
+        <form action="{{ route('papers.destroy', $paper->id) }}" method="POST" style="display:inline;">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-outline-danger btn-sm show_confirm" type="submit" data-toggle="tooltip"
+                data-placement="top" title="Delete"><i class="mdi mdi-delete"></i></button>
+        </form>
+    @endif
+
                                         <!-- @csrf
                                         @method('DELETE')
                                         <li class="list-inline-item">
@@ -110,12 +136,16 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
+    title: "{{ __('papers.delete_confirm') }}",
+    text: "{{ __('papers.delete_warning') }}",
+    icon: "warning",
+    buttons: {
+        cancel: "{{ __('papers.cancel') }}",
+        confirm: "{{ __('papers.ok') }}"
+    },
+    dangerMode: true,
+})
+
             .then((willDelete) => {
                 if (willDelete) {
                     swal("Delete Successfully", {

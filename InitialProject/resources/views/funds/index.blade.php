@@ -33,17 +33,36 @@
                         <tr>
 
                             <td>{{ $i+1 }}</td>
-                            <td>{{ Str::limit($fund->fund_name,80) }}</td>
                             <td>
-                @if(app()->getLocale() == 'th')
-                    {{ $fund->fund_type_th }}
-                @elseif(app()->getLocale() == 'zh')
-                    {{ $fund->fund_type_zh }}
-                @else
-                    {{ $fund->fund_type_en }}
-                @endif
-            </td>
-                            <td>{{ $fund->fund_level }}</td>
+                                @if(app()->getLocale() == 'th')
+                                    {{ Str::limit($fund->fund_name, 80) }}
+                                @elseif(app()->getLocale() == 'zh')
+                                    {{ Str::limit($fund->fund_name_zh, 80) }}
+                                @else
+                                    {{ Str::limit($fund->fund_name_en, 80) }}
+                                @endif
+                            </td>
+
+                            <td>
+                                @if(app()->getLocale() == 'th')
+                                    {{ $fund->fund_type_th }}
+                                @elseif(app()->getLocale() == 'zh')
+                                    {{ $fund->fund_type_zh }}
+                                @else
+                                    {{ $fund->fund_type_en }}
+                                @endif
+                            </td>
+
+                            <td>
+    @if(app()->getLocale() == 'th')
+        {{ $fund->fund_level_th }}
+    @elseif(app()->getLocale() == 'zh')
+        {{ $fund->fund_level_zh }}
+    @else
+        {{ $fund->fund_level_en }}
+    @endif
+</td>
+
                             <!-- <td>{{ $fund->user->fname_en }} {{ $fund->user->lname_en }}</td> -->
 
                             <td>

@@ -24,51 +24,88 @@
                             <th>{{ __('patents.title') }}</th>
                             <th>{{ __('patents.type') }}</th>
                             <th>{{ __('patents.registration_date') }}</th>
-                            <th>{{ __('patents.registration_number') }}</th>
+                            <th>{{ __('patents.regis_number') }}</th>
                             <th>{{ __('patents.creator') }}</th>
                             <th width="280px">{{ __('patents.action') }}</th>
                         </tr>
                         <thead>
                         <tbody>
-                            @foreach ($patents as $i=>$paper)
-                            <tr>
-                                <td>{{ $i+1 }}</td>
-                                <td>{{ Str::limit($paper->ac_name,50) }}</td>
-                                <td>{{ $paper->ac_type}}</td>
-                                <td>{{ $paper->ac_year}}</td>
-                                <td>{{ $paper->ac_refnumber,50 }}</td>
-                                <td>@foreach($paper->user as $a)
-                                    {{ $a->fname_th }} {{ $a->lname_th }}
-                                    @if (!$loop->last),@endif
-                                    @endforeach
+    @foreach ($patents as $i=>$paper)
+    <tr>
+        <td>{{ $i+1 }}</td>
 
-                                </td>
-                                <td>
-                                    <form action="{{ route('patents.destroy',$paper->id) }}" method="POST">
+        {{-- Title แสดงตามภาษา --}}
+        <td>
+            @if(app()->getLocale() == 'zh') 
+                {{ Str::limit($paper->ac_name_zh, 50) }}
+            @elseif(app()->getLocale() == 'en')
+                {{ Str::limit($paper->ac_name_en, 50) }}
+            @else
+                {{ Str::limit($paper->ac_name, 50) }}
+            @endif
+        </td>
 
-                                        <!-- <a class="btn btn-info" href="{{ route('patents.show',$paper->id) }}">Show</a> -->
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="view" href="{{ route('patents.show',$paper->id) }}"><i class="mdi mdi-eye"></i></a>
-                                        </li>
-                                        <!-- <a class="btn btn-primary" href="{{ route('patents.edit',$paper->id) }}">Edit</a> -->
-                                        @if(Auth::user()->can('update',$paper))
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-outline-success btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('patents.edit',$paper->id) }}"><i class="mdi mdi-pencil"></i></a>
-                                        </li>
-                                        @endif
-                                        @if(Auth::user()->can('delete',$paper))
-                                        @csrf
-                                        @method('DELETE')
-                                        <li class="list-inline-item">
-                                            <button class="btn btn-outline-danger btn-sm show_confirm" type="submit" data-toggle="tooltip" data-placement="top" title="Delete"><i class="mdi mdi-delete"></i></button>
-                                        </li>
-                                        @endif
-                                        <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                    <tbody>
+        {{-- Type แสดงตามภาษา --}}
+        <td>
+            @if(app()->getLocale() == 'zh') 
+                {{ $paper->ac_type_zh }}
+            @elseif(app()->getLocale() == 'en')
+                {{ $paper->ac_type_en }}
+            @else
+                {{ $paper->ac_type }}
+            @endif
+        </td>
+
+        <td>{{ $paper->ac_year }}</td>
+        <td>{{ $paper->ac_refnumber }}</td>
+
+        {{-- Creator แสดงตามภาษา --}}
+        <td>
+            @foreach($paper->user as $a)
+                @if(app()->getLocale() == 'zh') 
+                    {{ $a->fname_zh }} {{ $a->lname_zh }}
+                @elseif(app()->getLocale() == 'en')
+                    {{ $a->fname_en }} {{ $a->lname_en }}
+                @else
+                    {{ $a->fname_th }} {{ $a->lname_th }}
+                @endif
+                @if (!$loop->last), @endif
+            @endforeach
+        </td>
+
+        <td>
+            <form action="{{ route('patents.destroy', $paper->id) }}" method="POST">
+                <li class="list-inline-item">
+                    <a class="btn btn-outline-primary btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="view" 
+                        href="{{ route('patents.show', $paper->id) }}">
+                        <i class="mdi mdi-eye"></i>
+                    </a>
+                </li>
+                
+                @if(Auth::user()->can('update', $paper))
+                <li class="list-inline-item">
+                    <a class="btn btn-outline-success btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="Edit" 
+                        href="{{ route('patents.edit', $paper->id) }}">
+                        <i class="mdi mdi-pencil"></i>
+                    </a>
+                </li>
+                @endif
+
+                @if(Auth::user()->can('delete', $paper))
+                @csrf
+                @method('DELETE')
+                <li class="list-inline-item">
+                    <button class="btn btn-outline-danger btn-sm show_confirm" type="submit" data-toggle="tooltip" data-placement="top" title="Delete">
+                        <i class="mdi mdi-delete"></i>
+                    </button>
+                </li>
+                @endif
+            </form>
+        </td>
+    </tr>
+    @endforeach
+</tbody>
+
                 </table>
             <!-- </div> -->
         </div>

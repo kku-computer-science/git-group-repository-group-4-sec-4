@@ -34,4 +34,25 @@ return [
     'showing' => 'แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ',
     'previous' => 'ก่อนหน้า',
     'next' => 'ถัดไป',
+
+    "registration_number" => "เลขที่ :",
+    "regis_number" => "เลขทะเบียน",
+
+    'select_type' => '-- โปรดระบุประเภท --',
+    'patent' => 'สิทธิบัตร',
+    'patent_invention' => 'สิทธิบัตร (การประดิษฐ์)',
+    'patent_design' => 'สิทธิบัตร (การออกแบบผลิตภัณฑ์)',
+    'pettypatent' => 'อนุสิทธิบัตร',
+    'copyright' => 'ลิขสิทธิ์',
+    'copyright_literature' => 'ลิขสิทธิ์ (วรรณกรรม)',
+    'copyright_music' => 'ลิขสิทธิ์ (ดนตรีกรรม)',
+    'copyright_movie' => 'ลิขสิทธิ์ (ภาพยนตร์)',
+    'copyright_art' => 'ลิขสิทธิ์ (ศิลปกรรม)',
+    'copyright_broadcast' => 'ลิขสิทธิ์ (งานแพร่เสียงแพร่ภาพ)',
+    'copyright_audio' => 'ลิขสิทธิ์ (สิ่งบันทึกเสียง)',
+    'copyright_other' => 'ลิขสิทธิ์ (อื่น ๆ)',
+    'other' => 'อื่น ๆ',
+    'tradesecret' => 'ความลับทางการค้า',
+    'trademark' => 'เครื่องหมายการค้า',
+    'select_user' => 'เลือกผู้ใช้'
 ];
