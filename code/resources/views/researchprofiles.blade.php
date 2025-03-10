@@ -56,12 +56,20 @@
 
                     <h6 class="card-text">
                         <b>
-                            {{ $isEnglish ? $res->position_en : ($isThai ? $res->position_th : $res->position_zh) }}
-                            {{ $isEnglish ? $res->fname_en : ($isThai ? $res->fname_th : $res->fname_en) }}
-                            {{ $isEnglish ? $res->lname_en : ($isThai ? $res->lname_th : $res->lname_en) }}
-                            @if($res->doctoral_degree == 'Ph.D.')
-                            , {{$res->doctoral_degree}}
+                            {{ $isThai ? $res->position_th : ($isChinese ? $res->position_zh : $res->position_en) }}
+                            {{ $isThai ? $res->fname_th : ($isChinese ? $res->fname_zh : $res->fname_en) }}
+                            {{ $isThai ? $res->lname_th : ($isChinese ? $res->lname_zh : $res->lname_en) }}
+                            
+                            @if($isEnglish)
+                            {{$res->doctoral_degree}}
+                            @else
                             @endif
+                            <br>
+                            {{$res->position_en}}
+                            {{ $res->fname_en}}
+                            {{ $res->lname_en}}
+                            {{$res->doctoral_degree}}
+                            
                         </b>
                     </h6>
                     
