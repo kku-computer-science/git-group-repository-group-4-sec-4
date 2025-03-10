@@ -1,0 +1,4329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-03-10T23:53:25.786124" rpa="false" schemaversion="5">
+<suite id="s1" name="Reports" source="C:\xampp\htdocs\Project_SoftEn\git-group-repository-group-4-sec-4\test\reports.robot">
+<test id="s1-t1" name="Navigate To Report Page And Switch To Chinese" line="70">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:26.016223" level="INFO">Opening browser 'chrome' to base url 'https://cs0404.cpkkuhost.com/'.</msg>
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-10T23:53:26.016047" elapsed="11.665189"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-10T23:53:37.681431" elapsed="0.035810"/>
+</kw>
+<status status="PASS" start="2025-03-10T23:53:26.015544" elapsed="11.701843"/>
+</kw>
+<kw name="Navigate To Report Page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:37.718285" level="INFO">Clicking element 'xpath=//a[contains(@href, '/reports')]'.</msg>
+<arg>${REPORT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T23:53:37.718024" elapsed="0.609061"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Report</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-10T23:53:38.327413" elapsed="0.013532"/>
+</kw>
+<status status="PASS" start="2025-03-10T23:53:37.717725" elapsed="0.623316"/>
+</kw>
+<kw name="Switch Language And Verify">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:38.341967" level="INFO">Clicking element 'xpath=//a[@id="navbarDropdownMenuLink"]'.</msg>
+<arg>${LANG_DROPDOWN_TOGGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T23:53:38.341817" elapsed="0.071580"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T23:53:39.414144" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T23:53:38.413612" elapsed="1.000711"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:39.415388" level="INFO">Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), '中文')]'.</msg>
+<msg time="2025-03-10T23:53:39.693560" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-10T23:53:39.693822" level="FAIL">Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), '中文')]' not found.</msg>
+<arg>${lang_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-10T23:53:39.415080" elapsed="0.281953">Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), '中文')]' not found.</status>
+</kw>
+<arg>Click Element</arg>
+<arg>${lang_button}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-03-10T23:53:39.414729" elapsed="0.282422"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T23:53:42.700713" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T23:53:39.697304" elapsed="3.003610"/>
+</kw>
+<kw name="Verify Page Contains Multiple Texts">
+<kw name="Get Source" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:42.710529" level="INFO">${html_source} = &lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+  ...</msg>
+<var>${html_source}</var>
+<doc>Returns the entire HTML source of the current page or frame.</doc>
+<status status="PASS" start="2025-03-10T23:53:42.701949" elapsed="0.008636"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-10T23:53:42.711111" level="INFO">HTML Source: &lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+.card-title {
+    color:#19568A;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+&lt;/style&gt;
+
+
+
+
+    &lt;meta charset="UTF-8"&gt;&lt;style data-styles=""&gt;ion-icon{visibility:hidden}.hydrated{visibility:inherit}&lt;/style&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์&lt;/title&gt;
+    &lt;base href="https://cs0404.cpkkuhost.com"&gt;
+    &lt;link href="img/Newlogo.png" rel="shortcut icon" type="image/x-icon"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/app.css" rel="stylesheet"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/load-more-button.css" rel="stylesheet"&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/js/app.js"&gt;&lt;/script&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendor/bootstrap/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cs0404.cpkkuhost.com/js/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/mdi/css/materialdesignicons.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/ti-icons/css/themify-icons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/typicons/typicons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/simple-line-icons/css/simple-line-icons.css"&gt;
+    &lt;!-- datatable --&gt;
+    &lt;!-- &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css" /&gt; --&gt;
+
+    &lt;!-- &lt;script src="https://code.jquery.com/jquery-3.5.1.js" defer&gt;&lt;/script&gt; --&gt;
+    &lt;!--&lt;script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" defer&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js" defer&gt;&lt;/script&gt; --&gt;
+
+
+
+    &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css"&gt;
+
+
+    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet"&gt;
+    &lt;script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"&gt;&lt;/script&gt;
+    &lt;script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/css/style.css"&gt;
+
+
+
+&lt;style type="text/css"&gt;/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand&gt;div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink&gt;div{position:absolute;width:200%;height:200%;left:0;top:0}&lt;/style&gt;&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav id="navbar" class="navbar navbar-expand-lg navbar-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;a class="navbar-brand logo-image" href="#"&gt;
+                                &lt;img src="https://cs0404.cpkkuhost.com/img/logo2-en.png" alt="alternative"&gt;
+                                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;/a&gt;&lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                    &lt;/a&gt;&lt;ul class="navbar-nav ms-auto navbar-nav-scroll"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                        &lt;/a&gt;&lt;li class="nav-item d-flex align-items-center "&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                            &lt;/a&gt;&lt;a class="nav-link" href="/" id="home"&gt;Home&lt;/a&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class="nav-item dropdown   "&gt;
+                            &lt;a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                                Researchers
+                            &lt;/a&gt;
+                            &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/1"&gt;
+                                                                                Computer Science
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/2"&gt;
+                                                                                Infomation Technology
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/3"&gt;
+                                                                                Geo-Informatics
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item  "&gt;
+                            &lt;a class="nav-link" href="/researchproject"&gt;Research Project&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item   "&gt;
+                            &lt;a class="nav-link" href="/researchgroup"&gt;Research Group&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item active"&gt;
+                            &lt;a class="nav-link" href="/reports"&gt;Reports&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item dropdown show"&gt;
+                            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"&gt;
+                                &lt;span class="flag-icon flag-icon-us"&gt;&lt;/span&gt;
+                                English
+                            &lt;/a&gt;
+                            &lt;div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink"&gt;
+                                                                                                                                                                &lt;a class="dropdown-item" id="language-th" href="https://cs0404.cpkkuhost.com/lang/th"&gt;
+                                    &lt;span class="flag-icon flag-icon-th"&gt;&lt;/span&gt;
+                                    ไทย
+                                &lt;/a&gt;
+                                                                                                                                &lt;a class="dropdown-item" id="language-zh" href="https://cs0404.cpkkuhost.com/lang/zh"&gt;
+                                    &lt;span class="flag-icon flag-icon-cn"&gt;&lt;/span&gt;
+                                    中文
+                                &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                                                            &lt;span class="nav-item"&gt;
+                        &lt;a class="btn-solid-sm" href="/login" target="_blank" id="btn-login"&gt;Login&lt;/a&gt;
+                    &lt;/span&gt;
+                                                        &lt;/div&gt; &lt;!-- end of navbar-collapse --&gt;
+        &lt;/div&gt; &lt;!-- end of container --&gt;
+    &lt;/nav&gt; &lt;!-- end of navbar --&gt;
+    &lt;!-- end of navigation --&gt;
+    &lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Total Number of Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart1" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable"&gt;
+                            &lt;thead&gt;
+                                &lt;tr id="myRow" style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Statistics of Cited Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart2" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable2"&gt;
+                            &lt;thead&gt;
+                                &lt;tr style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+var paper_tci_cit = [0,0,0,0,0];
+var paper_scopus_cit = [47,2,0,0,0];
+var paper_wos_cit = [0,0,0,0,0];
+
+year.unshift("Source");
+paper_tci.unshift("tci");
+
+//console.log(paper_scopus_cit);
+paper_scopus.unshift("scopus");
+paper_wos.unshift("wos");
+
+let pro = year;
+let dat = [
+    paper_scopus,
+    paper_tci,
+    paper_wos
+];
+let res = dat.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        //index.hasOwnProperty("undefined");
+        // if(pro[index]==undefined){
+        //     obj['source'] = innerData;
+        //     console.log(obj)
+        // }else{
+        //     obj[pro[index]] = innerData;
+        // }
+        obj[pro[index]] = innerData;
+
+        //console.log(pro[index])
+    });
+
+    return obj;
+});
+
+console.log(res);
+
+//let props2 = year;
+
+paper_scopus_cit.unshift("scopus");
+//console.log(paper_scopus_cit);
+paper_tci_cit.unshift("tci");
+paper_wos_cit.unshift("wos");
+
+
+let dat2 = [
+    paper_scopus_cit,
+    paper_tci_cit,
+    paper_wos_cit
+];
+
+let res2 = dat2.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        obj[pro[index]] = innerData;
+    });
+    return obj;
+});
+console.log(res2);
+
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        for (key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+}
+
+let table = document.getElementById("myTable");
+let data = Object.keys(res[0]);
+generateTableHead(table, data);
+generateTable(table, res);
+let table2 = document.getElementById("myTable2");
+let data2 = Object.keys(res2[0]);
+generateTableHead(table2, data2);
+generateTable(table2, res2);
+&lt;/script&gt;
+
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+
+new Chart(barChartCanvas3, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<arg>HTML Source: ${html_source}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-10T23:53:42.710755" elapsed="0.001076"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-03-10T23:53:42.713700" level="FAIL">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+.card-title {
+    color:#19568A;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+&lt;/style&gt;
+
+
+
+
+    &lt;meta charset="UTF-8"&gt;&lt;style data-styles=""&gt;ion-icon{visibility:hidden}.hydrated{visibility:inherit}&lt;/style&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์&lt;/title&gt;
+    &lt;base href="https://cs0404.cpkkuhost.com"&gt;
+    &lt;link href="img/Newlogo.png" rel="shortcut icon" type="image/x-icon"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/app.css" rel="stylesheet"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/load-more-button.css" rel="stylesheet"&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/js/app.js"&gt;&lt;/script&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendor/bootstrap/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cs0404.cpkkuhost.com/js/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/mdi/css/materialdesignicons.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/ti-icons/css/themify-icons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/typicons/typicons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/simple-line-icons/css/simple-line-icons.css"&gt;
+    &lt;!-- datatable --&gt;
+    &lt;!-- &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css" /&gt; --&gt;
+
+    &lt;!-- &lt;script src="https://code.jquery.com/jquery-3.5.1.js" defer&gt;&lt;/script&gt; --&gt;
+    &lt;!--&lt;script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" defer&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js" defer&gt;&lt;/script&gt; --&gt;
+
+
+
+    &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css"&gt;
+
+
+    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet"&gt;
+    &lt;script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"&gt;&lt;/script&gt;
+    &lt;script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/css/style.css"&gt;
+
+
+
+&lt;style type="text/css"&gt;/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand&gt;div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink&gt;div{position:absolute;width:200%;height:200%;left:0;top:0}&lt;/style&gt;&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav id="navbar" class="navbar navbar-expand-lg navbar-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;a class="navbar-brand logo-image" href="#"&gt;
+                                &lt;img src="https://cs0404.cpkkuhost.com/img/logo2-en.png" alt="alternative"&gt;
+                                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;/a&gt;&lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                    &lt;/a&gt;&lt;ul class="navbar-nav ms-auto navbar-nav-scroll"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                        &lt;/a&gt;&lt;li class="nav-item d-flex align-items-center "&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                            &lt;/a&gt;&lt;a class="nav-link" href="/" id="home"&gt;Home&lt;/a&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class="nav-item dropdown   "&gt;
+                            &lt;a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                                Researchers
+                            &lt;/a&gt;
+                            &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/1"&gt;
+                                                                                Computer Science
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/2"&gt;
+                                                                                Infomation Technology
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/3"&gt;
+                                                                                Geo-Informatics
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item  "&gt;
+                            &lt;a class="nav-link" href="/researchproject"&gt;Research Project&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item   "&gt;
+                            &lt;a class="nav-link" href="/researchgroup"&gt;Research Group&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item active"&gt;
+                            &lt;a class="nav-link" href="/reports"&gt;Reports&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item dropdown show"&gt;
+                            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"&gt;
+                                &lt;span class="flag-icon flag-icon-us"&gt;&lt;/span&gt;
+                                English
+                            &lt;/a&gt;
+                            &lt;div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink"&gt;
+                                                                                                                                                                &lt;a class="dropdown-item" id="language-th" href="https://cs0404.cpkkuhost.com/lang/th"&gt;
+                                    &lt;span class="flag-icon flag-icon-th"&gt;&lt;/span&gt;
+                                    ไทย
+                                &lt;/a&gt;
+                                                                                                                                &lt;a class="dropdown-item" id="language-zh" href="https://cs0404.cpkkuhost.com/lang/zh"&gt;
+                                    &lt;span class="flag-icon flag-icon-cn"&gt;&lt;/span&gt;
+                                    中文
+                                &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                                                            &lt;span class="nav-item"&gt;
+                        &lt;a class="btn-solid-sm" href="/login" target="_blank" id="btn-login"&gt;Login&lt;/a&gt;
+                    &lt;/span&gt;
+                                                        &lt;/div&gt; &lt;!-- end of navbar-collapse --&gt;
+        &lt;/div&gt; &lt;!-- end of container --&gt;
+    &lt;/nav&gt; &lt;!-- end of navbar --&gt;
+    &lt;!-- end of navigation --&gt;
+    &lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Total Number of Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart1" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable"&gt;
+                            &lt;thead&gt;
+                                &lt;tr id="myRow" style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Statistics of Cited Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart2" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable2"&gt;
+                            &lt;thead&gt;
+                                &lt;tr style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+var paper_tci_cit = [0,0,0,0,0];
+var paper_scopus_cit = [47,2,0,0,0];
+var paper_wos_cit = [0,0,0,0,0];
+
+year.unshift("Source");
+paper_tci.unshift("tci");
+
+//console.log(paper_scopus_cit);
+paper_scopus.unshift("scopus");
+paper_wos.unshift("wos");
+
+let pro = year;
+let dat = [
+    paper_scopus,
+    paper_tci,
+    paper_wos
+];
+let res = dat.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        //index.hasOwnProperty("undefined");
+        // if(pro[index]==undefined){
+        //     obj['source'] = innerData;
+        //     console.log(obj)
+        // }else{
+        //     obj[pro[index]] = innerData;
+        // }
+        obj[pro[index]] = innerData;
+
+        //console.log(pro[index])
+    });
+
+    return obj;
+});
+
+console.log(res);
+
+//let props2 = year;
+
+paper_scopus_cit.unshift("scopus");
+//console.log(paper_scopus_cit);
+paper_tci_cit.unshift("tci");
+paper_wos_cit.unshift("wos");
+
+
+let dat2 = [
+    paper_scopus_cit,
+    paper_tci_cit,
+    paper_wos_cit
+];
+
+let res2 = dat2.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        obj[pro[index]] = innerData;
+    });
+    return obj;
+});
+console.log(res2);
+
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        for (key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+}
+
+let table = document.getElementById("myTable");
+let data = Object.keys(res[0]);
+generateTableHead(table, data);
+generateTable(table, res);
+let table2 = document.getElementById("myTable2");
+let data2 = Object.keys(res2[0]);
+generateTableHead(table2, data2);
+generateTable(table2, res2);
+&lt;/script&gt;
+
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+
+new Chart(barChartCanvas3, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain '过去五年内文章总数统计'</msg>
+<arg>${html_source}</arg>
+<arg>${text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-03-10T23:53:42.712731" elapsed="0.001636">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain '过去五年内文章总数统计'</status>
+</kw>
+<var name="${text}">过去五年内文章总数统计</var>
+<status status="FAIL" start="2025-03-10T23:53:42.712554" elapsed="0.002029">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain '过去五年内文章总数统计'</status>
+</iter>
+<var>${text}</var>
+<value>@{expected_texts}</value>
+<status status="FAIL" start="2025-03-10T23:53:42.712215" elapsed="0.002541">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain '过去五年内文章总数统计'</status>
+</for>
+<arg>@{expected_texts}</arg>
+<status status="FAIL" start="2025-03-10T23:53:42.701389" elapsed="0.013613">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain '过去五年内文章总数统计'</status>
+</kw>
+<arg>${LANG_TO_CHINESE}</arg>
+<arg>@{EXPECTED_REPORT_CN}</arg>
+<status status="FAIL" start="2025-03-10T23:53:38.341566" elapsed="4.373629">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain '过去五年内文章总数统计'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-10T23:53:42.715818" elapsed="0.000058"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-10T23:53:42.716613" elapsed="2.143100"/>
+</kw>
+<status status="FAIL" start="2025-03-10T23:53:26.015047" elapsed="18.845205">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain '过去五年内文章总数统计'</status>
+</test>
+<test id="s1-t2" name="Navigate To Report Page And Switch To English" line="76">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:44.872381" level="INFO">Opening browser 'chrome' to base url 'https://cs0404.cpkkuhost.com/'.</msg>
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-10T23:53:44.872225" elapsed="11.285847"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-10T23:53:56.158210" elapsed="0.036672"/>
+</kw>
+<status status="PASS" start="2025-03-10T23:53:44.872013" elapsed="11.322968"/>
+</kw>
+<kw name="Navigate To Report Page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:56.195590" level="INFO">Clicking element 'xpath=//a[contains(@href, '/reports')]'.</msg>
+<arg>${REPORT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T23:53:56.195448" elapsed="0.621910"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Report</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-10T23:53:56.817528" elapsed="0.039899"/>
+</kw>
+<status status="PASS" start="2025-03-10T23:53:56.195242" elapsed="0.662340"/>
+</kw>
+<kw name="Switch Language And Verify">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:56.858741" level="INFO">Clicking element 'xpath=//a[@id="navbarDropdownMenuLink"]'.</msg>
+<arg>${LANG_DROPDOWN_TOGGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T23:53:56.858535" elapsed="0.102397"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T23:53:57.962012" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T23:53:56.961156" elapsed="1.001104"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:53:57.963339" level="INFO">Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'English')]'.</msg>
+<msg time="2025-03-10T23:53:58.104331" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-10T23:53:58.104450" level="FAIL">Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'English')]' not found.</msg>
+<arg>${lang_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-10T23:53:57.963007" elapsed="0.142134">Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'English')]' not found.</status>
+</kw>
+<arg>Click Element</arg>
+<arg>${lang_button}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-03-10T23:53:57.962662" elapsed="0.142550"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T23:54:01.106014" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T23:53:58.105300" elapsed="3.000856"/>
+</kw>
+<kw name="Verify Page Contains Multiple Texts">
+<kw name="Get Source" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:54:01.110387" level="INFO">${html_source} = &lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+  ...</msg>
+<var>${html_source}</var>
+<doc>Returns the entire HTML source of the current page or frame.</doc>
+<status status="PASS" start="2025-03-10T23:54:01.106794" elapsed="0.003626"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-10T23:54:01.110722" level="INFO">HTML Source: &lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+.card-title {
+    color:#19568A;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+&lt;/style&gt;
+
+
+
+
+    &lt;meta charset="UTF-8"&gt;&lt;style data-styles=""&gt;ion-icon{visibility:hidden}.hydrated{visibility:inherit}&lt;/style&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์&lt;/title&gt;
+    &lt;base href="https://cs0404.cpkkuhost.com"&gt;
+    &lt;link href="img/Newlogo.png" rel="shortcut icon" type="image/x-icon"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/app.css" rel="stylesheet"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/load-more-button.css" rel="stylesheet"&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/js/app.js"&gt;&lt;/script&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendor/bootstrap/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cs0404.cpkkuhost.com/js/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/mdi/css/materialdesignicons.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/ti-icons/css/themify-icons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/typicons/typicons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/simple-line-icons/css/simple-line-icons.css"&gt;
+    &lt;!-- datatable --&gt;
+    &lt;!-- &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css" /&gt; --&gt;
+
+    &lt;!-- &lt;script src="https://code.jquery.com/jquery-3.5.1.js" defer&gt;&lt;/script&gt; --&gt;
+    &lt;!--&lt;script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" defer&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js" defer&gt;&lt;/script&gt; --&gt;
+
+
+
+    &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css"&gt;
+
+
+    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet"&gt;
+    &lt;script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"&gt;&lt;/script&gt;
+    &lt;script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/css/style.css"&gt;
+
+
+
+&lt;style type="text/css"&gt;/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand&gt;div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink&gt;div{position:absolute;width:200%;height:200%;left:0;top:0}&lt;/style&gt;&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav id="navbar" class="navbar navbar-expand-lg navbar-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;a class="navbar-brand logo-image" href="#"&gt;
+                                &lt;img src="https://cs0404.cpkkuhost.com/img/logo2-en.png" alt="alternative"&gt;
+                                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;/a&gt;&lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                    &lt;/a&gt;&lt;ul class="navbar-nav ms-auto navbar-nav-scroll"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                        &lt;/a&gt;&lt;li class="nav-item d-flex align-items-center "&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                            &lt;/a&gt;&lt;a class="nav-link" href="/" id="home"&gt;Home&lt;/a&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class="nav-item dropdown   "&gt;
+                            &lt;a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                                Researchers
+                            &lt;/a&gt;
+                            &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/1"&gt;
+                                                                                Computer Science
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/2"&gt;
+                                                                                Infomation Technology
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/3"&gt;
+                                                                                Geo-Informatics
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item  "&gt;
+                            &lt;a class="nav-link" href="/researchproject"&gt;Research Project&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item   "&gt;
+                            &lt;a class="nav-link" href="/researchgroup"&gt;Research Group&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item active"&gt;
+                            &lt;a class="nav-link" href="/reports"&gt;Reports&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item dropdown show"&gt;
+                            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"&gt;
+                                &lt;span class="flag-icon flag-icon-us"&gt;&lt;/span&gt;
+                                English
+                            &lt;/a&gt;
+                            &lt;div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink"&gt;
+                                                                                                                                                                &lt;a class="dropdown-item" id="language-th" href="https://cs0404.cpkkuhost.com/lang/th"&gt;
+                                    &lt;span class="flag-icon flag-icon-th"&gt;&lt;/span&gt;
+                                    ไทย
+                                &lt;/a&gt;
+                                                                                                                                &lt;a class="dropdown-item" id="language-zh" href="https://cs0404.cpkkuhost.com/lang/zh"&gt;
+                                    &lt;span class="flag-icon flag-icon-cn"&gt;&lt;/span&gt;
+                                    中文
+                                &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                                                            &lt;span class="nav-item"&gt;
+                        &lt;a class="btn-solid-sm" href="/login" target="_blank" id="btn-login"&gt;Login&lt;/a&gt;
+                    &lt;/span&gt;
+                                                        &lt;/div&gt; &lt;!-- end of navbar-collapse --&gt;
+        &lt;/div&gt; &lt;!-- end of container --&gt;
+    &lt;/nav&gt; &lt;!-- end of navbar --&gt;
+    &lt;!-- end of navigation --&gt;
+    &lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Total Number of Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart1" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable"&gt;
+                            &lt;thead&gt;
+                                &lt;tr id="myRow" style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Statistics of Cited Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart2" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable2"&gt;
+                            &lt;thead&gt;
+                                &lt;tr style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+var paper_tci_cit = [0,0,0,0,0];
+var paper_scopus_cit = [47,2,0,0,0];
+var paper_wos_cit = [0,0,0,0,0];
+
+year.unshift("Source");
+paper_tci.unshift("tci");
+
+//console.log(paper_scopus_cit);
+paper_scopus.unshift("scopus");
+paper_wos.unshift("wos");
+
+let pro = year;
+let dat = [
+    paper_scopus,
+    paper_tci,
+    paper_wos
+];
+let res = dat.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        //index.hasOwnProperty("undefined");
+        // if(pro[index]==undefined){
+        //     obj['source'] = innerData;
+        //     console.log(obj)
+        // }else{
+        //     obj[pro[index]] = innerData;
+        // }
+        obj[pro[index]] = innerData;
+
+        //console.log(pro[index])
+    });
+
+    return obj;
+});
+
+console.log(res);
+
+//let props2 = year;
+
+paper_scopus_cit.unshift("scopus");
+//console.log(paper_scopus_cit);
+paper_tci_cit.unshift("tci");
+paper_wos_cit.unshift("wos");
+
+
+let dat2 = [
+    paper_scopus_cit,
+    paper_tci_cit,
+    paper_wos_cit
+];
+
+let res2 = dat2.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        obj[pro[index]] = innerData;
+    });
+    return obj;
+});
+console.log(res2);
+
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        for (key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+}
+
+let table = document.getElementById("myTable");
+let data = Object.keys(res[0]);
+generateTableHead(table, data);
+generateTable(table, res);
+let table2 = document.getElementById("myTable2");
+let data2 = Object.keys(res2[0]);
+generateTableHead(table2, data2);
+generateTable(table2, res2);
+&lt;/script&gt;
+
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+
+new Chart(barChartCanvas3, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<arg>HTML Source: ${html_source}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-10T23:54:01.110524" elapsed="0.000468"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-03-10T23:54:01.111683" level="FAIL">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+.card-title {
+    color:#19568A;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+&lt;/style&gt;
+
+
+
+
+    &lt;meta charset="UTF-8"&gt;&lt;style data-styles=""&gt;ion-icon{visibility:hidden}.hydrated{visibility:inherit}&lt;/style&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์&lt;/title&gt;
+    &lt;base href="https://cs0404.cpkkuhost.com"&gt;
+    &lt;link href="img/Newlogo.png" rel="shortcut icon" type="image/x-icon"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/app.css" rel="stylesheet"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/load-more-button.css" rel="stylesheet"&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/js/app.js"&gt;&lt;/script&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendor/bootstrap/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cs0404.cpkkuhost.com/js/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/mdi/css/materialdesignicons.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/ti-icons/css/themify-icons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/typicons/typicons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/simple-line-icons/css/simple-line-icons.css"&gt;
+    &lt;!-- datatable --&gt;
+    &lt;!-- &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css" /&gt; --&gt;
+
+    &lt;!-- &lt;script src="https://code.jquery.com/jquery-3.5.1.js" defer&gt;&lt;/script&gt; --&gt;
+    &lt;!--&lt;script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" defer&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js" defer&gt;&lt;/script&gt; --&gt;
+
+
+
+    &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css"&gt;
+
+
+    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet"&gt;
+    &lt;script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"&gt;&lt;/script&gt;
+    &lt;script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/css/style.css"&gt;
+
+
+
+&lt;style type="text/css"&gt;/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand&gt;div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink&gt;div{position:absolute;width:200%;height:200%;left:0;top:0}&lt;/style&gt;&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav id="navbar" class="navbar navbar-expand-lg navbar-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;a class="navbar-brand logo-image" href="#"&gt;
+                                &lt;img src="https://cs0404.cpkkuhost.com/img/logo2-en.png" alt="alternative"&gt;
+                                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;/a&gt;&lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                    &lt;/a&gt;&lt;ul class="navbar-nav ms-auto navbar-nav-scroll"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                        &lt;/a&gt;&lt;li class="nav-item d-flex align-items-center "&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                            &lt;/a&gt;&lt;a class="nav-link" href="/" id="home"&gt;Home&lt;/a&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class="nav-item dropdown   "&gt;
+                            &lt;a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                                Researchers
+                            &lt;/a&gt;
+                            &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/1"&gt;
+                                                                                Computer Science
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/2"&gt;
+                                                                                Infomation Technology
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/3"&gt;
+                                                                                Geo-Informatics
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item  "&gt;
+                            &lt;a class="nav-link" href="/researchproject"&gt;Research Project&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item   "&gt;
+                            &lt;a class="nav-link" href="/researchgroup"&gt;Research Group&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item active"&gt;
+                            &lt;a class="nav-link" href="/reports"&gt;Reports&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item dropdown show"&gt;
+                            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"&gt;
+                                &lt;span class="flag-icon flag-icon-us"&gt;&lt;/span&gt;
+                                English
+                            &lt;/a&gt;
+                            &lt;div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink"&gt;
+                                                                                                                                                                &lt;a class="dropdown-item" id="language-th" href="https://cs0404.cpkkuhost.com/lang/th"&gt;
+                                    &lt;span class="flag-icon flag-icon-th"&gt;&lt;/span&gt;
+                                    ไทย
+                                &lt;/a&gt;
+                                                                                                                                &lt;a class="dropdown-item" id="language-zh" href="https://cs0404.cpkkuhost.com/lang/zh"&gt;
+                                    &lt;span class="flag-icon flag-icon-cn"&gt;&lt;/span&gt;
+                                    中文
+                                &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                                                            &lt;span class="nav-item"&gt;
+                        &lt;a class="btn-solid-sm" href="/login" target="_blank" id="btn-login"&gt;Login&lt;/a&gt;
+                    &lt;/span&gt;
+                                                        &lt;/div&gt; &lt;!-- end of navbar-collapse --&gt;
+        &lt;/div&gt; &lt;!-- end of container --&gt;
+    &lt;/nav&gt; &lt;!-- end of navbar --&gt;
+    &lt;!-- end of navigation --&gt;
+    &lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Total Number of Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart1" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable"&gt;
+                            &lt;thead&gt;
+                                &lt;tr id="myRow" style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Statistics of Cited Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart2" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable2"&gt;
+                            &lt;thead&gt;
+                                &lt;tr style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+var paper_tci_cit = [0,0,0,0,0];
+var paper_scopus_cit = [47,2,0,0,0];
+var paper_wos_cit = [0,0,0,0,0];
+
+year.unshift("Source");
+paper_tci.unshift("tci");
+
+//console.log(paper_scopus_cit);
+paper_scopus.unshift("scopus");
+paper_wos.unshift("wos");
+
+let pro = year;
+let dat = [
+    paper_scopus,
+    paper_tci,
+    paper_wos
+];
+let res = dat.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        //index.hasOwnProperty("undefined");
+        // if(pro[index]==undefined){
+        //     obj['source'] = innerData;
+        //     console.log(obj)
+        // }else{
+        //     obj[pro[index]] = innerData;
+        // }
+        obj[pro[index]] = innerData;
+
+        //console.log(pro[index])
+    });
+
+    return obj;
+});
+
+console.log(res);
+
+//let props2 = year;
+
+paper_scopus_cit.unshift("scopus");
+//console.log(paper_scopus_cit);
+paper_tci_cit.unshift("tci");
+paper_wos_cit.unshift("wos");
+
+
+let dat2 = [
+    paper_scopus_cit,
+    paper_tci_cit,
+    paper_wos_cit
+];
+
+let res2 = dat2.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        obj[pro[index]] = innerData;
+    });
+    return obj;
+});
+console.log(res2);
+
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        for (key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+}
+
+let table = document.getElementById("myTable");
+let data = Object.keys(res[0]);
+generateTableHead(table, data);
+generateTable(table, res);
+let table2 = document.getElementById("myTable2");
+let data2 = Object.keys(res2[0]);
+generateTableHead(table2, data2);
+generateTable(table2, res2);
+&lt;/script&gt;
+
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+
+new Chart(barChartCanvas3, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'Statistics on the total number of articles for 5 years'</msg>
+<arg>${html_source}</arg>
+<arg>${text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-03-10T23:54:01.111247" elapsed="0.000680">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'Statistics on the total number of articles for 5 years'</status>
+</kw>
+<var name="${text}">Statistics on the total number of articles for 5 years</var>
+<status status="FAIL" start="2025-03-10T23:54:01.111181" elapsed="0.000824">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'Statistics on the total number of articles for 5 years'</status>
+</iter>
+<var>${text}</var>
+<value>@{expected_texts}</value>
+<status status="FAIL" start="2025-03-10T23:54:01.111052" elapsed="0.001087">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'Statistics on the total number of articles for 5 years'</status>
+</for>
+<arg>@{expected_texts}</arg>
+<status status="FAIL" start="2025-03-10T23:54:01.106459" elapsed="0.005778">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'Statistics on the total number of articles for 5 years'</status>
+</kw>
+<arg>${LANG_TO_ENGLISH}</arg>
+<arg>@{EXPECTED_REPORT_EN}</arg>
+<status status="FAIL" start="2025-03-10T23:53:56.858141" elapsed="4.254170">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'Statistics on the total number of articles for 5 years'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-10T23:54:01.112666" elapsed="0.000022"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-10T23:54:01.113520" elapsed="2.155368"/>
+</kw>
+<status status="FAIL" start="2025-03-10T23:53:44.871659" elapsed="18.397608">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'Statistics on the total number of articles for 5 years'</status>
+</test>
+<test id="s1-t3" name="Navigate To Report Page And Switch To Thai" line="83">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:54:03.277391" level="INFO">Opening browser 'chrome' to base url 'https://cs0404.cpkkuhost.com/'.</msg>
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-10T23:54:03.277260" elapsed="10.786138"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-10T23:54:14.063556" elapsed="0.038449"/>
+</kw>
+<status status="PASS" start="2025-03-10T23:54:03.277081" elapsed="10.825026"/>
+</kw>
+<kw name="Navigate To Report Page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:54:14.102746" level="INFO">Clicking element 'xpath=//a[contains(@href, '/reports')]'.</msg>
+<arg>${REPORT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T23:54:14.102595" elapsed="0.646804"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Report</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-10T23:54:14.749600" elapsed="0.012089"/>
+</kw>
+<status status="PASS" start="2025-03-10T23:54:14.102382" elapsed="0.659391"/>
+</kw>
+<kw name="Switch Language And Verify">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:54:14.762726" level="INFO">Clicking element 'xpath=//a[@id="navbarDropdownMenuLink"]'.</msg>
+<arg>${LANG_DROPDOWN_TOGGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T23:54:14.762561" elapsed="0.066304"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T23:54:15.829659" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T23:54:14.829046" elapsed="1.000870"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:54:15.834685" level="INFO">Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'ไทย')]'.</msg>
+<msg time="2025-03-10T23:54:16.005750" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-10T23:54:16.005886" level="FAIL">Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'ไทย')]' not found.</msg>
+<arg>${lang_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-10T23:54:15.834254" elapsed="0.172326">Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'ไทย')]' not found.</status>
+</kw>
+<arg>Click Element</arg>
+<arg>${lang_button}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-03-10T23:54:15.830324" elapsed="0.176327"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T23:54:19.007154" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T23:54:16.006740" elapsed="3.000707"/>
+</kw>
+<kw name="Verify Page Contains Multiple Texts">
+<kw name="Get Source" owner="SeleniumLibrary">
+<msg time="2025-03-10T23:54:19.018180" level="INFO">${html_source} = &lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+  ...</msg>
+<var>${html_source}</var>
+<doc>Returns the entire HTML source of the current page or frame.</doc>
+<status status="PASS" start="2025-03-10T23:54:19.008746" elapsed="0.009498"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-10T23:54:19.018778" level="INFO">HTML Source: &lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+.card-title {
+    color:#19568A;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+&lt;/style&gt;
+
+
+
+
+    &lt;meta charset="UTF-8"&gt;&lt;style data-styles=""&gt;ion-icon{visibility:hidden}.hydrated{visibility:inherit}&lt;/style&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์&lt;/title&gt;
+    &lt;base href="https://cs0404.cpkkuhost.com"&gt;
+    &lt;link href="img/Newlogo.png" rel="shortcut icon" type="image/x-icon"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/app.css" rel="stylesheet"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/load-more-button.css" rel="stylesheet"&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/js/app.js"&gt;&lt;/script&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendor/bootstrap/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cs0404.cpkkuhost.com/js/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/mdi/css/materialdesignicons.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/ti-icons/css/themify-icons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/typicons/typicons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/simple-line-icons/css/simple-line-icons.css"&gt;
+    &lt;!-- datatable --&gt;
+    &lt;!-- &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css" /&gt; --&gt;
+
+    &lt;!-- &lt;script src="https://code.jquery.com/jquery-3.5.1.js" defer&gt;&lt;/script&gt; --&gt;
+    &lt;!--&lt;script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" defer&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js" defer&gt;&lt;/script&gt; --&gt;
+
+
+
+    &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css"&gt;
+
+
+    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet"&gt;
+    &lt;script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"&gt;&lt;/script&gt;
+    &lt;script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/css/style.css"&gt;
+
+
+
+&lt;style type="text/css"&gt;/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand&gt;div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink&gt;div{position:absolute;width:200%;height:200%;left:0;top:0}&lt;/style&gt;&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav id="navbar" class="navbar navbar-expand-lg navbar-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;a class="navbar-brand logo-image" href="#"&gt;
+                                &lt;img src="https://cs0404.cpkkuhost.com/img/logo2-en.png" alt="alternative"&gt;
+                                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;/a&gt;&lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                    &lt;/a&gt;&lt;ul class="navbar-nav ms-auto navbar-nav-scroll"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                        &lt;/a&gt;&lt;li class="nav-item d-flex align-items-center "&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                            &lt;/a&gt;&lt;a class="nav-link" href="/" id="home"&gt;Home&lt;/a&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class="nav-item dropdown   "&gt;
+                            &lt;a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                                Researchers
+                            &lt;/a&gt;
+                            &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/1"&gt;
+                                                                                Computer Science
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/2"&gt;
+                                                                                Infomation Technology
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/3"&gt;
+                                                                                Geo-Informatics
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item  "&gt;
+                            &lt;a class="nav-link" href="/researchproject"&gt;Research Project&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item   "&gt;
+                            &lt;a class="nav-link" href="/researchgroup"&gt;Research Group&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item active"&gt;
+                            &lt;a class="nav-link" href="/reports"&gt;Reports&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item dropdown show"&gt;
+                            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"&gt;
+                                &lt;span class="flag-icon flag-icon-us"&gt;&lt;/span&gt;
+                                English
+                            &lt;/a&gt;
+                            &lt;div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink"&gt;
+                                                                                                                                                                &lt;a class="dropdown-item" id="language-th" href="https://cs0404.cpkkuhost.com/lang/th"&gt;
+                                    &lt;span class="flag-icon flag-icon-th"&gt;&lt;/span&gt;
+                                    ไทย
+                                &lt;/a&gt;
+                                                                                                                                &lt;a class="dropdown-item" id="language-zh" href="https://cs0404.cpkkuhost.com/lang/zh"&gt;
+                                    &lt;span class="flag-icon flag-icon-cn"&gt;&lt;/span&gt;
+                                    中文
+                                &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                                                            &lt;span class="nav-item"&gt;
+                        &lt;a class="btn-solid-sm" href="/login" target="_blank" id="btn-login"&gt;Login&lt;/a&gt;
+                    &lt;/span&gt;
+                                                        &lt;/div&gt; &lt;!-- end of navbar-collapse --&gt;
+        &lt;/div&gt; &lt;!-- end of container --&gt;
+    &lt;/nav&gt; &lt;!-- end of navbar --&gt;
+    &lt;!-- end of navigation --&gt;
+    &lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Total Number of Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart1" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable"&gt;
+                            &lt;thead&gt;
+                                &lt;tr id="myRow" style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Statistics of Cited Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart2" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable2"&gt;
+                            &lt;thead&gt;
+                                &lt;tr style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+var paper_tci_cit = [0,0,0,0,0];
+var paper_scopus_cit = [47,2,0,0,0];
+var paper_wos_cit = [0,0,0,0,0];
+
+year.unshift("Source");
+paper_tci.unshift("tci");
+
+//console.log(paper_scopus_cit);
+paper_scopus.unshift("scopus");
+paper_wos.unshift("wos");
+
+let pro = year;
+let dat = [
+    paper_scopus,
+    paper_tci,
+    paper_wos
+];
+let res = dat.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        //index.hasOwnProperty("undefined");
+        // if(pro[index]==undefined){
+        //     obj['source'] = innerData;
+        //     console.log(obj)
+        // }else{
+        //     obj[pro[index]] = innerData;
+        // }
+        obj[pro[index]] = innerData;
+
+        //console.log(pro[index])
+    });
+
+    return obj;
+});
+
+console.log(res);
+
+//let props2 = year;
+
+paper_scopus_cit.unshift("scopus");
+//console.log(paper_scopus_cit);
+paper_tci_cit.unshift("tci");
+paper_wos_cit.unshift("wos");
+
+
+let dat2 = [
+    paper_scopus_cit,
+    paper_tci_cit,
+    paper_wos_cit
+];
+
+let res2 = dat2.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        obj[pro[index]] = innerData;
+    });
+    return obj;
+});
+console.log(res2);
+
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        for (key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+}
+
+let table = document.getElementById("myTable");
+let data = Object.keys(res[0]);
+generateTableHead(table, data);
+generateTable(table, res);
+let table2 = document.getElementById("myTable2");
+let data2 = Object.keys(res2[0]);
+generateTableHead(table2, data2);
+generateTable(table2, res2);
+&lt;/script&gt;
+
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+
+new Chart(barChartCanvas3, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<arg>HTML Source: ${html_source}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-10T23:54:19.018443" elapsed="0.001254"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-03-10T23:54:19.020839" level="FAIL">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+.card-title {
+    color:#19568A;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+&lt;/style&gt;
+
+
+
+
+    &lt;meta charset="UTF-8"&gt;&lt;style data-styles=""&gt;ion-icon{visibility:hidden}.hydrated{visibility:inherit}&lt;/style&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์&lt;/title&gt;
+    &lt;base href="https://cs0404.cpkkuhost.com"&gt;
+    &lt;link href="img/Newlogo.png" rel="shortcut icon" type="image/x-icon"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/app.css" rel="stylesheet"&gt;
+
+    &lt;link href="https://cs0404.cpkkuhost.com/css/load-more-button.css" rel="stylesheet"&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/js/app.js"&gt;&lt;/script&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendor/bootstrap/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cs0404.cpkkuhost.com/js/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+    &lt;script src="https://cs0404.cpkkuhost.com/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/mdi/css/materialdesignicons.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/ti-icons/css/themify-icons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/typicons/typicons.css"&gt;
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/vendors/simple-line-icons/css/simple-line-icons.css"&gt;
+    &lt;!-- datatable --&gt;
+    &lt;!-- &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css" /&gt; --&gt;
+
+    &lt;!-- &lt;script src="https://code.jquery.com/jquery-3.5.1.js" defer&gt;&lt;/script&gt; --&gt;
+    &lt;!--&lt;script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" defer&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js" defer&gt;&lt;/script&gt; --&gt;
+
+
+
+    &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.css"&gt;
+
+
+    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet"&gt;
+    &lt;script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"&gt;&lt;/script&gt;
+    &lt;script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+
+    &lt;link rel="stylesheet" href="https://cs0404.cpkkuhost.com/css/style.css"&gt;
+
+
+
+&lt;style type="text/css"&gt;/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand&gt;div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink&gt;div{position:absolute;width:200%;height:200%;left:0;top:0}&lt;/style&gt;&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav id="navbar" class="navbar navbar-expand-lg navbar-light"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;a class="navbar-brand logo-image" href="#"&gt;
+                                &lt;img src="https://cs0404.cpkkuhost.com/img/logo2-en.png" alt="alternative"&gt;
+                                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;/a&gt;&lt;div class="collapse navbar-collapse" id="collapsibleNavbar"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                    &lt;/a&gt;&lt;ul class="navbar-nav ms-auto navbar-nav-scroll"&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                        &lt;/a&gt;&lt;li class="nav-item d-flex align-items-center "&gt;&lt;a class="navbar-brand logo-image" href="#"&gt;
+                            &lt;/a&gt;&lt;a class="nav-link" href="/" id="home"&gt;Home&lt;/a&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class="nav-item dropdown   "&gt;
+                            &lt;a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                                Researchers
+                            &lt;/a&gt;
+                            &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/1"&gt;
+                                                                                Computer Science
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/2"&gt;
+                                                                                Infomation Technology
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                                &lt;li&gt;
+                                    &lt;a class="dropdown-item" href="https://cs0404.cpkkuhost.com/researchers/3"&gt;
+                                                                                Geo-Informatics
+                                                                            &lt;/a&gt;
+                                &lt;/li&gt;
+                                                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item  "&gt;
+                            &lt;a class="nav-link" href="/researchproject"&gt;Research Project&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item   "&gt;
+                            &lt;a class="nav-link" href="/researchgroup"&gt;Research Group&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item active"&gt;
+                            &lt;a class="nav-link" href="/reports"&gt;Reports&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item dropdown show"&gt;
+                            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"&gt;
+                                &lt;span class="flag-icon flag-icon-us"&gt;&lt;/span&gt;
+                                English
+                            &lt;/a&gt;
+                            &lt;div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink"&gt;
+                                                                                                                                                                &lt;a class="dropdown-item" id="language-th" href="https://cs0404.cpkkuhost.com/lang/th"&gt;
+                                    &lt;span class="flag-icon flag-icon-th"&gt;&lt;/span&gt;
+                                    ไทย
+                                &lt;/a&gt;
+                                                                                                                                &lt;a class="dropdown-item" id="language-zh" href="https://cs0404.cpkkuhost.com/lang/zh"&gt;
+                                    &lt;span class="flag-icon flag-icon-cn"&gt;&lt;/span&gt;
+                                    中文
+                                &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                                                            &lt;span class="nav-item"&gt;
+                        &lt;a class="btn-solid-sm" href="/login" target="_blank" id="btn-login"&gt;Login&lt;/a&gt;
+                    &lt;/span&gt;
+                                                        &lt;/div&gt; &lt;!-- end of navbar-collapse --&gt;
+        &lt;/div&gt; &lt;!-- end of container --&gt;
+    &lt;/nav&gt; &lt;!-- end of navbar --&gt;
+    &lt;!-- end of navigation --&gt;
+    &lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Total Number of Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart1" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable"&gt;
+                            &lt;thead&gt;
+                                &lt;tr id="myRow" style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="container card-cart d-sm-flex  justify-content-center mt-5"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title" style="padding: 16px;"&gt;Statistics of Cited Articles (5 Years)&lt;/h5&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;div style="width:520px;height:250px"&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor"&gt;&lt;div class="chartjs-size-monitor-expand"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="chartjs-size-monitor-shrink"&gt;&lt;div class=""&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                            &lt;canvas id="barChart2" width="650" height="312" style="display: block; height: 250px; width: 520px;" class="chartjs-render-monitor"&gt;&lt;/canvas&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6 p-5"&gt;
+                        &lt;table class="table table-bordered" id="myTable2"&gt;
+                            &lt;thead&gt;
+                                &lt;tr style="text-align: center;"&gt;
+
+
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;th&gt;2021&lt;/th&gt;&lt;th&gt;2022&lt;/th&gt;&lt;th&gt;2023&lt;/th&gt;&lt;th&gt;2024&lt;/th&gt;&lt;th&gt;2025&lt;/th&gt;&lt;th&gt;Source&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                &lt;/tr&gt;
+                            &lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;scopus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;tci&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;wos&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+var paper_tci_cit = [0,0,0,0,0];
+var paper_scopus_cit = [47,2,0,0,0];
+var paper_wos_cit = [0,0,0,0,0];
+
+year.unshift("Source");
+paper_tci.unshift("tci");
+
+//console.log(paper_scopus_cit);
+paper_scopus.unshift("scopus");
+paper_wos.unshift("wos");
+
+let pro = year;
+let dat = [
+    paper_scopus,
+    paper_tci,
+    paper_wos
+];
+let res = dat.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        //index.hasOwnProperty("undefined");
+        // if(pro[index]==undefined){
+        //     obj['source'] = innerData;
+        //     console.log(obj)
+        // }else{
+        //     obj[pro[index]] = innerData;
+        // }
+        obj[pro[index]] = innerData;
+
+        //console.log(pro[index])
+    });
+
+    return obj;
+});
+
+console.log(res);
+
+//let props2 = year;
+
+paper_scopus_cit.unshift("scopus");
+//console.log(paper_scopus_cit);
+paper_tci_cit.unshift("tci");
+paper_wos_cit.unshift("wos");
+
+
+let dat2 = [
+    paper_scopus_cit,
+    paper_tci_cit,
+    paper_wos_cit
+];
+
+let res2 = dat2.map((innerArray) =&gt; {
+    let obj = {};
+    innerArray.forEach((innerData, index) =&gt; {
+        obj[pro[index]] = innerData;
+    });
+    return obj;
+});
+console.log(res2);
+
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        for (key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+}
+
+let table = document.getElementById("myTable");
+let data = Object.keys(res[0]);
+generateTableHead(table, data);
+generateTable(table, res);
+let table2 = document.getElementById("myTable2");
+let data2 = Object.keys(res2[0]);
+generateTableHead(table2, data2);
+generateTable(table2, res2);
+&lt;/script&gt;
+
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [42,16,0,0,0];
+var paper_wos = [0,1,0,0,0];
+
+
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+
+new Chart(barChartCanvas3, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+&lt;script&gt;
+var year = [2021,2022,2023,2024,2025];
+var paper_tci = [0,0,0,0,0];
+var paper_scopus = [47,2,0,0,0];
+var paper_wos = [0,0,0,0,0];
+var areaChartData = {
+
+    labels: year,
+
+    datasets: [{
+            label: 'SCOPUS',
+            backgroundColor: '#83E4B5',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            pointRadius: false,
+            pointColor: '#83E4B5',
+            pointStrokeColor: '#3b8bba',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#83E4B5',
+            data: paper_scopus
+        },
+        {
+            label: 'TCI',
+            backgroundColor: '#3994D6',
+            borderColor: 'rgba(210, 214, 222, 1)',
+            pointRadius: false,
+            pointColor: '#3994D6',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#3994D6',
+            data: paper_tci
+        },
+        {
+            label: 'WOS',
+            backgroundColor: '#FCC29A',
+            borderColor: 'rgba(0, 0, 255, 1)',
+            pointRadius: false,
+            pointColor: '#FCC29A',
+            pointStrokeColor: '#c1c7d1',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: '#FCC29A',
+            data: paper_wos
+        },
+    ]
+}
+
+
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas = $('#barChart2').get(0).getContext('2d')
+
+var barChartData = $.extend(true, {}, areaChartData)
+var temp0 = areaChartData.datasets[0]
+var temp1 = areaChartData.datasets[1]
+barChartData.datasets[0] = temp1
+barChartData.datasets[1] = temp0
+
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'สถิติจำนวนบทความทั้งหมด 5 ปี'</msg>
+<arg>${html_source}</arg>
+<arg>${text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-03-10T23:54:19.020130" elapsed="0.001177">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'สถิติจำนวนบทความทั้งหมด 5 ปี'</status>
+</kw>
+<var name="${text}">สถิติจำนวนบทความทั้งหมด 5 ปี</var>
+<status status="FAIL" start="2025-03-10T23:54:19.020012" elapsed="0.001460">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'สถิติจำนวนบทความทั้งหมด 5 ปี'</status>
+</iter>
+<var>${text}</var>
+<value>@{expected_texts}</value>
+<status status="FAIL" start="2025-03-10T23:54:19.019819" elapsed="0.001770">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'สถิติจำนวนบทความทั้งหมด 5 ปี'</status>
+</for>
+<arg>@{expected_texts}</arg>
+<status status="FAIL" start="2025-03-10T23:54:19.008055" elapsed="0.013692">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'สถิติจำนวนบทความทั้งหมด 5 ปี'</status>
+</kw>
+<arg>${LANG_TO_THAI}</arg>
+<arg>@{EXPECTED_REPORT_TH}</arg>
+<status status="FAIL" start="2025-03-10T23:54:14.762282" elapsed="4.259619">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'สถิติจำนวนบทความทั้งหมด 5 ปี'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-10T23:54:19.022387" elapsed="0.000064"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-10T23:54:19.023082" elapsed="2.137950"/>
+</kw>
+<status status="FAIL" start="2025-03-10T23:54:03.276670" elapsed="17.884784">'&lt;html lang="en" class="hydrated"&gt;&lt;head&gt;&lt;style&gt;
+.count {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+
+
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 15px;
+    font-weight: normal;
+    [ Message content over the limit has been removed. ]
+var barChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    datasetFill: false,
+}
+new Chart(barChartCanvas, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+})
+&lt;/script&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;div class="d-sm-flex justify-content-center justify-content-sm-between"&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;' does not contain 'สถิติจำนวนบทความทั้งหมด 5 ปี'</status>
+</test>
+<status status="FAIL" start="2025-03-10T23:53:25.787193" elapsed="55.382039"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="Reports">Reports</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
