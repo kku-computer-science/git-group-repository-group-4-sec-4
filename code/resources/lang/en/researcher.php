@@ -26,4 +26,5 @@ return [
     'email'=> 'Email',
     'wos'=> 'WOS',
     'login'=> 'Login',
+    'Currency' => 'Bath'
 ];

@@ -25,4 +25,5 @@ return [
     'registration_date' => 'วันที่จดทะเบียน',
     'email'=> 'อีเมลล์',
     'wos'=> 'แย่',
+    'Currency' => 'บาท'
 ];

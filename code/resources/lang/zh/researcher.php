@@ -25,5 +25,6 @@ return [
     'registration_date' => '注册日期',
     'email'=> '电子邮件',
     'wos'=> '沃斯',
+    'Currency' => '銖'
 ];
 

@@ -27,79 +27,47 @@
             <tbody>
                 @foreach($resp as $i => $re)
                 <tr>
-                    <td style="vertical-align: top;text-align: left;">{{$i+1}}</td>
-                    <td style="vertical-align: top;text-align: left;">{{($re->project_year)+543}}</td>
+                <td style="vertical-align: top;text-align: left;">{{$i+1}}</td>
                     <td style="vertical-align: top;text-align: left;">
-                        {{$re->project_name}}
+                        {{ app()->getLocale() == 'th' ? $re->project_year + 543 : $re->project_year }}
+                    </td>
+                    <td style="vertical-align: top;text-align: left;">
+                        {{ $re->{'project_name_'.app()->getLocale()} ?? $re->project_name }}
                     </td>
                     <td>
                         <div style="padding-bottom: 10px">
-
-                            @if ($re->project_start != null)
-                            <span style="font-weight: bold;">
-                                {{ trans('researchPJ.time') }}
-                            </span>
+                            <span style="font-weight: bold;">{{ __('reseracher.Project_Duration') }}</span>
                             <span style="padding-left: 10px;">
-                                {{\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y') }} ถึง {{\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y') }}
+                                @if ($re->project_start != null)
+                                    {{\Carbon\Carbon::parse($re->project_start)->translatedFormat('j F Y') }} 
+                                    {{ __('reseracher.To') }} 
+                                    {{\Carbon\Carbon::parse($re->project_end)->translatedFormat('j F Y') }}
+                                @endif
                             </span>
-                            @else
-                            <span style="font-weight: bold;">
-                                {{ trans('researchPJ.time') }}
-                            </span>
-                            <span>
-
-                            </span>
-                            @endif
                         </div>
 
-
-                        <!-- @if ($re->project_start != null)
-                    <td>{{\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y') }}<br>ถึง {{\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y') }}</td>
-                    @else
-                    <td></td>
-                    @endif -->
-
-                        <!-- <td>@foreach($re->user as $user)
-                        {{$user->position }}{{$user->fname_th}} {{$user->lname_th}}<br>
-                        @endforeach
-                    </td> -->
-                        <!-- <td>
-                        @if(is_null($re->fund))
-                        @else
-                        {{$re->fund->fund_type}}
-                        @endif
-                    </td> -->
-                        <!-- <td>@if(is_null($re->fund))
-                        @else
-                        {{$re->fund->support_resource}}
-                        @endif
-                    </td> -->
-                        <!-- <td>{{$re->budget}}</td> -->
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;"> {{ trans('researchPJ.typeResearch') }}</span>
-                            <span style="padding-left: 10px;"> @if(is_null($re->fund))
-                                @else
-                                {{$re->fund->fund_type}}
-                                @endif</span>
+                            <span style="font-weight: bold;">{{ __('reseracher.Funding_Type') }}</span>
+                            <span style="padding-left: 10px;">{{ $re->fund->{'fund_type_' . (app()->getLocale() == 'zh' ? 'cn' : app()->getLocale())} ?? $re->fund->fund_type }}</span>
                         </div>
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;"> {{ trans('researchPJ.support') }} </span>
-                            <span style="padding-left: 10px;"> @if(is_null($re->fund))
-                                @else
-                                {{$re->fund->support_resource}}
-                    
-                                @endif</span>
+                            <span style="font-weight: bold;">{{ __('reseracher.Support_Agency') }}</span>
+                            <span style="padding-left: 10px;">{{ $re->fund->{'support_resource_' . (app()->getLocale() == 'zh' ? 'cn' : app()->getLocale())} ?? $re->fund->support_resource }}</span>
                         </div>
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;"> {{ trans('researchPJ.agency') }} </span>
+                            <span style="font-weight: bold;">{{ __('reseracher.Responsible_Department') }}</span>
                             <span style="padding-left: 10px;">
-                                {{$re->responsible_department}}
+                                {{ $re->{'responsible_department_' . (app()->getLocale() == 'zh' ? 'cn' : app()->getLocale())} ?? $re->responsible_department_en }}
                             </span>
                         </div>
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;"> {{ trans('researchPJ.budget') }} </span>
-                            <span style="padding-left: 10px;"> {{number_format($re->budget)}} {{ trans('researchPJ.baht') }} </span>
+                            <span style="font-weight: bold;">{{ __('reseracher.Budget_Allocated') }}</span>
+                            <span style="padding-left: 10px;">{{ number_format($re->budget) }} {{ __('researcher.Currency') }}
+
+
+                            </span>
                         </div>
+                    </td>
 
                     <td style="vertical-align: top;text-align: left;">
                         <div style="padding-bottom: 10px;">
