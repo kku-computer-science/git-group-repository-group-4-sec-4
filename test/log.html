@@ -5,60 +5,16 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.1.1 (Python 3.13.1 on win32)" name="Generator">
+<meta content="Robot Framework 4.1.3 (Python 2.7.18 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
-<style media="all">
-:root {
-    --text-color: black;
-    --background-color: white;
-    --primary-color: #ddd;
-    --secondary-color: #ccc;
-    --link-color: #15c;
-    --link-hover-color: #61c;
-    --highlight-color: #eee;
-    --target-color: #f9f9f9;
-    --pass-color: #97bd61;
-    --fail-color: #ce3e01;
-    --warn-color: #fed84f;
-    --pass-link-color: #098a09;
-    --warn-link-color: #927201;
-    --fail-link-color: #ce3e01;
-    --ascending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
-    --descending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-    }
-}
-[data-theme="dark"] {
-    --text-color: #e2e1d7;
-    --background-color: #1c2227;
-    --primary-color: #26373b;
-    --secondary-color: #424f5a;
-    --link-color: #8cc4ff;
-    --link-hover-color: #bb86fc;
-    --highlight-color: #002b36;
-    --target-color: #1a252e;
-    --pass-link-color: #97bd61;
-    --warn-link-color: #fed84f;
-    --fail-link-color: #ff9b8f;
-    --ascending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAfn5+////f/cqYgAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
-    --descending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAA////fn5+K6jOaAAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
-}
+<style media="all" type="text/css">
 /* Generic and misc styles */
 body {
     font-family: Helvetica, sans-serif;
     font-size: 0.8em;
-    color: black; /* Fallback value */
-    color: var(--text-color);
+    color: black;
     padding: 6px;
-    background: white; /* Fallback value */
-    background: var(--background-color);
-    margin-left: 15px;
-}
-body[theme-toggled] {
-    transition: background 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
+    background: white;
 }
 table {
     table-layout: fixed;
@@ -73,37 +29,20 @@ br {
     mso-data-placement: same-cell; /* maintain line breaks in Excel */
 }
 hr {
-    background: #ccc; /* Fallback value */
-    background: var(--secondary-color);
+    background: #ccc;
     height: 1px;
     border: 0;
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color: #15c; /* Fallback value */
-    color: var(--link-color);
+    color: #15c;
 }
 a > img {
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-color: #15c !important; /* Fallback value */
-    border-color: var(--link-color) !important;
+    border: 1px solid #15c !important;
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: #61c; /* Fallback value */
-    color: var(--link-hover-color);
-}
-select {
-    background-color: white; /* Fallback value */
-    background-color: var(--background-color);
-    color: black; /* Fallback value */
-    color: var(--text-color);
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
-    border-radius: 4px;
+    color: #61c;
 }
 .parent-name {
     font-size: 0.7em;
@@ -116,7 +55,7 @@ select {
 #header {
     width: 65em;
     height: 3em;
-    margin: 20px 0 6px 0;
+    margin: 6px 0;
 }
 h1 {
     float: left;
@@ -144,17 +83,14 @@ h2 {
 }
 /* Status text colors -- !important allows using them in links */
 .fail {
-    color: #ce3e01 !important; /* Fallback value */
-    color: var(--fail-link-color) !important;
+    color: #ce3e01 !important;
     font-weight: bold;
 }
 .pass {
-    color: #098a09 !important; /* Fallback value */
-    color: var(--pass-link-color) !important;
+    color: #098a09 !important;
 }
 .skip {
-    color: #927201 !important; /* Fallback value */
-    color: var(--warn-link-color) !important;
+    color: #927201 !important;
     font-weight: bold;
 }
 .label {
@@ -162,10 +98,8 @@ h2 {
     font-size: 0.75em;
     letter-spacing: 1px;
     white-space: nowrap;
-    color: black; /* Fallback value */
-    color: var(--text-color);
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
+    color: black;
+    background-color: #ddd;
     border-radius: 3px;
 }
 .label.debug, .label.trace, .label.error, .label.keyword {
@@ -175,18 +109,15 @@ h2 {
     font-weight: bold;
 }
 .label.pass {
-    background-color: #97bd61; /* Fallback value */
-    background-color: var(--pass-color);
+    background-color: #97bd61;
     color: #000 !important;
 }
 .label.fail, .label.error {
-    background-color: #ce3e01; /* Fallback value */
-    background-color: var(--fail-color);
+    background-color: #ce3e01;
     color: #fff !important;
 }
 .label.skip, .label.warn {
-    background-color: #fed84f; /* Fallback value */
-    background-color: var(--warn-color);
+    background-color: #fed84f;
     color: #000 !important;
 }
 /* Top right header */
@@ -215,8 +146,7 @@ h2 {
     padding: 0.3em 0;
     font-size: 0.9em;
     border-bottom-left-radius: 4px;
-    background: #ddd; /* Fallback value */
-    background: var(--primary-color);
+    background: #ddd;
 }
 /* Statistics table */
 .statistics {
@@ -226,20 +156,15 @@ h2 {
     margin-bottom: 1em;
 }
 .statistics tr:hover {
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #f4f4f4;
     cursor: pointer;
 }
 .statistics th, .statistics td {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    border: 1px solid #ccc;
     padding: 0.1em 0.3em;
 }
 .statistics th {
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
+    background-color: #ddd;
     padding: 0.2em 0.3em;
 }
 .statistics td {
@@ -275,33 +200,27 @@ th.stats-col-graph:hover {
 }
 /* Statistics graph */
 .graph, .empty-graph {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    border: 1px solid #ccc;
     width: auto;
     height: 7px;
     padding: 0;
+    background: #aaa;
 }
 .empty-graph {
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #eee;
 }
 .pass-bar, .fail-bar, .skip-bar {
     float: left;
     height: 100%;
 }
 .fail-bar {
-    background: #ce3e01; /* Fallback value */
-    background: var(--fail-color);
+    background: #ce3e01;
 }
 .pass-bar {
-    background: #97bd61; /* Fallback value */
-    background: var(--pass-color);
+    background: #97bd61;
 }
 .skip-bar {
-    background: #fed84f; /* Fallback value */
-    background: var(--warn-color);
+    background: #fed84f;
 }
 /* Tablesorter - adapted from provided Blue Skin */
 .tablesorter-header {
@@ -311,84 +230,30 @@ th.stats-col-graph:hover {
     cursor: pointer;
 }
 .tablesorter-header:hover {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--secondary-color);
+    background-color: #ccc;
 }
 .tablesorter-headerAsc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==); /* Fallback value */
-    background-image: var(--ascending-icon);
-    background-color: #ccc !important; /* Fallback value */
-    background-color: var(--secondary-color) !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
+    background-color: #ccc !important;
 }
 .tablesorter-headerDesc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==); /* Fallback value */
-    background-image: var(--descending-icon);
-    background-color: #ccc !important; /* Fallback value */
-    background-color: var(--secondary-color) !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
+    background-color: #ccc !important;
 }
 .sorter-false {
     background-image: none;
     cursor: default;
 }
 .sorter-false:hover {
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
-}
-#theme-toggle {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 28px;
-    height: 28px;
-    border: none;
-    padding: 4px;
-    z-index: 1000;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background: var(--highlight-color);
-}
-[data-theme="dark"] .dark-mode-icon,
-[data-theme="light"] .light-mode-icon {
-    display: none;
-}
-[data-theme="dark"] .light-mode-icon,
-[data-theme="light"] .dark-mode-icon {
-    display: block;
-}
-@keyframes highlight {
-    0% {
-        background: var(--primary-color)
-    }
-    100% {
-        background: var(--target-color);
-    }
-}
-:target {
-    background: var(--target-color);
-    transition: background 0.3s;
-    animation: highlight 4s;
+    background-color: #ddd;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 /* Icons are from Open Iconic <https://useiconic.com/open/>.
    Licensed under the MIT License. */
-:root {
-    --icon-filter: invert(0);
-    --icon-highlight: var(--secondary-color);
-    --elapsed-color: #666;
-}
-/* @media (prefers-color-scheme: dark) { */
-[data-theme="dark"] {
-    --icon-filter: invert(1);
-    --icon-highlight: #a39990;
-    --elapsed-color: #999;
-}
 /* Containers */
 .suite, .test, #errors {
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     padding: 0.3em 0.2em;
     margin: 0.2em 0;
 }
@@ -417,10 +282,8 @@ th.stats-col-graph:hover {
 }
 .element-header:hover {
     cursor: pointer;
-    background-color: #eee; /* Fallback value */
-    background-color: var(--highlight-color);
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    background-color: #eee;
+    border-color: #ccc;
 }
 .element-header-toggle {
     position: absolute;
@@ -430,14 +293,10 @@ th.stats-col-graph:hover {
     background-position: center;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAQAAABKxSfDAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0JChSkZz20AAAAGklEQVQI12NgQAKMDKzInP8IDhOqMk4G7AAANQwBE427PYUAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2Mmg4di0yaC04eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAzKSIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
     height: 10px;
     width: 10px;
     background-size: 6px 6px;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .closed > .element-header-toggle {
@@ -445,8 +304,7 @@ th.stats-col-graph:hover {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0zIDB2M2gtM3YyaDN2M2gydi0zaDN2LTJoLTN2LTNoLTJ6IiAvPgo8L3N2Zz4=), none;
 }
 .element-header:hover > .element-header-toggle {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
 }
 .element-header-right:hover ~ .element-header-toggle {
     background-color: transparent;
@@ -461,36 +319,25 @@ th.stats-col-graph:hover {
     padding: 3px;
     cursor: default;
 }
-.element-header .label {
-    margin-right: 0.5em;
-}
 .name {
     font-weight: bold;
-    white-space: pre-wrap;
-}
-.arg, .assign {
-    white-space: pre-wrap;
 }
 .elapsed {
     float: right;
-    color: #666; /* Fallback value */
-    color: var(--elapsed-color);
+    color: #666;
     padding-left: 1em;
 }
 .link {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHlJREFUGJVtzrEJwmAQBtCn6ASuIKTIBhY2gmghBiJYB1udwk10B8FJbKMBcQFbtbkfJHrVwfu+4/idJR64Y9H7E3higj5O3S8Y44ApLnjhnXCNGhV2yNGggDJwiC02gavUbpDFvscRo4QdXOMKDHBufz3HLYKzNn4AbSkV3fncGQYAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik01Ljg4LjAzYy0uMTguMDEtLjM2LjAzLS41My4wOS0uMjcuMS0uNTMuMjUtLjc1LjQ3YS41LjUgMCAxIDAgLjY5LjY5Yy4xMS0uMTEuMjQtLjE3LjM4LS4yMi4zNS0uMTIuNzgtLjA3IDEuMDYuMjIuMzkuMzkuMzkgMS4wNCAwIDEuNDRsLTEuNSAxLjVjLS40NC40NC0uOC40OC0xLjA2LjQ3LS4yNi0uMDEtLjQxLS4xMy0uNDEtLjEzYS41LjUgMCAxIDAtLjUuODhzLjM0LjIyLjg0LjI1Yy41LjAzIDEuMi0uMTYgMS44MS0uNzhsMS41LTEuNWMuNzgtLjc4Ljc4LTIuMDQgMC0yLjgxLS4yOC0uMjgtLjYxLS40NS0uOTctLjUzLS4xOC0uMDQtLjM4LS4wNC0uNTYtLjAzem0tMiAyLjMxYy0uNS0uMDItMS4xOS4xNS0xLjc4Ljc1bC0xLjUgMS41Yy0uNzguNzgtLjc4IDIuMDQgMCAyLjgxLjU2LjU2IDEuMzYuNzIgMi4wNi40Ny4yNy0uMS41My0uMjUuNzUtLjQ3YS41LjUgMCAxIDAtLjY5LS42OWMtLjExLjExLS4yNC4xNy0uMzguMjItLjM1LjEyLS43OC4wNy0xLjA2LS4yMi0uMzktLjM5LS4zOS0xLjA0IDAtMS40NGwxLjUtMS41Yy40LS40Ljc1LS40NSAxLjAzLS40NC4yOC4wMS40Ny4wOS40Ny4wOWEuNS41IDAgMSAwIC40NC0uODhzLS4zNC0uMi0uODQtLjIyeiIKICAvPgo8L3N2Zz4=), none;
-    filter: var(--icon-filter);
 }
 .expand {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAADtJREFUGJVjYCACKDAwMByA0ljFDjAwMPxnYGB4ABVQgLL/Q+VQBB6gseGmIivCkERXhFUSWRFOSawAAEl7E3uv1iMcAAAAAElFTkSuQmCC);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0xLjUgMGwtMS41IDEuNSA0IDQgNC00LTEuNS0xLjUtMi41IDIuNS0yLjUtMi41eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxKSIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
 }
 .collapse {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAC5JREFUGJVjYCARNEAxTsn/UIyhCFkSQxG6ThQ+C5IpjWhG1yNb4YDFTdjEMAEACi8Q++9Y9TAAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik00IDBsLTQgNCAxLjUgMS41IDIuNS0yLjUgMi41IDIuNSAxLjUtMS41LTQtNHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMSkiIC8+Cjwvc3ZnPg==), none;
-    filter: var(--icon-filter);
 }
 .expand, .collapse, .link {
     float: left;
@@ -502,10 +349,7 @@ th.stats-col-graph:hover {
     background-size: 8px 8px;
     background-repeat: no-repeat;
     background-position: center;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .link {
@@ -515,8 +359,7 @@ th.stats-col-graph:hover {
     visibility: visible;
 }
 .expand:hover, .collapse:hover, .link:hover {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
 }
 /* Messages and errors */
 .messages .time, .messages .message {
@@ -557,16 +400,11 @@ th.stats-col-graph:hover {
 .message-row:hover .select-message div {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0MOzhWKZQOAAAASUlEQVQY032PsRHAIAwDX9BkicD+W8UMEqegAQJWKZ/+3sLZJhFGQEZzNaIa4ibh66En867VNaIeoP5WppNuIGoAlOm3g5VC1AdYeQv1BZPRSgAAAABJRU5ErkJggg==);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2MWg4di0xaC04em0wIDJ2MWg2di0xaC02em0wIDJ2MWg4di0xaC04em0wIDJ2MWg2di0xaC02eiIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .select-message:hover div {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
     cursor: pointer;
 }
 /* Message tables - these MUST NOT be combined together because otherwise
@@ -598,7 +436,7 @@ th.stats-col-graph:hover {
     cursor: default;
 }
 </style>
-<style media="print">
+<style media="print" type="text/css">
 body {
     background: white !important;
     padding: 0;
@@ -638,7 +476,7 @@ a:link, a:visited {
     background: #ddd !important;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 #javascript-disabled {
     width: 600px;
     margin: 100px auto 0 auto;
@@ -661,7 +499,7 @@ a:link, a:visited {
     font-style: italic;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 .doc > * {
     margin: 0.7em 1em 0.1em 1em;
     padding: 0;
@@ -673,12 +511,14 @@ a:link, a:visited {
     margin-top: 0.1em;
 }
 .doc table {
+    border: 1px solid #ccc;
     background: transparent;
     border-collapse: collapse;
     empty-cells: show;
     font-size: 0.9em;
 }
 .doc table th, .doc table td {
+    border: 1px solid #ccc;
     background: transparent;
     padding: 0.1em 0.3em;
     height: 1.2em;
@@ -688,32 +528,24 @@ a:link, a:visited {
     letter-spacing: 0.1em;
 }
 .doc pre {
-    border-radius: 2px;
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #f4f4f4;
 }
 .doc code {
-    border-radius: 2px;
     padding: 0 0.2em;
     letter-spacing: 0.05em;
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #eee;
 }
 .doc li {
     list-style-position: inside;
     list-style-type: square;
 }
-.doc img, .doc table, .doc table th, .doc table td {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+.doc img {
+    border: 1px solid #ccc;
 }
 .doc hr {
-    background: #ccc; /* Fallback value */
-    background: var(--secondary-color);
+    background: #ccc;
     height: 1px;
     border: 0;
 }
@@ -725,9 +557,6 @@ function toggleSuite(suiteId) {
 }
 function toggleTest(testId) {
     toggleElement(testId, ['keyword']);
-    var test = window.testdata.findLoaded(testId);
-    if (test.status == "FAIL" || test.status == "SKIP")
-        expandFailed(test);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -791,7 +620,7 @@ function loadAndExpandElementIds(ids) {
     }
 }
 function expandFailed(element) {
-    if (element.status == "FAIL" || (element.type == "test" && element.status == "SKIP")) {
+    if (element.status == "FAIL") {
         window.elementsToExpand = [element];
         window.expandDecider = function (e) {
             return e.status == "FAIL";
@@ -1015,6 +844,7 @@ window.model = (function () {
         suite.populateSuites = createIterablePopulator('Suite');
         suite.childrenNames = ['keyword', 'suite', 'test'];
         suite.callWhenChildrenReady = function (callable) { callable(); };
+        suite.message = data.message;
         suite.children = function () {
             return suite.keywords().concat(suite.tests()).concat(suite.suites());
         };
@@ -1105,7 +935,6 @@ window.model = (function () {
             name: data.name,
             doc: data.doc,
             status: data.status,
-            message: data.message,
             times: data.times,
             id: data.parent ? data.parent.id + '-' + data.id : data.id
         };
@@ -1126,6 +955,7 @@ window.model = (function () {
                 return test.keywords();
         };
         test.tags = data.tags;
+        test.message = data.message;
         test.matchesTagPattern = function (pattern) {
             return containsTagPattern(test.tags, pattern);
         };
@@ -1141,7 +971,7 @@ window.model = (function () {
         kw.type = data.type;
         kw.template = 'keywordTemplate';
         kw.arguments = data.args;
-        kw.assign = data.assign + (data.assign ? ' =  ' : '');
+        kw.assign = data.assign + (data.assign ? ' =' : '');
         kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1252,48 +1082,58 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0)
+        if (total == 0) {
             return [0.0, 0.0, 0.0];
+        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1;
+            pass = 0.1
         if (fail > 0 && fail < 0.1)
-            fail = 0.1;
+            fail = 0.1
         if (skip > 0 && skip < 0.1)
-            skip = 0.1;
+            skip = 0.1
         if (pass > 99.95 && pass < 100)
-            pass = 99.9;
+            pass = 99.9
         if (fail > 99.95 && fail < 100)
-            fail = 99.9;
+            fail = 99.9
         if (skip > 99.95 && skip < 100)
-            skip = 99.9;
-        return [round1(pass), round1(skip), round1(fail)];
+            skip = 99.9
+        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1.0;
+            num1 = 1
         if (num2 > 0 && num2 < 1)
-            num2 = 1.0;
+            num2 = 1
         if (num3 > 0 && num3 < 1)
-            num3 = 1.0;
+            num3 = 1
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 >= num2 && num1 >= num3)
-                num1 = round1(num1 - 0.1);
-            else if (num2 >= num1 && num2 >= num3)
-                num2 = round1(num2 - 0.1);
-            else
-                num3 = round1(num3 - 0.1);
+            if (num1 > num2 && num1 > num3)
+                num1 -= 0.1;
+            else if (num2 > num1 && num2 > num3)
+                num2 -= 0.1;
+            else if (num3 > num1 && num3 > num2)
+                num3 -= 0.1;
+            else if (num1 > num3 && num1 == num2) {
+                num1 -= 0.1;
+                num2 -= 0.1;
+            }
+            else if (num1 > num2 && num1 == num3) {
+                num1 -= 0.1;
+                num3 -= 0.1;
+            }
+            else if (num2 > num1 && num2 == num3) {
+                num2 -= 0.1;
+                num3 -= 0.1;
+            }
         }
-        return [num1, num2, num3];
-    }
-    function round1(num) {
-        return Math.round(num*10) / 10;
+        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
     }
     return {
         Statistics: Statistics
@@ -1510,9 +1350,8 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
-                         'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'VAR', 'IF', 'ELSE IF', 'ELSE'];
+    var MESSAGE_TYPE = 8;
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1533,10 +1372,10 @@ window.testdata = function () {
                 elapsed];
     }
     function createMessage(element, strings) {
-        return model.Message(LEVELS[element[1]],
-                             util.timestamp(element[0]),
-                             strings.get(element[2]),
-                             strings.get(element[3]));
+        return model.Message(LEVELS[element[2]],
+                             util.timestamp(element[1]),
+                             strings.get(element[3]),
+                             strings.get(element[4]));
     }
     function parseStatus(stats) {
         return STATUSES[stats[0]];
@@ -1547,7 +1386,7 @@ window.testdata = function () {
         };
     }
     function createBodyItem(parent, element, strings, index) {
-        if (element.length < 5)
+        if (element[0] == MESSAGE_TYPE)
             return createMessage(element, strings);
         var messages = util.filter(parent.children(), function (child) {
             return child.type == 'message';
@@ -1555,7 +1394,6 @@ window.testdata = function () {
         return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
-        var status = element[8];
         var kw = model.Keyword({
             parent: parent,
             type: KEYWORD_TYPES[element[0]],
@@ -1571,12 +1409,7 @@ window.testdata = function () {
                 this.doc = function () { return doc; };
                 return doc;
             },
-            status: parseStatus(status),
-            message: function () {
-                var msg = status.length == 4 ? strings.get(status[3]) : '';
-                this.message = function () { return msg; };
-                return msg;
-            },
+            status: parseStatus(element[8], strings),
             times: model.Times(times(element[8])),
             isChildrenLoaded: typeof(element[9]) !== 'number'
         });
@@ -1787,20 +1620,6 @@ window.testdata = function () {
 }();
 </script>
 <script type="text/javascript">
-const lightModeIcon = `
-<svg class="light-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-    viewBox="0 0 24 24" fill="var(--text-color)">
-    <rect fill="none" height="24" width="24" />
-    <path
-        d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z" />
-</svg>`
-const darkModeIcon = `
-<svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-    viewBox="0 0 24 24" fill="var(--text-color)">
-    <rect fill="none" height="24" width="24" />
-    <path
-        d="M11.01,3.05C6.51,3.54,3,7.36,3,12c0,4.97,4.03,9,9,9c4.63,0,8.45-3.5,8.95-8c0.09-0.79-0.78-1.42-1.54-0.95 c-0.84,0.54-1.84,0.85-2.91,0.85c-2.98,0-5.4-2.42-5.4-5.4c0-1.06,0.31-2.06,0.84-2.89C12.39,3.94,11.9,2.98,11.01,3.05z" />
-</svg>`
 function removeJavaScriptDisabledWarning() {
     // Not using jQuery here for maximum speed
     document.getElementById('javascript-disabled').style.display = 'none';
@@ -1836,10 +1655,6 @@ function setTitle(suiteName, type) {
 function addHeader() {
     var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
-           '<button id=theme-toggle>' +
-             lightModeIcon +
-             darkModeIcon +
-           '</button>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
              '<span id="generated-ago">${ago} ago</span>' +
@@ -1851,7 +1666,6 @@ function addHeader() {
         ago: util.createGeneratedAgoString(generated),
         title: document.title
     }).appendTo($('#header'));
-    document.getElementById('theme-toggle')?.addEventListener('click', theme.onClick);
 }
 function addReportOrLogLink(myType) {
     var url;
@@ -1980,116 +1794,30 @@ function stopPropagation(event) {
     if (event.stopPropagation)
         event.stopPropagation();
 }
-const theme = function () {
-    const storageKey = 'theme-preference';
-    const urlParams = new URLSearchParams(window.location.search);
-    var storage;
-    var theme;
-    function init(givenStorage) {
-        storage = givenStorage;
-        theme = { value: getPreference() };
-        document.body.setAttribute('data-theme', theme.value);
-        reflectPreference();
-        window.matchMedia('(prefers-color-scheme: dark)')
-            .addEventListener('change', ({matches:isDark}) => {
-                theme.value = isDark ? 'dark' : 'light';
-                setPreference();
-            });
-        window.addEventListener('storage', ({key, newValue}) => {
-            if (key === storage.fullKey(storageKey)) {
-                theme.value = newValue === 'dark' ? 'dark' : 'light';
-                setPreference();
-            }
-        });
-    }
-    function getPreference() {
-        if (urlParams.has('theme')) {
-            var urlTheme = urlParams.get('theme') === 'dark' ? 'dark' : 'light';
-            storage.set(storageKey, urlTheme);
-            urlParams.delete('theme');
-            return urlTheme;
-        }
-        if (storage.get(storageKey))
-            return storage.get(storageKey) === 'dark' ? 'dark' : 'light';
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    function setPreference() {
-        storage.set(storageKey, theme.value);
-        reflectPreference();
-    }
-    function reflectPreference() {
-        document.body.setAttribute('data-theme', theme.value);
-        document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
-        const event = new Event('theme-change', {value: theme.value});
-        document.dispatchEvent(event);
-    }
-    function onClick() {
-        theme.value = theme.value === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('theme-toggled', "");
-        setPreference();
-    }
-    return {init: init, getPreference: getPreference, setPreference: setPreference,
-        reflectPreference: reflectPreference, onClick: onClick};
-}();
-</script>
-<script type="text/javascript">
-storage = function () {
-    var prefix = 'robot-framework-';
-    var storage;
-    function init(user) {
-        if (user)
-            prefix += user + '-';
-        storage = getStorage();
-    }
-    function getStorage() {
-        // Use localStorage if it's accessible, normal object otherwise.
-        // Inspired by https://stackoverflow.com/questions/11214404
-        try {
-            localStorage.setItem(prefix, prefix);
-            localStorage.removeItem(prefix);
-            return localStorage;
-        } catch (exception) {
-            return {};
-        }
-    }
-    function get(key, defaultValue) {
-        var value = storage[fullKey(key)];
-        if (typeof value === 'undefined')
-            return defaultValue;
-        return value;
-    }
-    function set(key, value) {
-        storage[fullKey(key)] = value;
-    }
-    function fullKey(key) {
-        return prefix + key;
-    }
-    return {init: init, get: get, set: set, fullKey: fullKey};
-}();
 </script>
 <script type="text/javascript">
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,55382],[],[[4,0,0,[],[0,228,18845,5],[[0,6,0,0,0,0,0,0,[1,229,11702],[[0,7,8,0,9,10,0,0,[1,229,11665],[[229,2,11]]],[0,12,8,0,13,0,0,0,[1,11894,36],[]]]],[0,14,0,0,0,0,0,0,[1,11931,623],[[0,15,8,0,16,17,0,0,[1,11931,609],[[11931,2,18]]],[0,19,8,0,20,21,0,0,[1,12540,14],[]]]],[0,22,0,0,0,23,0,0,[0,12555,4374],[[0,15,8,0,16,24,0,0,[1,12555,72],[[12555,2,25]]],[0,26,27,0,28,29,0,0,[1,12627,1001],[[13627,2,30]]],[0,31,27,0,32,33,0,0,[1,13628,282],[[0,15,8,0,16,34,0,0,[0,13628,282],[[13628,2,35],[13907,2,36],[13907,5,37]]]]],[0,26,27,0,28,38,0,0,[1,13910,3004],[[16914,2,39]]],[0,40,0,0,0,41,0,0,[0,16914,14],[[0,42,8,0,43,0,44,0,[1,16915,9],[[16924,2,45]]],[0,46,27,0,47,48,0,0,[1,16924,1],[[16924,2,49]]],[3,50,0,0,0,0,0,0,[0,16925,3],[[4,51,0,0,0,0,0,0,[0,16926,2],[[0,52,27,0,53,54,0,0,[0,16926,2],[[16927,5,55]]]]]]]]]]],[0,56,8,0,57,0,0,0,[3,16929,0],[]],[2,56,8,0,57,0,0,0,[1,16930,2143],[]]]],[58,0,0,[],[0,19085,18398,59],[[0,6,0,0,0,0,0,0,[1,19085,11323],[[0,7,8,0,9,10,0,0,[1,19085,11286],[[19085,2,11]]],[0,12,8,0,13,0,0,0,[1,30371,37],[]]]],[0,14,0,0,0,0,0,0,[1,30408,662],[[0,15,8,0,16,17,0,0,[1,30408,622],[[30409,2,18]]],[0,19,8,0,20,21,0,0,[1,31031,40],[]]]],[0,22,0,0,0,60,0,0,[0,31071,4254],[[0,15,8,0,16,24,0,0,[1,31072,102],[[31072,2,25]]],[0,26,27,0,28,29,0,0,[1,31174,1001],[[32175,2,30]]],[0,31,27,0,32,33,0,0,[1,32176,143],[[0,15,8,0,16,34,0,0,[0,32176,142],[[32176,2,61],[32317,2,62],[32317,5,63]]]]],[0,26,27,0,28,38,0,0,[1,32318,3001],[[35319,2,39]]],[0,40,0,0,0,41,0,0,[0,35319,6],[[0,42,8,0,43,0,44,0,[1,35320,4],[[35323,2,45]]],[0,46,27,0,47,48,0,0,[1,35324,0],[[35324,2,49]]],[3,50,0,0,0,0,0,0,[0,35324,1],[[4,64,0,0,0,0,0,0,[0,35324,1],[[0,52,27,0,53,54,0,0,[0,35324,1],[[35325,5,65]]]]]]]]]]],[0,56,8,0,57,0,0,0,[3,35326,0],[]],[2,56,8,0,57,0,0,0,[1,35327,2155],[]]]],[66,0,0,[],[0,37490,17885,67],[[0,6,0,0,0,0,0,0,[1,37490,10825],[[0,7,8,0,9,10,0,0,[1,37490,10786],[[37490,2,11]]],[0,12,8,0,13,0,0,0,[1,48277,38],[]]]],[0,14,0,0,0,0,0,0,[1,48315,659],[[0,15,8,0,16,17,0,0,[1,48316,647],[[48316,2,18]]],[0,19,8,0,20,21,0,0,[1,48963,12],[]]]],[0,22,0,0,0,68,0,0,[0,48975,4260],[[0,15,8,0,16,24,0,0,[1,48976,66],[[48976,2,25]]],[0,26,27,0,28,29,0,0,[1,49042,1001],[[50043,2,30]]],[0,31,27,0,32,33,0,0,[1,50043,176],[[0,15,8,0,16,34,0,0,[0,50047,172],[[50048,2,69],[50219,2,70],[50219,5,71]]]]],[0,26,27,0,28,38,0,0,[1,50220,3001],[[53220,2,39]]],[0,40,0,0,0,41,0,0,[0,53221,14],[[0,42,8,0,43,0,44,0,[1,53222,9],[[53231,2,45]]],[0,46,27,0,47,48,0,0,[1,53231,1],[[53232,2,49]]],[3,50,0,0,0,0,0,0,[0,53233,2],[[4,72,0,0,0,0,0,0,[0,53233,1],[[0,52,27,0,53,54,0,0,[0,53233,1],[[53234,5,73]]]]]]]]]]],[0,56,8,0,57,0,0,0,[3,53235,0],[]],[2,56,8,0,57,0,0,0,[1,53236,2138],[]]]]],[],[3,0,3,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,120799],[],[[4,0,0,[],[1,192,45671],[[0,5,0,0,0,0,0,0,[1,193,17211],[[0,6,7,0,8,9,0,0,[1,193,16865],[[8,194,2,10]]],[0,11,7,0,12,0,0,0,[1,17059,345],[]]]],[0,13,0,0,0,0,0,0,[1,17405,15125],[[0,14,7,0,15,16,0,0,[1,17405,1197],[[8,17406,2,17]]],[0,14,7,0,15,18,0,0,[1,18603,303],[[8,18603,2,19]]],[0,20,7,0,21,22,0,0,[1,18906,9340],[[8,18906,2,23]]],[0,24,7,0,25,26,0,0,[1,28247,4282],[[8,28247,2,27]]],[0,28,29,0,30,31,0,0,[1,32529,1],[[8,32530,2,31]]]]],[0,32,0,0,0,0,0,0,[1,32530,13123],[[0,33,7,0,34,35,0,0,[1,32531,1444],[[8,32531,2,36]]],[0,37,29,0,38,39,0,0,[1,33975,2006],[[8,35981,2,40]]],[0,41,7,0,42,43,0,0,[1,35982,121],[]],[0,33,7,0,34,44,0,0,[1,36104,2147],[[8,36104,2,45]]],[0,46,7,0,47,48,49,0,[1,38251,7397],[[8,45648,2,50]]],[3,51,0,0,0,0,0,0,[1,45649,3],[[4,52,0,0,0,0,0,0,[1,45649,1],[[0,53,29,0,54,55,0,0,[1,45649,1],[]]]],[4,56,0,0,0,0,0,0,[1,45650,0],[[0,53,29,0,54,55,0,0,[1,45650,0],[]]]],[4,57,0,0,0,0,0,0,[1,45650,1],[[0,53,29,0,54,55,0,0,[1,45651,0],[]]]],[4,58,0,0,0,0,0,0,[1,45651,1],[[0,53,29,0,54,55,0,0,[1,45651,1],[]]]],[4,59,0,0,0,0,0,0,[1,45652,0],[[0,53,29,0,54,55,0,0,[1,45652,0],[]]]]]],[0,28,29,0,30,60,0,0,[1,45652,1],[[8,45653,2,61]]],[0,62,29,0,63,61,0,0,[1,45653,0],[]]]],[0,64,7,0,65,0,0,0,[1,45654,206],[]],[2,64,7,0,65,0,0,0,[1,45862,1],[]]]],[66,0,0,[],[1,45869,37118],[[0,5,0,0,0,0,0,0,[1,45871,13395],[[0,6,7,0,8,9,0,0,[1,45873,13039],[[8,45876,2,10]]],[0,11,7,0,12,0,0,0,[1,58913,353],[]]]],[0,13,0,0,0,0,0,0,[1,59267,12510],[[0,14,7,0,15,16,0,0,[1,59267,1109],[[8,59268,2,17]]],[0,14,7,0,15,18,0,0,[1,60376,301],[[8,60377,2,19]]],[0,20,7,0,21,22,0,0,[1,60678,7999],[[8,60678,2,23]]],[0,24,7,0,25,26,0,0,[1,68677,3099],[[8,68678,2,27]]],[0,28,29,0,30,31,0,0,[1,71776,0],[[8,71776,2,31]]]]],[0,67,0,0,0,0,0,0,[1,71777,11018],[[0,33,7,0,34,35,0,0,[1,71777,1251],[[8,71778,2,36]]],[0,37,29,0,38,39,0,0,[1,73028,2005],[[8,75032,2,40]]],[0,46,7,0,47,48,49,0,[1,75034,7753],[[8,82787,2,68]]],[3,69,0,0,0,0,0,0,[1,82787,7],[[4,70,0,0,0,0,0,0,[1,82788,0],[[0,53,29,0,54,55,0,0,[1,82788,0],[]]]],[4,71,0,0,0,0,0,0,[1,82789,0],[[0,53,29,0,54,55,0,0,[1,82789,0],[]]]],[4,72,0,0,0,0,0,0,[1,82789,1],[[0,53,29,0,54,55,0,0,[1,82789,1],[]]]],[4,73,0,0,0,0,0,0,[1,82790,1],[[0,53,29,0,54,55,0,0,[1,82791,0],[]]]],[4,74,0,0,0,0,0,0,[1,82791,1],[[0,53,29,0,54,55,0,0,[1,82791,1],[]]]],[4,75,0,0,0,0,0,0,[1,82792,0],[[0,53,29,0,54,55,0,0,[1,82792,0],[]]]],[4,76,0,0,0,0,0,0,[1,82792,1],[[0,53,29,0,54,55,0,0,[1,82792,1],[]]]],[4,77,0,0,0,0,0,0,[1,82793,1],[[0,53,29,0,54,55,0,0,[1,82793,1],[]]]]]],[0,28,29,0,30,78,0,0,[1,82794,0],[[8,82794,2,78]]]]],[0,64,7,0,65,0,0,0,[1,82795,189],[]],[2,64,7,0,65,0,0,0,[1,82985,1],[]]]],[79,0,0,[],[1,82990,37804],[[0,5,0,0,0,0,0,0,[1,82992,11814],[[0,6,7,0,8,9,0,0,[1,82995,11474],[[8,82997,2,10]]],[0,11,7,0,12,0,0,0,[1,94470,336],[]]]],[0,13,0,0,0,0,0,0,[1,94807,13353],[[0,14,7,0,15,16,0,0,[1,94807,1069],[[8,94808,2,17]]],[0,14,7,0,15,18,0,0,[1,95876,303],[[8,95877,2,19]]],[0,20,7,0,21,22,0,0,[1,96179,8844],[[8,96180,2,23]]],[0,24,7,0,25,26,0,0,[1,105024,3135],[[8,105025,2,27]]],[0,28,29,0,30,31,0,0,[1,108159,1],[[8,108160,2,31]]]]],[0,80,0,0,0,0,0,0,[1,108160,12409],[[0,33,7,0,34,35,0,0,[1,108161,1129],[[8,108161,2,36]]],[0,37,29,0,38,39,0,0,[1,109290,2006],[[8,111295,2,40]]],[0,41,7,0,42,81,0,0,[1,111297,124],[]],[0,33,7,0,34,82,0,0,[1,111422,2882],[[8,111422,2,83]]],[0,46,7,0,47,48,49,0,[1,114305,6259],[[8,120564,2,84]]],[3,85,0,0,0,0,0,0,[1,120564,4],[[4,86,0,0,0,0,0,0,[1,120564,1],[[0,53,29,0,54,55,0,0,[1,120565,0],[]]]],[4,87,0,0,0,0,0,0,[1,120565,1],[[0,53,29,0,54,55,0,0,[1,120565,1],[]]]],[4,88,0,0,0,0,0,0,[1,120566,1],[[0,53,29,0,54,55,0,0,[1,120567,0],[]]]],[4,89,0,0,0,0,0,0,[1,120567,1],[[0,53,29,0,54,55,0,0,[1,120567,1],[]]]],[4,90,0,0,0,0,0,0,[1,120568,0],[[0,53,29,0,54,55,0,0,[1,120568,0],[]]]]]],[0,28,29,0,30,91,0,0,[1,120568,1],[[8,120568,2,91]]]]],[0,64,7,0,65,0,0,0,[1,120569,221],[]],[2,64,7,0,65,0,0,0,[1,120792,1],[]]]]],[],[3,3,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Reports","*C:\\xampp\\htdocs\\Project_SoftEn\\git-group-repository-group-4-sec-4\\test\\reports.robot","*reports.robot","*Navigate To Report Page And Switch To Chinese","eNqFUz2P00AQ7fdXjIJ0Bul8ySHSbJQCHaJDSLSIYu0d2wvrXWt38gWKRAPXUQEtUCMhChpIwZ8hufsZrD9BpMCWLc97zzPPM+PoRNOsoFKDFiafj9CMINXC+/mo2EgnCOXoJKdZI0Mh+2dPG411wM5SuzAELxiEIxHps9wFQMap1dZxuJFN63PW0JWQUpmcw+1JtYZJCybWSXSxE1ItPIdptZ4xxrasyxyTIo1d/swGwKvnyOHOpBYO4ApVXhAHY10pdEuUwuXKxGQrDueDvEMTS2RL3rsgXFMstMoNhxQNoZv97SGwxxbOp/+18BgeoPciR0iDJOQFu0QHVCBoVSqCQnhIEA04LAMlz+AJWwoXOukuCuHoYUXKGg/zrrxDX4VYLUN9cgs87b5JGQrXXV9hSo9EeIdDJrTveClIeKT7SusB3zKDK2iK3OyrXQizFP60q0WbKlSJAhn9ScMHa/dC1OK2Ncn/dc22t1i9LWOfOlVRsy+1vrnVRGZt6HS/cW00GmS9SqplL5GxL+NM4xqeLjypbBN3fY3boR3BQZ4grUKHj/OOQ+IBbIDWQYOx1nli5aZf+nH9o9RBBNKiD4OmZqyh8RBd/7zcv9n9+vF2//3b/vWrw/vLq88fDy93h3dfr3Yfrr98in4DibcjEA==","*Open Browser To Home Page","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${HOME_URL}    ${BROWSER}","*Opening browser 'chrome' to base url '<a href=\"https://cs0404.cpkkuhost.com/\">https://cs0404.cpkkuhost.com/\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Navigate To Report Page","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${REPORT_MENU}","*Clicking element 'xpath=//a[contains(@href, '/reports')]'.","*Wait Until Page Contains","*<p>Waits until <code>text\x3c/code> appears on the current page.\x3c/p>","*Report    10s","*Switch Language And Verify","*${LANG_TO_CHINESE}    @{EXPECTED_REPORT_CN}","*${LANG_DROPDOWN_TOGGLE}","*Clicking element 'xpath=//a[@id=\"navbarDropdownMenuLink\"]'.","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*1s","*Slept 1 second.","*Run Keyword And Ignore Error","*<p>Runs the given keyword with the given arguments and ignores possible error.\x3c/p>","*Click Element    ${lang_button}","*${lang_button}","*Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), '中文')]'.","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-7.png\"><img src=\"selenium-screenshot-7.png\" width=\"800px\">\x3c/a>","*Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), '中文')]' not found.","*3s","*Slept 3 seconds.","*Verify Page Contains Multiple Texts","*@{expected_texts}","*Get Source","*<p>Returns the entire HTML source of the current page or frame.\x3c/p>","*${html_source}","*${html_source} = &lt;html lang=\"en\" class=\"hydrated\"&gt;&lt;head&gt;&lt;style&gt;\n.count {\n    background-color: #f5f5f5;\n    padding: 20px 0;\n    border-radius: 5px;\n\n\n}\n\n.count-title {\n    font-size: 40px;\n    font-weight: normal;\n  ...","*Log","*<p>Logs the given message with the given level.\x3c/p>","*HTML Source: ${html_source}","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","*${text}    IN    @{expected_texts}","*${text} = 过去五年内文章总数统计","*Should Contain","*<p>Fails if <code>container\x3c/code> does not contain <code>item\x3c/code> one or more times.\x3c/p>","*${html_source}    ${text}","eNrtPE2P48aVd/2KiiZxq7NNSmK3xh4JQjxufyLJjDEzxu5iMDBKZElkN8liqkrdLQ8acBbeOAGCPa0TZA+7mw2CHBZZZIMcNPEhf0WH2PHPyKsqfouS2NNqZyaQZiCR9V6976r3qljsvVd8MXBF4CMfh5Nhk4RNZPuY82HTnTkMC+I0X5mIgUIj2EmuuZj5RN40TJtOQ4GeNhB8Rtg+nTBocAyb+pT10a1xT/4bKHCEHccLJ31kdaIL1NGNI8ocwgyGHW/K+6gXXQwajcZlI6ZsCE/4JKY/ptDAvY9IHx11JGLaeE68iSv6KKQswL4GBJhNvNAQNOqjbooet46oEDToJ1IIciEM7HuTsI9sEgrCBnkZALosQrd34yIoGcbYsC5i9ror9EF4KmjM3adY8Q2JbnA8Hvl41kcCj/y4LfHHEXa6pBcrh5lTsK9GutW907v92t2camMceD7Q2/suDj2xd4A4DrnBCfPGgyWr3JZqXjZkmLSzOJEfiSmbAyIwsl3MOBHD5geP3jZeaxYiCzlYYENdQiQqmEdDw7Np+PTM497I8z0x67ue45Dw0kxCNQ/zQhfEE5clMQoihDggw+aZR84jygREPmgBhh82zz1HuEOHnHk2MdTNAfJAcw/7BrexT4Zds9NcJugKERnkB1PvbNj8J+ODu8YxDSIsPPBCjrpHhsSZkGJ/5QbZspj/ajH/3WL+H+r/vyye/WQx/+1i/svF/Nli/uvF/NPF/PeL+S8W898s5n9YzH+8mP//Yv4/KLn/OdwojF9rwGL+Q3ULRD9JCP2nwvzN4tnHi/lnqvFXi2c/VZZKxUgFG2FOkMvIGKYEUI/3222bd446R6YdnZ5OXcoFjJKgqI3vhadxJy+YtO+Rc59OqBmFkyZixB82uQsWt6cCSZ82kZhFRKLiCWlfKD9relUE10kBjbyNo8iE34STiiKXEHENkjDCHCOgjBijKQzasA59bjMvEogzewODEy3yCU8HQVv3rZC3zLKOAmckdChrjygVXDAcKY3SOzPwtDoFB15F+JMfTAmbGYfmbbOjqG3SpDbxJclPyoKvYHUlmznhCTdtn06dsY8ZUZzxCb5o+96It9XUhs8JpwFpH5mvmh1lv3xztQmv6S/eDhxPsQpgbmMw9TiEQ3KQg4PfEEfhqbHHFVvhksAbz3TLTTCbRZpZcnEDPLgXRD4xgA7JabbUusz5G4ahkpDKoMgwloCrxdNzmczmbTVLXCnaxLknwNtGFvI9GFTd0pBVdNs1TLVRFjNVkpshEe2u2e2ah4qdhDzSkJRz7wZZM8Ij8IV3RtqWaZl3lBBZY7UQiWuWfFM5x1CHmHq20nNXMnH1zK6cSZBDxoRVzCcVAbCSxwqbHmUzpZmzbDyHreS8fs5cx6vafZv4pfZsXNe924nyv1mMvwARHjtiXb2yIXX5eKImOEMyOoQgj3NX0p6mkepSphR7Wt+AOlNZzhYicRpGpxPFHep0NaW+3oNRZbVhKSLStvTCJDzYlLpjpiHVDGEZcD2WW6gUZM7n5oTSiU9w5HHNHah/Ry+Qht+PM/U/vCdZNrdUv6mUJbvko6KRLZZKcSgR2t9Gx7C+EqA1+na78fopmY0ZrHa4WnaJE24wyJAwAmE9B+UFGOnpmNHgKY2wLVdP5p07l4Kmt93LS7PUMQC7CsqepgT6qyijbsCz7nKRmHQ+qGw1yEWEQ2cFkLsM7Pg0otxTXPGIU38qyMDxGLFVky/YwCdj0e8M5MK7M2BqYd4ZxAvuzoCeEQar5vN4BTmIqCfX2waBukHwvlpJL60zBx8ZHmh20Te6l+sEl/Z3vLMKEdVKst/tqA+skl29Y5A15KW+XKf/Jh5Wp/OthLy6LlAuronVXbK5o+NqRJ3ZUsVzD595E+3RUjoM8RnynGETfkeYpTtI+hbpn9g4hj9JGnwpXTbRJMRArYSAXDFjKNKYMfannlPETfBxkZ0xYsAGyeWmodaTyRC7tdy96iNJwpK1xuJELmwlG8sgoV7ZYh9W9/BFWAh2OiP1OepVZUkTQScw0bAk0Wicpt4bGfEYLK3k+zjiJAfBbCJ3Vm7FILn/cC/2DYb5yZCGZdRPWQEwhmgvEXDmGPuSpmr18UjOW48UR+m/OBBWK6hmJyBVrVK2wtehCIiVlBRU670ajhM6hcjRNkliLbORjNNlsyQkthBMRZmmfomiHCsBN+TuHcqaDMhIINQ25ViWxfdyVA1PkAA5MLLIBVK7jqqFG3rrEW1blGVx8oTlWuw0odTWXnJhZa1ovgsXWdf1yvpelnRXIVXZgdHIoechYNRTY0n4lEQc483cjPhmDIIyi/prRrKT4lWOxVqzyQPCCWa2Sxiv6YuNaFkMpzoGJJzm5wafOKPZkrq1BK4zPcZerYuOl+SVTq5Va7HMfO3udhQof+Se8FQOsYe2R0KbbJVBTbeWx8vL6yTrZpz0Xjimcfn6iNhuSGHCm+08dR1PHd6Mp94h1JDeYtJdNn/ZfaToTP3ame6Kie5501uamxOPRoyewHpLkUtyDnpfN14xWV9Vha3pIB9VR0UN3pFNNys/tuutDTbpIJ9Z8lh6dX2zYqclEnfp+daKpKR2rKiWvg81xveUyqpOWlEkuZhHNJpGw6ZgU7JUOanG2gM4v2JJN8lQto025TUWLeXPW+HE97i7rWost8oplGPaL5tqstSoNzIXb/uzLvvIgJGHVqawBjGEWysdSfw24F4p/W0Kipje1YJCfhbPPtHP6xtbzEMvjEs+uoJLPtqyS+zwOV3y5/lvv/zZpy+KPxQbGO/XmtLrFBTPY/ckMWzegUjDZSRCg1Pfcwyelo9yC82TJ0DiPasPRxARpzqWJL4GSx7fk1cbLH91j2+ye7r9SUIH0XF5Qym/Fbqpa7qdWd4/bQPR1byqnj5nCCu2ZKt2UZE67wVfAkkP6K0fdDLlQj7mj48nJfs/gTB6zZUkgdD6nVvJSe4iL2O5vQKSOnDURGo3ethMTwiqU2Sq8yMqsI/uTYMRSAU632VQ5vuEo1YP/TMUbXxfb2D3Vu4Q5uRi60qX5T1EI3CM2yjKW2Jdx1gJvQXfs3Jb/FYPbppVG5UVe/x18eIypwo9m/7iWCxfbyKtHzM8F+mNM1ZiMhuHZ5jrkY6Zel7VbSJ99q55u9eBKUJZb9g87FppiKSHG0c+tU8HMU4fKRMPdPc+0tZvlnUsPrzKVNGibJ5n16lWC+G540sfRIm76hv1bejzs8TRU2YwU4+z69XnIn3qU2dGFCzm8EDWmbE3Kg6t5p9bb5xlBasnaXpWQbjyyupYXd3fXQJYqwCHqwBHqwC9SsBDOmU2KYHaORGzK2Xdo1gip9jcvV3Z3Ll2K7dhQcRLoDXydW5IjupWYXvXFa17Q6Kd0zVWa9cbLYpa+vx086JPFJ61rkaTo/r5pp5K4FJjoaFw0/j7qiceCiiYuNwqlNXEMZSwzq6meFlqil31tK56snbV01aqJ+uGyqddzbSyZnqu7FrP7PUf31zdsLq+e7WymrB25d2LJdqG8u7lKMRWnANfdww4OQnatsw75mF8u+blmYyNuj3DDM2gKEJD9FjOIQdyvpBfh/LrSH71nmi0CEeEfQghIHE7B/G/AlBHr4QfWQfd2xUY4CbdvZsCi8Q/tD2xiUGCc/TqgVXNo4pKQ+ppTkPuemPRaupJq7k/aKS8MyDcSEhDvlYQcuoT06eTVlmGtK9uyrrr+4w2SJQB4UbR9olAEaMgphRsoO4drMSOX6jNSB/kWkC2/C2QazzRvRmRxgUaZoCjVssLoY6/yxie7aOh2oLUL4JKVDo6AdSnlzosM0xzTNlb2Hbj3m9igeXbkQ65KNKQn3ZbAUwX8/vn4fuMgjhi1mpOoXUMawhHqpkhI2/cAn0fq05PhsMUbT9PUv2AdI/3uHLQ3hOQM5VlUMbMuwd67efhl8TnpJJ2JsZq6pfpzdoeuS6FUEnxtUiX+zEqI2LKQklz0FCN+V7gQB11cWxE3ErDo1GOvqpwqxmv8ThbivfC+FmO2CRErcoYlX1KcVpuiinLeE0C1tIRa309IbvR+ZdxyJbdVPKSJc0xnobqTDqaEKCBBVH15btQ6rRUIjlQz7b3cyqoOgiYKrBpMyI7qQ4xW2UUei5RJKrphRzG1AN6niCArqglsU7JTC5x8xwyLtKm1J4GUH/GXN7yibwDT7v5UanQ5fvvSx0eQes96pAWMMp1EK6JowiWCseu54OegJWDguhFsBsDL+Ur6dX2qrJVqiXRYq/SNDaVsuaSqVJC0lRemNDK00jo2MT3gZAUX5M5hoY8nZq2ilk8Bo5PSr0li3Wmu8zspBipZUyO04SI2IdvzN5zWule8H6aODCg3x/JIzom8OcyTB93pBjrw7MET2B6KkpFsWrIYuWFsZalsdaKY2l5rGqBLCWRBC69ePwCVjQKDLUaVuXYm9o3T3UCUMc3eF/JeKCbpN6cCGh8XIpNidtHew+P77//wcO9gwIw+3scx/rPP+zdeu3wraM3emU8tQpOcNhkhFtWr3eAsq+O2dsvdVIvzTyI/2yHOqFcAV/PV6E8FIyekhTxcPTaaISrEN/1Jq56aeRtz5cq3xqPx2vxNOWV3KVN+wUnZkMtw6w296Pj9zbb+vDOnaM3b9ewdbcDZu4ewRfEIepez9KVXKssbXftV53uli1dyT1vaRhL9c38j/drhPTbx8fWnbubzQxG7sThfE0TV3L82kxcyT1vYlnvl0z8RGYNWTYa+Y+8R2/cfYCO37374BEyluBykkp2F4/1huMQfbO1dyt9YLu3L+f6Vkf9HMs9/wvR2rOcvf1GoXc8w33TBDgkuJY8mHcApdpBcRLcV50ECaIOYBdAZjIHQo5IsbqrsbpPGnnm+e6yIpCdVyB0E4ROUYf7kaxNuJqodQWYvLrbR0qf+E/0eOoByV0eQWp7II9nFEIqZqP9HreDc0Jyrt/ZbBUNfhAzky+BgfcBuJfR6Rfsq9uplrJfFhuK1NVcDrfK5m+1o7BysV/Ve5d8d8l3l3x3yfflTb7WLvluJ/l+Lbl3lxR3SXGXFHdJcZcUd0lxlxRXJEWJnz4GH1Mqjw4mL/qou7XHBLNjiCtOIZabAX1ExDkhYbPGU3ktQXxUR/9tkvjMgD4uKAL1ms0ecijhKKQieeUD7X31p0+/+LfP//zHf//i2R+++NG/fvmzT//yv//95ceff/nZ7/7y+X999X+/3PsroKrJmA==","*Close Browser","*<p>Closes the current browser.\x3c/p>","*Navigate To Report Page And Switch To English","eNqFU02P1DAMvfdXWIO0BWm7M4uYS0d7QIu4ISQ4Ig5u47aBNK4Sz0dB899xP3elOdCqVfLei/1qu+mdk0MjrQOHvn7akN9A6TDGp03Tm4BCZnNXy2GUEZplHaV3NGySh5KPXuBvAnoVWP6ugwImK9lxyOFNtR/uw0h3aIz1dQ7vd90FdhNYcDAUsoDGHmMO++5ySJLkmsyRM7HiaI5fsQLR/qEcPuwG4QqeydaN5OA5tOgmosVQW58Jdzk8rvIZLViE23xxIXSRDJ2tfQ4leaFweO1B2VsLj/v/WvgBXyhGrAlKlWhc4BMFkIbA2dYKNBihIPIQqFXKPMDP8WCg2LGP9qR5JBzpfvZuvejzMXZUyjcUyzlU6OLMGxSMJJ+tcyt+TTyd4bnBIG8LDOPiGf0J4/38SdJ3miVVMn0Jk8Mi/qS7CedOE/r4Qn2dgOT6LhmmYhvLYDsZ52LQj6+BqJi1ostkTbvNKltUxp4Wiclim1WOLvDrGMVWfTbXL5uacwOrvCA5ayVv42418AqOwORgxJLJecGmX4Z7O/wQwyYFwxS1oTK2TwsP6XfRqmvuMgL7sZHCgg78sS3UF1egdbGl03MVB9hDTxhi+g8gbhar","*${LANG_TO_ENGLISH}    @{EXPECTED_REPORT_EN}","*Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'English')]'.","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-8.png\"><img src=\"selenium-screenshot-8.png\" width=\"800px\">\x3c/a>","*Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'English')]' not found.","*${text} = Statistics on the total number of articles for 5 years","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","*Navigate To Report Page And Switch To Thai","eNqFUz2P1DAQ7fMrRot0Aelyu4fYJqst0CE6hESLKLzxbGJw7Mie/QJthwT0wAmoqJCg4ksy/8Y/Bcf5AHEFiWJl3nuZeRmP0xNJi4pqCZKpcjlBNYFCMmuXk+rADSPkk5OSFlGGjA/vlg4S2yA5K/RGETxLIFwrVjwpTQB4VmipTQ7X1vP2XkS6YZwLVeZwc9bsYdaBK204mswwLjY2h3mzXyRJckz6zBkJktjnX+sAWPEUc7g1a4UjuENRVpSD0qZmsiNqZkqhMtJNDuejvEdXmkjX+eCCcE8Zk6JUORSoCM3ibw+BvWrhfP5fCw/hHlrLSoQiSEJe0Fs0QBWCFLUgqJiFFaICg3Wg+Bk8SrbMhE6ai4oZut+Q0MrCsi9v0DYhFttQn8wGT/t/EorCc9s2WNADFr7JYc2k7XnOiFmku0LKET8mCncQi1wfql0wtWX2tK9FhyZUSQOZ/kmTj9buhKjDdWcy/9d1cryRtNMytYURDcV5afVxaYm11qHTw8R10WSUDSoutoOEZ7bO1hL38HhjSawPWd/XrNu0K3CQr5B2ocNX805D4hGMQOcgYknnfKX5YRj6aXtQ2iAFrtGGjaa4raHxkHr32bu33v3w7k1cX3r33bt33n2K63vvLr17HsNv3n2M4Vf/65V3L7z7EpHXMAfvPnj3M/0N5c9DHQ==","*${LANG_TO_THAI}    @{EXPECTED_REPORT_TH}","*Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'ไทย')]'.","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-9.png\"><img src=\"selenium-screenshot-9.png\" width=\"800px\">\x3c/a>","*Element with locator 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'ไทย')]' not found.","*${text} = สถิติจำนวนบทความทั้งหมด 5 ปี","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"]);
+window.output["strings"] = window.output["strings"].concat(["*","*manageExperts","*/Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/manageExperts.robot","*manageExperts.robot","*Admin Login And Change Language To Thai","*Open Browser To Home Page","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${HOME_URL}, ${BROWSER}, executable_path=${WEBDRIVER_PATH}","*Opening browser 'chrome' to base url '<a href=\"https://cs0404.cpkkuhost.com/login\">https://cs0404.cpkkuhost.com/login\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Login As Admin","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${USER_FIELD}, ${USER}","*Typing text 'admin@gmail.com' into text field 'id=username'.","*${PASSWORD_FIELD}, ${PASSWORD}","*Typing text '12345678' into text field 'id=password'.","*Click Button","*<p>Clicks the button identified by <code>locator\x3c/code>.\x3c/p>","*${LOGIN_BUTTON}","*Clicking button 'xpath=//button[@type='submit']'.","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${URL_FOR_TEST}","*Opening url '<a href=\"https://cs0404.cpkkuhost.com/experts\">https://cs0404.cpkkuhost.com/experts\x3c/a>'","*Log","*BuiltIn","*<p>Logs the given message with the given level.\x3c/p>","*\"Login Successful.\"","*Change Language To Thai","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${LANG_DROPDOWN_TOGGLE}","*Clicking element 'xpath=//a[@id=\"languageDropdown\"]'.","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*2s","*Slept 2 seconds","*Wait Until Element Is Enabled","*<p>Waits until the element <code>locator\x3c/code> is enabled.\x3c/p>","*${LANG_TO_THAI}, timeout=10s","*${LANG_TO_THAI}","*Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(@href, '/lang/th')]'.","*Get Text","*<p>Returns the text value of the element identified by <code>locator\x3c/code>.\x3c/p>","*xpath=//body","*${PAGE_TEXT}","*${PAGE_TEXT} = ระบบการจัดการสารสนเทศการวิจัย\nไทย\nออกจากระบบ\nแดชบอร์ด\nPROFILE\nโปรไฟล์ผู้ใช้\nOPTION\nจัดการทุน\nโครงการวิจัย\nกลุ่มวิจัย\nจัดการผลงานวิจัย\nADMIN\nผู้ใช้\nบทบาท\nสิทธิ์การใช้งาน\nแผนก\nจัดการโปรแกรม\nจัดการความเช...","*${TEXT} IN [ @{TEXT_TH} ]","*${TEXT} = ความเชี่ยวชาญของอาจารย์","*Should Contain","*<p>Fails if <code>container\x3c/code> does not contain <code>item\x3c/code> one or more times.\x3c/p>","*${PAGE_TEXT}, ${TEXT}","*${TEXT} = รหัส","*${TEXT} = ชื่ออาจารย์","*${TEXT} = ชื่อความเชี่ยวชาญ","*${TEXT} = การดำเนินการ","*\"Language changed to Thai successfully.\", INFO","*\"Language changed to Thai successfully.\"","*Log To Console","*<p>Logs the given message to the console.\x3c/p>","*Close Browser","*<p>Closes the current browser.\x3c/p>","*Admin Login And Change Language To English","*Change Language To English","*${PAGE_TEXT} = Research Information Management System\nEnglish\nไทย\n中文\nlogout\nDashboard\nPROFILE\nUser Profile\nOPTION\nManage Fund\nResearch Project\nResearch Group\nManage Publications\nADMIN\nUsers\nRoles\nPermissions\nDepartm...","*${TEXT} IN [ @{TEXT_ENG} ]","*${TEXT} = Teacher Expertise","*${TEXT} = ID","*${TEXT} = Teacher Name","*${TEXT} = Expertise Name","*${TEXT} = Action","*${TEXT} = Sartra Wongthanavasu","*${TEXT} = Big Data Analytics","*${TEXT} = Pusadee Seresangtakul","*\"Language changed to English successfully.\"","*Admin Login And Change Language To Chinese","*Change Language To Chinese","*${LANG_TO_CHINESE}, timeout=10s","*${LANG_TO_CHINESE}","*Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(@href, '/lang/zh')]'.","*${PAGE_TEXT} = 科研信息管理系统\n中文\n退出\n仪表板\nPROFILE\n用户资料\nOPTION\n管理资本\n研究项目\n研究小组\n管理研究成果\nADMIN\n用户\n角色\n执照\n部门\n管理计划\n管理专长\n教师专长\n编号 教师姓名 专长名称 操作\n1 Sartra Wongthanavasu Big Data Analytics\n2 Sartra Wongthanavasu Computer Vision\n3 Sartra ...","*${TEXT} IN [ @{TEXT_ZH} ]","*${TEXT} = 教师专长","*${TEXT} = 编号","*${TEXT} = 教师姓名","*${TEXT} = 专长名称","*${TEXT} = 操作","*\"Language changed to Chinese successfully.\""]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:55","fail":3,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:55","fail":3,"id":"s1","label":"Reports","name":"Reports","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:02:01","fail":0,"label":"All Tests","pass":3,"skip":0}],[],[{"elapsed":"00:02:01","fail":0,"id":"s1","label":"manageExperts","name":"manageExperts","pass":3,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1741625605787;
+window.output["baseMillis"] = 1741715482947;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 55412;
+window.output["generated"] = 120885;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2099,7 +1827,7 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
 </script>
 <title></title>
 </head>
-<body data-theme="dark">
+<body>
 <div id="javascript-disabled">
   <h1>Opening Robot Framework log failed</h1>
   <ul>
@@ -2109,13 +1837,12 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
   </ul>
 </div>
 <script type="text/javascript">removeJavaScriptDisabledWarning();</script>
+
 <div id="header"></div>
 <div id="statistics-container"></div>
 
 <script type="text/javascript">
 $(document).ready(function() {
-    storage.init();
-    theme.init(storage);
     try {
         var topsuite = window.testdata.suite();
     } catch (error) {
@@ -2123,7 +1850,6 @@ $(document).ready(function() {
         return;
     }
     initLayout(topsuite.name, 'Log');
-    theme.reflectPreference();
     addStatistics();
     addErrors();
     addExecutionLog(topsuite);
@@ -2164,6 +1890,25 @@ function drawErrorsRecursively(errors, target) {
         // Errors may have moved scroll position. Resetting location re-scrolls.
         if (window.location.hash)
             window.location.replace(window.location.hash);
+        highlightLinkTarget();
+    }
+}
+
+function highlightLinkTarget() {
+    if (window.location.hash) {
+        var target = $(window.location.hash);
+        highlight(target);
+    }
+}
+
+function highlight(element, color) {
+    if (color === undefined)
+        color = 242;
+    if (color < 255) {
+        element.css({'background-color': 'rgb('+color+','+color+','+color+')'});
+        setTimeout(function () { highlight(element, color+1); }, 300);
+    } else {
+        element.css({'background-color': ''});
     }
 }
 
@@ -2179,8 +1924,9 @@ function makeElementVisible(id) {
         util.map(ids, expandElementWithId);
         if (ids.length) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
+            window.location.hash = '';
             window.location.hash = id;
-            document.getElementById(id).scrollIntoView();
+            highlightLinkTarget();
         }
     });
 }
@@ -2377,16 +2123,15 @@ function addExecutionLog(main) {
     <div class="element-header closed" onclick="toggleKeyword('${id}')">
       <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
-        <span class="label ${status.toLowerCase()}">${type}</span>
-        <span class="assign">{{html assign}}</span>
+        <span class="label keyword ${status.toLowerCase()}">${type}</span>
+        <span>{{html assign}}</span>
         <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
-        &nbsp;
         <span class="arg">{{html arguments}}</span>
       </div>
       <div class="element-header-right" onclick="stopPropagation(event)">
         <a class="expand" title="Expand all" href="javascript:expandAll('${id}')"></a>
         <a class="collapse" title="Collapse all" href="javascript:collapseAll('${id}')"></a>
-        <a class="link" title="Link to this item" href="#${id}" onclick="makeElementVisible('${id}')"></a>
+        <a class="link" title="Link to this keyword" href="#${id}" onclick="makeElementVisible('${id}')"></a>
       </div>
       <div class="element-header-toggle" title="Toggle visibility"></div>
     </div>
@@ -2414,12 +2159,6 @@ function addExecutionLog(main) {
           <th>Start / End / Elapsed:</th>
           <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
         </tr>
-        {{if message()}}
-        <tr>
-          <th>Message:</th>
-          <td class="message">{{html message()}}</td>
-        </tr>
-        {{/if}}
       </table>
     </div>
   </div>
@@ -2442,7 +2181,6 @@ function addExecutionLog(main) {
   <div id="log-level-selector">
   Log level:
     <select onchange="logLevelSelected(this.options[selectedIndex].value)">
-      <option value="3">WARN</option>
       <option value="2">INFO</option>
       <option value="1">DEBUG</option>
       {{if showTrace()}}<option value="0">TRACE</option>{{/if}}
