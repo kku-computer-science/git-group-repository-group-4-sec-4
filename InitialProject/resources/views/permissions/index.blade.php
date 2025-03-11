@@ -31,7 +31,8 @@
                         @foreach ($data as $key => $permission)
                         <tr>
                             <td>{{ $permission->id }}</td>
-                            <td>{{ $permission->name }}</td>
+                            <td>{{ __('permissions.' . $permission->name) }}</td>
+
                             <td>
                                 <form action="{{ route('permissions.destroy',$permission->id) }}" method="POST">
                                     <li class="list-inline-item">
@@ -77,21 +78,22 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        if (!$.fn.DataTable.isDataTable('#example1')) { // ตรวจสอบว่า DataTable ถูกใช้งานไปแล้วหรือยัง
-            var table1 = $('#example1').DataTable({
-                responsive: true,
-                language: {
-                    search: "{{ __('reseracher.Search') }}",
-                    lengthMenu: "{{ __('reseracher.Show') }} _MENU_ {{ __('reseracher.entries') }}",
-                    info: "{{ __('reseracher.Showing') }} _START_ {{ __('reseracher.to') }} _END_ {{ __('reseracher.of') }} _TOTAL_ {{ __('reseracher.entries') }}",
-                    paginate: {
-                        previous: "{{ __('reseracher.Previous') }}",
-                        next: "{{ __('reseracher.Next') }}",
-                    }
+    if (!$.fn.DataTable.isDataTable('#example1')) { 
+        var table1 = $('#example1').DataTable({
+            responsive: true,
+            language: {
+                search: "{{ __('permissions.search') }}",
+                lengthMenu: "{{ __('permissions.show') }} _MENU_ {{ __('permissions.entries') }}",
+                info: "{{ __('permissions.showing') }} _START_ {{ __('permissions.to') }} _END_ {{ __('permissions.of') }} _TOTAL_ {{ __('permissions.entries') }}",
+                paginate: {
+                    previous: "{{ __('permissions.previous') }}",
+                    next: "{{ __('permissions.next') }}",
                 }
-            });
-        }
-    });
+            }
+        });
+    }
+});
+
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {
@@ -99,12 +101,28 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
+    title: "{{ __('manageExpertise.delete_confirm_title') }}",
+    text: "{{ __('manageExpertise.delete_confirm_text') }}",
+    icon: "warning",
+    buttons: {
+        cancel: {
+            text: "{{ __('manageExpertise.cancel') }}",
+            value: null,
+            visible: true,
+            className: "btn btn-secondary",
+            closeModal: true,
+        },
+        confirm: {
+            text: "{{ __('manageExpertise.ok') }}",
+            value: true,
+            visible: true,
+            className: "btn btn-danger",
+            closeModal: true
+        }
+    },
+    dangerMode: true,
+})
+
             .then((willDelete) => {
                 if (willDelete) {
                     swal("Delete Successfully", {

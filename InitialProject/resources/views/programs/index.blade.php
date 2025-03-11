@@ -33,44 +33,54 @@
             <h4 class="card-title" ">{{ __('manageProgram.course') }}</h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="javascript:void(0)" id="new-program" data-toggle="modal"><i class="mdi mdi-plus btn-icon-prepend"></i> {{ __('manageProgram.add') }} </a>
             <table id="example1" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>{{ __('manageProgram.id') }}</th>
-                        <th>{{ __('manageProgram.name_thai') }}</th>
-                        <!-- <th>Name (Eng)</th> -->
-                        <th>{{ __('manageProgram.degree') }}</th>
-                        <th>{{ __('manageProgram.action') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($programs as $i => $program)
-                    <tr id="program_id_{{ $program->id }}">
-                        <td>{{ $i+1 }}</td>
-                        <td>{{ $program->program_name_th }}</td>
-                        <!-- <td>{{ $program->program_name_en }}</td> -->
-                        <td>{{ $program->degree->degree_name_en}}</td>
-                        <td>
-                            <form action="{{ route('programs.destroy',$program->id) }}" method="POST">
-                                <!-- <a class="btn btn-info" id="show-program" data-toggle="modal" data-id="{{ $program->id }}">Show</a> -->
+    <thead>
+        <tr>
+            <th>{{ __('manageProgram.id') }}</th>
+            <th>{{ __('manageProgram.name') }}</th>
+            <th>{{ __('manageProgram.degree') }}</th>
+            <th>{{ __('manageProgram.action') }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($programs as $i => $program)
+        <tr id="program_id_{{ $program->id }}">
+            <td>{{ $i+1 }}</td>
+            <td>
+                @if(app()->getLocale() == 'th')
+                    {{ $program->program_name_th }}
+                @elseif(app()->getLocale() == 'en')
+                    {{ $program->program_name_en }}
+                @elseif(app()->getLocale() == 'zh')
+                    {{ $program->program_name_zh }}
+                @else
+                    {{ $program->program_name_en }}
+                @endif
+            </td>
+            <td>
+                @if(app()->getLocale() == 'th')
+                    {{ $program->degree->degree_name_th }}
+                @elseif(app()->getLocale() == 'en')
+                    {{ $program->degree->degree_name_en }}
+                @elseif(app()->getLocale() == 'zh')
+                    {{ $program->degree->degree_name_zh }}
+                @else
+                    {{ $program->degree->degree_name_en }}
+                @endif
+            </td>
+            <td>
+                <a class="btn btn-outline-success btn-sm" id="edit-program" type="button" data-toggle="modal" data-id="{{ $program->id }}" title="{{ __('manageProgram.edit') }}">
+                    <i class="mdi mdi-pencil"></i>
+                </a>
+                <meta name="csrf-token" content="{{ csrf_token() }}">
+                <button class="btn btn-outline-danger btn-sm" id="delete-program" type="submit" data-id="{{ $program->id }}" title="{{ __('manageProgram.delete') }}">
+                    <i class="mdi mdi-delete"></i>
+                </button>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 
-                                <!-- <a class="btn btn-outline-primary btn-sm" id="show-program" type="button" data-toggle="modal" data-placement="top" title="view" data-id="{{ $program->id }}"><i class="mdi mdi-eye"></i></a>
-                                     -->
-                                <!-- <a href="javascript:void(0)" class="btn btn-success" id="edit-program" data-toggle="modal" data-id="{{ $program->id }}">Edit </a> -->
-                                <li class="list-inline-item">
-                                    <a class="btn btn-outline-success btn-sm" id="edit-program" type="button" data-toggle="modal" data-id="{{ $program->id }}" data-placement="top" title="Edit" href="javascript:void(0)"><i class="mdi mdi-pencil"></i></a>
-                                </li>
-                                <meta name="csrf-token" content="{{ csrf_token() }}">
-                                <li class="list-inline-item">
-                                    <button class="btn btn-outline-danger btn-sm " id="delete-program" type="submit" data-id="{{ $program->id }}" data-toggle="tooltip" data-placement="top" title="Delete"><i class="mdi mdi-delete"></i></button>
-                                </li>
-                            </form>
-                            <!-- <a id="delete-program" data-id="{{ $program->id }}" class="btn btn-danger delete-user">Delete</a> -->
-
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
         </div>
     </div>
 </div>
@@ -81,7 +91,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="programCrudModal"></h4>
+            <h4 class="modal-title" id="programCrudModal">{{ __('manageProgram.edit_program') }}</h4>
+
             </div>
             <div class="modal-body">
                 <form name="proForm" action="{{ route('programs.store') }}" method="POST">
@@ -89,34 +100,67 @@
                     @csrf
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>{{ __('manageProgram.education_level') }}:</strong>
-                                <div class="col-sm-8">
-                                    <select id="degree" class="custom-select my-select" name="degree">
-                                        @foreach($degree as $d)
-                                        <option value="{{$d->id}}">{{$d->degree_name_th}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <strong>{{ __('manageProgram.major') }}:</strong>
-                                <div class="col-sm-8">
-                                    <select id="department" class="custom-select my-select" name="department">
-                                        @foreach($department as $d)
-                                        <option value="{{$d->id}}">{{$d->department_name_th}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+                        <div class="form-group">
+    <strong>{{ __('manageProgram.education_level') }}:</strong>
+    <div class="col-sm-8">
+        <select id="degree" class="custom-select my-select" name="degree">
+            @foreach($degree as $d)
+            <option value="{{ $d->id }}">
+                @if(app()->getLocale() == 'th')
+                    {{ $d->degree_name_th }}
+                @elseif(app()->getLocale() == 'en')
+                    {{ $d->degree_name_en }}
+                @elseif(app()->getLocale() == 'zh')
+                    {{ $d->degree_name_zh }}
+                @else
+                    {{ $d->degree_name_en }}
+                @endif
+            </option>
+            @endforeach
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <strong>{{ __('manageProgram.major') }}:</strong>
+    <div class="col-sm-8">
+        <select id="department" class="custom-select my-select" name="department">
+            @foreach($department as $d)
+            <option value="{{ $d->id }}">
+                @if(app()->getLocale() == 'th')
+                    {{ $d->department_name_th }}
+                @elseif(app()->getLocale() == 'en')
+                    {{ $d->department_name_en }}
+                @elseif(app()->getLocale() == 'zh')
+                    {{ $d->department_name_zh }}
+                @else
+                    {{ $d->department_name_en }}
+                @endif
+            </option>
+            @endforeach
+        </select>
+    </div>
+</div>
                             <div class="form-group">
                                 <strong>{{ __('manageProgram.name_thai') }}:</strong>
-                                <input type="text" name="program_name_th" id="program_name_th" class="form-control" placeholder="{{ __('manageProgram.enter_name_thai') }}" onchange="validate()">
+                                <input type="text" name="program_name_th" id="program_name_th" class="form-control" 
+       placeholder="{{ __('manageProgram.enter_name_thai') }}" 
+       value="{{ isset($program) ? $program->program_name_th : '' }}">
+
                             </div>
                             <div class="form-group">
                                 <strong>{{ __('manageProgram.name_english') }}:</strong>
-                                <input type="text" name="program_name_en" id="program_name_en" class="form-control" placeholder="{{ __('manageProgram.enter_name_english') }}" onchange="validate()">
+                                <input type="text" name="program_name_en" id="program_name_en" class="form-control" 
+       placeholder="{{ __('manageProgram.enter_name_english') }}" 
+       value="{{ isset($program) ? $program->program_name_en : '' }}">
                             </div>
+                            <div class="form-group">
+    <strong>{{ __('manageProgram.name_chinese') }}:</strong>
+    <input type="text" name="program_name_zh" id="program_name_zh" class="form-control" 
+       placeholder="{{ __('manageProgram.enter_name_chinese') }}" 
+       value="{{ isset($program) ? $program->program_name_zh : '' }}">
+
+</div>
+
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -139,14 +183,15 @@
             var table1 = $('#example1').DataTable({
                 responsive: true,
                 language: {
-                    search: "{{ __('reseracher.Search') }}",
-                    lengthMenu: "{{ __('reseracher.Show') }} _MENU_ {{ __('reseracher.entries') }}",
-                    info: "{{ __('reseracher.Showing') }} _START_ {{ __('reseracher.to') }} _END_ {{ __('reseracher.of') }} _TOTAL_ {{ __('reseracher.entries') }}",
-                    paginate: {
-                        previous: "{{ __('reseracher.Previous') }}",
-                        next: "{{ __('reseracher.Next') }}",
-                    }
-                }
+    search: "{{ __('manageProgram.search') }}",
+    lengthMenu: "{{ __('manageProgram.show') }} _MENU_ {{ __('manageProgram.entries') }}",
+    info: "{{ __('manageProgram.showing') }} _START_ {{ __('manageProgram.to') }} _END_ {{ __('manageProgram.of') }} _TOTAL_ {{ __('manageProgram.entries') }}",
+    paginate: {
+        previous: "{{ __('manageProgram.previous') }}",
+        next: "{{ __('manageProgram.next') }}",
+    }
+}
+
             });
         }
     });
@@ -156,27 +201,29 @@
 
         /* When click New program button */
         $('#new-program').click(function() {
-            $('#btn-save').val("create-program");
-            $('#program').trigger("reset");
-            $('#programCrudModal').html("Add New program");
-            $('#crud-modal').modal('show');
-        });
+    $('#btn-save').val("create-program");
+    $('#program').trigger("reset");
+    $('#programCrudModal').html("{{ __('manageProgram.add_new_program') }}");
+    $('#crud-modal').modal('show');
+});
+
 
         /* Edit program */
         $('body').on('click', '#edit-program', function() {
-            var program_id = $(this).data('id');
-            $.get('programs/' + program_id + '/edit', function(data) {
-                $('#programCrudModal').html("Edit program");
-                $('#btn-update').val("Update");
-                $('#btn-save').prop('disabled', false);
-                $('#crud-modal').modal('show');
-                $('#pro_id').val(data.id);
-                $('#program_name_th').val(data.program_name_th);
-                $('#program_name_en').val(data.program_name_en);
-                //$('#degree').val(data.program_name_en);
-                $('#degree').val(data.degree_id);
-            })
-        });
+    var program_id = $(this).data('id');
+    $.get('programs/' + program_id + '/edit', function(data) {
+        $('#programCrudModal').html("{{ __('manageProgram.edit_program') }}"); // ใช้คำแปล
+        $('#btn-update').val("{{ __('manageProgram.submit') }}");
+        $('#btn-save').prop('disabled', false);
+        $('#crud-modal').modal('show');
+        $('#pro_id').val(data.id);
+        $('#program_name_th').val(data.program_name_th);
+        $('#program_name_en').val(data.program_name_en);
+        $('#program_name_zh').val(data.program_name_zh);
+        $('#degree').val(data.degree_id);
+    })
+});
+
 
 
         /* Delete program */
@@ -187,12 +234,15 @@
             e.preventDefault();
             //confirm("Are You sure want to delete !");
             swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
-                type: "warning",
-                buttons: true,
-                dangerMode: true,
-            }).then((willDelete) => {
+    title: "{{ __('manageProgram.are_you_sure') }}",
+    text: "{{ __('manageProgram.delete_warning') }}",
+    type: "warning",
+    buttons: {
+        cancel: "{{ __('manageProgram.cancel') }}",
+        confirm: "{{ __('manageProgram.ok') }}",
+    },
+    dangerMode: true,
+}) .then((willDelete) => {
                 if (willDelete) {
                     swal("Delete Successfully", {
                         icon: "success",

@@ -97,23 +97,35 @@
         var form = $(this).closest("form");
         var name = $(this).data("name");
         event.preventDefault();
+
+        // แสดง SweetAlert เป็นหลายภาษา
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
+            title: "{{ __('books.delete_confirm_title') }}",
+            text: "{{ __('books.delete_confirm_text') }}",
+            icon: "warning",
+            buttons: {
+                cancel: {
+                    text: "{{ __('books.cancel') }}",
+                    value: null,
+                    visible: true,
+                    className: "btn btn-secondary",
+                    closeModal: true,
+                },
+                confirm: {
+                    text: "{{ __('books.ok') }}",
+                    value: true,
+                    visible: true,
+                    className: "btn btn-danger",
+                    closeModal: true
                 }
-            });
+            },
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                form.submit(); // ลบข้อมูลจริง ๆ
+            }
+        });
     });
 </script>
+
 @stop

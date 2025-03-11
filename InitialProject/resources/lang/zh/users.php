@@ -17,6 +17,9 @@ return [
     'lname_th' => '姓氏 (泰语)',
     'fname_en' => '名字 (英语)',
     'lname_en' => '姓氏 (英语)',
+    'fname_zh' => '名字（中文）',
+    'lname_zh' => '姓氏（中文）',
+
     'password' => '密码',
     'confirm_password' => '确认密码',
     'role' => '角色',
@@ -34,9 +37,27 @@ return [
     'choose_file' => '选择文件',
     'user_info' => '用户信息',
     'user_details' => '用户详情',
-    'name_thai' => '泰文名',
-    'name_english' => '英文名',
+    'name' => '姓名',
     'academic_rank' => '学术职称',
     'education' => '教育背景',
     'back' => '返回',
+
+    'role_admin' => '管理员',
+    'role_headproject' => '项目负责人',
+    'role_staff' => '职员',
+    'role_student' => '学生',
+    'role_teacher' => '教师',
+
+    'show_entries' => '显示 _MENU_ 条目',
+    'search' => '搜索：',
+    'showing' => '显示 _START_ 到 _END_，共 _TOTAL_ 条记录',
+    'previous' => '上一页',
+    'next' => '下一页',
+
+    'delete_confirm' => '你确定吗？',
+    'delete_warning' => '如果您删除此项，它将永远消失。',
+    'cancel' => '取消',
+    'ok' => '确定',
+
+    'nothing_selected' => '未选择',
 ];

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'roles' => 'Roles',
+    'role' => 'Roles',
     'name' => 'Name',
     'action' => 'Action',
     'add' => 'Add',
@@ -14,4 +14,15 @@ return [
     'back' => 'Back',
     'role_details' => 'Role Details',
     'permissions' => 'Permissions',
+
+    'admin' => 'Admin',
+    'teacher' => 'Teacher',
+    'headproject' => 'Head of Project',
+    'student' => 'Student',
+    'staff' => 'Staff',
+
+    'are_you_sure' => 'Are you sure?',
+    'delete_warning' => 'If you delete this, it will be gone forever.',
+    'ok' => 'OK',
+    'cancel' => 'Cancel'
 ];

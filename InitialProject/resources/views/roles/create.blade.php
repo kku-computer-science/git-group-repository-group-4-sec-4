@@ -17,7 +17,7 @@
         <div class="card">
             <div class="card-header">{{ __('roles.create_role') }}
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('roles.index') }}">{{ __('roles.roles') }}</a>
+                    <a class="btn btn-primary" href="{{ route('roles.index') }}">{{ __('roles.role') }}</a>
                 </span>
             </div>
 
@@ -32,10 +32,11 @@
                         <strong>{{ __('roles.permission') }}:</strong>
                         <br/>
                         @foreach($permission as $value)
-                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                            {{ $value->name }}</label>
-                        <br/>
-                        @endforeach
+    <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+    {{ __('permissions.' . $value->name) }}</label>
+    <br/>
+@endforeach
+
                     </div>
 
                     <button type="submit" class="btn btn-primary">{{ __('roles.submit') }}</button>

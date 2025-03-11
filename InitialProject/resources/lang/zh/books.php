@@ -83,4 +83,9 @@ return [
     'showing' => '显示 _START_ 到 _END_ ，共 _TOTAL_ 条目',
     'previous' => '上一页',
     'next' => '下一页',
+
+    'delete_confirm_title' => '你确定吗？',
+    'delete_confirm_text' => '如果你删除此项，它将永远消失。',
+    'cancel' => '取消',
+    'ok' => '确定',
 ];

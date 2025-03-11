@@ -147,22 +147,28 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: "{{ __('researchProjects.Are you sure?') }}",
-                text: "{{ __('researchProjects.Delete warning') }}",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
-                }
-            });
+    title: "{{ __('manageExpertise.delete_confirm_title') }}",
+    text: "{{ __('manageExpertise.delete_confirm_text') }}",
+    icon: "warning",
+    buttons: {
+        cancel: {
+            text: "{{ __('manageExpertise.cancel') }}",
+            value: null,
+            visible: true,
+            className: "btn btn-secondary",
+            closeModal: true,
+        },
+        confirm: {
+            text: "{{ __('manageExpertise.ok') }}",
+            value: true,
+            visible: true,
+            className: "btn btn-danger",
+            closeModal: true
+        }
+    },
+    dangerMode: true,
+});
+
     });
 </script>
 @stop

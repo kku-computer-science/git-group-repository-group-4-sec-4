@@ -85,4 +85,9 @@ return [
     'showing' => 'แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ',
     'previous' => 'ก่อนหน้า',
     'next' => 'ถัดไป',
+
+    'delete_confirm_title' => 'คุณแน่ใจหรือไม่?',
+    'delete_confirm_text' => 'หากคุณลบสิ่งนี้ ข้อมูลจะถูกลบถาวร',
+    'cancel' => 'ยกเลิก',
+    'ok' => 'ตกลง',
 ];  
