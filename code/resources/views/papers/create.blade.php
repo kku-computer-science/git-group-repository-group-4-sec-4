@@ -51,11 +51,14 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label"><b>{{ __('papers.source') }}</b></label>
                         <div class="col-sm-9">
-                            <select class="selectpicker" multiple data-live-search="true" name="cat[]">
-                                @foreach( $source as $s)
+
+                        <select class="selectpicker" multiple data-live-search="true" name="cat[]" 
+                                data-none-selected-text="{{ __('papers.select_placeholder') }}">
+                            @foreach($source as $s)
                                 <option value='{{ $s->id }}'>{{ $s->source_name }}</option>
-                                @endforeach
-                            </select>
+                            @endforeach
+                        </select>
+
                         </div>
                     </div>
 
@@ -88,4 +91,15 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        $('.selectpicker').selectpicker({
+            noneSelectedText: "{{ __('papers.select_placeholder') }}"
+        });
+    });
+</script>
 @endsection

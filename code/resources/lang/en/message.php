@@ -27,4 +27,5 @@ return [
 'reference_apa' => 'Reference (APA)',
 'close' => 'Close',
 'login' => 'Login',
+'before' => 'Before',
 ];

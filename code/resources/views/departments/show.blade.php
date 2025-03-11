@@ -24,14 +24,19 @@
                 @endcan
             </div>
             <div class="card-body">
-                <div class="lead">
-                    <strong>{{ __('department.department_name_th') }}:</strong>
-                    {{ $department->department_name_th }}
-                </div>
-                <div class="lead">
-                    <strong>{{ __('department.department_name_en') }}:</strong>
-                    {{ $department->department_name_en }}
-                </div>
+            <div class="lead">
+    <strong>{{ __('department.department_name_th') }}:</strong>
+    {{ $department->department_name_th }}
+</div>
+<div class="lead">
+    <strong>{{ __('department.department_name_en') }}:</strong>
+    {{ $department->department_name_en }}
+</div>
+<div class="lead">
+    <strong>{{ __('department.department_name_zh') }}:</strong>
+    {{ $department->department_name_zh }}
+</div>
+
             </div>
         </div>
     </div>

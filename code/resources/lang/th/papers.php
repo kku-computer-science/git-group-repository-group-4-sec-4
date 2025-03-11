@@ -70,4 +70,17 @@ return [
     "doi" => "DOI",
     "url" => "URL",
     "back" => "ย้อนกลับ",
+
+'show_entries' => 'แสดง _MENU_ รายการ',
+    'search' => 'ค้นหา:',
+    'showing' => 'แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ',
+    'previous' => 'ก่อนหน้า',
+    'next' => 'ถัดไป',
+
+    'select_placeholder' => 'กรุณาเลือก',
+    'no_publication_source' => 'ไม่มีข้อมูล',
+    'delete_confirm' => 'คุณแน่ใจหรือไม่?',
+    'delete_warning' => 'หากคุณลบสิ่งนี้ ข้อมูลจะหายไปตลอดกาล',
+    'ok' => 'ตกลง',
+    'cancel' => 'ยกเลิก',
 ];

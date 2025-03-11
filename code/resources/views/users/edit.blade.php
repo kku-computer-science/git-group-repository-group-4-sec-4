@@ -18,25 +18,38 @@
                 <p class="card-description">{{ __('users.enter_details') }}</p>
                 {!! Form::model($user, ['route' => ['users.update', $user->id], 'method'=>'PATCH']) !!}
                 <div class="form-group row">
-                    <div class="col-sm-6">
-                        <p><b>{{ __('users.fname_th') }}</b></p>
-                        <input type="text" name="fname_th" value="{{ $user->fname_th }}" class="form-control" placeholder="{{ __('users.fname_th') }}">
-                    </div>
-                    <div class="col-sm-6">
-                        <p><b>{{ __('users.lname_th') }}</b></p>
-                        <input type="text" name="lname_th" value="{{ $user->lname_th }}" class="form-control" placeholder="{{ __('users.lname_th') }}">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-6">
-                        <p><b>{{ __('users.fname_en') }}</b></p>
-                        <input type="text" name="fname_en" value="{{ $user->fname_en }}" class="form-control" placeholder="{{ __('users.fname_en') }}">
-                    </div>
-                    <div class="col-sm-6">
-                        <p><b>{{ __('users.lname_en') }}</b></p>
-                        <input type="text" name="lname_en" value="{{ $user->lname_en }}" class="form-control" placeholder="{{ __('users.lname_en') }}">
-                    </div>
-                </div>
+    <div class="col-sm-6">
+        <p><b>{{ __('users.fname_th') }}</b></p>
+        <input type="text" name="fname_th" value="{{ $user->fname_th }}" class="form-control" placeholder="{{ __('users.fname_th') }}">
+    </div>
+    <div class="col-sm-6">
+        <p><b>{{ __('users.lname_th') }}</b></p>
+        <input type="text" name="lname_th" value="{{ $user->lname_th }}" class="form-control" placeholder="{{ __('users.lname_th') }}">
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-6">
+        <p><b>{{ __('users.fname_en') }}</b></p>
+        <input type="text" name="fname_en" value="{{ $user->fname_en }}" class="form-control" placeholder="{{ __('users.fname_en') }}">
+    </div>
+    <div class="col-sm-6">
+        <p><b>{{ __('users.lname_en') }}</b></p>
+        <input type="text" name="lname_en" value="{{ $user->lname_en }}" class="form-control" placeholder="{{ __('users.lname_en') }}">
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-6">
+        <p><b>{{ __('users.fname_zh') }}</b></p>
+        <input type="text" name="fname_zh" value="{{ $user->fname_zh }}" class="form-control" placeholder="{{ __('users.fname_zh') }}">
+    </div>
+    <div class="col-sm-6">
+        <p><b>{{ __('users.lname_zh') }}</b></p>
+        <input type="text" name="lname_zh" value="{{ $user->lname_zh }}" class="form-control" placeholder="{{ __('users.lname_zh') }}">
+    </div>
+</div>
+
                 <div class="form-group row">
                     <p class="col-sm-3"><b>{{ __('users.email') }}</b></p>
                     <div class="col-sm-8">
@@ -58,7 +71,14 @@
                 <div class="form-group row">
                     <p class="col-sm-3"><b>{{ __('users.role') }}</b></p>
                     <div class="col-sm-8">
-                        {!! Form::select('roles[]', $roles, $userRole, array('class' => 'selectpicker','multiple data-live-search'=>"true")) !!}
+                    <select class="form-control" name="roles[]">
+    <option value="admin" {{ "admin" == $userRole ? 'selected' : '' }}>{{ __('users.role_admin') }}</option>
+    <option value="headproject" {{ "headproject" == $userRole ? 'selected' : '' }}>{{ __('users.role_headproject') }}</option>
+    <option value="staff" {{ "staff" == $userRole ? 'selected' : '' }}>{{ __('users.role_staff') }}</option>
+    <option value="student" {{ "student" == $userRole ? 'selected' : '' }}>{{ __('users.role_student') }}</option>
+    <option value="teacher" {{ "teacher" == $userRole ? 'selected' : '' }}>{{ __('users.role_teacher') }}</option>
+</select>
+
                     </div>
                 </div>
                 <div class="form-group row">
@@ -76,9 +96,16 @@
                         <select class="form-control" name="cat" id="cat" style="width: 100%;" required>
                             <option>{{ __('users.select_category') }}</option>
                             @foreach ($departments as $cat)
-                            <option value="{{$cat->id}}" {{$user->program->department_id == $cat->id  ? 'selected' : ''}}>
-                                {{ $cat->department_name_en }}
-                            </option>
+                            <option value="{{$cat->id}}" {{$user->program->department_id == $cat->id ? 'selected' : ''}}>
+    @if(app()->getLocale() == 'zh')
+        {{ $cat->department_name_zh }}
+    @elseif(app()->getLocale() == 'th')
+        {{ $cat->department_name_th }}
+    @else
+        {{ $cat->department_name_en }}
+    @endif
+</option>
+
                             @endforeach
                         </select>
                     </div>
@@ -87,9 +114,16 @@
                         <select class="form-control select2" name="sub_cat" id="subcat" required>
                             <option>{{ __('users.select_category') }}</option>
                             @foreach ($programs as $cat)
-                            <option value="{{$cat->id}}" {{$user->program->id == $cat->id  ? 'selected' : ''}}>
-                                {{ $cat->program_name_en }}
-                            </option>
+                            <option value="{{$cat->id}}" {{$user->program->id == $cat->id ? 'selected' : ''}}>
+    @if(app()->getLocale() == 'zh')
+        {{ $cat->program_name_zh }}
+    @elseif(app()->getLocale() == 'th')
+        {{ $cat->program_name_th }}
+    @else
+        {{ $cat->program_name_en }}
+    @endif
+</option>
+
                             @endforeach
                         </select>
                     </div>

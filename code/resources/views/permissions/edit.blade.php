@@ -22,7 +22,8 @@
                 {!! Form::model($permission, ['route' => ['permissions.update', $permission->id], 'method'=>'PATCH']) !!}
                     <div class="form-group">
                         <strong>{{ __('permissions.name') }}:</strong>
-                        {!! Form::text('name', null, array('placeholder' => __('permissions.name_placeholder'),'class' => 'form-control')) !!}
+                        {!! Form::text('name', __('permissions.' . $permission->name), array('placeholder' => __('permissions.name'),'class' => 'form-control')) !!}
+
                     </div>
                     <button type="submit" class="btn btn-primary">{{ __('permissions.submit') }}</button>
                 {!! Form::close() !!}

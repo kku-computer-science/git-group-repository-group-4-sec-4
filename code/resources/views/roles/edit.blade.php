@@ -21,7 +21,8 @@
                 <div class="form-group row">
                     <p class="col-sm-3">{{ __('roles.name') }}:</p>
                     <div class="col-sm-8">
-                        {!! Form::text('name', null, array('placeholder' => __('roles.name'),'class' => 'form-control')) !!}
+                    {!! Form::text('name', isset($role->name) ? __('roles.' . $role->name) : '', array('placeholder' => __('roles.name'),'class' => 'form-control')) !!}
+
                     </div>
                 </div>
                 <div class="form-group">
@@ -29,8 +30,8 @@
                     <div class="col-sm-9">
                         @foreach($permission as $value)
                         <p>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
-                            {{ $value->name }}</p>
-                        @endforeach
+    {{ __('permissions.' . $value->name) }}</p>
+    @endforeach
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-5">{{ __('roles.submit') }}</button>

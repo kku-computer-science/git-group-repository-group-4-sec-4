@@ -18,6 +18,8 @@ return [
     'lname_th' => 'Last Name (Thai)',
     'fname_en' => 'First Name (English)',
     'lname_en' => 'Last Name (English)',
+    'fname_zh' => 'First Name (Chinese)',
+    'lname_zh' => 'Last Name (Chinese)',
     'password' => 'Password',
     'confirm_password' => 'Confirm Password',
     'role' => 'Role',
@@ -35,10 +37,28 @@ return [
     'choose_file' => 'Choose file',
     'user_info' => 'User Information',
     'user_details' => 'User Details',
-    'name_thai' => 'Name (Thai)',
-    'name_english' => 'Name (English)',
+    'name' => 'Name',
     'academic_rank' => 'Academic Rank',
     'education' => 'Education History',
     'back' => 'Back',
+
+    'role_admin' => 'Admin',
+    'role_headproject' => 'Head Project',
+    'role_staff' => 'Staff',
+    'role_student' => 'Student',
+    'role_teacher' => 'Teacher',
+
+    'show_entries' => 'Show _MENU_ entries',
+    'search' => 'Search:',
+    'showing' => 'Showing _START_ to _END_ of _TOTAL_ entries',
+    'previous' => 'Previous',
+    'next' => 'Next',
+
+    'delete_confirm' => 'Are you sure?',
+    'delete_warning' => 'If you delete this, it will be gone forever.',
+    'cancel' => 'Cancel',
+    'ok' => 'OK',
+
+    'nothing_selected' => 'Nothing selected',
 
 ];

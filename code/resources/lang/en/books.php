@@ -77,4 +77,15 @@ return [
     "Publication_Source" => "Publication Source",
     "Page" => "Page",
     'back' => 'Back',
+
+    'show_entries' => 'Show _MENU_ entries',
+    'search' => 'Search:',
+    'showing' => 'Showing _START_ to _END_ of _TOTAL_ entries',
+    'previous' => 'Previous',
+    'next' => 'Next',
+
+    'delete_confirm_title' => 'Are you sure?',
+    'delete_confirm_text' => 'If you delete this, it will be gone forever.',
+    'cancel' => 'Cancel',
+    'ok' => 'OK',
 ];

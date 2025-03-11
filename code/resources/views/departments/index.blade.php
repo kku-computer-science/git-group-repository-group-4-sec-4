@@ -36,7 +36,18 @@
                         @foreach ($data as $key => $department)
                         <tr>
                             <td>{{ $department->id }}</td>
-                            <td>{{ $department->department_name_th }}</td>
+                            <td>
+    @if(app()->getLocale() == 'th')
+        {{ $department->department_name_th }}
+    @elseif(app()->getLocale() == 'en')
+        {{ $department->department_name_en }}
+    @elseif(app()->getLocale() == 'zh')
+        {{ $department->department_name_zh }}
+    @else
+        {{ $department->department_name_en }} {{-- ค่าเริ่มต้นเป็นภาษาอังกฤษ --}}
+    @endif
+</td>
+
                             <td>
                                 <form action="{{ route('departments.destroy',$department->id) }}" method="POST">
                                     
@@ -81,12 +92,28 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
+    title: `{{ __('department.confirm_title') }}`,
+    text: "{{ __('department.confirm_text') }}",
+    icon: "warning",
+    buttons: {
+        cancel: {
+            text: "{{ __('department.cancel') }}",
+            value: null,
+            visible: true,
+            className: "btn btn-secondary",
+            closeModal: true,
+        },
+        confirm: {
+            text: "{{ __('department.ok') }}",
+            value: true,
+            visible: true,
+            className: "btn btn-danger",
+            closeModal: true
+        }
+    },
+    dangerMode: true,
+})
+
             .then((willDelete) => {
                 if (willDelete) {
                     swal("Delete Successfully", {

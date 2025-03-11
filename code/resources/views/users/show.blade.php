@@ -14,23 +14,34 @@
                 <p class="card-description">{{ __('users.user_details') }}</p>
                 
                 <div class="row mt-2">
-                    <h6 class="col-md-3"><b>{{ __('users.name_thai') }}</b></h6>
-                    <h6 class="col-md-9">{{ $user->title_name_th }} {{ $user->fname_th }} {{ $user->lname_th }}</h6>
-                </div>
-                <div class="row mt-2">
-                    <h6 class="col-md-3"><b>{{ __('users.name_english') }}</b></h6>
-                    <h6 class="col-md-9">{{ $user->title_name_en }} {{ $user->fname_en }} {{ $user->lname_en }}</h6>
-                </div>
+    <h6 class="col-md-3"><b>{{ __('users.name') }}</b></h6>
+    <h6 class="col-md-9">
+        @php $locale = app()->getLocale(); @endphp
+        @if($locale == 'zh')
+            {{ $user->title_name_zh ?? $user->title_name_en }} {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+        @elseif($locale == 'en')
+            {{ $user->title_name_en }} {{ $user->fname_en }} {{ $user->lname_en }}
+        @else
+            {{ $user->title_name_th }} {{ $user->fname_th }} {{ $user->lname_th }}
+        @endif
+    </h6>
+</div>
+
+
                 <div class="row mt-2">
                     <h6 class="col-md-3"><b>{{ __('users.email') }}</b></h6>
                     <h6 class="col-md-9">{{ $user->email }}</h6>
                 </div>
                 @foreach($user->getRoleNames() as $val)
-                <div class="row mt-2">
-                    <h6 class="col-md-3"><b>{{ __('users.role') }}</b></h6>
-                    <h6 class="col-md-9"><label class="badge badge-dark">{{ $val }}</label></h6>
-                </div>
-                @endforeach
+<div class="row mt-2">
+    <h6 class="col-md-3"><b>{{ __('users.role') }}</b></h6>
+    <h6 class="col-md-9">
+        <label class="badge badge-dark">{{ __('roles.'.$val) }}</label>
+    </h6>
+</div>
+@endforeach
+
+                
 
                 @if($val == "teacher")
                 <div class="row mt-2">

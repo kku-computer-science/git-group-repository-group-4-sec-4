@@ -78,44 +78,54 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        if (!$.fn.DataTable.isDataTable('#example1')) { // ตรวจสอบว่า DataTable ถูกใช้งานไปแล้วหรือยัง
-            var table1 = $('#example1').DataTable({
-                responsive: true,
-                language: {
-                    search: "{{ __('reseracher.Search') }}",
-                    lengthMenu: "{{ __('reseracher.Show') }} _MENU_ {{ __('reseracher.entries') }}",
-                    info: "{{ __('reseracher.Showing') }} _START_ {{ __('reseracher.to') }} _END_ {{ __('reseracher.of') }} _TOTAL_ {{ __('reseracher.entries') }}",
-                    paginate: {
-                        previous: "{{ __('reseracher.Previous') }}",
-                        next: "{{ __('reseracher.Next') }}",
-                    }
-                }
-            });
+    var table = $('#example1').DataTable({
+        fixedHeader: true,
+        "language": {
+            "lengthMenu": "{{ __('books.show_entries') }}",
+            "search": "{{ __('books.search') }}",
+            "info": "{{ __('books.showing') }}",
+            "paginate": {
+                "previous": "{{ __('books.previous') }}",
+                "next": "{{ __('books.next') }}"
+            }
         }
     });
+});
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {
         var form = $(this).closest("form");
         var name = $(this).data("name");
         event.preventDefault();
+
+        // แสดง SweetAlert เป็นหลายภาษา
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
+            title: "{{ __('books.delete_confirm_title') }}",
+            text: "{{ __('books.delete_confirm_text') }}",
+            icon: "warning",
+            buttons: {
+                cancel: {
+                    text: "{{ __('books.cancel') }}",
+                    value: null,
+                    visible: true,
+                    className: "btn btn-secondary",
+                    closeModal: true,
+                },
+                confirm: {
+                    text: "{{ __('books.ok') }}",
+                    value: true,
+                    visible: true,
+                    className: "btn btn-danger",
+                    closeModal: true
                 }
-            });
+            },
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                form.submit(); // ลบข้อมูลจริง ๆ
+            }
+        });
     });
 </script>
+
 @stop

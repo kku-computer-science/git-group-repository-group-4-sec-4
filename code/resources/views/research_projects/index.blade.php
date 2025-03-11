@@ -35,23 +35,45 @@
                                 <td>{{ $i+1 }}</td>
                                 <td>{{ $researchProject->project_year }}</td>
                                 {{-- <td>{{ $researchProject->project_name }}</td> --}}
-                                <td>{{ Str::limit($researchProject->project_name,70) }}</td>
                                 <td>
-                                    @foreach($researchProject->user as $user)
-                                    @if ( $user->pivot->role == 1)
-                                    {{ $user->fname_en}}
-                                    @endif
+    @if(app()->getLocale() == 'th')
+        {{ Str::limit($researchProject->project_name, 70) }}
+    @elseif(app()->getLocale() == 'zh')
+        {{ Str::limit($researchProject->project_name_zh ?? $researchProject->project_name_en, 70) }}
+    @else
+        {{ Str::limit($researchProject->project_name_en, 70) }}
+    @endif
+</td>
 
-                                    @endforeach
-                                </td>
                                 <td>
-                                    @foreach($researchProject->user as $user)
-                                    @if ( $user->pivot->role == 2)
-                                    {{ $user->fname_en}}
-                                    @endif
+    @foreach($researchProject->user as $user)
+        @if ($user->pivot->role == 1)
+            @if(app()->getLocale() == 'th')
+                {{ $user->fname_th }} {{ $user->lname_th }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+            @else
+                {{ $user->fname_en }} {{ $user->lname_en }}
+            @endif
+        @endif
+    @endforeach
+</td>
 
-                                    @endforeach
-                                </td>
+<td>
+    @foreach($researchProject->user as $user)
+        @if ($user->pivot->role == 2)
+            @if(app()->getLocale() == 'th')
+                {{ $user->fname_th }} {{ $user->lname_th }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+            @else
+                {{ $user->fname_en }} {{ $user->lname_en }}
+            @endif
+            @if (!$loop->last), @endif
+        @endif
+    @endforeach
+</td>
+
                                 <td>
                                     <form action="{{ route('researchProjects.destroy',$researchProject->id) }}"method="POST">
                                     <li class="list-inline-item">
@@ -105,10 +127,19 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-            responsive: true,
-        });
+    var table = $('#example1').DataTable({
+        fixedHeader: true,
+        "language": {
+            "lengthMenu": "{{ __('researchProjects.show_entries') }}",
+            "search": "{{ __('researchProjects.search') }}",
+            "info": "{{ __('researchProjects.showing') }}",
+            "paginate": {
+                "previous": "{{ __('researchProjects.previous') }}",
+                "next": "{{ __('researchProjects.next') }}"
+            }
+        }
     });
+});
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {
@@ -116,22 +147,28 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: "{{ __('researchProjects.Are you sure?') }}",
-                text: "{{ __('researchProjects.Delete warning') }}",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
-                }
-            });
+    title: "{{ __('manageExpertise.delete_confirm_title') }}",
+    text: "{{ __('manageExpertise.delete_confirm_text') }}",
+    icon: "warning",
+    buttons: {
+        cancel: {
+            text: "{{ __('manageExpertise.cancel') }}",
+            value: null,
+            visible: true,
+            className: "btn btn-secondary",
+            closeModal: true,
+        },
+        confirm: {
+            text: "{{ __('manageExpertise.ok') }}",
+            value: true,
+            visible: true,
+            className: "btn btn-danger",
+            closeModal: true
+        }
+    },
+    dangerMode: true,
+});
+
     });
 </script>
 @stop

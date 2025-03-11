@@ -42,4 +42,11 @@ return [
     'Support Organization' => '支持组织',
     'Added by' => '添加者',
     'Back' => '返回',
+    'name' => '资助名称',
+    'support_resource' => '支持资源',
+    'show_entries' => '显示 _MENU_ 条目',
+    'search' => '搜索:',
+    'showing' => '显示 _START_ 到 _END_ ，共 _TOTAL_ 条目',
+    'previous' => '上一页',
+    'next' => '下一页',
 ];

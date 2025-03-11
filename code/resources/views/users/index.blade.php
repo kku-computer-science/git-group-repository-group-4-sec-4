@@ -126,16 +126,36 @@
                         @foreach ($data as $key => $user)
                         <tr>
                             <td>{{ $key++ }}</td>
-                            <td>{{ $user->fname_en }} {{ $user->lname_en }} </td>
-                            <td>{{ Str::limit($user->program->program_name_en,20) }}</td>
+                            <td>
+            @php $locale = app()->getLocale(); @endphp
+            @if($locale == 'zh')
+                {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+            @elseif($locale == 'en')
+                {{ $user->fname_en }} {{ $user->lname_en }}
+            @else
+                {{ $user->fname_th }} {{ $user->lname_th }}
+            @endif
+        </td>
+        <td>
+            @if($locale == 'zh')
+                {{ $user->program->program_name_zh ?? $user->program->program_name_en }}
+            @elseif($locale == 'en')
+                {{ $user->program->program_name_en }}
+            @else
+                {{ $user->program->program_name_th }}
+            @endif
+        </td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                @if(!empty($user->getRoleNames()))
-                                @foreach($user->getRoleNames() as $val)
-                                <label class="badge badge-dark">{{ $val }}</label>
-                                @endforeach
-                                @endif
-                            </td>
+    @if(!empty($user->getRoleNames()))
+        @foreach($user->getRoleNames() as $role)
+            <label class="badge badge-dark">
+                {{ __('roles.' . strtolower($role)) }} 
+            </label>
+        @endforeach
+    @endif
+</td>
+
                             <td>
                                 <form action="{{ route('users.destroy',$user->id) }}" method="POST">
                                 <li class="list-inline-item">
@@ -176,44 +196,48 @@
 <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer></script>
 <script>
     $(document).ready(function() {
-        if (!$.fn.DataTable.isDataTable('#example1')) { // ตรวจสอบว่า DataTable ถูกใช้งานไปแล้วหรือยัง
-            var table1 = $('#example1').DataTable({
-                responsive: true,
-                language: {
-                    search: "{{ __('reseracher.Search') }}",
-                    lengthMenu: "{{ __('reseracher.Show') }} _MENU_ {{ __('reseracher.entries') }}",
-                    info: "{{ __('reseracher.Showing') }} _START_ {{ __('reseracher.to') }} _END_ {{ __('reseracher.of') }} _TOTAL_ {{ __('reseracher.entries') }}",
-                    paginate: {
-                        previous: "{{ __('reseracher.Previous') }}",
-                        next: "{{ __('reseracher.Next') }}",
-                    }
-                }
-            });
+    var table = $('#example1').DataTable({
+        responsive: true,
+        language: {
+            lengthMenu: "{{ __('users.show_entries') }}",
+            search: "{{ __('users.search') }}",
+            info: "{{ __('users.showing') }}",
+            paginate: {
+                previous: "{{ __('users.previous') }}",
+                next: "{{ __('users.next') }}",
+            }
         }
     });
+});
+
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {
         var form = $(this).closest("form");
-        var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: "{{ __('users.delete_confirm') }}",
+                text: "{{ __('users.delete_warning') }}",
                 icon: "warning",
-                buttons: true,
+                buttons: {
+                    cancel: {
+                        text: "{{ __('users.cancel') }}",
+                        visible: true,
+                        className: "btn btn-secondary",
+                    },
+                    confirm: {
+                        text: "{{ __('users.ok') }}",
+                        className: "btn btn-danger",
+                    }
+                },
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
+                    form.submit();
                 }
             });
     });
 </script>
+
 @endsection

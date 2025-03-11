@@ -9,18 +9,20 @@
         @endif
         <div class="card col-8" style="padding: 16px;">
             <div class="card-body">
-                <h4 class="card-title">{{ __('roles.roles') }}</h4>
+                <h4 class="card-title">{{ __('roles.role') }}</h4>
                 <p class="card-description">{{ __('roles.role_details') }}</p>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ __('roles.name') }} </b></p>
-                    <p class="card-text col-sm-9">{{ $role->name }}</p>
+                    <p class="card-text col-sm-9">{{ __('roles.' . $role->name) }}</p>
+
                 </div>
                 <div class="row mt-3">
                     <p class="card-text col-sm-3"><b>{{ __('roles.permissions') }} </b></p>
                     @if(!empty($rolePermissions))
                     <p class="card-text col-sm-9" style="line-height: 1.85rem;">
                         @foreach($rolePermissions as $permission)
-                            <label class="badge badge-success"> {{ $permission->name }} </label>
+                        <label class="badge badge-success"> {{ __('permissions.' . $permission->name) }} </label>
+
                         @endforeach
                     </p>
                     @endif

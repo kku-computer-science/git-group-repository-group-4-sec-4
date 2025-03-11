@@ -40,5 +40,7 @@ return [
     'master_degree' => '硕士学位',
     'doctoral_degree' => '博士学位',
     'edit_expertise' => '编辑专业知识',
-
+    'enter_current_password' => '输入当前密码',
+    'enter_new_password' => '输入新密码',
+    'reenter_new_password' => '重新输入新密码',
 ];

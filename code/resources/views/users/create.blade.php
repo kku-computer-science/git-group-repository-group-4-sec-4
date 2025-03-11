@@ -40,6 +40,16 @@
                         </div>
                     </div>
                     <div class="form-group row">
+    <div class="col-sm-6">
+        <p><b>{{ __('users.fname_zh') }}</b></p>
+        <input type="text" name="fname_zh" class="form-control" placeholder="{{ __('users.fname_zh') }}">
+    </div>
+    <div class="col-sm-6">
+        <p><b>{{ __('users.lname_zh') }}</b></p>
+        <input type="text" name="lname_zh" class="form-control" placeholder="{{ __('users.lname_zh') }}">
+    </div>
+</div>
+                    <div class="form-group row">
                         <div class="col-sm-8">
                             <p><b>{{ __('users.email') }}</b></p>
                             {!! Form::text('email', null, array('placeholder' => __('users.email'),'class' => 'form-control'))!!}
@@ -55,23 +65,35 @@
                             {!! Form::password('password_confirmation', array('placeholder' => __('users.confirm_password'),'class' =>'form-control')) !!}
                         </div>
                     </div>
-                    <div class="form-group col-sm-8">
-                        <p><b>{{ __('users.role') }}</b></p>
-                        <div class="col-sm-8">
-                            {!! Form::select('roles[]', $roles,[],  array('class' => 'selectpicker','multiple')) !!}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h6>{{ __('users.department') }} <span class="text-danger">*</span></h6>
-                                <select class="form-control" name="cat" id="cat" style="width: 100%;" required>
-                                    <option>{{ __('users.select_category') }}</option>
-                                    @foreach ($departments as $cat)
-                                    <option value="{{$cat->id}}">{{ $cat->department_name_en }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                    <div class="form-group row">
+    <p class="col-sm-3"><b>{{ __('users.role') }}</b></p>
+    <div class="col-sm-8">
+        <select name="roles[]" class="form-control selectpicker"
+            multiple data-live-search="true"
+            data-none-selected-text="{{ __('users.nothing_selected') }}">
+            @foreach ($roles as $role)
+                <option value="{{ $role }}">
+                    {{ __('roles.' . $role) }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-4">
+            <h6>{{ __('users.department') }} <span class="text-danger">*</span></h6>
+            <select class="form-control selectpicker" name="cat" id="cat" style="width: 100%;" required>
+                <option value="">{{ __('users.select_category') }}</option>
+                @foreach ($departments as $cat)
+                <option value="{{ $cat->id }}">
+                    {{ app()->getLocale() == 'th' ? $cat->department_name_th : (app()->getLocale() == 'zh' ? $cat->department_name_zh : $cat->department_name_en) }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+                            
                             <div class="col-md-4">
                                 <h6>{{ __('users.program') }} <span class="text-danger">*</span></h6>
                                 <select class="form-control select2" name="sub_cat" id="subcat" required>
@@ -95,16 +117,47 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
+
+
 <script>
-    $('#cat').on('change', function(e) {
-        var cat_id = e.target.value;
-        $.get('/ajax-get-subcat?cat_id=' + cat_id, function(data) {
-            $('#subcat').empty();
-            $.each(data, function(index, areaObj) {
-                $('#subcat').append('<option value="' + areaObj.id + '">' + areaObj.degree.title_en +' in '+ areaObj.program_name_en + '</option>');
+    $('#cat').on('change', function() {
+        var cat_id = $(this).val();
+        console.log("Selected Department ID: " + cat_id); // Debug
+        if (cat_id) {
+            $.ajax({
+                url: '/ajax-get-subcat?cat_id=' + cat_id,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log("Received Data:", data); // Debug
+
+                    $('#subcat').empty();
+                    $('#subcat').append('<option value="">{{ __('users.select_subcategory') }}</option>');
+
+                    $.each(data, function(key, value) {
+                        var programName = value.program_name_en; // ค่าเริ่มต้นเป็นอังกฤษ
+                        if ("{{ app()->getLocale() }}" == "th") {
+                            programName = value.program_name_th;
+                        } else if ("{{ app()->getLocale() }}" == "zh") {
+                            programName = value.program_name_zh;
+                        }
+                        console.log("Adding Program: ", programName); // Debug
+                        $('#subcat').append('<option value="' + value.id + '">' + programName + '</option>');
+                    });
+
+                    $('.selectpicker').selectpicker('refresh');
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error:", xhr.responseText);
+                }
             });
-        });
+        } else {
+            $('#subcat').empty();
+            $('#subcat').append('<option value="">{{ __('users.select_subcategory') }}</option>');
+            $('.selectpicker').selectpicker('refresh');
+        }
     });
 </script>
+
 
 @endsection

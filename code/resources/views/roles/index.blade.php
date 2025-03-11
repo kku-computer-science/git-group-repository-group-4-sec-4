@@ -9,7 +9,7 @@
         @endif
         <div class="card" style="padding: 16px;">
             <div class="card-body">
-                <h4 class="card-title">{{ __('roles.roles') }}</h4>
+                <h4 class="card-title">{{ __('roles.role') }}</h4>
                 @can('role-create')
                 <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('roles.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i>{{ __('roles.add') }}</a>
                 @endcan
@@ -28,7 +28,8 @@
 
                         <tr>
                             <td>{{ $i++ }}</td>
-                            <td>{{ $role->name }}</td>
+                            <td>{{ __('roles.' . $role->name) }}</td>
+
                             <td>
                                 <form action="{{ route('roles.destroy',$role->id) }}" method="POST">
                                     <a class="btn btn-outline-primary btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="view" href="{{ route('roles.show',$role->id) }}"><i class="mdi mdi-eye"></i></a>
@@ -64,12 +65,16 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
+    title: `{{ __('roles.are_you_sure') }}`,
+    text: "{{ __('roles.delete_warning') }}",
+    icon: "warning",
+    buttons: {
+        cancel: "{{ __('roles.cancel') }}",
+        confirm: "{{ __('roles.ok') }}"
+    },
+    dangerMode: true,
+})
+
             .then((willDelete) => {
                 if (willDelete) {
                     swal("Delete Successfully", {

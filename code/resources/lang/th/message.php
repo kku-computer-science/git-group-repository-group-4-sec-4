@@ -27,4 +27,5 @@ return [
 'reference_apa' => 'การอ้างอิง (รูปแบบ APA)',
 'close' => 'ปิด',
 'login' => 'เข้าสู่ระบบ',
+'before' => 'ก่อน',
 ];

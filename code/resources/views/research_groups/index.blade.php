@@ -3,7 +3,33 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.bootstrap4.min.css">
 @section('content')
+<style>
+/* ปรับตารางให้ขยายเต็มที่ */
+table.dataTable {
+    width: 100% !important;
+    table-layout: auto;
+}
 
+/* ป้องกันข้อความยาวเกินไปในคอลัมน์ */
+table.dataTable th,
+table.dataTable td {
+    white-space: nowrap;
+    text-align: left;
+}
+
+/* ปรับขนาดคอลัมน์ที่มีข้อความยาว */
+table.dataTable td:nth-child(2), /* คอลัมน์ Group Name */
+table.dataTable td:nth-child(4)  /* คอลัมน์ Member */ {
+    max-width: 300px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</style>
+
+<div class="container">
+    <!-- โค้ด HTML ของตาราง -->
+</div>
 <div class="container">
     @if ($message = Session::get('success'))
     <div class="alert alert-success">
@@ -31,26 +57,45 @@
                         @foreach ($researchGroups as $i=>$researchGroup)
                         <tr>
                             <td>{{ $i+1 }}</td>
-                            <td>{{ Str::limit($researchGroup->group_name_th,50) }}</td>
                             <td>
-                                @foreach($researchGroup->user as $user)
-                                @if ( $user->pivot->role == 1)
+    @if(app()->getLocale() == 'zh') 
+        {{ Str::limit($researchGroup->group_name_zh,50) }}
+    @elseif(app()->getLocale() == 'en')
+        {{ Str::limit($researchGroup->group_name_en,50) }}
+    @else
+        {{ Str::limit($researchGroup->group_name_th,50) }}
+    @endif
+</td>
 
-                                {{ $user->fname_th}}
+<td>
+    @foreach($researchGroup->user as $user)
+    @if ( $user->pivot->role == 1)
+        @if(app()->getLocale() == 'zh') 
+            {{ $user->fname_zh }} {{ $user->lname_zh }}
+        @elseif(app()->getLocale() == 'en')
+            {{ $user->fname_en }} {{ $user->lname_en }}
+        @else
+            {{ $user->fname_th }} {{ $user->lname_th }}
+        @endif
+    @endif
+    @endforeach
+</td>
 
-                                @endif
+<td>
+    @foreach($researchGroup->user as $user)
+    @if ( $user->pivot->role == 2)
+        @if(app()->getLocale() == 'zh') 
+            {{ $user->fname_zh }} {{ $user->lname_zh }}
+        @elseif(app()->getLocale() == 'en')
+            {{ $user->fname_en }} {{ $user->lname_en }}
+        @else
+            {{ $user->fname_th }} {{ $user->lname_th }}
+        @endif
+        @if (!$loop->last),@endif
+    @endif
+    @endforeach
+</td>
 
-                                @endforeach
-                            </td>
-                            <td>
-                                @foreach($researchGroup->user as $user)
-                                @if ( $user->pivot->role == 2)
-                                {{ $user->fname_th}}
-                                @if (!$loop->last),@endif
-                                @endif
-
-                                @endforeach
-                            </td>
                             <td>
                                 <form action="{{ route('researchGroups.destroy',$researchGroup->id) }}" method="POST">
 
@@ -91,10 +136,19 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-            responsive: true,
-        });
+    var table = $('#example1').DataTable({
+        fixedHeader: true,
+        "language": {
+            "lengthMenu": "{{ __('researchGroups.show_entries') }}",
+            "search": "{{ __('researchGroups.search') }}",
+            "info": "{{ __('researchGroups.showing') }}",
+            "paginate": {
+                "previous": "{{ __('researchGroups.previous') }}",
+                "next": "{{ __('researchGroups.next') }}"
+            }
+        }
     });
+});
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {
@@ -102,22 +156,28 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: "{{ __('researchGroups.Are you sure?') }}",
-                text: "{{ __('researchGroups.Delete warning') }}",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
-                }
-            });
+    title: "{{ __('manageExpertise.delete_confirm_title') }}",
+    text: "{{ __('manageExpertise.delete_confirm_text') }}",
+    icon: "warning",
+    buttons: {
+        cancel: {
+            text: "{{ __('manageExpertise.cancel') }}",
+            value: null,
+            visible: true,
+            className: "btn btn-secondary",
+            closeModal: true,
+        },
+        confirm: {
+            text: "{{ __('manageExpertise.ok') }}",
+            value: true,
+            visible: true,
+            className: "btn btn-danger",
+            closeModal: true
+        }
+    },
+    dangerMode: true,
+});
+
     });
 </script>
 @stop

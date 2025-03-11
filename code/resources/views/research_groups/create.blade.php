@@ -63,11 +63,21 @@
                 <div class="form-group row">
                     <p class="col-sm-3"><b>{{ __('researchGroups.group_head') }}</b></p>
                     <div class="col-sm-8">
-                        <select id='head0' name="head">
-                            @foreach($users as $user)
-                            <option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
-                            @endforeach
-                        </select>
+                    <select id='head0' name="head">
+    <option value="">{{ __('researchGroups.select_user') }}</option>
+    @foreach($users as $user)
+        <option value="{{ $user->id }}">
+            @if(app()->getLocale() == 'th')
+                {{ $user->fname_th }} {{ $user->lname_th }}
+            @elseif(app()->getLocale() == 'zh')
+                {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+            @else
+                {{ $user->fname_en }} {{ $user->lname_en }}
+            @endif
+        </option>
+    @endforeach
+</select>
+
                     </div>
                 </div>
                 <div class="form-group row">
@@ -75,16 +85,66 @@
                     <div class="col-sm-8">
                         <table class="table" id="dynamicAddRemove">
                             <tr>
-                                <th><button type="button" name="add" id="add-btn2" class="btn btn-success btn-sm add"><i class="mdi mdi-plus"></i></button></th>
+                                <th>
+                                    <button type="button" name="add" id="add-btn2" class="btn btn-success btn-sm"><i class="mdi mdi-plus"></i></button>
+                                </th>
                             </tr>
                         </table>
                     </div>
                 </div>
+
                 <button type="submit" class="btn btn-primary upload mt-5">{{ __('researchGroups.submit') }}</button>
                 <a class="btn btn-light mt-5" href="{{ route('researchGroups.index') }}">{{ __('researchGroups.back') }}</a>
             </form>
         </div>
     </div>
 </div>
+@section('javascript')
+<script>
+    $(document).ready(function () {
+        var i = 0; // ตัวนับจำนวนแถวที่เพิ่ม
+        var selectUserText = @json(__('researchGroups.select_user'));
 
+        $("#add-btn2").click(function () {
+            i++;
+
+            var newRow = `
+                <tr id="row${i}">
+                    <td>
+                        <select id="selUser${i}" name="members[${i}][userid]" class="form-control select2">
+                            <option value="">${selectUserText}</option>
+                            @foreach($users as $user)
+                                <option value="{{ $user->id }}">
+                                    @if(app()->getLocale() == 'th')
+                                        {{ $user->fname_th }} {{ $user->lname_th }}
+                                    @elseif(app()->getLocale() == 'zh')
+                                        {{ $user->fname_zh ?? $user->fname_en }} {{ $user->lname_zh ?? $user->lname_en }}
+                                    @else
+                                        {{ $user->fname_en }} {{ $user->lname_en }}
+                                    @endif
+                                </option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm remove-tr">
+                            <i class="mdi mdi-minus"></i>
+                        </button>
+                    </td>
+                </tr>`;
+
+            $("#dynamicAddRemove").append(newRow);
+            $("#selUser" + i).select2();
+        });
+
+        // ปุ่มลบสมาชิก
+        $(document).on("click", ".remove-tr", function () {
+            $(this).closest("tr").remove();
+        });
+
+        // ทำให้ select2 ทำงานกับ dropdown ที่โหลดมาพร้อมหน้า
+        $(".select2").select2();
+    });
+</script>
+@endsection
 @stop

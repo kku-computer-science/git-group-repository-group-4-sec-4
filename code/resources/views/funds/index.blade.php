@@ -33,17 +33,36 @@
                         <tr>
 
                             <td>{{ $i+1 }}</td>
-                            <td>{{ Str::limit($fund->fund_name,80) }}</td>
                             <td>
-                @if(app()->getLocale() == 'th')
-                    {{ $fund->fund_type_th }}
-                @elseif(app()->getLocale() == 'zh')
-                    {{ $fund->fund_type_zh }}
-                @else
-                    {{ $fund->fund_type_en }}
-                @endif
-            </td>
-                            <td>{{ $fund->fund_level }}</td>
+                                @if(app()->getLocale() == 'th')
+                                    {{ Str::limit($fund->fund_name, 80) }}
+                                @elseif(app()->getLocale() == 'zh')
+                                    {{ Str::limit($fund->fund_name_zh, 80) }}
+                                @else
+                                    {{ Str::limit($fund->fund_name_en, 80) }}
+                                @endif
+                            </td>
+
+                            <td>
+                                @if(app()->getLocale() == 'th')
+                                    {{ $fund->fund_type_th }}
+                                @elseif(app()->getLocale() == 'zh')
+                                    {{ $fund->fund_type_zh }}
+                                @else
+                                    {{ $fund->fund_type_en }}
+                                @endif
+                            </td>
+
+                            <td>
+    @if(app()->getLocale() == 'th')
+        {{ $fund->fund_level_th }}
+    @elseif(app()->getLocale() == 'zh')
+        {{ $fund->fund_level_zh }}
+    @else
+        {{ $fund->fund_level_en }}
+    @endif
+</td>
+
                             <!-- <td>{{ $fund->user->fname_en }} {{ $fund->user->lname_en }}</td> -->
 
                             <td>
@@ -86,10 +105,19 @@
 <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer></script>
 <script>
     $(document).ready(function() {
-        var table = $('#example1').DataTable({
-            fixedHeader: true
-        });
+    var table = $('#example1').DataTable({
+        fixedHeader: true,
+        "language": {
+            "lengthMenu": "{{ __('funds.show_entries') }}",
+            "search": "{{ __('funds.search') }}",
+            "info": "{{ __('funds.showing') }}",
+            "paginate": {
+                "previous": "{{ __('funds.previous') }}",
+                "next": "{{ __('funds.next') }}"
+            }
+        }
     });
+});
 </script>
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {
@@ -97,22 +125,28 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: "{{ __('funds.Are you sure?') }}",
-                text: "{{ __('funds.Delete warning') }}",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
-                }
-            });
+    title: "{{ __('manageExpertise.delete_confirm_title') }}",
+    text: "{{ __('manageExpertise.delete_confirm_text') }}",
+    icon: "warning",
+    buttons: {
+        cancel: {
+            text: "{{ __('manageExpertise.cancel') }}",
+            value: null,
+            visible: true,
+            className: "btn btn-secondary",
+            closeModal: true,
+        },
+        confirm: {
+            text: "{{ __('manageExpertise.ok') }}",
+            value: true,
+            visible: true,
+            className: "btn btn-danger",
+            closeModal: true
+        }
+    },
+    dangerMode: true,
+});
+
     });
 </script>
 @endsection

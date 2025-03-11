@@ -16,10 +16,11 @@
                 @endcan
             </div>
             <div class="card-body">
-                <div class="lead">
-                    <strong>{{ __('permissions.name') }}:</strong>
-                    {{ $permission->name }}
-                </div>
+            <div class="lead">
+    <strong>{{ __('permissions.name') }}:</strong>
+    {{ __('permissions.' . $permission->name) }}
+</div>
+
             </div>
         </div>
     </div>
