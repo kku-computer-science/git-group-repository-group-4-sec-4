@@ -24,5 +24,7 @@ return [
     'are_you_sure' => 'Are you sure?',
     'delete_warning' => 'If you delete this, it will be gone forever.',
     'ok' => 'OK',
-    'cancel' => 'Cancel'
+    'cancel' => 'Cancel',
+    'name_required' => 'Role name is required',
+    'permission_required' => 'Permissions are required',
 ];

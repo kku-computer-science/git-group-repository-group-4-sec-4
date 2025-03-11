@@ -24,4 +24,8 @@ return [
     'cancel' => 'ยกเลิก',
     'ok' => 'ตกลง',
     'success' => 'ลบข้อมูลสำเร็จ',
+
+    'department_name_th_required' =>  'จำเป็นต้องกรอกชื่อแผนก (ภาษาไทย)',
+    'department_name_en_required' =>  'จำเป็นต้องกรอกชื่อแผนก (ภาษาอังกฤษ)',
+    'department_name_zh_required' =>  'จำเป็นต้องกรอกชื่อแผนก (ภาษาจีน)',
 ];

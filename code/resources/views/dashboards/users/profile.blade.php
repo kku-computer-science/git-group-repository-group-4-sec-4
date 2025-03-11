@@ -477,7 +477,7 @@
                                 'input[name="name"]')).val());
                         });
                         console.log(data.msg);
-                        swal("Update Info", "Your account is updated!", "success");
+                        swal("{{ __('profile.update') }}", "{{ __('profile.update_info') }}", "success");
                     }
                 }
             });

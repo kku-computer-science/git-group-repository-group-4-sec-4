@@ -84,4 +84,11 @@ return [
     'delete_warning' => '如果您删除此内容，它将永远消失。',
     'ok' => '确定',
     'cancel' => '取消',
+
+    'ac_name_required' => '必须填写论文名称',
+    'ac_type_required' => '必须填写论文类型',
+    'ac_sourcetitle_required' => '必须填写论文来源标题',
+    'ac_yearpub_required' => '必须填写论文出版年份',
+    'ac_volume_required' => '必须填写论文卷号',
+    'ac_doi_required' => '必须填写论文DOI',
 ];

@@ -73,11 +73,11 @@ class ResearchProjectController extends Controller
             ],
 
             [
-                'project_name.required' => 'ต้องใส่ข้อมูล ชื่อโครงการวิจัย',
-                'budget.required' => 'ต้องใส่ข้อมูล งบประมาณ',
-                'project_year.required' => 'ต้องใส่ข้อมูล ปีที่ปีที่ยื่นขอ',
-                'fund.required' => 'ต้องใส่ข้อมูล ทุนวิจัย',
-                'head.required' => 'ต้องใส่ข้อมูล ผู้รับผิดชอบโครงการ',
+                'project_name.required' => __('researchProjects.project_name'),
+                'budget.required' => __('researchProjects.budget'),
+                'project_year.required' => __('researchProjects.project_year'),
+                'fund.required' => __('researchProjects.fund'),
+                'head.required' => __('researchProjects.head'),
             ]
         );
         //return $request->fund; 

@@ -61,4 +61,13 @@ return [
 
     'nothing_selected' => 'Nothing selected',
 
+    'fname_required' => 'First name (English) is required',
+    'lname_required' => 'Last name (English) is required',
+    'email_required' => 'Email is required',
+    'password_required' => 'Password is required',
+    'password_confirmed' => 'Password confirmation does not match',
+    'roles_required' => 'Roles are required',
+    'sub_cat_required' => 'Sub category is required',
+
+    
 ];

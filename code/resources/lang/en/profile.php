@@ -43,4 +43,7 @@ return [
     'enter_current_password' => 'Enter current password',
     'enter_new_password' => 'Enter new password',
     'reenter_new_password' => 'Re-enter new password',
+    'update' => 'Update info',
+    'update_info' => 'Your account is updated!',
+    'account_updated' => 'บัญชีของคุณได้รับการอัปเดตแล้ว',
 ];

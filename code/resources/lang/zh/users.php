@@ -60,4 +60,12 @@ return [
     'ok' => '确定',
 
     'nothing_selected' => '未选择',
+
+    'fname_required' => '必须填写英文名字',
+    'lname_required' => '必须填写英文姓氏',
+    'email_required' => '必须填写电子邮件',
+    'password_required' => '必须填写密码',
+    'password_confirmed' => '密码确认不匹配',
+    'roles_required' => '必须选择角色',
+    'sub_cat_required' => '必须填写子类别',
 ];

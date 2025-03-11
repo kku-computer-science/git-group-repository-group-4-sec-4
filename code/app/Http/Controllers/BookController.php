@@ -67,10 +67,12 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'ac_name' => 'required',
-            //'ac_sourcetitle' => 'required',
             'ac_year' => 'required',
+        ], [
+            'ac_name.required' => __('books.ac_name_required'),
+            'ac_year.required' => __('books.ac_year_required'), 
         ]);
 
         $input = $request->except(['_token']);

@@ -49,5 +49,10 @@ return [
     'showing' => 'Showing _START_ to _END_ of _TOTAL_ entries',
     'previous' => 'Previous',
     'next' => 'Next',
+    'whoops' => 'Oops!',
+    'error_mes' => 'There was an issue with the data you entered',
+    'fund_name' => 'You must enter the fund name',
+    'fund_type' => 'You must enter the fund type',
+    'support_resource' => 'You must enter the support resource',
 
 ];

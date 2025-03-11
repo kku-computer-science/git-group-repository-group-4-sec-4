@@ -71,4 +71,7 @@ return [
     'next' => 'Next',
     'no_file_chosen' => 'No file chosen',
 
+    'group_name_th' => 'You must enter the project group name (Thai)',
+    'group_name_en' => 'You must enter the project group name (English)',
+    'head' => 'You must enter the project leader name',
 ];

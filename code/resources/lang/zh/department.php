@@ -24,4 +24,8 @@ return [
     'cancel' => '取消',
     'ok' => '确定',
     'success' => '删除成功',
+
+    'department_name_th_required' => '必须填写部门名称 (泰语)',
+    'department_name_en_required' => '必须填写部门名称 (英语)',
+    'department_name_zh_required' => '必须填写部门名称 (中文)',
 ];

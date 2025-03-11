@@ -57,6 +57,11 @@ class ResearchGroupController extends Controller
             'group_name_en' => 'required',
             'head' => 'required',
             //'group_image' => 'required|mimes:png,jpg,jpeg|max:2048',
+        ],[
+            'group_name_th.required' => __('researchGroups.group_name_th'),
+            'group_name_en.required' => __('researchGroups.group_name_en'),
+            'head.required' => __('researchGroups.head'),
+
         ]);
         $input = $request->all();
         if ($request->group_image) {

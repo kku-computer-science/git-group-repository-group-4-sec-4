@@ -24,4 +24,8 @@ return [
     'cancel' => 'Cancel',
     'ok' => 'OK',
     'success' => 'Deleted successfully',
+
+    'department_name_th_required' => 'Department name is required (Thai)',
+    'department_name_en_required' => 'Department name is required (English)',
+    'department_name_zh_required' => 'Department name is required (Chinese)',
 ];

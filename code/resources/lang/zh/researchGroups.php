@@ -69,5 +69,8 @@ return [
     'next' => '下一页',
     'no_file_chosen' => '未选择文件',
 
+    'group_name_th' => '必须填写项目组名称（泰语）',
+    'group_name_en' => '必须填写项目组名称（英语）',
+    'head' => '必须填写项目负责人姓名',
     
 ];

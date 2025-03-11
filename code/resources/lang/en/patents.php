@@ -53,4 +53,20 @@ return [
     'tradesecret' => 'Trade Secret',
     'trademark' => 'Trademark',
     'select_user' => 'Select User',
+    'ok' => 'OK',
+    'cancel' => 'Cancel',
+
+    'ac_name_required'      => 'Please specify the name (invention, petty patent, or copyright).',
+    'ac_type_required'      => 'Please specify the type of work.',
+    'ac_year_required'      => 'Please provide the publication date or year.',
+    'ac_refnumber_required' => 'Please provide the registration number.',
+    // 'advisor_required'    => 'Please select an advisor.',
+
+    'created_success'       => 'Data has been created successfully.',
+    'updated_success'       => 'Data has been updated successfully.',
+    'deleted_success'       => 'Data has been deleted successfully.',
+
+    'updated_success1' => 'Patent updated successfully',
+
+    'Product deleted successfully' => 'Product deleted successfully',
 ];

@@ -88,4 +88,7 @@ return [
     'delete_confirm_text' => '如果你删除此项，它将永远消失。',
     'cancel' => '取消',
     'ok' => '确定',
+
+    'ac_name_required' => '必须填写论文名称',
+    'ac_year_required' => '必须填写出版年份',
 ];

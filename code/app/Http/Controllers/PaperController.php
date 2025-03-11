@@ -78,6 +78,13 @@ class PaperController extends Controller
             //'paper_citation' => 'required',
             //'paper_page' => 'required',
             'paper_doi' => 'required',
+        ],[
+            'paper_name.required' => __('papers.ac_name_required'),
+            'paper_type.required' => __('papers.ac_type_required'),
+            'paper_sourcetitle.required' => __('papers.ac_sourcetitle_required'),
+            'paper_yearpub.required' => __('papers.ac_yearpub_required'),
+            'paper_volume.required' => __('papers.ac_volume_required'),
+            'paper_doi.required' => __('papers.ac_doi_required'),
         ]);
         $input = $request->except(['_token']);
 

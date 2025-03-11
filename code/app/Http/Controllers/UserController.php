@@ -84,6 +84,16 @@ class UserController extends Controller
             'roles' => 'required',
             // 'position' => 'required',
             'sub_cat' => 'required',
+        ],[
+            'fname_en.required' => __('users.fname_required'),
+            'lname_en.required' => __('users.lname_required'),
+            'fname_th.required' => __('users.fname_required'),
+            'lname_th.required' => __('users.lname_required'),
+            'email.required' => __('users.email_required'),
+            'password.required' => __('users.password_required'),
+            'password.confirmed' => __('users.password_confirmed'),
+            'roles.required' => __('users.roles_required'),
+            'sub_cat.required' => __('users.sub_cat_required'),
         ]);
     
         //$input = $request->all();

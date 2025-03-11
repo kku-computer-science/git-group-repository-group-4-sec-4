@@ -82,5 +82,6 @@ return [
     'to' => 'to',
     'of' => 'of',
     'previous' => 'Previous',
-    'next' => 'Next'
+    'next' => 'Next',
+    'name_required' => 'Permission name is required',
 ];

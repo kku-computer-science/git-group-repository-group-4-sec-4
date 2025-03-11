@@ -63,7 +63,12 @@ class FundController extends Controller
             'fund_name' => 'required',
             'fund_type' => 'required',
             'support_resource'=> 'required',
+        ],[
+            'fund_name.required' => __('funds.fund_name'),
+            'fund_type.required' => __('funds.fund_type'),
+            'support_resource.required'=> __('funds.support_resource'),
         ]);
+
     //return $request->all();
         //Fund::create($request->all());
         $user = User::find(Auth::user()->id);

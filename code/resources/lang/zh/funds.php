@@ -49,4 +49,9 @@ return [
     'showing' => '显示 _START_ 到 _END_ ，共 _TOTAL_ 条目',
     'previous' => '上一页',
     'next' => '下一页',
+    'whoops' => '哎呀！',
+    'error_mes' => '您输入的数据有问题',
+    'fund_name' => '必须填写基金名称',
+    'fund_type' => '必须填写基金类型',
+    'support_resource' => '必须填写支持资源',
 ];

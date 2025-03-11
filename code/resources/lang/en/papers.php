@@ -82,4 +82,10 @@ return [
     'delete_warning' => 'If you delete this, it will be gone forever.',
     'ok' => 'OK',
     'cancel' => 'Cancel',
+    'ac_name_required' => 'You must enter the paper name',
+    'ac_type_required' => 'You must enter the paper type',
+    'ac_sourcetitle_required' => 'You must enter the source title of the paper',
+    'ac_yearpub_required' => 'You must enter the publication year of the paper',
+    'ac_volume_required' => 'You must enter the volume of the paper',
+    'ac_doi_required' => 'You must enter the DOI of the paper',
 ];

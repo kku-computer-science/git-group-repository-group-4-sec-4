@@ -24,5 +24,8 @@ return [
     'are_you_sure' => '你确定吗？',
     'delete_warning' => '如果你删除这个，它将永远消失。',
     'ok' => '确定',
-    'cancel' => '取消'
+    'cancel' => '取消',
+
+    'name_required' => '角色名称是必填项',
+    'permission_required' => '必须选择权限',
 ];

@@ -76,4 +76,10 @@ return [
     'position_or_title' => 'Position or Title',
     'first_name' => 'First Name',
     'last_name' => 'Last Name',
+
+    'project_name' => 'You must enter the project name',
+    'budget' => 'You must enter the budget',
+    'project_year' => 'You must enter the project year',
+    'fund' => 'You must enter the research fund',
+    'head' => 'You must enter the project leader',
 ];

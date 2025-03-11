@@ -74,5 +74,11 @@ return [
     'position_or_title' => '职位或头衔',
     'first_name' => '名字',
     'last_name' => '姓氏',
+
+    'project_name' => '必须填写项目名称',
+    'budget' => '必须填写预算',
+    'project_year' => '必须填写申请年份',
+    'fund' => '必须填写研究资金',
+    'head' => '必须填写项目负责人',
     
 ];

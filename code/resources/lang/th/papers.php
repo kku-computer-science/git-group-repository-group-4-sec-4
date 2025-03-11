@@ -83,4 +83,11 @@ return [
     'delete_warning' => 'หากคุณลบสิ่งนี้ ข้อมูลจะหายไปตลอดกาล',
     'ok' => 'ตกลง',
     'cancel' => 'ยกเลิก',
+
+    'ac_name_required' => 'ต้องกรอกชื่อกระดาษ',
+    'ac_type_required' => 'ต้องกรอกประเภทกระดาษ',
+    'ac_sourcetitle_required' => 'ต้องกรอกชื่อแหล่งที่มาของกระดาษ',
+    'ac_yearpub_required' => 'ต้องกรอกปีที่เผยแพร่กระดาษ',
+    'ac_volume_required' => 'ต้องกรอกเล่มกระดาษ',
+    'ac_doi_required' => 'ต้องกรอก DOI ของกระดาษ',
 ];

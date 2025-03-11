@@ -51,7 +51,12 @@ class DepartmentController extends Controller
     {
         $this->validate($request, [
             'department_name_th' => 'required',
-            'department_name_th' => 'required',
+            'department_name_en' => 'required',
+            'department_name_zh' => 'required',
+        ],[
+            'department_name_th.required' =>  __('department.department_name_th_required'),
+            'department_name_en.required' =>  __('department.department_name_en_required'),
+            'department_name_zh.required' =>  __('department.department_name_zh_required'),
         ]);
         $input = $request->except(['_token']);
     

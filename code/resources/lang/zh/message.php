@@ -31,4 +31,16 @@ return [
     'close' => '关闭',
     'login' => '登录',
     'before' => '之前',
+    'profile_updated' => '个人资料更新成功',
+    'password_updated' => '您的密码已成功更改',
+    'upload_failed' => '上传图片失败',
+    'update_success' => '更新成功',
+    'update_failed' => '更新失败',
+    'profile_picture_updated' => '头像更新成功',
+    'password_updated' => '您的密码已成功更改',
+    'old_password_incorrect' => '当前密码不正确',
+
+    'old_password_required' => '请输入您当前的密码',
+    'new_password_required' => '请输入新密码',
+    'cnewpassword_required' => '请确认您的新密码',
 ];

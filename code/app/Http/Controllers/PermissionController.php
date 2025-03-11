@@ -53,6 +53,8 @@ class PermissionController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:permissions,name',
+        ],[
+            'name.required' => __('permissions.name_required'),
         ]);
     
         Permission::create(['name' => $request->input('name')]);

@@ -55,4 +55,18 @@ return [
     'tradesecret' => '商业机密',
     'trademark' => '商标',
     'select_user' => '选择用户',
+    'ok' => '确定',
+    'cancel' => '取消',
+
+    'ac_name_required'      => '请填写名称（发明、实用新型、版权）。',
+    'ac_type_required'      => '请指定作品类型。',
+    'ac_year_required'      => '请提供出版日期或年份。',
+    'ac_refnumber_required' => '请提供登记号。',
+    // 'advisor_required'    => '请选择导师。',
+
+    'created_success'       => '数据已成功创建。',
+    'updated_success'       => '数据已成功更新。',
+    'deleted_success'       => '数据已成功删除。',
+    
+    'Product deleted successfully' => '該產品已成功刪除',
 ];

@@ -82,5 +82,7 @@ return [
     'to' => '到',
     'of' => '共',
     'previous' => '上一页',
-    'next' => '下一页'
+    'next' => '下一页',
+
+    'name_required' => '权限名称是必填项',
 ];

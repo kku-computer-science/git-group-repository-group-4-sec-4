@@ -43,5 +43,7 @@ return [
     'enter_current_password' => 'กรอกรหัสผ่านปัจจุบัน',
     'enter_new_password' => 'กรอกรหัสผ่านใหม่',
     'reenter_new_password' => 'ยืนยันรหัสผ่านใหม่',
-
+    'update' => 'อัปเดตโปรไฟล์',
+    'update_info' => 'อัปเดตข้อมูลสำเร็จ!',
+    'account_updated' => 'บัญชีของคุณได้รับการอัปเดตแล้ว',
 ];

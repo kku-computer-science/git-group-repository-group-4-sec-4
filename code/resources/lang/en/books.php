@@ -88,4 +88,7 @@ return [
     'delete_confirm_text' => 'If you delete this, it will be gone forever.',
     'cancel' => 'Cancel',
     'ok' => 'OK',
+
+    'ac_name_required' => 'You must enter the paper name',
+    'ac_year_required' => 'You must enter the year of publication',
 ];

@@ -43,4 +43,7 @@ return [
     'enter_current_password' => '输入当前密码',
     'enter_new_password' => '输入新密码',
     'reenter_new_password' => '重新输入新密码',
+    'update' => '更新个人资料',
+    'update_info' => '信息更新成功！',
+    'account_updated' => '您的账户已更新',
 ];
