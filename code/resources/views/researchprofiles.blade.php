@@ -355,9 +355,8 @@
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
-                                <a>{{$author -> author_fname_en}} {{$author -> author_lname}}
-
-                                </a>
+        
+                                <a>{{$author -> author_fname_en}} {{$author -> author_lname}}</a>
                             </span>
                             @endforeach
                             @foreach ($paper->teacher as $author)
@@ -493,27 +492,70 @@
                         <td>{{$n+1}}</td>
                         <td>{{$paper->ac_name}}</td>
                         <td>
-                            @foreach ($paper->author as $author)
+                        @foreach ($paper->author as $author)
                             <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
-
+                            @if(app()->getLocale() == 'en')
+                            <a>{{$author -> author_fname}} {{$author -> author_lname}} , </a>
+                            @elseif(app()->getLocale() == 'th')
+                                @if($author -> author_fname_th == NULL)
+                                <a>{{$author -> author_fname}} {{$author -> author_lname}} , </a>
+                                @else
+                                <a>{{$author -> author_fname_th}} {{$author -> author_lname_th}} , </a>
+                                @endif
+                            @elseif(app()->getLocale() == 'zh')
+                                @if($author -> author_fname_zh == NULL)
+                                <a>{{$author -> author_fname}} {{$author -> author_lname}} , </a>
+                                @else
+                                <a>{{$author -> author_fname_zh}} {{$author -> author_lname_zh}} , </a>
+                                @endif
+                            @endif
                             </span>
-                            @endforeach
+                         @endforeach
+                            
                             @foreach ($paper->user as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
+                                @if(app()->getLocale() == 'en')
                                     <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                @elseif(app()->getLocale() == 'th')
+                                    @if($author -> fname_th == NULL)
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                    @else
+                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
+                                    @endif
+                                @elseif(app()->getLocale() == 'zh')
+                                    @if($author -> fname_zh == NULL)
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                    @else
+                                    <teacher>{{$author -> fname_zh}} {{$author -> lname_zh}}</teacher>
+                                    @endif
+                                @endif
                                 </a>
 
                             </span>
                             @endforeach
                         </td>
-                        <td>{{$paper->ac_type}}</td>
+
+                        @if(app()->getLocale() == 'en')
+                            <<td>{{$paper->ac_type_en}}</td>
+                        @elseif(app()->getLocale() == 'th')
+                            @if($author -> fname_th == NULL)
+                                <td>{{$paper->ac_type_en}}</td>
+                            @else
+                                <<td>{{$paper->ac_type}}</td>
+                            @endif
+                        @elseif(app()->getLocale() == 'zh')
+                            @if($author -> fname_zh == NULL)
+                                <td>{{$paper->ac_type_zh}}</td>
+                            @else
+                                <td>{{$paper->ac_type_zh}}</td>
+                            @endif
+                            @endif
                         <td>{{$paper->ac_refnumber }}</td>
                         <td>{{$paper->ac_year}}</td>
-
                     </tr>
                     @endforeach
+
                 </tbody>
             </table>
         </div>
