@@ -6,6 +6,7 @@ Test Teardown    Close Browser
 ${BROWSER}           chrome
 ${HOME_URL}          https://cs0404.cpkkuhost.com/
 ${WAIT_TIME}        3s
+${WEBDRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/chromedriver-mac-arm64/chromedriver
 
 # ตัวแปรสำหรับเมนู Research Project (ปรับ locator ให้ตรงกับหน้าเว็บของคุณ)
 ${RESEARCH_PROJECT_MENU}       xpath=//a[contains(@href, '/researchproject')]
@@ -14,32 +15,32 @@ ${RESEARCH_PROJECT_MENU}       xpath=//a[contains(@href, '/researchproject')]
 ${LANG_DROPDOWN_TOGGLE}    xpath=//a[@id="navbarDropdownMenuLink"]
 
 # เปลี่ยนภาษา (ตัวเลือกใน dropdown)
-${LANG_TO_THAI}       xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'ไทย')]
-${LANG_TO_ENGLISH}    xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), 'English')]
-${LANG_TO_CHINESE}    xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(text(), '中文')]
+${LANG_TO_THAI}       xpath=//a[@id="language-th"]
+${LANG_TO_ENGLISH}    xpath=//a[@id="language-en"]
+${LANG_TO_CHINESE}    xpath=//a[@id="language-zh"]
 
 # ตัวแปรสำหรับข้อความ Training Text ที่ต้องการตรวจสอบ
 ${TRAINING_TEXT}    การจัดอบรมหลักสูตรประกาศนียบัตร (Non-Degree) โครงการพัฒนาทักษะกำลังคนของประเทศ (Reskill/Upskill/Newskill) เพื่อการมีงานทำและเตรียมความพร้อมรองรับการทำงานในอนาคตหลังวิกฤตการระบาดของไวรัสโคโรนา 2019 (COVID-19)
 
 # ตรวจสอบข้อความทั่วไปของหน้า Research Project (Expected texts อาจต้องปรับให้ตรงกับข้อมูลจริง)
 @{EXPECTED_RP_EN}    
-...    Academic Services Project / Research Project
+...    Academic service projects/research projects
 ...    Show 
 ...    entries
 ...    Search
-...    Number	
+...    No	
 ...    Year	
 ...    Project 
 ...    Name	
-...    Details	
+...    Detail
 ...    Project
-...    Leader	
+...    Person Responsible
 ...    Status
-...    Project Duration
+...    Project period
 ...    Research Grant Type
-...    Funding Agency 
-...    Responsible Agency
-...    Allocated Budget 
+...    Organizations that support funding 
+...    Responsible agency
+...    Allocated budget
 ...    External funding
 ...    Office of the Permanent Secretary (OPS) , MHESI Thailand
 ...    Computer Science
@@ -85,7 +86,7 @@ ${TRAINING_TEXT}    การจัดอบรมหลักสูตรปร
 ...    ${TRAINING_TEXT}
 
 @{EXPECTED_RP_CN}    
-...    学术服务项目 / 研究项目
+...    学术服务项目/研究项目
 ...    显示 
 ...    条目
 ...    搜索
@@ -117,7 +118,7 @@ ${TRAINING_TEXT}    การจัดอบรมหลักสูตรปร
 
 *** Keywords ***
 Open Browser To Home Page
-    Open Browser    ${HOME_URL}    ${BROWSER}
+    Open Browser    ${HOME_URL}    ${BROWSER}    executable_path=${WEBDRIVER_PATH}
     Maximize Browser Window
 
 Wait And Click
