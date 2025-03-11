@@ -27,7 +27,7 @@
                         <img class="profile-user-img img-fluid img-circle admin_picture" src="{{ Auth::user()->picture }}" alt="User profile picture">
                     </div>
                     <h4 class="text-center p-2">@if(app()->getLocale() == 'zh')
-                            @if(Auth::user()->fname_zh == null || Auth::user()->fname_zh == '-' || Auth::user()->lname_zh == null || Auth::user()->lname_zh == '-')
+                            @if(Auth::user()->fname_zh == null)
                                 {{ Auth::user()->position_en }} {{ Auth::user()->fname_en }} {{ Auth::user()->lname_en }}
                             @else
                                 {{ Auth::user()->position_zh }} {{ Auth::user()->fname_zh }} {{ Auth::user()->lname_zh }}

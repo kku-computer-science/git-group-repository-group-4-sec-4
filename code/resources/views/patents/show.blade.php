@@ -9,9 +9,9 @@
             <div class="row">
             <p class="card-text col-sm-3"><b>{{ __('patents.name2') }}</b></p>
             <p class="card-text col-sm-9">
-                @if($locale == 'zh' && !empty($patent->ac_name_zh))
+                @if(app()->getLocale() == 'zh' && !empty($patent->ac_name_zh))
                     {{ $patent->ac_name_zh }}
-                @elseif($locale == 'en' && !empty($patent->ac_name_en))
+                @elseif(app()->getLocale() == 'en' && !empty($patent->ac_name_en))
                     {{ $patent->ac_name_en }}
                 @else
                     {{ $patent->ac_name }}
@@ -22,9 +22,9 @@
             <div class="row">
             <p class="card-text col-sm-3"><b>{{ __('patents.type') }}</b></p>
             <p class="card-text col-sm-9">
-                @if($locale == 'zh' && !empty($patent->ac_type_zh))
+                @if(app()->getLocale() == 'zh' && !empty($patent->ac_type_zh))
                     {{ $patent->ac_type_zh }}
-                @elseif($locale == 'en' && !empty($patent->ac_type_en))
+                @elseif(app()->getLocale() == 'en' && !empty($patent->ac_type_en))
                     {{ $patent->ac_type_en }}
                 @else
                     {{ $patent->ac_type }}
@@ -44,9 +44,9 @@
             <p class="card-text col-sm-3"><b>{{ __('patents.creator') }}</b></p>
             <p class="card-text col-sm-9">
                 @foreach($patent->user as $a)
-                    @if($locale == 'zh')
+                    @if(app()->getLocale() == 'zh')
                         {{ $a->fname_zh }} {{ $a->lname_zh }}
-                    @elseif($locale == 'en')
+                    @elseif(app()->getLocale() == 'en')
                         {{ $a->fname_en }} {{ $a->lname_en }}
                     @else
                         {{ $a->fname_th }} {{ $a->lname_th }}
@@ -60,9 +60,9 @@
             <p class="card-text col-sm-3"><b>{{ __('patents.creator_joint') }}</b></p>
 <p class="card-text col-sm-9">
     @foreach($patent->author as $a)
-        @if($locale == 'zh')
+        @if(app()->getLocale() == 'zh')
             {{ $a->author_fname_zh ?? $a->author_fname }} {{ $a->author_lname_zh ?? $a->author_lname }}
-        @elseif($locale == 'en')
+        @elseif(app()->getLocale() == 'en')
             {{ $a->author_fname_en ?? $a->author_fname }} {{ $a->author_lname_en ?? $a->author_lname }}
         @else
             {{ $a->author_fname }} {{ $a->author_lname }}

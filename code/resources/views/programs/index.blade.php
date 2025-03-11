@@ -108,7 +108,11 @@
                                             @elseif(app()->getLocale() == 'en')
                                                 {{ $d->degree_name_en }}
                                             @elseif(app()->getLocale() == 'zh')
+                                                @if($d->degree_name_zh == NULL)
+                                                {{ $d->degree_name_en }}
+                                                @else
                                                 {{ $d->degree_name_zh }}
+                                                @endif
                                             @else
                                                 {{ $d->degree_name_en }}
                                             @endif

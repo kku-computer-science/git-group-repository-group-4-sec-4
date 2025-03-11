@@ -16,7 +16,7 @@
             </div>
             <div class="row mt-1">
                 <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_name_zh') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_name_zh ?? $researchGroup->group_name_en }}</p>
+                <p class="card-text col-sm-9">{{ $researchGroup->group_name_zh}}</p>
             </div>
             <div class="row mt-2">
                 <p class="card-text col-sm-3"><b>{{ __('researchGroups.research_group_desc_th') }}</b></p>

@@ -64,14 +64,14 @@
             @endif
         </td>
         <td>
-    @if(app()->getLocale() == 'th' && !empty($expert->expert_name))
-        {{ $expert->expert_name }}
-    @elseif(app()->getLocale() == 'en' && !empty($expert->expert_name_en))
-        {{ $expert->expert_name_en }}
+    @if(app()->getLocale() == 'th' && !empty($expert->expert_name_th))
+        {{ $expert->expert_name_th }}
+    @elseif(app()->getLocale() == 'en' && !empty($expert->expert_name))
+        {{ $expert->expert_name}}
     @elseif(app()->getLocale() == 'zh' && !empty($expert->expert_name_zh))
         {{ $expert->expert_name_zh }}
     @else
-        {{ $expert->expert_name_en ?? '-' }} {{-- ถ้าไม่มีค่าจะใส่ `-` --}}
+        {{ $expert->expert_name ?? '-' }} {{-- ถ้าไม่มีค่าจะใส่ `-` --}}
     @endif
 </td>
 
@@ -186,13 +186,13 @@
         // แสดงข้อมูลตามภาษาที่เลือก
         var locale = "{{ app()->getLocale() }}";
         if (locale === "th") {
-            $('#expert_name').val(data.expert_name);
+            $('#expert_name').val(data.expert_name_th);
         } else if (locale === "en") {
-            $('#expert_name').val(data.expert_name_en);
+            $('#expert_name').val(data.expert_name);
         } else if (locale === "zh") {
             $('#expert_name').val(data.expert_name_zh);
         } else {
-            $('#expert_name').val(data.expert_name_en); // ค่าเริ่มต้นเป็นภาษาอังกฤษ
+            $('#expert_name').val(data.expert_name); // ค่าเริ่มต้นเป็นภาษาอังกฤษ
         }
     });
 });

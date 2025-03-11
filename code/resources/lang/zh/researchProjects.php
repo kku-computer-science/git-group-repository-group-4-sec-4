@@ -75,7 +75,7 @@ return [
     'first_name' => '名字',
     'last_name' => '姓氏',
 
-    'project_name' => '必须填写项目名称',
+    'project_name_2' => '必须填写项目名称',
     'budget' => '必须填写预算',
     'project_year' => '必须填写申请年份',
     'fund' => '必须填写研究资金',

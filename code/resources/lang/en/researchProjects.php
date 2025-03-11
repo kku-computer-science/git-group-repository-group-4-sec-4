@@ -77,7 +77,7 @@ return [
     'first_name' => 'First Name',
     'last_name' => 'Last Name',
 
-    'project_name' => 'You must enter the project name',
+    'project_name_2' => 'You must enter the project name',
     'budget' => 'You must enter the budget',
     'project_year' => 'You must enter the project year',
     'fund' => 'You must enter the research fund',

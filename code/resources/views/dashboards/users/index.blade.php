@@ -7,7 +7,7 @@
 <br>
 <h4>{{ __('dashboard.hello') }}
                 @if(app()->getLocale() == 'zh')
-                    @if(Auth::user()->fname_zh == null || Auth::user()->fname_zh == '-' || Auth::user()->lname_zh == null || Auth::user()->lname_zh == '-')
+                    @if(Auth::user()->fname_zh == null)
                         {{ Auth::user()->position_en }} {{ Auth::user()->fname_en }} {{ Auth::user()->lname_en }}
                     @else
                         {{ Auth::user()->position_zh }} {{ Auth::user()->fname_zh }} {{ Auth::user()->lname_zh }}

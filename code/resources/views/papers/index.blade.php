@@ -37,18 +37,34 @@
                                 <td>{{ $i+1 }}</td>
                                 <td>
                                     @if(app()->getLocale() == 'zh') 
+                                        @if($paper->paper_name_zh == NULL)
+                                        {{ Str::limit($paper->paper_name, 50) }}
+                                        @else
                                         {{ Str::limit($paper->paper_name_zh ?? $paper->paper_name_en, 50) }}
+                                        @endif
                                     @elseif(app()->getLocale() == 'en')
+                                        @if($paper->paper_name_en == NULL)
+                                        {{ Str::limit($paper->paper_name, 50) }}
+                                        @else
                                         {{ Str::limit($paper->paper_name_en, 50) }}
+                                        @endif
                                     @else
                                         {{ Str::limit($paper->paper_name, 50) }}
                                     @endif
                                 </td>
                                 <td>
                                     @if(app()->getLocale() == 'zh') 
+                                        @if($paper->paper_type_zh == NULL)
+                                        {{ Str::limit($paper->paper_type, 50) }}
+                                        @else
                                         {{ Str::limit($paper->paper_type_zh ?? $paper->paper_type_en, 50) }}
+                                        @endif
                                     @elseif(app()->getLocale() == 'en')
+                                        @if($paper->paper_type_en == NULL)
+                                        {{ Str::limit($paper->paper_type, 50) }}
+                                        @else
                                         {{ Str::limit($paper->paper_type_en, 50) }}
+                                        @endif
                                     @else
                                         {{ Str::limit($paper->paper_type, 50) }}
                                     @endif

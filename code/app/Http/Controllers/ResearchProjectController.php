@@ -73,7 +73,7 @@ class ResearchProjectController extends Controller
             ],
 
             [
-                'project_name.required' => __('researchProjects.project_name'),
+                'project_name.required' => __('researchProjects.project_name_2'),
                 'budget.required' => __('researchProjects.budget'),
                 'project_year.required' => __('researchProjects.project_year'),
                 'fund.required' => __('researchProjects.fund'),
