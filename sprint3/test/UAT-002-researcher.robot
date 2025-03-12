@@ -6,7 +6,7 @@ Test Teardown    Close Browser
 ${BROWSER}           chrome
 ${HOME_URL}          https://cs0404.cpkkuhost.com/detail/eyJpdiI6ImlvL1Z4UzFOZ1hUbXFDOTV6Q2ZCZnc9PSIsInZhbHVlIjoiN1QwS3p2eUhRMTJsT2ZRMDd2SHNCZz09IiwibWFjIjoiZWUyOGFlZjk3NGU0ODY5YTlkM2IxYzc1NDQ1OGI5YWU3NDlkYTkwM2U2YmFjNzBhNmQ2YTBmZGRiNDU0ODNmMiIsInRhZyI6IiJ9
 ${WAIT_TIME}         3s
-${WEBDRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/test_sprint3/chromedriver-mac-arm64/chromedriver
+${WEBDRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/sprint3/test/chromedriver-mac-arm64/chromedriver
 
 # เปลี่ยนภาษา (ตัวเลือกใน dropdown)
 ${LANG_DROPDOWN_TOGGLE}    xpath=//a[@id="navbarDropdownMenuLink"]
