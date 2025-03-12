@@ -1,0 +1,27 @@
+<?php
+return [
+'no'=> 'No',
+'year'=> 'Year',
+'projectName'=> 'Project Name',
+'detail'=> 'Detail',
+'responsible'=> 'Person Responsible',
+'status'=> 'Status',
+'title'=> 'Academic service projects/research projects',
+'time'=> 'Project period',
+'typeResearch'=> 'Research grant type',
+'support'=> 'Organizations that support funding',
+'agency'=> 'Responsible agency',
+'budget'=> 'Allocated budget',
+'baht'=> 'baht',
+'apply'=> 'Apply for',
+'carryOut'=> 'carry out',
+'close'=> 'Close the project',
+
+'Project_Duration' => 'Project Duration',
+    'To' => 'to',
+    'Funding_Type' => 'Funding Type',
+    'Support_Agency' => 'Support Agency',
+    'Responsible_Department' => 'Responsible Department',
+    'Budget_Allocated' => 'Budget Allocated',
+    'Currency' => 'THB',
+];

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20250227 05:01:27.709" schemaversion="2" generator="Robot 4.1.3 (Python 2.7.18 on darwin)">
+<suite source="/Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/InitialProject/tests/robot_framework/testcase2.robot" id="s1" name="Testcase2">
+<test id="s1-t1" name="Login Test">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250227 05:01:27.900" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<status status="PASS" endtime="20250227 05:01:43.666" starttime="20250227 05:01:27.900"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20250227 05:01:43.873" level="INFO">Page title is 'ระบบข้อมูลงานวิจัย วิทยาลัยการคอมพิวเตอร์'.</msg>
+<status status="PASS" endtime="20250227 05:01:43.873" starttime="20250227 05:01:43.668"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=navbarDropdownMenuLink</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250227 05:01:43.874" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<status status="PASS" endtime="20250227 05:01:45.352" starttime="20250227 05:01:43.873"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=language-th</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250227 05:01:45.352" level="INFO">Clicking element 'id=language-th'.</msg>
+<status status="PASS" endtime="20250227 05:01:48.217" starttime="20250227 05:01:45.352"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250227 05:01:50.220" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20250227 05:01:50.221" starttime="20250227 05:01:48.217"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=btn-login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250227 05:01:50.223" level="INFO">Clicking element 'id=btn-login'.</msg>
+<status status="PASS" endtime="20250227 05:01:51.080" starttime="20250227 05:01:50.222"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250227 05:01:53.082" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20250227 05:01:53.082" starttime="20250227 05:01:51.081"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${window_handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20250227 05:01:53.135" level="INFO">${window_handles} = [u'2CBD33791ABCC22FFA9974160D3F28C0', u'F9EAFD1892D5E2639267BA6764EB6D22']</msg>
+<status status="PASS" endtime="20250227 05:01:53.135" starttime="20250227 05:01:53.083"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${window_handles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" endtime="20250227 05:01:53.365" starttime="20250227 05:01:53.136"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" endtime="20250227 05:01:53.795" starttime="20250227 05:01:53.366"/>
+</kw>
+<kw name="Input Username">
+<doc>กรอกชื่อผู้ใช้ที่ช่อง username</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250227 05:01:53.797" level="INFO">Typing text 'admin@gmail.com' into text field 'id=username'.</msg>
+<status status="PASS" endtime="20250227 05:01:54.920" starttime="20250227 05:01:53.797"/>
+</kw>
+<status status="PASS" endtime="20250227 05:01:54.920" starttime="20250227 05:01:53.796"/>
+</kw>
+<kw name="Input Password">
+<doc>กรอกรหัสผ่านที่ช่อง password</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250227 05:01:54.921" level="INFO">Typing text '123456789' into text field 'id=password'.</msg>
+<status status="PASS" endtime="20250227 05:01:55.188" starttime="20250227 05:01:54.921"/>
+</kw>
+<status status="PASS" endtime="20250227 05:01:55.188" starttime="20250227 05:01:54.920"/>
+</kw>
+<kw name="Click Submit Button">
+<doc>คลิกปุ่มส่งข้อมูล</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250227 05:01:55.190" level="INFO">Clicking button 'id=submit'.</msg>
+<status status="PASS" endtime="20250227 05:01:56.401" starttime="20250227 05:01:55.189"/>
+</kw>
+<status status="PASS" endtime="20250227 05:01:56.401" starttime="20250227 05:01:55.189"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250227 05:02:01.404" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20250227 05:02:01.405" starttime="20250227 05:01:56.401"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${translated_text}</var>
+<arg>id=title-dashboard-admin</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250227 05:02:01.556" level="INFO">${translated_text} = ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์</msg>
+<status status="PASS" endtime="20250227 05:02:01.556" starttime="20250227 05:02:01.405"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${expected_text}</var>
+<arg>ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250227 05:02:01.557" level="INFO">${expected_text} = ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์</msg>
+<status status="PASS" endtime="20250227 05:02:01.557" starttime="20250227 05:02:01.557"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${translated_text}</arg>
+<arg>${expected_text}</arg>
+<arg>Test Failed! Expected '${expected_text}', but got '${translated_text}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" endtime="20250227 05:02:01.559" starttime="20250227 05:02:01.557"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250227 05:02:01.721" starttime="20250227 05:02:01.559"/>
+</kw>
+<doc>ทดสอบการเข้าสู่ระบบด้วยชื่อผู้ใช้และรหัสผ่านและเปลี่ยนภาษาถูกต้อง</doc>
+<status status="PASS" endtime="20250227 05:02:01.722" starttime="20250227 05:01:27.896"/>
+</test>
+<status status="PASS" endtime="20250227 05:02:01.725" starttime="20250227 05:01:27.711"/>
+</suite>
+<statistics>
+<total>
+<stat fail="0" skip="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" skip="0" id="s1" name="Testcase2" pass="1">Testcase2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
