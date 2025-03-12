@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20250312 22:39:58.883" schemaversion="2" generator="Robot 4.1.3 (Python 2.7.18 on darwin)">
+<suite source="/Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/test_sprint3/UAT-001-Home.robot" id="s1" name="UAT-001-Home">
+<test id="s1-t1" name="Admin Login And Change Language To Thai">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${WEBDRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250312 22:39:59.077" level="INFO">Opening browser 'chrome' to base url 'https://cs0404.cpkkuhost.com/'.</msg>
+<status status="PASS" endtime="20250312 22:40:23.648" starttime="20250312 22:39:59.076"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20250312 22:40:24.813" starttime="20250312 22:40:23.650"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:24.813" starttime="20250312 22:39:59.076"/>
+</kw>
+<kw name="Change Language To Thai">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANG_DROPDOWN_TOGGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:40:24.815" level="INFO">Clicking element 'xpath=//a[@id="navbarDropdownMenuLink"]'.</msg>
+<status status="PASS" endtime="20250312 22:40:26.757" starttime="20250312 22:40:24.814"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250312 22:40:28.760" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20250312 22:40:28.762" starttime="20250312 22:40:26.757"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LANG_TO_THAI}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" endtime="20250312 22:40:28.864" starttime="20250312 22:40:28.763"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANG_TO_THAI}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:40:28.865" level="INFO">Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(@href, '/lang/th')]'.</msg>
+<status status="PASS" endtime="20250312 22:40:35.018" starttime="20250312 22:40:28.864"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" endtime="20250312 22:40:35.465" starttime="20250312 22:40:35.019"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" endtime="20250312 22:40:35.955" starttime="20250312 22:40:35.465"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250312 22:40:36.958" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20250312 22:40:36.958" starttime="20250312 22:40:35.956"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:40:36.961" level="INFO">Clicking element 'xpath=(//div[@id="accordionExample"])[7]'.</msg>
+<status status="PASS" endtime="20250312 22:40:37.807" starttime="20250312 22:40:36.959"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${PAGE_TEXT}</var>
+<arg>xpath=//body</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:40:48.372" level="INFO">${PAGE_TEXT} = หน้าแรก
+ผู้วิจัย
+โครงการวิจัย
+กลุ่มวิจัย
+รายงาน
+ไทย
+เข้าสู่ระบบ
+Previous
+Next
+
+461
+สรุป
+386
+SCOPUS
+1
+WOS
+74
+TCI
+ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)
+2025
+2024
+2023
+2022
+2021
+2020
+ก่อน 2019
+[1]
+IT adaptation p...</msg>
+<status status="PASS" endtime="20250312 22:40:48.372" starttime="20250312 22:40:37.808"/>
+</kw>
+<for flavor="IN">
+<var>${TEXT}</var>
+<value>@{TEXT_TH}</value>
+<iter>
+<var name="${TEXT}">สรุป</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.373" starttime="20250312 22:40:48.373"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.373" starttime="20250312 22:40:48.372"/>
+</iter>
+<iter>
+<var name="${TEXT}">ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.374" starttime="20250312 22:40:48.373"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.374" starttime="20250312 22:40:48.373"/>
+</iter>
+<iter>
+<var name="${TEXT}">หน้าแรก</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.374" starttime="20250312 22:40:48.374"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.374" starttime="20250312 22:40:48.374"/>
+</iter>
+<iter>
+<var name="${TEXT}">ผู้วิจัย</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.375" starttime="20250312 22:40:48.374"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.375" starttime="20250312 22:40:48.374"/>
+</iter>
+<iter>
+<var name="${TEXT}">โครงการวิจัย</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.375" starttime="20250312 22:40:48.375"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.375" starttime="20250312 22:40:48.375"/>
+</iter>
+<iter>
+<var name="${TEXT}">กลุ่มวิจัย</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.376" starttime="20250312 22:40:48.376"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.376" starttime="20250312 22:40:48.376"/>
+</iter>
+<iter>
+<var name="${TEXT}">เข้าสู่ระบบ</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.377" starttime="20250312 22:40:48.376"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.377" starttime="20250312 22:40:48.376"/>
+</iter>
+<iter>
+<var name="${TEXT}">ระบบแนะนำการแพทย์แผนโบราณแบบเฉพาะบุคคลโดยใช้แนวทางออนโทโลยีและการอนุมานตามกฎ</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.377" starttime="20250312 22:40:48.377"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.377" starttime="20250312 22:40:48.377"/>
+</iter>
+<iter>
+<var name="${TEXT}">การจัดประเภทคำถามเชิงความหมายสำหรับระบบตอบคำถามโดยใช้แนวทางข้อมูลเปิดที่เชื่อมโยง</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:40:48.379" starttime="20250312 22:40:48.378"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.379" starttime="20250312 22:40:48.377"/>
+</iter>
+<status status="PASS" endtime="20250312 22:40:48.379" starttime="20250312 22:40:48.372"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>"Language changed to Thai successfully."</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250312 22:40:48.379" level="INFO">"Language changed to Thai successfully."</msg>
+<status status="PASS" endtime="20250312 22:40:48.379" starttime="20250312 22:40:48.379"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>"Language changed to Thai successfully."</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" endtime="20250312 22:40:48.380" starttime="20250312 22:40:48.379"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.380" starttime="20250312 22:40:24.814"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250312 22:40:48.533" starttime="20250312 22:40:48.380"/>
+</kw>
+<kw type="TEARDOWN" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250312 22:40:48.535" starttime="20250312 22:40:48.534"/>
+</kw>
+<status status="PASS" endtime="20250312 22:40:48.535" starttime="20250312 22:39:59.074"/>
+</test>
+<test id="s1-t2" name="Admin Login And Change Language To English">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${WEBDRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250312 22:40:48.550" level="INFO">Opening browser 'chrome' to base url 'https://cs0404.cpkkuhost.com/'.</msg>
+<status status="PASS" endtime="20250312 22:41:11.395" starttime="20250312 22:40:48.545"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20250312 22:41:12.763" starttime="20250312 22:41:11.396"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:12.763" starttime="20250312 22:40:48.543"/>
+</kw>
+<kw name="Change Language To English">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANG_DROPDOWN_TOGGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:41:12.765" level="INFO">Clicking element 'xpath=//a[@id="navbarDropdownMenuLink"]'.</msg>
+<status status="PASS" endtime="20250312 22:41:14.480" starttime="20250312 22:41:12.764"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250312 22:41:16.481" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20250312 22:41:16.482" starttime="20250312 22:41:14.480"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" endtime="20250312 22:41:16.638" starttime="20250312 22:41:16.483"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" endtime="20250312 22:41:17.087" starttime="20250312 22:41:16.638"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250312 22:41:18.089" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20250312 22:41:18.089" starttime="20250312 22:41:17.088"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:41:18.090" level="INFO">Clicking element 'xpath=(//div[@id="accordionExample"])[7]'.</msg>
+<status status="PASS" endtime="20250312 22:41:19.142" starttime="20250312 22:41:18.089"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${PAGE_TEXT}</var>
+<arg>xpath=//body</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:41:29.825" level="INFO">${PAGE_TEXT} = HOME
+RESEARCHERS
+RESEARCH PROJECT
+RESEARCH GROUP
+REPORTS
+ENGLISH
+LOGIN
+Previous
+Next
+
+461
+SUMMARY
+386
+SCOPUS
+1
+WOS
+74
+TCI
+Publications (In the Last 5 Years)
+2025
+2024
+2023
+2022
+2021
+2020
+Before 2019
+[...</msg>
+<status status="PASS" endtime="20250312 22:41:29.825" starttime="20250312 22:41:19.142"/>
+</kw>
+<for flavor="IN">
+<var>${TEXT}</var>
+<value>@{TEXT_ENG}</value>
+<iter>
+<var name="${TEXT}">SUMMARY</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.827" starttime="20250312 22:41:29.826"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.827" starttime="20250312 22:41:29.826"/>
+</iter>
+<iter>
+<var name="${TEXT}">Publications (In the Last 5 Years)</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.828" starttime="20250312 22:41:29.827"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.828" starttime="20250312 22:41:29.827"/>
+</iter>
+<iter>
+<var name="${TEXT}">HOME</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.828" starttime="20250312 22:41:29.828"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.828" starttime="20250312 22:41:29.828"/>
+</iter>
+<iter>
+<var name="${TEXT}">RESEARCHERS</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.829" starttime="20250312 22:41:29.828"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.829" starttime="20250312 22:41:29.828"/>
+</iter>
+<iter>
+<var name="${TEXT}">RESEARCH PROJECT</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.829" starttime="20250312 22:41:29.829"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.829" starttime="20250312 22:41:29.829"/>
+</iter>
+<iter>
+<var name="${TEXT}">RESEARCH GROUP</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.830" starttime="20250312 22:41:29.830"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.830" starttime="20250312 22:41:29.830"/>
+</iter>
+<iter>
+<var name="${TEXT}">REPORTS</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.831" starttime="20250312 22:41:29.830"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.831" starttime="20250312 22:41:29.830"/>
+</iter>
+<iter>
+<var name="${TEXT}">LOGIN</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.831" starttime="20250312 22:41:29.831"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.831" starttime="20250312 22:41:29.831"/>
+</iter>
+<iter>
+<var name="${TEXT}">IT adaptation patterns to enterprise-wide systems</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.833" starttime="20250312 22:41:29.832"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.833" starttime="20250312 22:41:29.831"/>
+</iter>
+<iter>
+<var name="${TEXT}">An integrated approach to performance evaluation of enterprise resource planning (ERP) system implementation</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.833" starttime="20250312 22:41:29.833"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.833" starttime="20250312 22:41:29.833"/>
+</iter>
+<iter>
+<var name="${TEXT}">P. Wanchai</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:41:29.834" starttime="20250312 22:41:29.834"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.834" starttime="20250312 22:41:29.833"/>
+</iter>
+<status status="PASS" endtime="20250312 22:41:29.834" starttime="20250312 22:41:29.825"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>"Language changed to English successfully."</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250312 22:41:29.835" level="INFO">"Language changed to English successfully."</msg>
+<status status="PASS" endtime="20250312 22:41:29.835" starttime="20250312 22:41:29.834"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.835" starttime="20250312 22:41:12.764"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250312 22:41:29.966" starttime="20250312 22:41:29.836"/>
+</kw>
+<kw type="TEARDOWN" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250312 22:41:29.967" starttime="20250312 22:41:29.967"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:29.968" starttime="20250312 22:40:48.540"/>
+</test>
+<test id="s1-t3" name="Admin Login And Change Language To Chinese">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${WEBDRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250312 22:41:29.972" level="INFO">Opening browser 'chrome' to base url 'https://cs0404.cpkkuhost.com/'.</msg>
+<status status="PASS" endtime="20250312 22:41:51.309" starttime="20250312 22:41:29.971"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20250312 22:41:52.340" starttime="20250312 22:41:51.310"/>
+</kw>
+<status status="PASS" endtime="20250312 22:41:52.340" starttime="20250312 22:41:29.971"/>
+</kw>
+<kw name="Change Language To Chinese">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANG_DROPDOWN_TOGGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:41:52.342" level="INFO">Clicking element 'xpath=//a[@id="navbarDropdownMenuLink"]'.</msg>
+<status status="PASS" endtime="20250312 22:41:54.106" starttime="20250312 22:41:52.341"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250312 22:41:56.107" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20250312 22:41:56.109" starttime="20250312 22:41:54.106"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LANG_TO_CHINESE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" endtime="20250312 22:41:56.213" starttime="20250312 22:41:56.109"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANG_TO_CHINESE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:41:56.214" level="INFO">Clicking element 'xpath=//div[contains(@class, 'dropdown-menu')]//a[contains(@href, '/lang/zh')]'.</msg>
+<status status="PASS" endtime="20250312 22:42:00.671" starttime="20250312 22:41:56.213"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" endtime="20250312 22:42:01.193" starttime="20250312 22:42:00.672"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" endtime="20250312 22:42:01.738" starttime="20250312 22:42:01.193"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250312 22:42:02.740" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20250312 22:42:02.741" starttime="20250312 22:42:01.739"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_BEFORE_2019}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:42:02.744" level="INFO">Clicking element 'xpath=(//div[@id="accordionExample"])[7]'.</msg>
+<status status="PASS" endtime="20250312 22:42:03.691" starttime="20250312 22:42:02.742"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${PAGE_TEXT}</var>
+<arg>xpath=//body</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250312 22:42:13.559" level="INFO">${PAGE_TEXT} = 首页
+研究人员
+研究项目
+研究团队
+报告
+中文
+登录
+Previous
+Next
+
+461
+总结
+386
+SCOPUS
+1
+WOS
+74
+TCI
+出版物（近5年）
+2025
+2024
+2023
+2022
+2021
+2020
+之前 2019
+[1]
+IT adaptation patterns to enterprise-wide systems ( P. Wanchai, A. Andrade, ...</msg>
+<status status="PASS" endtime="20250312 22:42:13.559" starttime="20250312 22:42:03.691"/>
+</kw>
+<for flavor="IN">
+<var>${TEXT}</var>
+<value>@{TEXT_ZH}</value>
+<iter>
+<var name="${TEXT}">总结</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.560" starttime="20250312 22:42:13.560"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.560" starttime="20250312 22:42:13.559"/>
+</iter>
+<iter>
+<var name="${TEXT}">出版物（近5年）</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.561" starttime="20250312 22:42:13.560"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.561" starttime="20250312 22:42:13.560"/>
+</iter>
+<iter>
+<var name="${TEXT}">首页</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.561" starttime="20250312 22:42:13.561"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.561" starttime="20250312 22:42:13.561"/>
+</iter>
+<iter>
+<var name="${TEXT}">研究人员</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.562" starttime="20250312 22:42:13.561"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.562" starttime="20250312 22:42:13.561"/>
+</iter>
+<iter>
+<var name="${TEXT}">研究项目</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.563" starttime="20250312 22:42:13.562"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.563" starttime="20250312 22:42:13.562"/>
+</iter>
+<iter>
+<var name="${TEXT}">研究团队</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.563" starttime="20250312 22:42:13.563"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.563" starttime="20250312 22:42:13.563"/>
+</iter>
+<iter>
+<var name="${TEXT}">报告</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.564" starttime="20250312 22:42:13.564"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.564" starttime="20250312 22:42:13.564"/>
+</iter>
+<iter>
+<var name="${TEXT}">登录</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.565" starttime="20250312 22:42:13.564"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.565" starttime="20250312 22:42:13.564"/>
+</iter>
+<iter>
+<var name="${TEXT}">IT adaptation patterns to enterprise-wide systems</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.565" starttime="20250312 22:42:13.565"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.565" starttime="20250312 22:42:13.565"/>
+</iter>
+<iter>
+<var name="${TEXT}">An integrated approach to performance evaluation of enterprise resource planning (ERP) system implementation</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.566" starttime="20250312 22:42:13.565"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.566" starttime="20250312 22:42:13.565"/>
+</iter>
+<iter>
+<var name="${TEXT}">P. Wanchai</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${PAGE_TEXT}</arg>
+<arg>${TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" endtime="20250312 22:42:13.566" starttime="20250312 22:42:13.566"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.566" starttime="20250312 22:42:13.566"/>
+</iter>
+<status status="PASS" endtime="20250312 22:42:13.566" starttime="20250312 22:42:13.559"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>"Language changed to Chinese successfully."</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250312 22:42:13.567" level="INFO">"Language changed to Chinese successfully."</msg>
+<status status="PASS" endtime="20250312 22:42:13.567" starttime="20250312 22:42:13.566"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.567" starttime="20250312 22:41:52.341"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250312 22:42:13.728" starttime="20250312 22:42:13.567"/>
+</kw>
+<kw type="TEARDOWN" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20250312 22:42:13.728" starttime="20250312 22:42:13.728"/>
+</kw>
+<status status="PASS" endtime="20250312 22:42:13.729" starttime="20250312 22:41:29.970"/>
+</test>
+<status status="PASS" endtime="20250312 22:42:13.731" starttime="20250312 22:39:58.886"/>
+</suite>
+<statistics>
+<total>
+<stat fail="0" skip="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" skip="0" id="s1" name="UAT-001-Home" pass="3">UAT-001-Home</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

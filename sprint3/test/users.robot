@@ -6,7 +6,7 @@ Test Teardown    Close Browser
 ${BROWSER}           chrome
 ${HOME_URL}          https://cs0404.cpkkuhost.com/login
 ${WAIT_TIME}         3s
-${WEBDRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/chromedriver-mac-arm64/chromedriver
+${WEBDRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/test_sprint3/chromedriver-mac-arm64/chromedriver
 
 # ฟิลด์สำหรับล็อกอิน
 ${USER}             admin@gmail.com
@@ -28,8 +28,8 @@ ${LANG_TO_CHINESE}    xpath=//div[contains(@class, 'dropdown-menu')]//a[contains
 ...    อีเมล
 ...    บทบาท
 ...    การดำเนินการ
-...    admin@gmail.com	
-...    Chaiyapon Keeratikasikorn
+...    admin@gmail.com
+...    สาขาวิชาวิทยาการคอมพิวเตอร์
 
 @{TEXT_ENG}    
 ...    Users
@@ -39,7 +39,7 @@ ${LANG_TO_CHINESE}    xpath=//div[contains(@class, 'dropdown-menu')]//a[contains
 ...    Roles
 ...    Action
 ...    admin@gmail.com	
-...    Chaiyapon Keeratikasikorn
+...    Computer Science
 
 @{TEXT_ZH}    
 ...    用户
@@ -49,7 +49,7 @@ ${LANG_TO_CHINESE}    xpath=//div[contains(@class, 'dropdown-menu')]//a[contains
 ...    角色
 ...    操作
 ...    admin@gmail.com	
-...    Chaiyapon Keeratikasikorn
+...    计算机科学
 
 #หน้าที่ test
 ${URL_FOR_TEST}    https://cs0404.cpkkuhost.com/users

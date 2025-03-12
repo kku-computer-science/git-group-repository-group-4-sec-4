@@ -6,7 +6,7 @@ Test Teardown    Close Browser
 ${BROWSER}           chrome
 ${HOME_URL}          https://cs0404.cpkkuhost.com/login
 ${WAIT_TIME}         3s
-${WEBDRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/chromedriver-mac-arm64/chromedriver
+${WEBDRIVER_PATH}    /Users/ptpspp/Documents/GitHub/git-group-repository-group-4-sec-4/test/test_sprint3/chromedriver-mac-arm64/chromedriver
 
 # ฟิลด์สำหรับล็อกอิน
 ${USER}             admin@gmail.com
