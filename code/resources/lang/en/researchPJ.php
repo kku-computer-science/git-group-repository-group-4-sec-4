@@ -17,4 +17,11 @@ return [
 'carryOut'=> 'carry out',
 'close'=> 'Close the project',
 
+'Project_Duration' => 'Project Duration',
+    'To' => 'to',
+    'Funding_Type' => 'Funding Type',
+    'Support_Agency' => 'Support Agency',
+    'Responsible_Department' => 'Responsible Department',
+    'Budget_Allocated' => 'Budget Allocated',
+    'Currency' => 'THB',
 ];

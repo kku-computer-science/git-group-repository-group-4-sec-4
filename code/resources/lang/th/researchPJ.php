@@ -16,4 +16,11 @@ return [
 'apply'=> 'ยื่นขอ',
 'carryOut'=> 'ดำเนินการ',
 'close'=> 'ปิดโครงการ',
+'Project_Duration' => 'ระยะเวลาของโครงการ',
+    'To' => 'ถึง',
+    'Funding_Type' => 'ประเภทเงินทุน',
+    'Support_Agency' => 'หน่วยงานสนับสนุน',
+    'Responsible_Department' => 'หน่วยงานที่รับผิดชอบ',
+    'Budget_Allocated' => 'งบประมาณที่จัดสรร',
+    'Currency' => 'บาท',
 ];

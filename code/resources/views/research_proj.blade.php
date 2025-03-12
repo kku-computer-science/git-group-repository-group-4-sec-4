@@ -36,33 +36,33 @@
                     </td>
                     <td>
                         <div style="padding-bottom: 10px">
-                            <span style="font-weight: bold;">{{ __('reseracher.Project_Duration') }}</span>
+                            <span style="font-weight: bold;">{{ __('researchPJ.Project_Duration') }}</span>
                             <span style="padding-left: 10px;">
                                 @if ($re->project_start != null)
                                     {{\Carbon\Carbon::parse($re->project_start)->translatedFormat('j F Y') }} 
-                                    {{ __('reseracher.To') }} 
+                                    {{ __('researchPJ.To') }} 
                                     {{\Carbon\Carbon::parse($re->project_end)->translatedFormat('j F Y') }}
                                 @endif
                             </span>
                         </div>
 
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;">{{ __('reseracher.Funding_Type') }}</span>
-                            <span style="padding-left: 10px;">{{ $re->fund->{'fund_type_' . (app()->getLocale() == 'zh' ? 'cn' : app()->getLocale())} ?? $re->fund->fund_type }}</span>
+                            <span style="font-weight: bold;">{{ __('researchPJ.Funding_Type') }}</span>
+                            <span style="padding-left: 10px;">{{ $re->fund->{'fund_type_' . (app()->getLocale() == 'zh' ? 'zh' : app()->getLocale())} ?? $re->fund->fund_type }}</span>
                         </div>
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;">{{ __('reseracher.Support_Agency') }}</span>
-                            <span style="padding-left: 10px;">{{ $re->fund->{'support_resource_' . (app()->getLocale() == 'zh' ? 'cn' : app()->getLocale())} ?? $re->fund->support_resource }}</span>
+                            <span style="font-weight: bold;">{{ __('researchPJ.Support_Agency') }}</span>
+                            <span style="padding-left: 10px;">{{ $re->fund->{'support_resource_' . (app()->getLocale() == 'zh' ? 'zh' : app()->getLocale())} ?? $re->fund->support_resource }}</span>
                         </div>
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;">{{ __('reseracher.Responsible_Department') }}</span>
+                            <span style="font-weight: bold;">{{ __('researchPJ.Responsible_Department') }}</span>
                             <span style="padding-left: 10px;">
-                                {{ $re->{'responsible_department_' . (app()->getLocale() == 'zh' ? 'cn' : app()->getLocale())} ?? $re->responsible_department_en }}
+                                {{ $re->{'responsible_department_' . (app()->getLocale() == 'zh' ? 'zh' : app()->getLocale())} ?? $re->responsible_department_en }}
                             </span>
                         </div>
                         <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;">{{ __('reseracher.Budget_Allocated') }}</span>
-                            <span style="padding-left: 10px;">{{ number_format($re->budget) }} {{ __('researcher.Currency') }}
+                            <span style="font-weight: bold;">{{ __('researchPJ.Budget_Allocated') }}</span>
+                            <span style="padding-left: 10px;">{{ number_format($re->budget) }} {{ __('researchPJ.Currency') }}
 
 
                             </span>

@@ -16,4 +16,12 @@ return [
 'apply' => '申请',
 'carryOut' => '执行',
 'close' => '项目结束',
+
+'Project_Duration' => '项目期限',
+    'To' => '至',
+    'Funding_Type' => '资金类型',
+    'Support_Agency' => '资助机构',
+    'Responsible_Department' => '负责部门',
+    'Budget_Allocated' => '预算分配',
+    'Currency' => '泰铢',
 ];
