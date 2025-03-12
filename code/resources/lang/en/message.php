@@ -39,4 +39,8 @@ return [
     'old_password_required' => 'Please enter your current password',
     'new_password_required' => 'Please enter a new password',
     'cnewpassword_required' => 'Please confirm your new password',
+    'expert_name_required' => 'The expert name is required.',
+
+    'expertise_entry_created' => 'Expertise entry created successfully.',
+    'expertise_data_updated' => 'Expertise data is updated successfully.',
 ];

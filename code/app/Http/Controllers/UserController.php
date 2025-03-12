@@ -121,7 +121,7 @@ class UserController extends Controller
         $user = $user->program()->associate($program)->save();
 
         return redirect()->route('users.index')
-            ->with('success', 'User created successfully.');
+            ->with('success', __('users.user_created'));
     }
 
     /**
@@ -199,7 +199,7 @@ class UserController extends Controller
         $user = $user->program()->associate($program)->save();
 
         return redirect()->route('users.index')
-            ->with('success', 'User updated successfully.');
+            ->with('success', __('users.user_updated'));
     }
 
     /**
@@ -213,7 +213,7 @@ class UserController extends Controller
         
         User::find($id)->delete();
         return redirect()->route('users.index')
-            ->with('success', 'User deleted successfully.');
+            ->with('success', __('users.user_deleted'));
     }
 
     function profile(){

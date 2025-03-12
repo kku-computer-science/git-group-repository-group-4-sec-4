@@ -130,6 +130,7 @@ class ResearchGroupController extends Controller
         $request->validate([
             'group_name_th' => 'required',
             'group_name_en' => 'required',
+            'moreFields.*.userid' => 'nullable|integer|exists:users,id'
 
         ]);
         $input = $request->all();

@@ -28,4 +28,8 @@ return [
     'department_name_th_required' =>  'จำเป็นต้องกรอกชื่อแผนก (ภาษาไทย)',
     'department_name_en_required' =>  'จำเป็นต้องกรอกชื่อแผนก (ภาษาอังกฤษ)',
     'department_name_zh_required' =>  'จำเป็นต้องกรอกชื่อแผนก (ภาษาจีน)',
+
+    'department_created' => 'สร้างแผนกสำเร็จ',
+    'department_updated' => 'อัปเดตแผนกสำเร็จ',
+    'department_deleted' => 'ลบแผนกสำเร็จ',
 ];

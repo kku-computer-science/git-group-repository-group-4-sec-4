@@ -28,4 +28,8 @@ return [
     'department_name_th_required' => '必须填写部门名称 (泰语)',
     'department_name_en_required' => '必须填写部门名称 (英语)',
     'department_name_zh_required' => '必须填写部门名称 (中文)',
+
+    'department_created' => '部门创建成功。',
+    'department_updated' => '部门更新成功。',
+    'department_deleted' => '部门删除成功。',
 ];

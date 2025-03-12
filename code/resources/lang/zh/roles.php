@@ -28,4 +28,8 @@ return [
 
     'name_required' => '角色名称是必填项',
     'permission_required' => '必须选择权限',
+
+    'role_created' => '角色创建成功。',
+    'role_updated' => '角色更新成功。',
+    'role_deleted' => '角色删除成功。',
 ];

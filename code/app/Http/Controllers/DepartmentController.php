@@ -63,7 +63,7 @@ class DepartmentController extends Controller
         Department::create($input);
     
         return redirect()->route('departments.index')
-            ->with('success','departments created successfully.');
+            ->with('success',__('department.department_created'));
     }
 
     /**
@@ -101,7 +101,7 @@ class DepartmentController extends Controller
     {
         $department->update($request->all());
         return redirect()->route('departments.index')
-                        ->with('success','Department updated successfully');
+                        ->with('success',__('department.department_updated'));
     }
 
     /**
@@ -114,6 +114,6 @@ class DepartmentController extends Controller
     {
         $department->delete();
         return redirect()->route('departments.index')
-                        ->with('success','Department delete successfully');
+                        ->with('success',__('department.department_deleted'));
     }
 }

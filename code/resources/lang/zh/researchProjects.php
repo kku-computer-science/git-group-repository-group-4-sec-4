@@ -76,9 +76,13 @@ return [
     'last_name' => '姓氏',
 
     'project_name_2' => '必须填写项目名称',
-    'budget' => '必须填写预算',
+    'budget2' => '必须填写预算',
     'project_year' => '必须填写申请年份',
     'fund' => '必须填写研究资金',
     'head' => '必须填写项目负责人',
     
+
+    'research_project_created' => '研究项目创建成功。',
+    'research_project_updated' => '研究项目更新成功。',
+    'research_project_deleted' => '研究项目删除成功。',
 ];

@@ -91,4 +91,14 @@ return [
     'ac_yearpub_required' => '必须填写论文出版年份',
     'ac_volume_required' => '必须填写论文卷号',
     'ac_doi_required' => '必须填写论文DOI',
+
+    'paper_type_required' => '论文类型字段是必填的。',
+    'paper_sourcetitle_required' => '论文来源标题字段是必填的。',
+    'paper_volume_required' => '论文卷字段是必填的。',
+    'paper_issue_required' => '论文期字段是必填的。',
+    'paper_citation_required' => '论文引用字段是必填的。',
+    'paper_page_required' => '论文页字段是必填的。',
+
+    'papers_created' => '论文创建成功。',
+    'papers_updated' => '论文更新成功。',
 ];

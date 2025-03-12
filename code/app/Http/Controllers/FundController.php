@@ -89,7 +89,7 @@ class FundController extends Controller
             $input['fund_level']=null;
         }
         $user->fund()->Create($input);
-        return redirect()->route('funds.index')->with('success','fund created successfully.');
+        return redirect()->route('funds.index')->with('success',__('funds.fund_created'));
     }
      
     /**
@@ -138,7 +138,7 @@ class FundController extends Controller
         }
         $fund->update($input);
         return redirect()->route('funds.index')
-                        ->with('success','Fund updated successfully');
+                        ->with('success',__('funds.fund_updated'));
     }
     
     /**
@@ -152,6 +152,6 @@ class FundController extends Controller
         $fund->delete();
     
         return redirect()->route('funds.index')
-                        ->with('success','Fund deleted successfully');
+                        ->with('success',__('funds.fund_deleted'));
     }
 }

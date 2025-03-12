@@ -58,6 +58,11 @@ class ProgramController extends Controller
             'degree' => 'required',
             'department' => 'required',
 
+        ],[
+            'program_name_th.required' => __('manageProgram.program_name_th_required'),
+            'program_name_en.required' => __('manageProgram.program_name_en_required'),
+            'degree.required' =>__('manageProgram.degree_required'),
+            'department.required' => __('manageProgram.department_required'),
         ]);
 
         $proId = $request->pro_id;
@@ -103,9 +108,9 @@ class ProgramController extends Controller
         
 
         if (empty($request->pro_id))
-            $msg = 'Program entry created successfully.';
+            $msg = __('manageProgram.program_entry_created');
         else
-            $msg = 'Program data is updated successfully';
+            $msg =  __('manageProgram.program_data_updated');
         return redirect()->route('programs.index')->with('success', $msg);
     }
 

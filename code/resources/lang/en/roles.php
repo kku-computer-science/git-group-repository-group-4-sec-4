@@ -27,4 +27,8 @@ return [
     'cancel' => 'Cancel',
     'name_required' => 'Role name is required',
     'permission_required' => 'Permissions are required',
+
+    'role_created' => 'Role created successfully.',
+    'role_updated' => 'Role updated successfully.',
+    'role_deleted' => 'Role deleted successfully.',
 ];

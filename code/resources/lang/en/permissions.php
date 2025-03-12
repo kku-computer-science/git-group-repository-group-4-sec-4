@@ -84,4 +84,8 @@ return [
     'previous' => 'Previous',
     'next' => 'Next',
     'name_required' => 'Permission name is required',
+
+    'permission_created' => 'Permission created successfully.',
+    'permission_updated' => 'Permission updated successfully.',
+    'permission_deleted' => 'Permission deleted successfully.',
 ];

@@ -162,7 +162,7 @@ class PaperController extends Controller
         }
 
         return redirect()->route('papers.index')
-            ->with('success', 'papers created successfully.');
+            ->with('success', __('pepers.papers_created'));
     }
 
     /**
@@ -230,6 +230,13 @@ class PaperController extends Controller
             'paper_citation' => 'required',
             'paper_page' => 'required',
             // 'paper_doi' => 'required',
+        ],[
+            'paper_type.required' => __('papers.paper_type_required'),
+            'paper_sourcetitle.required' => __('papers.paper_sourcetitle_required'),
+            'paper_volume.required' => __('papers.paper_volume_required'),
+            'paper_issue.required' => __('papers.paper_issue_required'),
+            'paper_citation.required' => __('papers.paper_citation_required'),
+            'paper_page.required' => __('papers.paper_page_required'),
         ]);
         $input = $request->except(['_token']);
         $key = $input['keyword'];
@@ -311,7 +318,7 @@ class PaperController extends Controller
             }
         }
         return redirect()->route('papers.index')
-            ->with('success', 'papers updated successfully');
+            ->with('success', __('pepers.papers_updated'));
         //$paper->author()->detach();
     }
 

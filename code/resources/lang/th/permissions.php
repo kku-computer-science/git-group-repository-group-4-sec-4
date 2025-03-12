@@ -85,4 +85,8 @@ return [
     'next' => 'ถัดไป',
 
     'name_required' => 'จำเป็นต้องกรอกชื่อสิทธิ์',
+
+    'permission_created' => 'สร้างสิทธิ์การเข้าถึงสำเร็จ',
+    'permission_updated' => 'อัปเดตสิทธิ์การเข้าถึงสำเร็จ',
+    'permission_deleted' => 'ลบสิทธิ์การเข้าถึงสำเร็จ',
 ];

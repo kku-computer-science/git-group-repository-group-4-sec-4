@@ -74,7 +74,7 @@ class ResearchProjectController extends Controller
 
             [
                 'project_name.required' => __('researchProjects.project_name_2'),
-                'budget.required' => __('researchProjects.budget'),
+                'budget.required' => __('researchProjects.budget2'),
                 'project_year.required' => __('researchProjects.project_year'),
                 'fund.required' => __('researchProjects.fund'),
                 'head.required' => __('researchProjects.head'),
@@ -139,7 +139,7 @@ class ResearchProjectController extends Controller
         //$user = User::find(auth()->user()->id);
         //$user->researchProject()->attach(2);
 
-        return redirect()->route('researchProjects.index')->with('success', 'research projects created successfully.');
+        return redirect()->route('researchProjects.index')->with('success', __('messages.research_project_created'));
     }
 
 
@@ -195,11 +195,11 @@ class ResearchProjectController extends Controller
                 'head' => 'required'
             ],
             [
-                'project_name.required' => 'ต้องใส่ข้อมูล ชื่อโครงการวิจัย',
-                'budget.required' => 'ต้องใส่ข้อมูล งบประมาณ',
-                'project_year.required' => 'ต้องใส่ข้อมูล ปีที่ปีที่ยื่นขอ',
-                'fund.required' => 'ต้องใส่ข้อมูล ทุนวิจัย',
-                'head.required' => 'ต้องใส่ข้อมูล ผู้รับผิดชอบโครงการ',
+                'project_name.required' => __('researchProjects.project_name_2'),
+                'budget.required' => __('researchProjects.budget2'),
+                'project_year.required' => __('researchProjects.project_year'),
+                'fund.required' => __('researchProjects.fund'),
+                'head.required' => __('researchProjects.head'),
 
             ]
         );
@@ -253,7 +253,7 @@ class ResearchProjectController extends Controller
             }
         }
         return redirect()->route('researchProjects.index')
-            ->with('success', 'Research Project updated successfully');
+            ->with('success', __('messages.research_project_updated'));
     }
 
     /**
@@ -268,6 +268,6 @@ class ResearchProjectController extends Controller
         $this->authorize('delete', $researchProject);
         $researchProject->delete();
         return redirect()->route('researchProjects.index')
-            ->with('success', 'Research Project deleted successfully');
+            ->with('success', __('messages.research_project_deleted'));
     }
 }

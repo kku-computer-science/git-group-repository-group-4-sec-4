@@ -54,5 +54,7 @@ return [
     'fund_name' => 'You must enter the fund name',
     'fund_type' => 'You must enter the fund type',
     'support_resource' => 'You must enter the support resource',
-
+'fund_created' => 'Fund created successfully.',
+    'fund_updated' => 'Fund updated successfully.',
+    'fund_deleted' => 'Fund deleted successfully.',
 ];

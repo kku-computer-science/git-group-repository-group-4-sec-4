@@ -36,4 +36,12 @@ return [
     'delete_warning' => 'You will not be able to recover this file!',
     'cancel' => 'Cancel',
     'ok' => 'OK',
+
+    'program_name_th_required' => 'The program name in Thai is required.',
+    'program_name_en_required' => 'The program name in English is required.',
+    'degree_required' => 'The degree is required.',
+    'department_required' => 'The department is required.',
+
+    'program_entry_created' => 'Program entry created successfully.',
+    'program_data_updated' => 'Program data is updated successfully.',
 ];

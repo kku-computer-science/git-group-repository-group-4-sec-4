@@ -28,4 +28,8 @@ return [
     'department_name_th_required' => 'Department name is required (Thai)',
     'department_name_en_required' => 'Department name is required (English)',
     'department_name_zh_required' => 'Department name is required (Chinese)',
+
+    'department_created' => 'Department created successfully.',
+    'department_updated' => 'Department updated successfully.',
+    'department_deleted' => 'Department deleted successfully.',
 ];

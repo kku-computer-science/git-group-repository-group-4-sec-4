@@ -14,7 +14,7 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">{{ __('researchGroups.iedit_research_group') }}</h4>
+            <h4 class="card-title">{{ __('researchGroups.edit_research_group') }}</h4>
             <p class="card-description">{{ __('researchGroups.fill_research_group_details') }}</p>
             <form action="{{ route('researchGroups.update',$researchGroup->id) }}" method="POST" enctype="multipart/form-data" >
                 @csrf
@@ -91,7 +91,9 @@
         <select id="leader" name="leader" class="form-control">
             @foreach($users as $user)
                 <option value="{{ $user->id }}"
-                    @if($user->id == $researchGroup->leader_id) selected @endif>
+                    @if($user->id == $researchGroup->leader_id) 
+                        selected @endif>
+                        
                     @if(app()->getLocale() == 'zh') 
                         {{ $user->position_zh }} {{ $user->fname_zh }} {{ $user->lname_zh }}
                     @elseif(app()->getLocale() == 'en')

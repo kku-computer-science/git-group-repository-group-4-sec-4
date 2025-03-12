@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             'lname'=> 'So-In',
             'position'=> 'Assoc.Prof.Dr.',
             'email' => 'chakso@kku.ac.th',
-            'password' => Hash::make('123456789'),
+            'password' => Hash::make('  '),
             'picture' => 'Chakchai.jpg',
         ])->assignRole(2);
         User::create([

@@ -27,4 +27,8 @@ return [
     'cancel' => 'ยกเลิก',
     'name_required' => 'จำเป็นต้องกรอกชื่อบทบาท',
     'permission_required' => 'จำเป็นต้องเลือกสิทธิ์การใช้งาน',
+
+    'role_created' => 'สร้างบทบาทสำเร็จ',
+    'role_updated' => 'อัปเดตบทบาทสำเร็จ',
+    'role_deleted' => 'ลบบทบาทสำเร็จ',
 ];

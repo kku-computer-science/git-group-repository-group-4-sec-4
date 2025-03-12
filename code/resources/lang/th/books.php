@@ -93,4 +93,8 @@ return [
 
     'ac_name_required' => 'ต้องกรอกชื่อกระดาษ',
     'ac_year_required' => 'ต้องกรอกปีที่เผยแพร่',
+
+    'book_created' => 'สร้างหนังสือสำเร็จ',
+    'book_updated' => 'อัปเดตหนังสือสำเร็จ',
+    'product_deleted' => 'ลบผลิตภัณฑ์สำเร็จ',
 ];  

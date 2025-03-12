@@ -43,4 +43,9 @@ return [
     'old_password_required' => '请输入您当前的密码',
     'new_password_required' => '请输入新密码',
     'cnewpassword_required' => '请确认您的新密码',
+
+    'expert_name_required' => '请输入专家名称。',
+
+    'expertise_entry_created' => '专业条目创建成功。',
+    'expertise_data_updated' => '专业数据更新成功。',
 ];

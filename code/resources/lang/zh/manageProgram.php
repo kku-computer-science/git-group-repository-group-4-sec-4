@@ -36,4 +36,9 @@ return [
     'delete_warning' => '你将无法恢复此文件！',
     'cancel' => '取消',
     'ok' => '确定',
+
+    'program_name_th_required' => '请输入泰语程序名称。',
+    'program_name_en_required' => '请输入英语程序名称。',
+    'degree_required' => '请输入学位。',
+    'department_required' => '请输入部门。',
 ];

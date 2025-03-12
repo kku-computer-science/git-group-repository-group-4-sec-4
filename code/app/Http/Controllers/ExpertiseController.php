@@ -50,6 +50,8 @@ class ExpertiseController extends Controller
         $r = $request->validate([
             'expert_name' => 'required',
 
+        ],[
+            'expert_name.required' => __('message.expert_name_required'),
         ]);
         $exp = Expertise::find($request->exp_id);
         //return $exp;
@@ -63,9 +65,9 @@ class ExpertiseController extends Controller
         }
 
         if (empty($request->exp_id))
-            $msg = 'Expertise entry created successfully.';
+            $msg = __('message.expertise_entry_created');
         else
-            $msg = 'Expertise data is updated successfully';
+            $msg = __('message.expertise_data_updated');
 
         if (auth()->user()->hasRole('admin')) {
             return redirect()->route('experts.index')->with('success', $msg);
@@ -129,7 +131,7 @@ class ExpertiseController extends Controller
     {
         //dd($id);
         $exp = Expertise::where('id', $id)->delete();
-        $msg = 'Expertise entry created successfully.';
+        $msg = __('message.expertise_entry_created');
         if (auth()->user()->hasRole('admin')) {
             return redirect()->route('experts.index')->with('success', $msg);
         } else {

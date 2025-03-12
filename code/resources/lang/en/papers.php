@@ -88,4 +88,14 @@ return [
     'ac_yearpub_required' => 'You must enter the publication year of the paper',
     'ac_volume_required' => 'You must enter the volume of the paper',
     'ac_doi_required' => 'You must enter the DOI of the paper',
+
+    'paper_type_required' => 'The paper type field is required.',
+    'paper_sourcetitle_required' => 'The paper source title field is required.',
+    'paper_volume_required' => 'The paper volume field is required.',
+    'paper_issue_required' => 'The paper issue field is required.',
+    'paper_citation_required' => 'The paper citation field is required.',
+    'paper_page_required' => 'The paper page field is required.',
+
+    'papers_created' => 'Papers created successfully.',
+    'papers_updated' => 'Papers updated successfully.',
 ];

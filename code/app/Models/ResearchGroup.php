@@ -11,6 +11,7 @@ class ResearchGroup extends Model
     protected $fillable = [
         'group_name_th', 'group_name_en', 'group_detail_th', 'group_detail_en', 'group_desc_th', 'group_desc_en', 'group_image'
     ];
+    protected $table = 'research_groups';
 
     public function user()
     {
@@ -20,4 +21,7 @@ class ResearchGroup extends Model
     public function product(){
         return $this->hasOne(Product::class,'group_id');
     }
+    
+    
+
 }

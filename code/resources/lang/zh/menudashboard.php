@@ -19,4 +19,6 @@ return [
     'book' => '书',
     'other_academic_works' => '其他学术著作',
     'logout' => '退出',
+
+    
 ];

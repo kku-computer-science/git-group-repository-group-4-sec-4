@@ -39,4 +39,8 @@ return [
 'old_password_required' => 'กรุณากรอกรหัสผ่านปัจจุบัน',
     'new_password_required' => 'กรุณากรอกรหัสผ่านใหม่',
     'cnewpassword_required' => 'กรุณายืนยันรหัสผ่านใหม่',
+
+    'expert_name_required' => 'โปรดระบุชื่อผู้เชี่ยวชาญ',
+    'expertise_entry_created' => 'สร้างรายการความเชี่ยวชาญสำเร็จ',
+    'expertise_data_updated' => 'อัปเดตข้อมูลความเชี่ยวชาญสำเร็จ',
 ];

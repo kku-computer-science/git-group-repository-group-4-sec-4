@@ -36,4 +36,12 @@ return [
     'delete_warning' => 'คุณจะไม่สามารถกู้คืนไฟล์นี้ได้อีก!',
     'cancel' => 'ยกเลิก',
     'ok' => 'ตกลง',
+
+    'program_name_th_required' => 'โปรดระบุชื่อโปรแกรม (ภาษาไทย)',
+    'program_name_en_required' => 'โปรดระบุชื่อโปรแกรม (ภาษาอังกฤษ)',
+    'degree_required' => 'โปรดระบุปริญญา',
+    'department_required' => 'โปรดระบุแผนก',
+
+    'program_entry_created' => 'สร้างรายการโปรแกรมสำเร็จ',
+    'program_data_updated' => 'อัปเดตข้อมูลโปรแกรมสำเร็จ',
 ];

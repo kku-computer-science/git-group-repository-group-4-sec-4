@@ -54,4 +54,7 @@ return [
     'fund_name' => '必须填写基金名称',
     'fund_type' => '必须填写基金类型',
     'support_resource' => '必须填写支持资源',
+    'fund_created' => '资金创建成功。',
+    'fund_updated' => '资金更新成功。',
+    'fund_deleted' => '资金删除成功。',
 ];

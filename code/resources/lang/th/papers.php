@@ -90,4 +90,14 @@ return [
     'ac_yearpub_required' => 'ต้องกรอกปีที่เผยแพร่กระดาษ',
     'ac_volume_required' => 'ต้องกรอกเล่มกระดาษ',
     'ac_doi_required' => 'ต้องกรอก DOI ของกระดาษ',
+
+    'paper_type_required' => 'ต้องระบุประเภทของเอกสาร',
+    'paper_sourcetitle_required' => 'ต้องระบุชื่อแหล่งที่มาของเอกสาร',
+    'paper_volume_required' => 'ต้องระบุฉบับที่ของเอกสาร',
+    'paper_issue_required' => 'ต้องระบุฉบับที่ออกของเอกสาร',
+    'paper_citation_required' => 'ต้องระบุการอ้างอิงของเอกสาร',
+    'paper_page_required' => 'ต้องระบุหน้าของเอกสาร',
+
+    'papers_created' => 'สร้างเอกสารสำเร็จ',
+    'papers_updated' => 'อัปเดตเอกสารสำเร็จ',
 ];

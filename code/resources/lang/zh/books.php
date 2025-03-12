@@ -91,4 +91,8 @@ return [
 
     'ac_name_required' => '必须填写论文名称',
     'ac_year_required' => '必须填写出版年份',
+
+    'book_created' => '书籍创建成功。',
+    'book_updated' => '书籍更新成功。',
+    'product_deleted' => '产品删除成功。',
 ];

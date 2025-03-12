@@ -85,4 +85,8 @@ return [
     'next' => '下一页',
 
     'name_required' => '权限名称是必填项',
+
+    'permission_created' => '权限创建成功。',
+    'permission_updated' => '权限更新成功。',
+    'permission_deleted' => '权限删除成功。',
 ];

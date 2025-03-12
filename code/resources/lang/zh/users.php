@@ -68,4 +68,8 @@ return [
     'password_confirmed' => '密码确认不匹配',
     'roles_required' => '必须选择角色',
     'sub_cat_required' => '必须填写子类别',
+
+    'user_created' => '用户创建成功。',
+    'user_updated' => '用户更新成功。',
+    'user_deleted' => '用户删除成功。',
 ];

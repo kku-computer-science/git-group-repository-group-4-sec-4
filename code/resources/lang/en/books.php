@@ -91,4 +91,8 @@ return [
 
     'ac_name_required' => 'You must enter the paper name',
     'ac_year_required' => 'You must enter the year of publication',
+
+    'book_created' => 'Book created successfully.',
+    'book_updated' => 'Book updated successfully.',
+    'product_deleted' => 'Product deleted successfully.',
 ];

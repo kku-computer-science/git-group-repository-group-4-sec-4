@@ -69,5 +69,7 @@ return [
     'roles_required' => 'Roles are required',
     'sub_cat_required' => 'Sub category is required',
 
-    
+    'user_created' => 'User created successfully.',
+    'user_updated' => 'User updated successfully.',
+    'user_deleted' => 'User deleted successfully.',
 ];
