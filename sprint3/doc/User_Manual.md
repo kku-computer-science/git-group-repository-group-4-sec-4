@@ -1,4 +1,6 @@
-# คู่มือการใช้งาน Switch Language
+# คู่มือการใช้งาน (User Manual)
+
+## Sprint 3 - Product Backlog Items No.16 As a user, I want to switch language at all time.
 
 ## สารบัญ
 1. ข้อมูลเบื้องต้น
